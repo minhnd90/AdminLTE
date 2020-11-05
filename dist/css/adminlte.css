@@ -21802,63 +21802,32 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   object-fit: cover;
 }
 
-.login-page,
-.register-page {
+.login-page .login-left,
+.login-page .login-right,
+.register-page .login-left,
+.register-page .login-right {
   -ms-flex-align: center;
   align-items: center;
   background-color: #e9ecef;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 100vh;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.login-info {
-  margin-left: 40px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.login-info .login-logo,
-.login-info .register-logo {
-  font-size: 2.1rem;
-  font-weight: 300;
-  margin-top: 2rem;
-  width: 100px;
-}
-
-.login-info .login-logo a,
-.login-info .register-logo a {
-  color: #495057;
-}
-
-.login-info .login-title,
-.login-info .login-footer {
-  color: #fff;
-}
-
-.login-info .login-title {
+.login-title {
   margin-left: 80px;
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.login-info .login-title small {
+.login-title small {
   font-size: 2.5rem;
   font-weight: 400;
-}
-
-.login-info .login-footer {
-  margin-bottom: 2rem;
 }
 
 .login-box,

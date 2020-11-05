@@ -16,48 +16,25 @@
 }
 .login-page,
 .register-page {
-	align-items: center;
-	background-color: $gray-200;
-	display: flex;
-	flex-direction: row;
-	height: 100vh;
-	justify-content: space-between;
+	.login-left,
+	.login-right {
+		align-items: center;
+		background-color: $gray-200;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: space-between;
+	}
 }
-.login-info {
-	margin-left: 40px;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	justify-content: space-between;
+.login-title {
+	margin-left: 80px;
+	font-size: 3.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
 
-	.login-logo,
-	.register-logo {
-		font-size: 2.1rem;
-		font-weight: 300;
-		margin-top: 2rem;
-		width: 100px;
-
-		a {
-			color: $gray-700;
-		}
-	}
-	.login-title,
-	.login-footer {
-		color: $white;
-	}
-	.login-title {
-		margin-left: 80px;
-		font-size: 3.5rem;
-		font-weight: 700;
-		text-transform: uppercase;
-
-		small {
-			font-size: 2.5rem;
-			font-weight: 400;
-		}
-	}
-	.login-footer {
-		margin-bottom: 2rem;
+	small {
+		font-size: 2.5rem;
+		font-weight: 400;
 	}
 }
 .login-box,
