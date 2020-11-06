@@ -21789,10 +21789,12 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .login-background {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .login-background img {
@@ -21804,27 +21806,31 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-page,
 .register-page {
-  -ms-flex-align: center;
-  align-items: center;
   background-color: #e9ecef;
+  height: 100vh;
+}
+
+.login-info,
+.login-form {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
   height: 100vh;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.login-form {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .login-info {
-  margin-left: 40px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 50px;
+  margin-top: -135px;
 }
 
 .login-info .login-logo,
@@ -21833,6 +21839,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   font-weight: 300;
   margin-top: 2rem;
   width: 100px;
+  position: absolute;
+  top: 0;
 }
 
 .login-info .login-logo a,
@@ -21840,31 +21848,54 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   color: #495057;
 }
 
-.login-info .login-title,
-.login-info .login-footer {
-  color: #fff;
-}
-
 .login-info .login-title {
-  margin-left: 80px;
-  font-size: 3.5rem;
+  color: #001f3f;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .login-info .login-title small {
-  font-size: 2.5rem;
+  color: #495057;
+  font-size: 1.75rem;
   font-weight: 400;
 }
 
-.login-info .login-footer {
-  margin-bottom: 2rem;
+@media (max-width: 768px) {
+  .login-info .login-title {
+    font-size: 2rem;
+  }
+  .login-info .login-title small {
+    font-size: 1.5rem;
+  }
+}
+
+.login-footer {
+  margin: 2rem 0;
+  color: #fff;
+}
+
+.login-footer a {
+  color: inherit;
+}
+
+.login-footer h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.login-footer p {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .login-box,
 .register-box {
   width: 360px;
-  margin-right: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 576px) {
@@ -21878,19 +21909,31 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .login-box .card,
 .register-box .card {
   margin-bottom: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.login-box .card a,
+.register-box .card a {
+  color: #fff;
 }
 
 .login-card-body,
 .register-card-body {
-  background-color: #fff;
+  background-color: transparent;
   border-top: 0;
-  color: #666;
+  color: #fff;
   padding: 20px;
-  border-radius: 4px;
+}
+
+.login-card-body .custom-control,
+.register-card-body .custom-control {
+  float: left;
 }
 
 .login-card-body .input-group .input-group-prepend .input-group-text,
 .register-card-body .input-group .input-group-prepend .input-group-text {
+  background-color: #fff;
   border-right: 0;
 }
 
@@ -21901,6 +21944,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-card-body .input-group .input-group-append .input-group-text,
 .register-card-body .input-group .input-group-append .input-group-text {
+  background-color: #fff;
   border-left: 0;
 }
 
@@ -30955,8 +30999,8 @@ blockquote.quote-gray-dark h6 {
   color: #fff;
 }
 
-[class^="bg-"].disabled {
-  opacity: .65;
+[class^='bg-'].disabled {
+  opacity: 0.65;
 }
 
 a.text-muted:hover {
@@ -32842,35 +32886,35 @@ a.text-muted:hover {
   color: #3f474e;
 }
 
-[class*="accent-"] a.btn-primary {
+[class*='accent-'] a.btn-primary {
   color: #fff;
 }
 
-[class*="accent-"] a.btn-secondary {
+[class*='accent-'] a.btn-secondary {
   color: #fff;
 }
 
-[class*="accent-"] a.btn-success {
+[class*='accent-'] a.btn-success {
   color: #fff;
 }
 
-[class*="accent-"] a.btn-info {
+[class*='accent-'] a.btn-info {
   color: #fff;
 }
 
-[class*="accent-"] a.btn-warning {
+[class*='accent-'] a.btn-warning {
   color: #1f2d3d;
 }
 
-[class*="accent-"] a.btn-danger {
+[class*='accent-'] a.btn-danger {
   color: #fff;
 }
 
-[class*="accent-"] a.btn-light {
+[class*='accent-'] a.btn-light {
   color: #1f2d3d;
 }
 
-[class*="accent-"] a.btn-dark {
+[class*='accent-'] a.btn-dark {
   color: #fff;
 }
 

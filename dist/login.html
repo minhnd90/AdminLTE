@@ -14,70 +14,80 @@
 		<!-- Theme style -->
 		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
 	</head>
-	<body class="hold-transition login-page">
-		<div class="login-background">
-			<img src="assets/body-bg.jpg" alt="" />
-		</div>
-		<div class="login-info">
-			<h1 class="login-logo">
-				<a href="#" title="FSI Vietnam">
-					<img src="assets/logo.png" alt="FSI Vietnam" />
-				</a>
-			</h1>
-			<h2 class="login-title">
-				<small>Hệ thống quản lý</small>
-				<br />
-				<span>Lưu trữ điện tử</span>
-			</h2>
-			<div class="login-footer">
-				<h4 class="mb-2">Công ty CPĐT TM và PT công nghệ FSI</h4>
-				<p><i class="fas fa-fw mr-2 fa-map-marker-alt"></i>Tầng 5, Tòa Lâm Viên, 107A Nguyễn Phong Sắc, Cầu Giấy, Hà Nội</p>
-				<p><i class="fas fa-fw mr-2 fa-phone-alt"></i>+844-3767 5677(10-11)</p>
-				<p><i class="fas fa-fw mr-2 fa-envelope"></i>fsivietnam.com.vn</p>
-			</div>
-		</div>
-
-		<div class="login-box">
-			<div class="card">
-				<div class="card-body login-card-body">
-					<h3 class="login-box-msg mt-2">Đăng nhập</h3>
-
-					<form action="../index3.html" method="post">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" class="form-control" placeholder="Tài khoản" />
-						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<div class="input-group-text"><i class="fas fa-lock"></i></div>
-							</div>
-							<input type="password" class="form-control" placeholder="Mật khẩu" />
-						</div>
-						<div class="row mb-4">
-							<div class="col-6">
-								<div class="custom-control custom-checkbox">
-									<input class="custom-control-input" type="checkbox" id="remember" checked="" />
-									<label for="remember" class="custom-control-label">Ghi nhớ</label>
-								</div>
-							</div>
-							<!-- /.col -->
-							<div class="col-6 text-right">
-								<a href="forgot-password.html">Quên mật khẩu?</a>
-							</div>
-							<!-- /.col -->
-						</div>
-
-						<p class="mb-3">
-							<button type="submit" class="btn btn-block btn-danger">Đăng nhập</button>
-						</p>
-						<p class="mb-3 text-center">
-							<a href="register.html">Đăng ký tài khoản độc giả</a>
-						</p>
-					</form>
+	<body class="login-page container-fluid">
+		<div class="row">
+			<div class="col-4">
+				<div class="login-background">
+					<img src="assets/bg-page-left.jpg" />
 				</div>
-				<!-- /.login-card-body -->
+				<div class="login-info">
+					<h1 class="login-logo">
+						<a href="#" title="FSI Vietnam">
+							<img src="assets/logo.png" alt="FSI Vietnam" />
+						</a>
+					</h1>
+					<h2 class="login-title">
+						<small>Hệ thống quản lý</small>
+						<br />
+						<span>Lưu trữ điện tử</span>
+					</h2>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="login-background">
+					<img src="assets/bg-page-right.jpg" />
+				</div>
+				<div class="login-form text-center">
+					<div class="login-box">
+						<div class="card">
+							<div class="card-body login-card-body">
+								<h3 class="login-box-msg mt-2">Đăng nhập</h3>
+
+								<form action="../index3.html" method="post">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" class="form-control" placeholder="Tài khoản" />
+									</div>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<div class="input-group-text"><i class="fas fa-lock"></i></div>
+										</div>
+										<input type="password" class="form-control" placeholder="Mật khẩu" />
+									</div>
+									<div class="row mb-4">
+										<div class="col-6">
+											<div class="custom-control custom-checkbox">
+												<input class="custom-control-input" type="checkbox" id="remember" checked="" />
+												<label for="remember" class="custom-control-label">Ghi nhớ</label>
+											</div>
+										</div>
+										<!-- /.col -->
+										<div class="col-6 text-right">
+											<a href="forgot-password.html">Quên mật khẩu?</a>
+										</div>
+										<!-- /.col -->
+									</div>
+
+									<p class="mb-3">
+										<button type="submit" class="btn btn-block btn-danger">Đăng nhập</button>
+									</p>
+									<p class="mb-3 text-center">
+										<a href="register.html">Đăng ký tài khoản độc giả</a>
+									</p>
+								</form>
+							</div>
+							<!-- /.login-card-body -->
+						</div>
+					</div>
+					<div class="login-footer">
+						<h4 class="mb-2">Công ty CPĐT TM và PT công nghệ FSI</h4>
+						<p>Địa chỉ: Tầng 5, Tòa Lâm Viên, 107A Nguyễn Phong Sắc, Cầu Giấy, Hà Nội</p>
+						<p>Điện thoại: <a href="tel:+84437675677" title="+844-3767 5677">+844-3767 5677(10-11)</a></p>
+						<p>Website: <a href="fsivietnam.com.vn" title="fsivietnam.com.vn">fsivietnam.com.vn</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- /.login-box -->
