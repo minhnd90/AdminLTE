@@ -118,18 +118,11 @@
 	color: $white;
 	padding: 20px;
 
-	.custom-control {
-		float: left;
-	}
-
 	.input-group {
 		.input-group-prepend {
 			.input-group-text {
 				background-color: $white;
 				border-right: 0;
-			}
-			& + .form-control {
-				border-left: 0;
 			}
 		}
 		.input-group-append {
@@ -139,6 +132,11 @@
 			}
 		}
 		.form-control {
+			~ .input-group-prepend {
+				.input-group-text {
+					border-left: 0;
+				}
+			}
 			~ .input-group-append {
 				.input-group-text {
 					border-right: 0;
