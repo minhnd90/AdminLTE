@@ -35,9 +35,9 @@ $colors: map-merge(
 $font-size-root: 1rem !default;
 
 // Sidebar
-$sidebar-width: 250px !default;
+$sidebar-width: 300px !default;
 $sidebar-padding-x: 0.5rem !default;
-$sidebar-padding-y: 0 !default;
+$sidebar-padding-y: 0.5rem !default;
 $sidebar-custom-height: 4rem !default;
 $sidebar-custom-height-lg: 6rem !default;
 $sidebar-custom-height-xl: 8rem !default;
@@ -51,7 +51,7 @@ $boxed-layout-max-width: 1250px !default;
 $screen-header-collapse: map-get($grid-breakpoints, md) !default;
 
 // Body background (Affects main content background only)
-$main-bg: #f4f6f9 !default;
+$main-bg: #e5e5e5 !default;
 
 // Content padding
 $content-padding-y: 0 !default;
@@ -127,7 +127,7 @@ $sidebar-dark-header-color: $white !default;
 
 // Light sidebar
 $sidebar-light-bg: $white !default;
-$sidebar-light-hover-bg: rgba($black, 0.1) !default;
+$sidebar-light-hover-bg: #F5F6FA !default;
 $sidebar-light-color: $gray-800 !default;
 $sidebar-light-hover-color: $gray-900 !default;
 $sidebar-light-active-color: $black !default;
@@ -181,7 +181,7 @@ $attachment-border-radius: 3px !default;
 // Z-INDEX
 // --------------------------------------------------------
 $zindex-main-header: $zindex-fixed + 4 !default;
-$zindex-main-sidebar: $zindex-fixed + 8 !default;
+$zindex-main-sidebar: $zindex-fixed + 3 !default;
 $zindex-main-footer: $zindex-fixed + 2 !default;
 $zindex-control-sidebar: $zindex-fixed + 1 !default;
 $zindex-sidebar-mini-links: 010 !default;

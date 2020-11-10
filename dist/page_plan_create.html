@@ -11,20 +11,66 @@
 		<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
 		<!-- icheck bootstrap -->
 		<link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+		<!-- Select2 -->
+		<link rel="stylesheet" href="../plugins/select2/css/select2.min.css" />
+		<link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" />
+		<!-- overlayScrollbars -->
+		<link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css" />
+		<!-- Tempusdominus Bootstrap 4 -->
+		<link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+		<!-- DataTables -->
+		<link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
 		<!-- Theme style -->
 		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
 	</head>
-	<body class="hold-transition sidebar-mini layout-navbar-fixed">
+	<body class="hold-transition layout-fixed layout-navbar-fixed">
 		<!-- Site wrapper -->
 		<div class="wrapper">
 			<!-- Navbar -->
-			<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
 				<!-- Left navbar links -->
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="#" role="button"><i class="fas fa-bars"></i></a>
+					<li class="dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#"><i class="fas fa-bars"></i></a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<span class="dropdown-item dropdown-header">15 Notifications</span>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-envelope mr-2"></i> 4 new messages
+								<span class="float-right text-muted text-sm">3 mins</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-users mr-2"></i> 8 friend requests
+								<span class="float-right text-muted text-sm">12 hours</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-file mr-2"></i> 3 new reports
+								<span class="float-right text-muted text-sm">2 days</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+						</div>
 					</li>
 				</ul>
+				<a class="navbar-brand py-0 mr-auto" href="#">
+					<svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M56 0H52.0096C49.8656 0 47.8236 1.68338 47.3385 3.79882L42.8998 29.1189H46.9432C49.0871 29.1148 51.0762 27.4355 51.5613 25.32L56 0Z" fill="white" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23.9668 0H11.853C8.19681 0 4.84227 2.79205 3.99447 6.32593L0 29.1189H4.04745C6.2118 29.1148 8.27425 27.4029 8.73076 25.2589L10.0065 17.9873H16.8379C18.9819 17.9873 21.0239 16.3039 21.509 14.1885L22.0307 11.1764H11.2008L11.7592 8.00524H19.0349C20.9302 7.80144 22.6625 6.32593 23.1964 4.46728L23.9668 0Z" fill="white" />
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M45.329 0H45.0396C39.0194 0 37.3156 0 31.2954 0C27.7696 0 24.5496 3.04476 23.9504 6.79467L23.2494 11.1682C22.6502 14.9181 24.8757 17.9873 28.4218 17.9873H34.4094L33.9081 21.1177H25.3648C23.3757 21.1218 21.4804 22.8133 21.0483 24.945L20.3799 29.1189C31.2791 29.1189 23.5143 29.1189 34.4135 29.1189C37.9515 29.1189 41.1552 26.0863 41.7584 22.3242L42.4514 17.971C43.0464 14.2415 40.7965 11.1764 37.2789 11.1764H31.2954L31.8049 8.00524H40.3481C42.325 8.00524 44.2122 6.32593 44.6565 4.21049L45.329 0Z"
+							fill="white"
+						/>
+					</svg>
+				</a>
+				<div class="header-text mx-auto mb-0 text-uppercase">Hệ thống quản lý lưu trữ điện tử</div>
 				<!-- Right navbar links -->
 				<ul class="navbar-nav ml-auto">
 					<!-- Messages Dropdown Menu -->
@@ -118,9 +164,28 @@
 							<div class="image">
 								<img src="img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
 							</div>
-							<div class="info">
-								<a href="#" class="d-block">Alexander Pierce</a>
-								<span class="caret"></span>
+							<div class="info dropdown">
+								<a href="#" data-toggle="dropdown" class="nav-link">Alexander Pierce</a>
+								<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+									<span class="dropdown-item dropdown-header">15 Notifications</span>
+									<div class="dropdown-divider"></div>
+									<a href="#" class="dropdown-item">
+										<i class="fas fa-envelope mr-2"></i> 4 new messages
+										<span class="float-right text-muted text-sm">3 mins</span>
+									</a>
+									<div class="dropdown-divider"></div>
+									<a href="#" class="dropdown-item">
+										<i class="fas fa-users mr-2"></i> 8 friend requests
+										<span class="float-right text-muted text-sm">12 hours</span>
+									</a>
+									<div class="dropdown-divider"></div>
+									<a href="#" class="dropdown-item">
+										<i class="fas fa-file mr-2"></i> 3 new reports
+										<span class="float-right text-muted text-sm">2 days</span>
+									</a>
+									<div class="dropdown-divider"></div>
+									<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+								</div>
 							</div>
 						</div>
 					</li>
@@ -129,633 +194,62 @@
 			<!-- /.navbar -->
 
 			<!-- Main Sidebar Container -->
-			<aside class="main-sidebar sidebar-dark-primary elevation-4">
-				<!-- Brand Logo -->
-				<a href="../../index3.html" class="brand-link elevation-4">
-					<img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
-					<span class="brand-text font-weight-light">AdminLTE 3</span>
-				</a>
-
+			<aside class="main-sidebar sidebar-light-primary elevation-4">
 				<!-- Sidebar -->
 				<div class="sidebar">
-
 					<!-- Sidebar Menu -->
 					<nav class="mt-2">
 						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 							<!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-tachometer-alt"></i>
-									<p>
-										Dashboard
-										<i class="right fas fa-angle-left"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../../index.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Dashboard v1</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../../index2.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Dashboard v2</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../../index3.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Dashboard v3</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="../widgets.html" class="nav-link">
-									<i class="nav-icon fas fa-th"></i>
-									<p>
-										Widgets
-										<span class="right badge badge-danger">New</span>
-									</p>
-								</a>
-							</li>
 							<li class="nav-item menu-open">
-								<a href="#" class="nav-link active">
-									<i class="nav-icon fas fa-copy"></i>
-									<p>
-										Layout Options
-										<i class="fas fa-angle-left right"></i>
-										<span class="badge badge-info right">6</span>
-									</p>
+								<a href="#" class="nav-link text-uppercase active">
+									<i class="nav-icon far fa-file-alt"></i>
+									<span>Thu thập tài liệu</span>
+									<i class="right fas fa-angle-left"></i>
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="../layout/top-nav.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Top Navigation</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/top-nav-sidebar.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Top Navigation + Sidebar</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/boxed.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Boxed</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/fixed-sidebar.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Fixed Sidebar</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/fixed-sidebar-custom.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Fixed Sidebar <small>+ Custom Area</small></p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/fixed-topnav.html" class="nav-link active">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Fixed Navbar</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/fixed-footer.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Fixed Footer</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../layout/collapsed-sidebar.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Collapsed Sidebar</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-chart-pie"></i>
-									<p>
-										Charts
-										<i class="right fas fa-angle-left"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../charts/chartjs.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>ChartJS</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../charts/flot.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Flot</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../charts/inline.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Inline</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-tree"></i>
-									<p>
-										UI Elements
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../UI/general.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>General</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/icons.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Icons</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/buttons.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Buttons</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/sliders.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Sliders</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/modals.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Modals & Alerts</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/navbar.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Navbar & Tabs</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/timeline.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Timeline</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../UI/ribbons.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Ribbons</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-edit"></i>
-									<p>
-										Forms
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../forms/general.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>General Elements</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../forms/advanced.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Advanced Elements</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../forms/editors.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Editors</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../forms/validation.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Validation</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-table"></i>
-									<p>
-										Tables
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../tables/simple.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Simple Tables</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../tables/data.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>DataTables</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../tables/jsgrid.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>jsGrid</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-header">EXAMPLES</li>
-							<li class="nav-item">
-								<a href="../calendar.html" class="nav-link">
-									<i class="nav-icon far fa-calendar-alt"></i>
-									<p>
-										Calendar
-										<span class="badge badge-info right">2</span>
-									</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="../gallery.html" class="nav-link">
-									<i class="nav-icon far fa-image"></i>
-									<p>Gallery</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="../kanban.html" class="nav-link">
-									<i class="nav-icon fas fa-columns"></i>
-									<p>Kanban Board</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon far fa-envelope"></i>
-									<p>
-										Mailbox
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../mailbox/mailbox.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Inbox</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../mailbox/compose.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Compose</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../mailbox/read-mail.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Read</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-book"></i>
-									<p>
-										Pages
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../examples/invoice.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Invoice</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/profile.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Profile</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/e-commerce.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>E-commerce</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/projects.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Projects</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/project-add.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Project Add</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/project-edit.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Project Edit</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/project-detail.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Project Detail</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/contacts.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Contacts</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/faq.html" class="nav-link active">
-											<i class="far fa-circle nav-icon"></i>
-											<p>FAQ</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/contact-us.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Contact us</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon far fa-plus-square"></i>
-									<p>
-										Extras
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>
-												Login & Register v1
-												<i class="fas fa-angle-left right"></i>
-											</p>
-										</a>
-										<ul class="nav nav-treeview">
-											<li class="nav-item">
-												<a href="../examples/login.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Login v1</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/register.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Register v1</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/forgot-password.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Forgot Password v1</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/recover-password.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Recover Password v1</p>
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>
-												Login & Register v2
-												<i class="fas fa-angle-left right"></i>
-											</p>
-										</a>
-										<ul class="nav nav-treeview">
-											<li class="nav-item">
-												<a href="../examples/login-v2.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Login v2</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/register-v2.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Register v2</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/forgot-password-v2.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Forgot Password v2</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="../examples/recover-password-v2.html" class="nav-link">
-													<i class="far fa-circle nav-icon"></i>
-													<p>Recover Password v2</p>
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/lockscreen.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Lockscreen</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/legacy-user-menu.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Legacy User Menu</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/language-menu.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Language Menu</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/404.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Error 404</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/500.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Error 500</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/pace.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Pace</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../examples/blank.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Blank Page</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../../starter.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Starter Page</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-search"></i>
-									<p>
-										Search
-										<i class="fas fa-angle-left right"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="../search/simple.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Simple Search</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="../search/enhanced.html" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Enhanced</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-header">MISCELLANEOUS</li>
-							<li class="nav-item">
-								<a href="https://adminlte.io/docs/3.0/" class="nav-link">
-									<i class="nav-icon fas fa-file"></i>
-									<p>Documentation</p>
-								</a>
-							</li>
-							<li class="nav-header">MULTI LEVEL EXAMPLE</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="fas fa-circle nav-icon"></i>
-									<p>Level 1</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-circle"></i>
-									<p>
-										Level 1
-										<i class="right fas fa-angle-left"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Level 2</p>
+										<a href="#" class="nav-link active">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lập kế hoạch thu thập</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a href="#" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>
-												Level 2
-												<i class="right fas fa-angle-left"></i>
-											</p>
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt kế hoạch thu thập</span>
 										</a>
-										<ul class="nav nav-treeview">
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="far fa-dot-circle nav-icon"></i>
-													<p>Level 3</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="far fa-dot-circle nav-icon"></i>
-													<p>Level 3</p>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="far fa-dot-circle nav-icon"></i>
-													<p>Level 3</p>
-												</a>
-											</li>
-										</ul>
 									</li>
 									<li class="nav-item">
 										<a href="#" class="nav-link">
-											<i class="far fa-circle nav-icon"></i>
-											<p>Level 2</p>
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thu thập tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Biên mục tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lưu kho tài liệu</span>
 										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link">
-									<i class="fas fa-circle nav-icon"></i>
-									<p>Level 1</p>
-								</a>
-							</li>
-							<li class="nav-header">LABELS</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon far fa-circle text-danger"></i>
-									<p class="text">Important</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon far fa-circle text-warning"></i>
-									<p>Warning</p>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link">
-									<i class="nav-icon far fa-circle text-info"></i>
-									<p>Informational</p>
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Level 1</span>
 								</a>
 							</li>
 						</ul>
@@ -770,18 +264,11 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<div class="container-fluid">
-						<div class="row mb-2">
-							<div class="col-sm-6">
-								<h1>Fixed Navbar Layout</h1>
-							</div>
-							<div class="col-sm-6">
-								<ol class="breadcrumb float-sm-right">
-									<li class="breadcrumb-item"><a href="#">Home</a></li>
-									<li class="breadcrumb-item"><a href="#">Layout</a></li>
-									<li class="breadcrumb-item active">Fixed Navbar Layout</li>
-								</ol>
-							</div>
-						</div>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Thu thập, chỉnh lý</a></li>
+							<li class="breadcrumb-item active">Danh sách thu thập tài liệu</li>
+						</ol>
 					</div>
 					<!-- /.container-fluid -->
 				</section>
@@ -794,18 +281,490 @@
 								<!-- Default box -->
 								<div class="card">
 									<div class="card-header">
-										<h3 class="card-title">Title</h3>
-
-										<div class="card-tools">
-											<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-												<i class="fas fa-minus"></i>
-											</button>
-											<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-												<i class="fas fa-times"></i>
-											</button>
-										</div>
+										<h1 class="page-heading mb-0">Danh sách thu thập tài liệu</h1>
 									</div>
-									<div class="card-body">Start creating your amazing application!</div>
+
+									<div class="card-body">
+										<div class="row">
+											<div class="col-6">
+												<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<select id="select-font" class="select2bs4 w-100">
+														<option>Alabama</option>
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+													</div>
+													<input type="text" class="form-control" placeholder="Ngày tạo" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask />
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="form-group">
+													<select id="select-status" class="select2bs4 w-100" multiple>
+														<option>Alabama</option>
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="form-group row">
+													<label for="reservation" class="col-6 col-form-label">Thời gian dự kiến thu thập:</label>
+													<div class="col-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="far fa-calendar-alt"></i>
+																</span>
+															</div>
+															<input type="text" class="form-control float-right" id="reservation" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-2">
+												<button type="button" class="btn btn-block btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
+											</div>
+										</div>
+
+										<table id="data_table" class="table table-bordered table-striped">
+											<thead>
+												<tr>
+													<th>Rendering engine</th>
+													<th>Browser</th>
+													<th>Platform(s)</th>
+													<th>Engine version</th>
+													<th>CSS grade</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Trident</td>
+													<td>Internet Explorer 4.0</td>
+													<td>Win 95+</td>
+													<td>4</td>
+													<td>X</td>
+												</tr>
+												<tr>
+													<td>Trident</td>
+													<td>Internet Explorer 5.0</td>
+													<td>Win 95+</td>
+													<td>5</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Trident</td>
+													<td>Internet Explorer 5.5</td>
+													<td>Win 95+</td>
+													<td>5.5</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Trident</td>
+													<td>Internet Explorer 6</td>
+													<td>Win 98+</td>
+													<td>6</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Trident</td>
+													<td>Internet Explorer 7</td>
+													<td>Win XP SP2+</td>
+													<td>7</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Trident</td>
+													<td>AOL browser (AOL desktop)</td>
+													<td>Win XP</td>
+													<td>6</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Firefox 1.0</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.7</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Firefox 1.5</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Firefox 2.0</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Firefox 3.0</td>
+													<td>Win 2k+ / OSX.3+</td>
+													<td>1.9</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Camino 1.0</td>
+													<td>OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Camino 1.5</td>
+													<td>OSX.3+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Netscape 7.2</td>
+													<td>Win 95+ / Mac OS 8.6-9.2</td>
+													<td>1.7</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Netscape Browser 8</td>
+													<td>Win 98SE+</td>
+													<td>1.7</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Netscape Navigator 9</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.0</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.1</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.1</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.2</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.2</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.3</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.3</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.4</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.4</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.5</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.5</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.6</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>1.6</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.7</td>
+													<td>Win 98+ / OSX.1+</td>
+													<td>1.7</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Mozilla 1.8</td>
+													<td>Win 98+ / OSX.1+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Seamonkey 1.1</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Gecko</td>
+													<td>Epiphany 2.20</td>
+													<td>Gnome</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>Safari 1.2</td>
+													<td>OSX.3</td>
+													<td>125.5</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>Safari 1.3</td>
+													<td>OSX.3</td>
+													<td>312.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>Safari 2.0</td>
+													<td>OSX.4+</td>
+													<td>419.3</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>Safari 3.0</td>
+													<td>OSX.4+</td>
+													<td>522.1</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>OmniWeb 5.5</td>
+													<td>OSX.4+</td>
+													<td>420</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>iPod Touch / iPhone</td>
+													<td>iPod</td>
+													<td>420.1</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Webkit</td>
+													<td>S60</td>
+													<td>S60</td>
+													<td>413</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 7.0</td>
+													<td>Win 95+ / OSX.1+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 7.5</td>
+													<td>Win 95+ / OSX.2+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 8.0</td>
+													<td>Win 95+ / OSX.2+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 8.5</td>
+													<td>Win 95+ / OSX.2+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 9.0</td>
+													<td>Win 95+ / OSX.3+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 9.2</td>
+													<td>Win 88+ / OSX.3+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera 9.5</td>
+													<td>Win 88+ / OSX.3+</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Opera for Wii</td>
+													<td>Wii</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Nokia N800</td>
+													<td>N800</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Presto</td>
+													<td>Nintendo DS browser</td>
+													<td>Nintendo DS</td>
+													<td>8.5</td>
+													<td>C/A<sup>1</sup></td>
+												</tr>
+												<tr>
+													<td>KHTML</td>
+													<td>Konqureror 3.1</td>
+													<td>KDE 3.1</td>
+													<td>3.1</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>KHTML</td>
+													<td>Konqureror 3.3</td>
+													<td>KDE 3.3</td>
+													<td>3.3</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>KHTML</td>
+													<td>Konqureror 3.5</td>
+													<td>KDE 3.5</td>
+													<td>3.5</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Tasman</td>
+													<td>Internet Explorer 4.5</td>
+													<td>Mac OS 8-9</td>
+													<td>-</td>
+													<td>X</td>
+												</tr>
+												<tr>
+													<td>Tasman</td>
+													<td>Internet Explorer 5.1</td>
+													<td>Mac OS 7.6-9</td>
+													<td>1</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Tasman</td>
+													<td>Internet Explorer 5.2</td>
+													<td>Mac OS 8-X</td>
+													<td>1</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>NetFront 3.1</td>
+													<td>Embedded devices</td>
+													<td>-</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>NetFront 3.4</td>
+													<td>Embedded devices</td>
+													<td>-</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>Dillo 0.8</td>
+													<td>Embedded devices</td>
+													<td>-</td>
+													<td>X</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>Links</td>
+													<td>Text only</td>
+													<td>-</td>
+													<td>X</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>Lynx</td>
+													<td>Text only</td>
+													<td>-</td>
+													<td>X</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>IE Mobile</td>
+													<td>Windows Mobile 6</td>
+													<td>-</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Misc</td>
+													<td>PSP browser</td>
+													<td>PSP</td>
+													<td>-</td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>Other browsers</td>
+													<td>All others</td>
+													<td>-</td>
+													<td>-</td>
+													<td>U</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<th>Rendering engine</th>
+													<th>Browser</th>
+													<th>Platform(s)</th>
+													<th>Engine version</th>
+													<th>CSS grade</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">Footer</div>
 									<!-- /.card-footer-->
@@ -836,8 +795,74 @@
 		<script src="../plugins/jquery/jquery.min.js"></script>
 		<!-- Bootstrap 4 -->
 		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Select2 -->
+		<script src="../plugins/select2/js/select2.full.min.js"></script>
+		<!-- overlayScrollbars -->
+		<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+		<!-- InputMask -->
+		<script src="../plugins/moment/moment.min.js"></script>
+		<script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+		<!-- date-range-picker -->
+		<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- Tempusdominus Bootstrap 4 -->
+		<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+		<!-- DataTables  & Plugins -->
+		<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+		<script src="../plugins/jszip/jszip.min.js"></script>
+		<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+		<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 		<!-- AdminLTE App -->
 		<script src="js/adminlte.min.js"></script>
 		<!-- AdminLTE for demo purposes -->
+		<script>
+			$(function () {
+				//Initialize Select2 Elements
+				$('#select-status').select2({
+					// theme: 'bootstrap4',
+					placeholder: {
+						id: '', // the value of the option
+						text: 'Trạng thái'
+					},
+					allowClear: true
+				});
+				$('#select-font').select2({
+					// theme: 'bootstrap4',
+					placeholder: {
+						id: '', // the value of the option
+						text: 'Chọn phông'
+					}
+				});
+				//Datemask dd/mm/yyyy
+				$('[data-mask]').inputmask();
+
+				//Date range picker
+				$('#reservation').daterangepicker({
+					locale: {
+						format: 'DD/MM/yyyy'
+					},
+					applyLabel: 'Chọn',
+					cancelLabel: 'Hủy'
+				});
+				//DataTable
+				$('#data_table')
+					.DataTable({
+						responsive: true,
+						lengthChange: false,
+						autoWidth: false,
+						buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis']
+					})
+					.buttons()
+					.container()
+					.appendTo('#data_table_wrapper .col-md-6:eq(0)');
+			});
+		</script>
 	</body>
 </html>

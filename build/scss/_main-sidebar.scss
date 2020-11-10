@@ -19,19 +19,15 @@
 .sidebar {
 	height: calc(100% - (#{$main-header-height-inner} + #{$main-header-bottom-border-width}));
 	overflow-y: auto;
-	padding-bottom: $sidebar-padding-y;
-	padding-left: $sidebar-padding-x;
-	padding-right: $sidebar-padding-x;
-	padding-top: $sidebar-padding-y;
+	padding: $sidebar-padding-x $sidebar-padding-y;
 }
-
 
 // Sidebar navigation menu
 .nav-sidebar {
 	// All levels
 	.nav-item {
 		> .nav-link {
-			margin-bottom: 0.2rem;
+			margin-bottom: 0.5rem;
 
 			.right {
 				@include transition(transform $transition-fn $transition-speed);
@@ -76,10 +72,8 @@
 
 		.nav-icon {
 			margin-left: 0.05rem;
-			font-size: 1.2rem;
 			margin-right: 0.2rem;
 			text-align: center;
-			width: $sidebar-nav-icon-width;
 
 			&.fa,
 			&.fas,
@@ -89,7 +83,7 @@
 			&.fad,
 			&.svg-inline--fa,
 			&.ion {
-				font-size: 1.1rem;
+				font-size: 1rem;
 			}
 		}
 
@@ -139,8 +133,13 @@
 	}
 
 	.nav-header {
-		font-size: 0.9rem;
-		padding: $nav-link-padding-y;
+		font-size: $font-size-base;
+
+		h2,
+		h3,
+		h4 {
+			font-size: inherit;
+		}
 
 		&:not(:first-of-type) {
 			padding: 1.7rem 1rem 0.5rem;
@@ -264,18 +263,17 @@
 		> .nav-item {
 			> .nav-link {
 				color: $sidebar-light-submenu-color;
+				border-left: 4px solid transparent;
 			}
 
-			> .nav-link.active {
-				&,
+			> .nav-link {
+				&.active,
+				&.active:hover,
 				&:hover {
 					background-color: $sidebar-light-submenu-active-bg;
 					color: $sidebar-light-submenu-active-color;
+					border-left-color: theme-color('primary');
 				}
-			}
-
-			> .nav-link:hover {
-				background-color: $sidebar-light-submenu-hover-bg;
 			}
 		}
 	}
@@ -1081,4 +1079,8 @@
 			right: 0.5rem;
 		}
 	}
+}
+.os-theme-light > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle,
+.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+	background: rgba(0, 0, 0, 0.4);
 }
