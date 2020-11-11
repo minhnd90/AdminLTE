@@ -3,6 +3,9 @@
 //
 
 .table {
+	th, td {
+		vertical-align: middle;
+	}
 	&:not(.table-dark) {
 		color: inherit;
 	}

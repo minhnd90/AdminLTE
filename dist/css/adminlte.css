@@ -213,8 +213,8 @@ table {
 }
 
 caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.5rem 0.75rem;
+  padding-bottom: 0.5rem 0.75rem;
   color: #6c757d;
   text-align: left;
   caption-side: bottom;
@@ -1678,7 +1678,7 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
@@ -11606,25 +11606,6 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   color: #fff;
 }
 
-img {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-}
-
-.select2-container--bootstrap4 .select2-selection__clear {
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
-  text-align: center;
-  margin-top: 0.5rem;
-  padding: 0;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  line-height: 1.625rem;
-}
-
 .main-header {
   z-index: 1024;
 }
@@ -13688,7 +13669,7 @@ body.text-sm .control-sidebar {
 }
 
 .text-sm .dropdown-toggle::after {
-  vertical-align: .2rem;
+  vertical-align: 0.2rem;
 }
 
 .dropdown-item-title {
@@ -13729,8 +13710,8 @@ body.text-sm .control-sidebar {
   border-bottom: 0.3em solid transparent;
   border-left: 0.3em solid;
   float: right;
-  margin-left: .5rem;
-  margin-top: .5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .dropdown-submenu > .dropdown-menu {
@@ -13939,15 +13920,6 @@ body.text-sm .control-sidebar {
   margin-right: 10px;
   margin-top: -2px;
   width: 1.85rem;
-}
-
-@media (min-width: 576px) {
-  .navbar-nav > .user-menu .user-image {
-    float: none;
-    line-height: 10px;
-    margin-right: .4rem;
-    margin-top: -8px;
-  }
 }
 
 .dark-mode .dropdown-menu {
@@ -20334,6 +20306,11 @@ html.maximized-card {
   color: #040505;
 }
 
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
 .table:not(.table-dark) {
   color: inherit;
 }
@@ -20417,12 +20394,12 @@ html.maximized-card {
 
 .expandable-body > td > div,
 .expandable-body > td > p {
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .expandable-body .table {
-  width: calc(100% - 0.75rem);
-  margin: 0 0 0 0.75rem;
+  width: calc(100% - 0.5rem 0.75rem);
+  margin: 0 0 0 0.5rem 0.75rem;
 }
 
 .expandable-body .table tr:first-child td,
@@ -24761,6 +24738,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .dark-mode [class*='icheck-'] > input:first-child:not(:checked) + input[type='hidden'] + label::before,
 .dark-mode [class*='icheck-'] > input:first-child:not(:checked) + label::before {
   border-color: #6c757d;
+}
+
+[class*='icheck-'] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .mapael .map {
@@ -29678,8 +29660,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .badge-btn {
-  border-radius: 0.15rem;
-  font-size: 0.65625rem;
+  font-size: 1rem;
   font-weight: 400;
   padding: 0.25rem 0.5rem;
 }
@@ -29717,6 +29698,29 @@ blockquote.quote-gray-dark h6 {
 .dark-mode .list-group-item {
   background-color: #343a40;
   border-color: #6c757d;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.select2-container--bootstrap4 .select2-selection__clear {
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 1.625rem;
+}
+
+.dt-buttons {
+  float: right;
 }
 
 @media print {

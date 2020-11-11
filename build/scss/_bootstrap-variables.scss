@@ -319,7 +319,7 @@ $hr-margin-y: $spacer !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding: 0.75rem !default;
+$table-cell-padding: 0.5rem 0.75rem !default;
 $table-cell-padding-sm: 0.3rem !default;
 
 $table-bg: transparent !default;
