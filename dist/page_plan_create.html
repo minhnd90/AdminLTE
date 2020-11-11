@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>AdminLTE 3 | DANH SÁCH KẾ HOẠCH THU THẬP</title>
+
+		<!-- Google Font: Source Sans Pro -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=fallback" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+		<!-- icheck bootstrap -->
+		<link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+		<!-- Select2 -->
+		<link rel="stylesheet" href="../plugins/select2/css/select2.min.css" />
+		<link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" />
+		<!-- overlayScrollbars -->
+		<link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css" />
+		<!-- Tempusdominus Bootstrap 4 -->
+		<link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+		<!-- DataTables -->
+		<link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
+		<!-- Theme style -->
+		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+	</head>
+	<body class="hold-transition layout-fixed layout-navbar-fixed">
+		<!-- Site wrapper -->
+		<div class="wrapper">
+			<!-- Navbar -->
+			<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+				<!-- Left navbar links -->
+				<ul class="navbar-nav">
+					<li class="dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#"><i class="fas fa-bars"></i></a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<span class="dropdown-item dropdown-header">15 Notifications</span>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-envelope mr-2"></i> 4 new messages
+								<span class="float-right text-muted text-sm">3 mins</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-users mr-2"></i> 8 friend requests
+								<span class="float-right text-muted text-sm">12 hours</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-file mr-2"></i> 3 new reports
+								<span class="float-right text-muted text-sm">2 days</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+						</div>
+					</li>
+				</ul>
+				<a class="navbar-brand py-0 mr-auto" href="#">
+					<svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M56 0h32.0096C49.8656 0 47.8236 1.68338 47.3385 3.79882L42.8998 29.1189H46.9432C49.0871 29.1148 51.0762 27.4355 51.5613 25.32L56 0Z" fill="white" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23.9668 0H11.853C8.19681 0 4.84227 2.79205 3.99447 6.32593L0 29.1189H4.04745C6.2118 29.1148 8.27425 27.4029 8.73076 25.2589L10.0065 17.9873H16.8379C18.9819 17.9873 21.0239 16.3039 21.509 14.1885L22.0307 11.1764H11.2008L11.7592 8.00524H19.0349C20.9302 7.80144 22.6625 6.32593 23.1964 4.46728L23.9668 0Z" fill="white" />
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M45.329 0H45.0396C39.0194 0 37.3156 0 31.2954 0C27.7696 0 24.5496 3.04476 23.9504 6.79467L23.2494 11.1682C22.6502 14.9181 24.8757 17.9873 28.4218 17.9873H34.4094L33.9081 21.1177H25.3648C23.3757 21.1218 21.4804 22.8133 21.0483 24.945L20.3799 29.1189C31.2791 29.1189 23.5143 29.1189 34.4135 29.1189C37.9515 29.1189 41.1552 26.0863 41.7584 22.3242L42.4514 17.971C43.0464 14.2415 40.7965 11.1764 37.2789 11.1764H31.2954L31.8049 8.00524H40.3481C42.325 8.00524 44.2122 6.32593 44.6565 4.21049L45.329 0Z"
+							fill="white"
+						/>
+					</svg>
+				</a>
+				<div class="header-text mx-auto mb-0 text-uppercase">Hệ thống quản lý lưu trữ điện tử</div>
+				<!-- Right navbar links -->
+				<ul class="navbar-nav ml-auto">
+					<!-- Messages Dropdown Menu -->
+					<li class="nav-item dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#">
+							<i class="far fa-comments"></i>
+							<span class="badge badge-danger navbar-badge">3</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											Brad Diesel
+											<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">Call me whenever you can...</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											John Pierce
+											<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">I got your message bro</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											Nora Silvester
+											<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">The subject goes here</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+						</div>
+					</li>
+					<!-- Notifications Dropdown Menu -->
+					<li class="nav-item dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#">
+							<i class="far fa-bell"></i>
+							<span class="badge badge-warning navbar-badge">15</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<span class="dropdown-item dropdown-header">15 Notifications</span>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-envelope mr-2"></i> 4 new messages
+								<span class="float-right text-muted text-sm">3 mins</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-users mr-2"></i> 8 friend requests
+								<span class="float-right text-muted text-sm">12 hours</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-file mr-2"></i> 3 new reports
+								<span class="float-right text-muted text-sm">2 days</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown user-menu">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+							<img src="img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image" />
+							<span class="d-none d-md-inline">Alexander Pierce</span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<!-- User image -->
+							<li class="user-header bg-primary">
+								<img src="img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
+
+								<p>
+									Alexander Pierce - Web Developer
+									<small>Member since Nov. 2012</small>
+								</p>
+							</li>
+							<!-- Menu Body -->
+							<li class="user-body">
+								<div class="row">
+									<div class="col-4 text-center">
+										<a href="#">Followers</a>
+									</div>
+									<div class="col-4 text-center">
+										<a href="#">Sales</a>
+									</div>
+									<div class="col-4 text-center">
+										<a href="#">Friends</a>
+									</div>
+								</div>
+								<!-- /.row -->
+							</li>
+							<!-- Menu Footer-->
+							<li class="user-footer">
+								<a href="#" class="btn btn-default btn-flat">Profile</a>
+								<a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<!-- /.navbar -->
+
+			<!-- Main Sidebar Container -->
+			<aside class="main-sidebar sidebar-light-primary elevation-4">
+				<!-- Sidebar -->
+				<div class="sidebar">
+					<!-- Sidebar Menu -->
+					<nav class="mt-2">
+						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+							<!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+							<li class="nav-item menu-open">
+								<a href="#" class="nav-link text-uppercase active">
+									<i class="nav-icon far fa-file-alt"></i>
+									<span>Thu thập tài liệu</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link active">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lập kế hoạch thu thập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt kế hoạch thu thập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thu thập tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Biên mục tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lưu kho tài liệu</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Level 1</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- /.sidebar-menu -->
+				</div>
+				<!-- /.sidebar -->
+			</aside>
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<div class="container-fluid">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Thu thập, chỉnh lý</a></li>
+							<li class="breadcrumb-item active">Danh sách thu thập tài liệu</li>
+						</ol>
+					</div>
+					<!-- /.container-fluid -->
+				</section>
+
+				<!-- Main content -->
+				<section class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<!-- Default box -->
+								<div class="card">
+									<div class="card-header">
+										<h1 class="page-heading mb-0">Danh sách thu thập tài liệu</h1>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-6">
+												<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<select id="select-font-search" class="select2bs4">
+														<option value="-1">Chọn phông</option>
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+													</div>
+													<input type="text" class="form-control" placeholder="Ngày tạo" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask />
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="form-group">
+													<select id="select-status" class="select2bs4" multiple>
+														<option>Alabama</option>
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="form-group row">
+													<label for="reservation" class="col-6 col-form-label">Thời gian dự kiến thu thập:</label>
+													<div class="col-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="far fa-calendar-alt"></i>
+																</span>
+															</div>
+															<input type="text" class="form-control float-right" id="reservation" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-2">
+												<button type="button" class="btn btn-block btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
+											</div>
+										</div>
+										<table id="data_table" class="table table-bordered table-striped">
+											<thead>
+												<tr>
+													<th>STT</th>
+													<th>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="0" value="0" />
+															<label class="custom-control-label" for="0"></label>
+														</div>
+													</th>
+													<th>Tên kế hoạch</th>
+													<th>Ngày tạo</th>
+													<th>Thời gian dự kiến thu thập</th>
+													<th>Trạng thái</th>
+													<th>Thao tác</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="1" value="1" />
+															<label class="custom-control-label" for="1"></label>
+														</div>
+													</td>
+													<td>1</td>
+													<td>Internet Explorer 4.0</td>
+													<td>Win 95+</td>
+													<td><span class="badge badge-btn badge-primary">Another status</span></td>
+													<td>
+														<button type="button" class="btn btn-xs btn-success " data-toggle="modal" data-target="#planViewModal">
+															<i class="fas fa-eye"></i>
+														</button>
+														<button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#planEditModal">
+															<i class="fas fa-pencil-alt"></i>
+														</button>
+														<button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#planDeleteModal">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="2" value="2" />
+															<label class="custom-control-label" for="2"></label>
+														</div>
+													</td>
+													<td>Internet Explorer 5.0</td>
+													<td>Internet Explorer 5.0</td>
+													<td>Win 95+</td>
+													<td><span class="badge badge-btn badge-secondary">Tạo mới</span></td>
+													<td>C</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="3" value="3" />
+															<label class="custom-control-label" for="3"></label>
+														</div>
+													</td>
+													<td>Win 95+</td>
+													<td>Win 95+</td>
+													<td>Win 95+</td>
+													<td>5.5</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="4" value="4" />
+															<label class="custom-control-label" for="4"></label>
+														</div>
+													</td>
+													<td>Win 98+</td>
+													<td>6</td>
+													<td>6</td>
+													<td><span class="badge badge-btn badge-success">Đã duyệt</span></td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="5" value="5" />
+															<label class="custom-control-label" for="5"></label>
+														</div>
+													</td>
+													<td>Internet Explorer 7</td>
+													<td>Internet Explorer 7</td>
+													<td>Win XP SP2+</td>
+													<td><span class="badge badge-btn badge-danger">Từ chối</span></td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="6" value="6" />
+															<label class="custom-control-label" for="6"></label>
+														</div>
+													</td>
+													<td>Win XP</td>
+													<td>Win XP</td>
+													<td>Win XP</td>
+													<td><span class="badge badge-btn badge-warning">Chờ phê duyệt</span></td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="7" value="7" />
+															<label class="custom-control-label" for="7"></label>
+														</div>
+													</td>
+													<td>2</td>
+													<td>Firefox 1.0</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td><span class="badge badge-btn badge-info">Info</span></td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="8" value="8" />
+															<label class="custom-control-label" for="8"></label>
+														</div>
+													</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td><span class="badge badge-btn badge-light">Another status</span></td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="9" value="9" />
+															<label class="custom-control-label" for="9"></label>
+														</div>
+													</td>
+													<td>Firefox 2.0</td>
+													<td>Firefox 2.0</td>
+													<td>Win 98+ / OSX.2+</td>
+													<td>1.8</td>
+													<td>A</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="10" value="10" />
+															<label class="custom-control-label" for="10"></label>
+														</div>
+													</td>
+													<td>Firefox 3.0</td>
+													<td>Firefox 3.0</td>
+													<td>Win 2k+ / OSX.3+</td>
+													<td><span class="badge badge-btn badge-dark">Another status</span></td>
+													<td>A</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- /.card-body -->
+									<div class="card-footer">Footer</div>
+									<!-- /.card-footer-->
+								</div>
+								<!-- /.card -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.content-wrapper -->
+
+			<footer class="main-footer">
+				<div class="float-right d-none d-sm-block"><b>Version</b> 3.1.0-pre</div>
+				<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+			</footer>
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Control sidebar content goes here -->
+			</aside>
+			<!-- /.control-sidebar -->
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- Plan Create Modal -->
+		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planCreateModalTitle">Create plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form id="planCreateForm">
+							<div class="form-group row">
+								<label for="modal_create-select-font" class="col-sm-3 col-form-label">Phông</label>
+								<div class="col-sm-9">
+									<select id="modal_create-select-font" class="select2bs4" required>
+										<option value="-1">Chọn phông</option>
+										<option>Alaska</option>
+										<option>California</option>
+										<option>Delaware</option>
+										<option>Tennessee</option>
+										<option>Texas</option>
+										<option>Washington</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-input-name" class="col-sm-3 col-form-label">Tên kế hoạch</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" name="modal_create-input-name" id="modal_create-input-name" placeholder="Tên kế hoạch" required />
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-date" class="col-sm-3 col-form-label">Ngày tạo</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" name="modal_create-date" id="modal_create-date" placeholder="Ngày tạo" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask required />
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-textarea-content" class="col-sm-3 col-form-label">Tên kế hoạch</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" name="modal_create-textarea-content" id="modal_create-textarea-content" cols="30" rows="2"></textarea>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-date_range" class="col-sm-3 col-form-label">Thời gian dự kiến thu thập:</label>
+								<div class="col-sm-9">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+										</div>
+										<input type="text" class="form-control float-right" name="modal_create-date_range" id="modal_create-date_range" />
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan View Modal -->
+		<div class="modal fade" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planViewModalTitle">View plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">...</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan Edit Modal -->
+		<div class="modal fade" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planEditModalTitle">Edit plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">...</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan Delete Modal -->
+		<div class="modal fade" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planDeleteModalTitle">Delete plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">Sure?</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="../plugins/jquery/jquery.min.js"></script>
+		<!-- Bootstrap 4 -->
+		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Select2 -->
+		<script src="../plugins/select2/js/select2.full.min.js"></script>
+		<!-- overlayScrollbars -->
+		<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+		<!-- InputMask -->
+		<script src="../plugins/moment/moment.min.js"></script>
+		<script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+		<!-- date-range-picker -->
+		<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- Tempusdominus Bootstrap 4 -->
+		<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+		<!-- DataTables  & Plugins -->
+		<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="../plugins/datatables-select/js/dataTables.select.min.js"></script>
+		<script src="../plugins/datatables-select/js/select.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+		<script src="../plugins/jszip/jszip.min.js"></script>
+		<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+		<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="js/adminlte.min.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script>
+			$(function () {
+				//Initialize Select2 Elements
+				$('.select2bs4').select2();
+				$('#select-status').select2({
+					width: '.form-group',
+					allowClear: true,
+					closeOnSelect: false,
+					placeholder: 'Trạng thái'
+				});
+				$('#select-font-search, #select-font-modal').select2({
+					width: '.form-group',
+					allowClear: true,
+					placeholder: 'Chọn phông'
+				});
+				//Datemask dd/mm/yyyy
+				$('[data-mask]').inputmask();
+
+				//Date range picker
+				$('#reservation, #modal_create-date_range').daterangepicker({
+					locale: {
+						format: 'DD/MM/yyyy'
+					},
+					applyLabel: 'Chọn',
+					cancelLabel: 'Hủy'
+				});
+				//DataTable
+				$('#data_table')
+					.DataTable({
+						paging: false,
+						info: false,
+						filter: false,
+						ordering: false,
+						responsive: true,
+						lengthChange: false,
+						autoWidth: false,
+						fixedHeader: {
+							header: true
+						},
+						buttons: [
+							{
+								text: '<i class="fas fa-plus mr-2"></i>Thêm mới',
+								action: function (dt) {
+									$('#planCreateModal').modal();
+								}
+							},
+							'print',
+							'csv',
+							'excel',
+							'pdf'
+						]
+					})
+					.buttons()
+					.container()
+					.appendTo('#data_table_wrapper .col-md-6:eq(1)');
+			});
+		</script>
+	</body>
+</html>
