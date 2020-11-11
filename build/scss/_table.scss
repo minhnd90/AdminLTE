@@ -5,6 +5,7 @@
 .table {
 	th, td {
 		vertical-align: middle;
+		font-size: 0.75rem;
 	}
 	&:not(.table-dark) {
 		color: inherit;
