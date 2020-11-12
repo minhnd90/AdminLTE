@@ -302,8 +302,7 @@
 											</div>
 											<div class="col-4">
 												<div class="form-group">
-													<select id="select-font-search" class="select2bs4">
-														<option value="-1">Chọn phông</option>
+													<select id="search_select-font" class="select2bs4 select_font">
 														<option>Alaska</option>
 														<option>California</option>
 														<option>Delaware</option>
@@ -315,7 +314,7 @@
 											</div>
 											<div class="col-4">
 												<div class="form-group">
-													<select id="select-status" class="select2bs4" multiple>
+													<select id="search_select-status" class="select2bs4 select_status" multiple>
 														<option>Alabama</option>
 														<option>Alaska</option>
 														<option>California</option>
@@ -328,7 +327,7 @@
 											</div>
 											<div class="col-6">
 												<div class="form-group row">
-													<label for="reservation" class="col-4 col-form-label">Thời gian dự kiến thu thập:</label>
+													<label for="search_range-date" class="col-4 col-form-label">Thời gian dự kiến thu thập:</label>
 													<div class="col-8">
 														<div class="input-group">
 															<div class="input-group-prepend">
@@ -347,8 +346,8 @@
 													<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#search_create-date" data-toggle="datetimepicker" />
 												</div>
 											</div>
-											<div class="col-2">
-												<button type="button" class="btn btn-block btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
+											<div class="col-2 text-right">
+												<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
 											</div>
 										</div>
 										<table id="data_table" class="table table-bordered table-striped">
@@ -382,15 +381,15 @@
 													<td>Win 95+</td>
 													<td><span class="badge badge-btn badge-primary">Another status</span></td>
 													<td>
-														<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#planViewModal">
+														<a href="#" title="Xem" class="btn btn-sm btn-outline-secondary btn-hover-success" role="button" data-toggle="modal" data-target="#planViewModal">
 															<i class="fas fa-eye"></i>
-														</button>
-														<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#planEditModal">
+														</a>
+														<a href="#" title="Sửa" class="btn btn-sm btn-outline-secondary btn-hover-primary" role="button" data-toggle="modal" data-target="#planEditModal">
 															<i class="fas fa-pencil-alt"></i>
-														</button>
-														<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#planDeleteModal">
+														</a>
+														<a href="#" title="Xóa" class="btn btn-sm btn-outline-secondary btn-hover-danger" role="button" data-toggle="modal" data-target="#planDeleteModal">
 															<i class="fas fa-trash-alt"></i>
-														</button>
+														</a>
 													</td>
 												</tr>
 												<tr>
@@ -528,7 +527,7 @@
 											<div class="col-6">Có tổng cộng <span class="text-red">5</span> công việc</div>
 											<div class="col-6">
 												<nav aria-label="Pagination">
-													<ul class="pagination pagination-sm justify-content-end mb-0">
+													<ul class="pagination pagination-md justify-content-end mb-0">
 														<li class="page-item disabled">
 															<a class="page-link" href="#" aria-label="Previous">
 																<span aria-hidden="true">&laquo;</span>
@@ -577,7 +576,7 @@
 
 		<!-- Plan Create Modal -->
 		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header bg-primary">
 						<h3 class="modal-title" id="planCreateModalTitle">Create plan modal</h3>
@@ -588,10 +587,9 @@
 					<div class="modal-body">
 						<form id="planCreateForm">
 							<div class="form-group row">
-								<label for="modal_create-select-font" class="col-sm-3 col-form-label">Phông</label>
+								<label for="modal_create-select_font" class="col-sm-3 col-form-label">Phông</label>
 								<div class="col-sm-9">
-									<select id="modal_create-select-font" class="select2bs4" required>
-										<option value="-1">Chọn phông</option>
+									<select id="modal_create-select_font" class="select2bs4 select_font" required>
 										<option>Alaska</option>
 										<option>California</option>
 										<option>Delaware</option>
@@ -603,10 +601,10 @@
 							</div>
 							<div class="form-group row">
 								<label for="modal_create-input-name" class="col-sm-3 col-form-label">Tên kế hoạch</label>
-								<div class="col-sm-6">
+								<div class="col-sm-5">
 									<input type="text" class="form-control" name="modal_create-input-name" id="modal_create-input-name" placeholder="Tên kế hoạch" required />
 								</div>
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 									<div class="input-group date" id="modal_create-date" data-target-input="nearest">
 										<div class="input-group-prepend" data-target="#modal_create-date" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
@@ -618,7 +616,7 @@
 							<div class="form-group row">
 								<label for="modal_create-textarea-content" class="col-sm-3 col-form-label">Nội dung</label>
 								<div class="col-sm-9">
-									<textarea class="form-control" name="modal_create-textarea-content" id="modal_create-textarea-content" cols="30" rows="2"></textarea>
+									<textarea class="form-control" placeholder="Nội dung kế hoạch thu thập" name="modal_create-textarea-content" id="modal_create-textarea-content" rows="2"></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -645,21 +643,48 @@
 											</div>
 										</div>
 									</div>
-									<form class="table-responsive">
+									<div class="table-responsive">
 										<table class="table table-sm table-bordered table-hover">
 											<thead>
 												<tr>
 													<th scope="col" class="text-center col-min">STT</th>
 													<th scope="col">Tên hồ sơ</th>
-													<th scope="col">Mô tả</th>
+													<th scope="col">Đơn vị nộp lưu</th>
+													<th scope="col">Cán bộ được phân công lập hồ sơ</th>
+													<th scope="col" class="text-center col-min">Hoàn thành</th>
 													<th scope="col" class="text-center col-min">Thao tác</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td class="text-center">1</th>
+													<td class="text-center">1</td>
 													<td>Mark</td>
-													<td>Otto</td>
+													<td>
+														<select id="modal_create-select_center--1" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--1" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-1" value="1" />
+															<label class="custom-control-label" for="checkbox-complete-1"></label>
+														</div>
+													</td>
 													<td class="text-center">
 														<button type="button" class="btn btn-sm btn-danger">
 															<i class="fas fa-trash-alt"></i>
@@ -667,9 +692,34 @@
 													</td>
 												</tr>
 												<tr>
-													<td class="text-center">2</th>
+													<td class="text-center">2</td>
 													<td>Jacob</td>
-													<td>Thornton</td>
+													<td>
+														<select id="modal_create-select_center--2" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--2" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-2" value="2" />
+															<label class="custom-control-label" for="checkbox-complete-2"></label>
+														</div>
+													</td>
 													<td class="text-center">
 														<button type="button" class="btn btn-sm btn-danger">
 															<i class="fas fa-trash-alt"></i>
@@ -677,9 +727,34 @@
 													</td>
 												</tr>
 												<tr>
-													<td class="text-center">3</th>
+													<td class="text-center">3</td>
 													<td>Larry</td>
-													<td>the Bird</td>
+													<td>
+														<select id="modal_create-select_center--3" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--3" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-3" value="3" />
+															<label class="custom-control-label" for="checkbox-complete-3"></label>
+														</div>
+													</td>
 													<td class="text-center">
 														<button type="button" class="btn btn-sm btn-danger">
 															<i class="fas fa-trash-alt"></i>
@@ -688,23 +763,9 @@
 												</tr>
 											</tbody>
 										</table>
-									</form>
+									</div>
 								</div>
 								<!-- /.card-body -->
-							</div>
-							<div class="form-group row">
-								<label for="modal_create-select-center" class="col-sm-3 col-form-label">Đơn vị nộp lưu:</label>
-								<div class="col-sm-9">
-									<select id="modal_create-select-center" class="select2bs4" required>
-										<option value="-1">Chọn đơn vị nộp lưu</option>
-										<option>Alaska</option>
-										<option>California</option>
-										<option>Delaware</option>
-										<option>Tennessee</option>
-										<option>Texas</option>
-										<option>Washington</option>
-									</select>
-								</div>
 							</div>
 						</form>
 					</div>
@@ -719,7 +780,7 @@
 
 		<!-- Plan View Modal -->
 		<div class="modal fade" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h3 class="modal-title" id="planViewModalTitle">View plan modal</h3>
@@ -738,7 +799,7 @@
 
 		<!-- Plan Edit Modal -->
 		<div class="modal fade" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h3 class="modal-title" id="planEditModalTitle">Edit plan modal</h3>
@@ -811,21 +872,26 @@
 			$(function () {
 				//Initialize Select2 Elements
 				$('.select2bs4').select2();
-				$('#select-status').select2({
+				$('.select_status').select2({
 					width: '.form-group',
 					allowClear: true,
 					closeOnSelect: false,
 					placeholder: 'Trạng thái'
 				});
-				$('#select-font-search, #modal_create-select-font').select2({
+				$('.select_font').select2({
 					width: '.form-group',
 					allowClear: true,
 					placeholder: 'Chọn phông'
 				});
-				$('#modal_create-select-center').select2({
-					width: '.form-group',
+				$('.select_center').select2({
+					width: 'td',
 					allowClear: true,
 					placeholder: 'Chọn đơn vị nộp lưu'
+				});
+				$('.select_collector').select2({
+					width: 'td',
+					allowClear: true,
+					placeholder: 'Chọn cán bộ'
 				});
 				//Datemask dd/mm/yyyy
 				$('[data-mask]').inputmask();
