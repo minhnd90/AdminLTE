@@ -204,6 +204,9 @@
 			<aside class="main-sidebar sidebar-light-primary elevation-4">
 				<!-- Sidebar -->
 				<div class="sidebar">
+					<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+						<h2 class="text-uppercase text-primary"><i class="fas fa-fw fa-layer-group mr-2"></i>Thu thập tài liệu</h2>
+					</div>
 					<!-- Sidebar Menu -->
 					<nav class="mt-2">
 						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -292,10 +295,12 @@
 									</div>
 									<div class="card-body">
 										<div class="row">
-											<div class="col-6">
-												<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
+											<div class="col-4">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
+												</div>
 											</div>
-											<div class="col-6">
+											<div class="col-4">
 												<div class="form-group">
 													<select id="select-font-search" class="select2bs4">
 														<option value="-1">Chọn phông</option>
@@ -308,15 +313,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-3">
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-													</div>
-													<input type="text" class="form-control" placeholder="Ngày tạo" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask />
-												</div>
-											</div>
-											<div class="col-3">
+											<div class="col-4">
 												<div class="form-group">
 													<select id="select-status" class="select2bs4" multiple>
 														<option>Alabama</option>
@@ -329,19 +326,25 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-4">
+											<div class="col-6">
 												<div class="form-group row">
-													<label for="reservation" class="col-6 col-form-label">Thời gian dự kiến thu thập:</label>
-													<div class="col-6">
+													<label for="reservation" class="col-4 col-form-label">Thời gian dự kiến thu thập:</label>
+													<div class="col-8">
 														<div class="input-group">
 															<div class="input-group-prepend">
-																<span class="input-group-text">
-																	<i class="far fa-calendar-alt"></i>
-																</span>
+																<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
 															</div>
-															<input type="text" class="form-control float-right" id="reservation" />
+															<input type="text" class="form-control float-right" id="search_range-date" />
 														</div>
 													</div>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="input-group date" id="search_create-date" data-target-input="nearest">
+													<div class="input-group-prepend" data-target="#search_create-date" data-toggle="datetimepicker">
+														<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+													</div>
+													<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#search_create-date" data-toggle="datetimepicker" />
 												</div>
 											</div>
 											<div class="col-2">
@@ -379,13 +382,13 @@
 													<td>Win 95+</td>
 													<td><span class="badge badge-btn badge-primary">Another status</span></td>
 													<td>
-														<button type="button" class="btn btn-xs btn-success " data-toggle="modal" data-target="#planViewModal">
+														<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#planViewModal">
 															<i class="fas fa-eye"></i>
 														</button>
-														<button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#planEditModal">
+														<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#planEditModal">
 															<i class="fas fa-pencil-alt"></i>
 														</button>
-														<button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#planDeleteModal">
+														<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#planDeleteModal">
 															<i class="fas fa-trash-alt"></i>
 														</button>
 													</td>
@@ -520,7 +523,34 @@
 										</table>
 									</div>
 									<!-- /.card-body -->
-									<div class="card-footer">Footer</div>
+									<div class="card-footer">
+										<div class="row">
+											<div class="col-6">Có tổng cộng <span class="text-red">5</span> công việc</div>
+											<div class="col-6">
+												<nav aria-label="Pagination">
+													<ul class="pagination pagination-sm justify-content-end mb-0">
+														<li class="page-item disabled">
+															<a class="page-link" href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<li class="page-item active">
+															<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+														</li>
+														<li class="page-item" aria-current="page">
+															<a class="page-link" href="#">2</a>
+														</li>
+														<li class="page-item"><a class="page-link" href="#">3</a></li>
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
+											</div>
+										</div>
+									</div>
 									<!-- /.card-footer-->
 								</div>
 								<!-- /.card -->
@@ -547,9 +577,9 @@
 
 		<!-- Plan Create Modal -->
 		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
 				<div class="modal-content">
-					<div class="modal-header">
+					<div class="modal-header bg-primary">
 						<h3 class="modal-title" id="planCreateModalTitle">Create plan modal</h3>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
@@ -573,18 +603,20 @@
 							</div>
 							<div class="form-group row">
 								<label for="modal_create-input-name" class="col-sm-3 col-form-label">Tên kế hoạch</label>
-								<div class="col-sm-9">
+								<div class="col-sm-6">
 									<input type="text" class="form-control" name="modal_create-input-name" id="modal_create-input-name" placeholder="Tên kế hoạch" required />
 								</div>
-							</div>
-							<div class="form-group row">
-								<label for="modal_create-date" class="col-sm-3 col-form-label">Ngày tạo</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" name="modal_create-date" id="modal_create-date" placeholder="Ngày tạo" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask required />
+								<div class="col-sm-3">
+									<div class="input-group date" id="modal_create-date" data-target-input="nearest">
+										<div class="input-group-prepend" data-target="#modal_create-date" data-toggle="datetimepicker">
+											<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+										</div>
+										<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#modal_create-date" data-toggle="datetimepicker" />
+									</div>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="modal_create-textarea-content" class="col-sm-3 col-form-label">Tên kế hoạch</label>
+								<label for="modal_create-textarea-content" class="col-sm-3 col-form-label">Nội dung</label>
 								<div class="col-sm-9">
 									<textarea class="form-control" name="modal_create-textarea-content" id="modal_create-textarea-content" cols="30" rows="2"></textarea>
 								</div>
@@ -600,11 +632,86 @@
 									</div>
 								</div>
 							</div>
+							<div class="card">
+								<div class="card-header">
+									<h3 class="card-title">Thông tin hồ sơ cần thu thập</h3>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-6 py-1">Tổng số hồ sơ: <span class="text-red">5</span></div>
+										<div class="col-6 mb-2">
+											<div class="d-flex justify-content-end">
+												<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-fw fa-plus"></i> Thêm</button>
+											</div>
+										</div>
+									</div>
+									<form class="table-responsive">
+										<table class="table table-sm table-bordered table-hover">
+											<thead>
+												<tr>
+													<th scope="col" class="text-center col-min">STT</th>
+													<th scope="col">Tên hồ sơ</th>
+													<th scope="col">Mô tả</th>
+													<th scope="col" class="text-center col-min">Thao tác</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="text-center">1</th>
+													<td>Mark</td>
+													<td>Otto</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td class="text-center">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td class="text-center">3</th>
+													<td>Larry</td>
+													<td>the Bird</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</form>
+								</div>
+								<!-- /.card-body -->
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-select-center" class="col-sm-3 col-form-label">Đơn vị nộp lưu:</label>
+								<div class="col-sm-9">
+									<select id="modal_create-select-center" class="select2bs4" required>
+										<option value="-1">Chọn đơn vị nộp lưu</option>
+										<option>Alaska</option>
+										<option>California</option>
+										<option>Delaware</option>
+										<option>Tennessee</option>
+										<option>Texas</option>
+										<option>Washington</option>
+									</select>
+								</div>
+							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-warning">Chuyển xử lý</button>
+						<button type="button" class="btn btn-primary">Lưu</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
 					</div>
 				</div>
 			</div>
@@ -710,16 +817,26 @@
 					closeOnSelect: false,
 					placeholder: 'Trạng thái'
 				});
-				$('#select-font-search, #select-font-modal').select2({
+				$('#select-font-search, #modal_create-select-font').select2({
 					width: '.form-group',
 					allowClear: true,
 					placeholder: 'Chọn phông'
 				});
+				$('#modal_create-select-center').select2({
+					width: '.form-group',
+					allowClear: true,
+					placeholder: 'Chọn đơn vị nộp lưu'
+				});
 				//Datemask dd/mm/yyyy
 				$('[data-mask]').inputmask();
 
+				//Date picker
 				//Date range picker
-				$('#reservation, #modal_create-date_range').daterangepicker({
+				$('#search_create-date, #modal_create-date').datetimepicker({
+					format: 'DD/MM/yyyy'
+				});
+				//Date range picker
+				$('#search_range-date, #modal_create-date_range').daterangepicker({
 					locale: {
 						format: 'DD/MM/yyyy'
 					},
@@ -745,11 +862,7 @@
 								action: function (dt) {
 									$('#planCreateModal').modal();
 								}
-							},
-							'print',
-							'csv',
-							'excel',
-							'pdf'
+							}
 						]
 					})
 					.buttons()

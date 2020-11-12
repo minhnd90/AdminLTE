@@ -6089,15 +6089,15 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
 
 .modal-header .close, .modal-header .mailbox-attachment-close {
-  padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
+  padding: 0.5rem 1rem;
+  margin: -0.5rem -1rem -0.5rem auto;
 }
 
 .modal-title {
@@ -20306,10 +20306,13 @@ html.maximized-card {
   color: #040505;
 }
 
-.table th,
-.table td {
+.table thead th {
   vertical-align: middle;
-  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.table tbody th, .table tbody td {
+  vertical-align: middle;
 }
 
 .table:not(.table-dark) {
@@ -20431,6 +20434,10 @@ html.maximized-card {
 
 .dark-mode .table.table-head-fixed thead tr:nth-child(1) th {
   background-color: #3f474e;
+}
+
+.col-min {
+  width: 1%;
 }
 
 .carousel-control-prev .carousel-control-custom-icon {
@@ -29662,9 +29669,8 @@ blockquote.quote-gray-dark h6 {
 
 .badge-btn {
   font-weight: 400;
-  font-size: 0.6875rem;
-  padding: .375rem;
-  display: block;
+  font-size: 0.75rem;
+  padding: .5rem;
 }
 
 .badge-btn.badge-pill {
