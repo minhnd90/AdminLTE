@@ -35,8 +35,7 @@
 		}
 	}
 
-	.nav-link > .right,
-	.nav-link > p > .right {
+	.nav-link .right {
 		position: absolute;
 		right: 1rem;
 		top: 0.7rem;
@@ -146,15 +145,14 @@
 		}
 	}
 
-	.nav-link p,
-	.nav-link span {
+	.nav-link > *:not(.nav-icon) {
 		display: inline-block;
 		margin: 0;
 	}
 }
 
 .sidebar-is-opening .nav-sidebar {
-	.nav-link p {
+	.nav-link > *:not(.nav-icon) {
 		animation-name: fadeIn;
 		animation-duration: $transition-speed;
 		animation-fill-mode: both;

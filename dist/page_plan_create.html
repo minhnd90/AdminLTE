@@ -112,6 +112,7 @@
 							<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
 						</div>
 					</li>
+
 					<!-- Notifications Dropdown Menu -->
 					<li class="nav-item dropdown">
 						<a class="nav-link" data-toggle="dropdown" href="#">
@@ -144,37 +145,15 @@
 							<img src="img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image" />
 							<span class="d-none d-md-inline">Alexander Pierce</span>
 						</a>
-						<ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-							<!-- User image -->
-							<li class="user-header bg-primary">
-								<img src="img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
-
-								<p>
-									Alexander Pierce - Web Developer
-									<small>Member since Nov. 2012</small>
-								</p>
-							</li>
-							<!-- Menu Body -->
-							<li class="user-body">
-								<div class="row">
-									<div class="col-4 text-center">
-										<a href="#">Followers</a>
-									</div>
-									<div class="col-4 text-center">
-										<a href="#">Sales</a>
-									</div>
-									<div class="col-4 text-center">
-										<a href="#">Friends</a>
-									</div>
-								</div>
-								<!-- /.row -->
-							</li>
-							<!-- Menu Footer-->
-							<li class="user-footer">
-								<a href="#" class="btn btn-default btn-flat">Profile</a>
-								<a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
-							</li>
-						</ul>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-address-card mr-2"></i>Cập nhật thông tin </a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-unlock-alt mr-2"></i>Đổi mật khẩu </a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất </a>
+							<div class="dropdown-divider"></div>
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -185,7 +164,7 @@
 				<!-- Sidebar -->
 				<div class="sidebar">
 					<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-						<h2 class="text-uppercase text-primary text-nowrap"><i class="fas fa-fw fa-layer-group mr-2"></i>Thu thập tài liệu</h2>
+						<h2 class="text-uppercase text-primary text-nowrap overflow-hidden"><i class="fas fa-fw fa-layer-group ml-2 mr-3"></i><span>Thu thập tài liệu</span></h2>
 					</div>
 					<!-- Sidebar Menu -->
 					<nav class="mt-2">
@@ -194,8 +173,7 @@
 							<li class="nav-item menu-open">
 								<a href="#" class="nav-link text-uppercase active">
 									<i class="nav-icon far fa-file-alt"></i>
-									<span>Thu thập tài liệu</span>
-									<i class="right fas fa-angle-left"></i>
+									<span>Thu thập tài liệu<i class="right fas fa-angle-left"></i></span>
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
@@ -276,12 +254,12 @@
 									<div class="card-body">
 										<!-- Search form -->
 										<div class="row">
-											<div class="col-4">
+											<div class="col-lg-6 col-md-12">
 												<div class="form-group">
 													<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
 												</div>
 											</div>
-											<div class="col-4">
+											<div class="col-lg-6 col-md-12">
 												<div class="form-group">
 													<select id="search_select-font" class="select2bs4 select_font">
 														<option>Alaska</option>
@@ -293,7 +271,30 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-4">
+											<div class="col-xl-6 col-lg-8 col-md-12">
+												<div class="form-group row">
+													<label for="search_range-date" class="col-4 col-md-6 col-form-label">Thời gian dự kiến thu thập:</label>
+													<div class="col-8 col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+															</div>
+															<input type="text" class="form-control float-right" id="search_range-date" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+												<div class="form-group">
+													<div class="input-group date" id="search_create-date" data-target-input="nearest">
+														<div class="input-group-prepend" data-target="#search_create-date" data-toggle="datetimepicker">
+															<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+														</div>
+														<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#search_create-date" data-toggle="datetimepicker" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-2 col-lg-6 col-md-6 col-sm-12">
 												<div class="form-group">
 													<select id="search_select-status" class="select2bs4 select_status" multiple>
 														<option>Alabama</option>
@@ -306,29 +307,10 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-6">
-												<div class="form-group row">
-													<label for="search_range-date" class="col-4 col-form-label">Thời gian dự kiến thu thập:</label>
-													<div class="col-8">
-														<div class="input-group">
-															<div class="input-group-prepend">
-																<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-															</div>
-															<input type="text" class="form-control float-right" id="search_range-date" />
-														</div>
-													</div>
+											<div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 text-lg-right">
+												<div class="form-group">
+													<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
 												</div>
-											</div>
-											<div class="col-4">
-												<div class="input-group date" id="search_create-date" data-target-input="nearest">
-													<div class="input-group-prepend" data-target="#search_create-date" data-toggle="datetimepicker">
-														<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-													</div>
-													<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#search_create-date" data-toggle="datetimepicker" />
-												</div>
-											</div>
-											<div class="col-2 text-right">
-												<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
 											</div>
 										</div>
 										<!-- /Search form -->
@@ -336,12 +318,12 @@
 										<!-- Data Table -->
 										<div class="table-control">
 											<div class="row">
-												<div class="col-6 text-left">
+												<div class="col-md-3 col-sm-12 text-left mb-2 mb-md-0">
 													<a href="#" class="btn btn-warning" title="Thêm mới" role="button">
 														<span><i class="fas fa-paper-plane mr-2"></i>Chuyển xử lý</span>
 													</a>
 												</div>
-												<div class="col-6 text-right">
+												<div class="col-md-9 col-sm-12 text-md-right">
 													<a href="#" class="btn btn-danger" title="Xóa" role="button">
 														<span><i class="fas fa-trash-alt mr-2"></i>Xóa</span>
 													</a>
