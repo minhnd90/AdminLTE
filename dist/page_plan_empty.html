@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>AdminLTE 3 | DANH SÁCH KẾ HOẠCH THU THẬP</title>
+
+		<!-- Google Font: Source Sans Pro -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=fallback" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+		<!-- icheck bootstrap -->
+		<link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+		<!-- Select2 -->
+		<link rel="stylesheet" href="../plugins/select2/css/select2.min.css" />
+		<link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" />
+		<!-- overlayScrollbars -->
+		<link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css" />
+		<!-- Tempusdominus Bootstrap 4 -->
+		<link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+		<!-- DataTables -->
+		<link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
+		<!-- Theme style -->
+		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+	</head>
+	<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+		<!-- Site wrapper -->
+		<div class="wrapper">
+			<!-- Navbar -->
+			<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+				<!-- Left navbar links -->
+				<ul class="navbar-nav">
+					<li>
+						<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+					</li>
+				</ul>
+				<a class="navbar-brand py-0 mr-auto" href="#">
+					<svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M56 0h32.0096C49.8656 0 47.8236 1.68338 47.3385 3.79882L42.8998 29.1189H46.9432C49.0871 29.1148 51.0762 27.4355 51.5613 25.32L56 0Z" fill="white" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23.9668 0H11.853C8.19681 0 4.84227 2.79205 3.99447 6.32593L0 29.1189H4.04745C6.2118 29.1148 8.27425 27.4029 8.73076 25.2589L10.0065 17.9873H16.8379C18.9819 17.9873 21.0239 16.3039 21.509 14.1885L22.0307 11.1764H11.2008L11.7592 8.00524H19.0349C20.9302 7.80144 22.6625 6.32593 23.1964 4.46728L23.9668 0Z" fill="white" />
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M45.329 0H45.0396C39.0194 0 37.3156 0 31.2954 0C27.7696 0 24.5496 3.04476 23.9504 6.79467L23.2494 11.1682C22.6502 14.9181 24.8757 17.9873 28.4218 17.9873H34.4094L33.9081 21.1177H25.3648C23.3757 21.1218 21.4804 22.8133 21.0483 24.945L20.3799 29.1189C31.2791 29.1189 23.5143 29.1189 34.4135 29.1189C37.9515 29.1189 41.1552 26.0863 41.7584 22.3242L42.4514 17.971C43.0464 14.2415 40.7965 11.1764 37.2789 11.1764H31.2954L31.8049 8.00524H40.3481C42.325 8.00524 44.2122 6.32593 44.6565 4.21049L45.329 0Z"
+							fill="white"
+						/>
+					</svg>
+				</a>
+				<div class="header-text mx-auto mb-0 text-uppercase">Hệ thống quản lý lưu trữ điện tử</div>
+				<!-- Right navbar links -->
+				<ul class="navbar-nav ml-auto">
+					<!-- Messages Dropdown Menu -->
+					<li class="nav-item dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#">
+							<i class="far fa-comments"></i>
+							<span class="badge badge-danger navbar-badge">3</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											Brad Diesel
+											<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">Call me whenever you can...</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											John Pierce
+											<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">I got your message bro</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<!-- Message Start -->
+								<div class="media">
+									<img src="img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3" />
+									<div class="media-body">
+										<h3 class="dropdown-item-title">
+											Nora Silvester
+											<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+										</h3>
+										<p class="text-sm">The subject goes here</p>
+										<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+									</div>
+								</div>
+								<!-- Message End -->
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+						</div>
+					</li>
+
+					<!-- Notifications Dropdown Menu -->
+					<li class="nav-item dropdown">
+						<a class="nav-link" data-toggle="dropdown" href="#">
+							<i class="far fa-bell"></i>
+							<span class="badge badge-warning navbar-badge">15</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<span class="dropdown-item dropdown-header">15 Notifications</span>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-envelope mr-2"></i> 4 new messages
+								<span class="float-right text-muted text-sm">3 mins</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-users mr-2"></i> 8 friend requests
+								<span class="float-right text-muted text-sm">12 hours</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-file mr-2"></i> 3 new reports
+								<span class="float-right text-muted text-sm">2 days</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown user-menu">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+							<img src="img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image" />
+							<span class="d-none d-md-inline">Alexander Pierce</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-address-card mr-2"></i>Cập nhật thông tin </a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-unlock-alt mr-2"></i>Đổi mật khẩu </a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"> <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất </a>
+							<div class="dropdown-divider"></div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<!-- /.navbar -->
+
+			<!-- Main Sidebar Container -->
+			<aside class="main-sidebar sidebar-light-primary elevation-4">
+				<!-- Sidebar -->
+				<div class="sidebar">
+					<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+						<h2 class="text-uppercase text-primary text-nowrap overflow-hidden"><i class="fas fa-fw fa-layer-group ml-2 mr-3"></i><span>Thu thập tài liệu</span></h2>
+					</div>
+					<!-- Sidebar Menu -->
+					<nav class="mt-2">
+						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+							<!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+							<li class="nav-item menu-open">
+								<a href="#" class="nav-link text-uppercase active">
+									<i class="nav-icon far fa-file-alt"></i>
+									<span>Thu thập tài liệu<i class="right fas fa-angle-left"></i></span>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link active">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lập kế hoạch thu thập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt kế hoạch thu thập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thu thập tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Biên mục tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lưu kho tài liệu</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Level 1</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- /.sidebar-menu -->
+				</div>
+				<!-- /.sidebar -->
+			</aside>
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<div class="container-fluid">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Thu thập, chỉnh lý</a></li>
+							<li class="breadcrumb-item active">Danh sách thu thập tài liệu</li>
+						</ol>
+					</div>
+					<!-- /.container-fluid -->
+				</section>
+
+				<!-- Main content -->
+				<section class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<!-- Default box -->
+								<div class="card">
+									<div class="card-header">
+										<h1 class="page-heading mb-0">Danh sách thu thập tài liệu</h1>
+									</div>
+									<div class="card-body">
+										<!-- Search form -->
+										<div class="row">
+											<div class="col-lg-6 col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-12">
+												<div class="form-group">
+													<select id="search_select-font" class="select2bs4 select_font">
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xl-6 col-lg-8 col-md-12">
+												<div class="form-group row">
+													<label for="search_range-date" class="col-4 col-md-6 col-form-label">Thời gian dự kiến thu thập:</label>
+													<div class="col-8 col-md-6">
+														<div class="input-group">
+															<div class="input-group-prepend">
+																<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+															</div>
+															<input type="text" class="form-control float-right" id="search_range-date" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
+												<div class="form-group">
+													<div class="input-group date" id="search_create-date" data-target-input="nearest">
+														<div class="input-group-prepend" data-target="#search_create-date" data-toggle="datetimepicker">
+															<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+														</div>
+														<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#search_create-date" data-toggle="datetimepicker" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-2 col-lg-6 col-md-6 col-sm-12">
+												<div class="form-group">
+													<select id="search_select-status" class="select2bs4 select_status" multiple>
+														<option>Alabama</option>
+														<option>Alaska</option>
+														<option>California</option>
+														<option>Delaware</option>
+														<option>Tennessee</option>
+														<option>Texas</option>
+														<option>Washington</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 text-lg-right">
+												<div class="form-group">
+													<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
+												</div>
+											</div>
+										</div>
+										<!-- /Search form -->
+
+										<!-- Data Table -->
+										<div class="table-control">
+											<div class="row">
+												<div class="col-md-3 col-sm-12 text-left mb-2 mb-md-0">
+													<a href="#" class="btn btn-warning" title="Thêm mới" role="button">
+														<span><i class="fas fa-paper-plane mr-2"></i>Chuyển xử lý</span>
+													</a>
+												</div>
+												<div class="col-md-9 col-sm-12 text-md-right">
+													<a href="#" class="btn btn-danger" title="Xóa" role="button">
+														<span><i class="fas fa-trash-alt mr-2"></i>Xóa</span>
+													</a>
+													<a href="#" class="btn btn-primary" title="Thêm mới" data-toggle="modal" data-target="#planCreateModal" role="button">
+														<span><i class="fas fa-plus mr-2"></i>Thêm mới</span>
+													</a>
+													<a href="#" class="btn btn-secondary" title="In" role="button">
+														<span><i class="fas fa-print mr-2"></i>In</span>
+													</a>
+													<a href="#" class="btn btn-secondary" title="Xuất file" role="button">
+														<span><i class="fas fa-file-download mr-2"></i>Xuất file</span>
+													</a>
+												</div>
+											</div>
+										</div>
+										<table id="data_table" class="table table-bordered table-striped">
+											<caption>Không có bản ghi nào</caption>
+										</table>
+									</div>
+									<!-- /.card-body -->
+									<div class="card-footer">
+										<div class="row">
+											<div class="col-6">Có tổng cộng <span class="text-red">0</span> công việc</div>
+											<div class="col-6"></div>
+										</div>
+									</div>
+									<!-- /.card-footer-->
+								</div>
+								<!-- /.card -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.content-wrapper -->
+
+			<footer class="main-footer">
+				<div class="float-right d-none d-sm-block"><b>Version</b> 3.1.0-pre</div>
+				<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+			</footer>
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Control sidebar content goes here -->
+			</aside>
+			<!-- /.control-sidebar -->
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- Plan Create Modal -->
+		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-primary">
+						<h3 class="modal-title" id="planCreateModalTitle">Create plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form id="planCreateForm">
+							<div class="form-group row">
+								<label for="modal_create-select_font" class="col-sm-3 col-form-label">Phông</label>
+								<div class="col-sm-9">
+									<select id="modal_create-select_font" class="select2bs4 select_font" required>
+										<option>Alaska</option>
+										<option>California</option>
+										<option>Delaware</option>
+										<option>Tennessee</option>
+										<option>Texas</option>
+										<option>Washington</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-input-name" class="col-sm-3 col-form-label">Tên kế hoạch</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" name="modal_create-input-name" id="modal_create-input-name" placeholder="Tên kế hoạch" required />
+								</div>
+								<div class="col-sm-4">
+									<div class="input-group date" id="modal_create-date" data-target-input="nearest">
+										<div class="input-group-prepend" data-target="#modal_create-date" data-toggle="datetimepicker">
+											<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+										</div>
+										<input type="text" class="form-control datetimepicker-input" placeholder="Ngày tạo" data-target="#modal_create-date" data-toggle="datetimepicker" />
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-textarea-content" class="col-sm-3 col-form-label">Nội dung</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" placeholder="Nội dung kế hoạch thu thập" name="modal_create-textarea-content" id="modal_create-textarea-content" rows="2"></textarea>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="modal_create-date_range" class="col-sm-3 col-form-label">Thời gian dự kiến thu thập:</label>
+								<div class="col-sm-9">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+										</div>
+										<input type="text" class="form-control float-right" name="modal_create-date_range" id="modal_create-date_range" />
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<h3 class="card-title">Thông tin hồ sơ cần thu thập</h3>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-6 py-1">Tổng số hồ sơ: <span class="text-red">5</span></div>
+										<div class="col-6 mb-2">
+											<div class="d-flex justify-content-end">
+												<button type="button" class="btn btn-sm btn-primary"><i class="fas fa-fw fa-plus"></i> Thêm</button>
+											</div>
+										</div>
+									</div>
+									<div class="table-responsive">
+										<table class="table table-sm table-bordered table-hover">
+											<thead>
+												<tr>
+													<th scope="col" class="text-center col-min">STT</th>
+													<th scope="col">Tên hồ sơ</th>
+													<th scope="col">Đơn vị nộp lưu</th>
+													<th scope="col">Cán bộ được phân công lập hồ sơ</th>
+													<th scope="col" class="text-center col-min">Hoàn thành</th>
+													<th scope="col" class="text-center col-min">Thao tác</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="text-center">1</td>
+													<td>Mark</td>
+													<td>
+														<select id="modal_create-select_center--1" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--1" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-1" value="1" />
+															<label class="custom-control-label" for="checkbox-complete-1"></label>
+														</div>
+													</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td class="text-center">2</td>
+													<td>Jacob</td>
+													<td>
+														<select id="modal_create-select_center--2" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--2" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-2" value="2" />
+															<label class="custom-control-label" for="checkbox-complete-2"></label>
+														</div>
+													</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td class="text-center">3</td>
+													<td>Larry</td>
+													<td>
+														<select id="modal_create-select_center--3" class="select2bs4 select_center" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td>
+														<select id="modal_create-select_collector--3" class="select2bs4 select_collector" required>
+															<option>Alaska</option>
+															<option>California</option>
+															<option>Delaware</option>
+															<option>Tennessee</option>
+															<option>Texas</option>
+															<option>Washington</option>
+														</select>
+													</td>
+													<td class="text-center">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="checkbox-complete-3" value="3" />
+															<label class="custom-control-label" for="checkbox-complete-3"></label>
+														</div>
+													</td>
+													<td class="text-center">
+														<button type="button" class="btn btn-sm btn-danger">
+															<i class="fas fa-trash-alt"></i>
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- /.card-body -->
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-warning">Chuyển xử lý</button>
+						<button type="button" class="btn btn-primary">Lưu</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan View Modal -->
+		<div class="modal fade" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planViewModalTitle">View plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">...</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan Edit Modal -->
+		<div class="modal fade" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planEditModalTitle">Edit plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">...</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan Delete Modal -->
+		<div class="modal fade" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="planDeleteModalTitle">Delete plan modal</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">Sure?</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="../plugins/jquery/jquery.min.js"></script>
+		<!-- Bootstrap 4 -->
+		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Select2 -->
+		<script src="../plugins/select2/js/select2.full.min.js"></script>
+		<!-- overlayScrollbars -->
+		<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+		<!-- InputMask -->
+		<script src="../plugins/moment/moment.min.js"></script>
+		<script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+		<!-- date-range-picker -->
+		<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- Tempusdominus Bootstrap 4 -->
+		<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+		<!-- DataTables  & Plugins -->
+		<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="../plugins/datatables-select/js/dataTables.select.min.js"></script>
+		<script src="../plugins/datatables-select/js/select.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+		<script src="../plugins/jszip/jszip.min.js"></script>
+		<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+		<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="js/adminlte.min.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script>
+			$(function () {
+				//Initialize Select2 Elements
+				$('.select2bs4').select2();
+				$('.select_status').select2({
+					width: '.form-group',
+					allowClear: true,
+					closeOnSelect: false,
+					placeholder: 'Trạng thái'
+				});
+				$('.select_font').select2({
+					width: '.form-group',
+					allowClear: true,
+					placeholder: 'Chọn phông'
+				});
+				$('.select_center').select2({
+					width: 'td',
+					allowClear: true,
+					placeholder: 'Chọn đơn vị nộp lưu'
+				});
+				$('.select_collector').select2({
+					width: 'td',
+					allowClear: true,
+					placeholder: 'Chọn cán bộ'
+				});
+				//Datemask dd/mm/yyyy
+				$('[data-mask]').inputmask();
+
+				//Date picker
+				//Date range picker
+				$('#search_create-date, #modal_create-date').datetimepicker({
+					format: 'DD/MM/yyyy'
+				});
+				//Date range picker
+				$('#search_range-date, #modal_create-date_range').daterangepicker({
+					locale: {
+						format: 'DD/MM/yyyy'
+					},
+					applyLabel: 'Chọn',
+					cancelLabel: 'Hủy'
+				});
+				//DataTable
+				$('#data_table')
+					.DataTable({
+						paging: false,
+						info: false,
+						filter: false,
+						ordering: false,
+						responsive: true,
+						lengthChange: false,
+						autoWidth: false,
+						fixedHeader: {
+							header: true
+						}
+					})
+					.buttons()
+					.container()
+					.appendTo('#data_table_wrapper .col-md-6:eq(1)');
+			});
+		</script>
+	</body>
+</html>

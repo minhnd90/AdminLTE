@@ -3,8 +3,16 @@
 //
 
 .table {
+	thead th {
+		border-bottom: $table-border-width solid $table-border-color;
+	}
 
-	th, td {
+	tbody + tbody {
+		border-top: $table-border-width solid $table-border-color;
+	}
+
+	th,
+	td {
 		vertical-align: middle !important;
 		white-space: nowrap;
 	}
@@ -161,4 +169,11 @@
 
 .col-min {
 	width: 1%;
+}
+caption {
+	padding: $table-cell-padding;
+}
+.table-control {
+	margin-bottom: 5px;
+	margin-top: 10px;
 }

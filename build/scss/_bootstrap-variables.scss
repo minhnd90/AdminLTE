@@ -319,7 +319,7 @@ $hr-margin-y: $spacer !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding: 0.25rem 0.375rem !default;
+$table-cell-padding: 0.375rem !default;
 $table-cell-padding-sm: 0.3rem !default;
 
 $table-bg: transparent !default;
@@ -680,7 +680,7 @@ $card-spacer-x: 1.25rem !default;
 $card-border-width: 0 !default; //$border-width !default;
 $card-border-radius: $border-radius !default;
 $card-border-color: rgba($black, 0.125) !default;
-$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-inner-border-radius: $card-border-radius !default;
 $card-cap-bg: rgba($black, 0.03) !default;
 $card-bg: $white !default;
 
