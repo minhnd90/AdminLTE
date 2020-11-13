@@ -432,6 +432,7 @@ $input-focus-box-shadow: none !default;
 
 $input-placeholder-color: lighten($gray-600, 15%) !default;
 
+$input-height: calc(2rem + 2px) !default;
 $input-height-border: $input-border-width * 2 !default;
 
 $input-height-inner: ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !default;
@@ -647,7 +648,7 @@ $pagination-padding-y-sm: 0.25rem !default;
 $pagination-padding-x-sm: 0.5rem !default;
 $pagination-padding-y-lg: 0.75rem !default;
 $pagination-padding-x-lg: 1.5rem !default;
-$pagination-line-height: 1.25 !default;
+$pagination-line-height: 1rem !default;
 
 $pagination-color: $link-color !default;
 $pagination-bg: $white !default;
