@@ -1072,20 +1072,6 @@
 					}
 				});
 
-				//JS Tree
-				$('.jstree_demo').jstree({
-					core: {
-						themes: {
-							dots: false,
-							icons: false
-						}
-					},
-					plugins: ['search', 'checkbox', 'changed']
-				});
-				$('.jstree_demo').on('changed.jstree', function (e, data) {
-					console.log(data.selected);
-				});
-
 				// DropzoneJS Demo Code Start
 				Dropzone.autoDiscover = false;
 
