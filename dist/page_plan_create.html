@@ -27,6 +27,8 @@
 		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
 		<!-- JS Tree -->
 		<link rel="stylesheet" href="../plugins/jstree/themes/default/style.min.css" />
+		<!-- dropzonejs -->
+		<link rel="stylesheet" href="../plugins/dropzone/min/dropzone.min.css" />
 		<!-- Theme style -->
 		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
 	</head>
@@ -255,7 +257,7 @@
 									</div>
 									<div class="card-body">
 										<!-- Search form -->
-										<div class="row">
+										<form class="row">
 											<div class="col-lg-6 col-md-12">
 												<div class="form-group">
 													<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
@@ -314,7 +316,7 @@
 													<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
 												</div>
 											</div>
-										</div>
+										</form>
 										<!-- /Search form -->
 
 										<!-- Data Table -->
@@ -593,10 +595,129 @@
 									<div class="card-header">
 										<h3 class="card-title">Form elements</h3>
 									</div>
-									<div class="card-body">Form elements</div>
+									<div class="card-body">
+										<div class="row">
+											<!-- checkbox -->
+											<div class="col-sm-6">
+												<label>Checkbox styles: </label>
+												<div class="form-group">
+													<div class="custom-control custom-checkbox">
+														<input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1" />
+														<label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input class="custom-control-input" type="checkbox" id="customCheckbox2" checked />
+														<label for="customCheckbox2" class="custom-control-label">Custom Checkbox checked</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled />
+														<label for="customCheckbox3" class="custom-control-label">Custom Checkbox disabled</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox4" checked />
+														<label for="customCheckbox4" class="custom-control-label">Custom Checkbox with custom color</label>
+													</div>
+													<div class="custom-control custom-checkbox">
+														<input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="customCheckbox5" checked />
+														<label for="customCheckbox5" class="custom-control-label">Custom Checkbox with custom color outline</label>
+													</div>
+												</div>
+											</div>
+
+											<!-- radio -->
+											<div class="col-sm-6">
+												<label>Inline radio: </label>
+												<div class="form-group">
+													<div class="custom-control custom-radio form-check-inline">
+														<input class="custom-control-input" type="radio" id="customRadioInline1" name="customRadio" />
+														<label for="customRadioInline1" class="custom-control-label">Custom Radio</label>
+													</div>
+													<div class="custom-control custom-radio form-check-inline">
+														<input class="custom-control-input" type="radio" id="customRadioInline2" name="customRadio" checked />
+														<label for="customRadioInline2" class="custom-control-label">Custom Radio checked</label>
+													</div>
+												</div>
+												<label>Radio styles: </label>
+												<div class="form-group">
+													<div class="custom-control custom-radio">
+														<input class="custom-control-input" type="radio" id="customRadio1" name="customRadio" />
+														<label for="customRadio1" class="custom-control-label">Custom Radio</label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input class="custom-control-input" type="radio" id="customRadio2" disabled name="customRadio" />
+														<label for="customRadio2" class="custom-control-label">Custom Radio disabled</label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio3" name="customRadio" />
+														<label for="customRadio3" class="custom-control-label">Custom Radio with custom color</label>
+													</div>
+													<div class="custom-control custom-radio">
+														<input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" id="customRadio4" name="customRadio" />
+														<label for="customRadio4" class="custom-control-label">Custom Radio with custom color outline</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 									<!-- /.card-body -->
 								</div>
-								<!-- /.card -->
+
+								<!-- Upload -->
+								<div class="card card-default">
+									<div class="card-header">
+										<h3 class="card-title">
+											Dropzone.js <small><em>jQuery File Upload</em> like look</small>
+										</h3>
+									</div>
+									<div class="card-body">
+										<div id="actions" class="row">
+											<div class="col-lg-2">
+												<div class="btn-group w-100">
+													<span class="btn btn-success col fileinput-button">
+														<i class="fas fa-plus"></i>
+														<span>Add files</span>
+													</span>
+												</div>
+											</div>
+											<div class="col-lg-10 d-flex align-items-center">
+												<div class="fileupload-process w-100">
+													<div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+														<div class="progress-bar progress-bar-success" style="width: 0%" data-dz-uploadprogress></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="table table-striped files" id="previews">
+											<div id="template" class="row mt-2">
+												<div class="col-auto">
+													<span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+												</div>
+												<div class="col d-flex align-items-center">
+													<p class="mb-0 mr-2">
+														<span data-dz-name></span>
+														(<span data-dz-size></span>)
+													</p>
+													<strong class="error text-danger" data-dz-errormessage></strong>
+												</div>
+												<div class="col-4 d-flex align-items-center">
+													<div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+														<div class="progress-bar progress-bar-success" style="width: 0%" data-dz-uploadprogress></div>
+													</div>
+												</div>
+												<div class="col-auto d-flex align-items-center">
+													<div class="btn-group">
+														<button data-dz-remove class="btn btn-danger delete">
+															<i class="fas fa-trash"></i>
+															<span>Delete</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /.card-body -->
+									<div class="card-footer">Visit <a href="https://www.dropzonejs.com">dropzone.js documentation</a> for more examples and information about the plugin.</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -907,6 +1028,8 @@
 		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 		<!-- JS Tree -->
 		<script src="../plugins/jstree/jstree.min.js"></script>
+		<!-- dropzonejs -->
+		<script src="../plugins/dropzone/min/dropzone.min.js"></script>
 		<!-- AdminLTE App -->
 		<script src="js/adminlte.min.js"></script>
 		<!-- AdminLTE for demo purposes -->
@@ -982,6 +1105,49 @@
 				$('.jstree_demo').on('changed.jstree', function (e, data) {
 					console.log(data.selected);
 				});
+
+				// DropzoneJS Demo Code Start
+				Dropzone.autoDiscover = false;
+
+				// Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+				var previewNode = document.querySelector('#template');
+				previewNode.id = '';
+				var previewTemplate = previewNode.parentNode.innerHTML;
+				previewNode.parentNode.removeChild(previewNode);
+
+				var myDropzone = new Dropzone(document.body, {
+					// Make the whole body a dropzone
+					url: '/target-url', // Set the url
+					thumbnailWidth: 35,
+					thumbnailHeight: 35,
+					parallelUploads: 20,
+					previewTemplate: previewTemplate,
+					autoQueue: true, // Make sure the files aren't queued until manually added
+					previewsContainer: '#previews', // Define the container to display the previews
+					clickable: '.fileinput-button' // Define the element that should be used as click trigger to select files.
+				});
+
+				myDropzone.on('addedfile', function (file) {
+					// Hookup the start button
+					// myDropzone.enqueueFile(file);
+				});
+
+				// Update the total progress bar
+				myDropzone.on('totaluploadprogress', function (progress) {
+					document.querySelector('#total-progress .progress-bar').style.width = progress + '%';
+				});
+
+				myDropzone.on('sending', function (file) {
+					// Show the total progress bar when upload starts
+					document.querySelector('#total-progress').style.opacity = '1';
+				});
+
+				// Hide the total progress bar when nothing's uploading anymore
+				myDropzone.on('queuecomplete', function (progress) {
+					document.querySelector('#total-progress').style.opacity = '0';
+				});
+
+				// DropzoneJS Demo Code End
 			});
 		</script>
 	</body>

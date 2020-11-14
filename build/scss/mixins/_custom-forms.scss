@@ -120,3 +120,8 @@
 		}
 	}
 }
+.custom-control {
+	&.form-check-inline {
+		display: inline-flex;
+	}
+}
