@@ -108,7 +108,7 @@ class ControlSidebar {
   toggle() {
     const $body = $('body')
     const shouldClose = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) ||
-        $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)
+      $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)
 
     if (shouldClose) {
       // Close the control sidebar
@@ -125,7 +125,7 @@ class ControlSidebar {
     this._fixHeight()
     this._fixScrollHeight()
 
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this._fixHeight()
       this._fixScrollHeight()
     })
@@ -133,7 +133,7 @@ class ControlSidebar {
     $(window).scroll(() => {
       const $body = $('body')
       const shouldFixHeight = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) ||
-          $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)
+        $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)
 
       if (shouldFixHeight) {
         this._fixScrollHeight()
@@ -161,18 +161,18 @@ class ControlSidebar {
 
     const navbarFixed = (
       $body.hasClass(CLASS_NAME_NAVBAR_FIXED) ||
-        $body.hasClass(CLASS_NAME_NAVBAR_SM_FIXED) ||
-        $body.hasClass(CLASS_NAME_NAVBAR_MD_FIXED) ||
-        $body.hasClass(CLASS_NAME_NAVBAR_LG_FIXED) ||
-        $body.hasClass(CLASS_NAME_NAVBAR_XL_FIXED)
+      $body.hasClass(CLASS_NAME_NAVBAR_SM_FIXED) ||
+      $body.hasClass(CLASS_NAME_NAVBAR_MD_FIXED) ||
+      $body.hasClass(CLASS_NAME_NAVBAR_LG_FIXED) ||
+      $body.hasClass(CLASS_NAME_NAVBAR_XL_FIXED)
     ) && $(SELECTOR_HEADER).css('position') === 'fixed'
 
     const footerFixed = (
       $body.hasClass(CLASS_NAME_FOOTER_FIXED) ||
-        $body.hasClass(CLASS_NAME_FOOTER_SM_FIXED) ||
-        $body.hasClass(CLASS_NAME_FOOTER_MD_FIXED) ||
-        $body.hasClass(CLASS_NAME_FOOTER_LG_FIXED) ||
-        $body.hasClass(CLASS_NAME_FOOTER_XL_FIXED)
+      $body.hasClass(CLASS_NAME_FOOTER_SM_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_MD_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_LG_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_XL_FIXED)
     ) && $(SELECTOR_FOOTER).css('position') === 'fixed'
 
     const $controlSidebar = $(SELECTOR_CONTROL_SIDEBAR)
@@ -224,10 +224,10 @@ class ControlSidebar {
 
     if (
       $body.hasClass(CLASS_NAME_FOOTER_FIXED) ||
-          $body.hasClass(CLASS_NAME_FOOTER_SM_FIXED) ||
-          $body.hasClass(CLASS_NAME_FOOTER_MD_FIXED) ||
-          $body.hasClass(CLASS_NAME_FOOTER_LG_FIXED) ||
-          $body.hasClass(CLASS_NAME_FOOTER_XL_FIXED)
+      $body.hasClass(CLASS_NAME_FOOTER_SM_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_MD_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_LG_FIXED) ||
+      $body.hasClass(CLASS_NAME_FOOTER_XL_FIXED)
     ) {
       if ($(SELECTOR_FOOTER).css('position') === 'fixed') {
         sidebarHeight = heights.window - heights.header - heights.footer

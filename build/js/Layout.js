@@ -159,7 +159,7 @@ class Layout {
         this.fixLayoutHeight('control_sidebar')
       })
 
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this.fixLayoutHeight()
     })
 

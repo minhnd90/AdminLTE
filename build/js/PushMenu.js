@@ -155,7 +155,7 @@ class PushMenu {
     this.remember()
     this.autoCollapse()
 
-    $(window).resize(() => {
+    $(window).on('resize', () => {
       this.autoCollapse(true)
     })
   }

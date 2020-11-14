@@ -688,9 +688,7 @@
 								<!-- Toast -->
 								<div class="card card-info card-outline">
 									<div class="card-header">
-										<h3 class="card-title">
-											Toasts Examples <small>built in AdminLTE</small>
-										</h3>
+										<h3 class="card-title">Toasts Examples <small>built in AdminLTE</small></h3>
 									</div>
 									<div class="card-body">
 										<button type="button" class="btn btn-success toastsDefaultSuccess">Launch Success Toast</button>
@@ -998,6 +996,7 @@
 		<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 		<!-- InputMask -->
 		<script src="../plugins/moment/moment.min.js"></script>
+		<script src="../plugins/moment/locales.min.js"></script>
 		<script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
 		<!-- date-range-picker -->
 		<script src="../plugins/daterangepicker/daterangepicker.js"></script>
@@ -1048,7 +1047,37 @@
 
 				//Date picker
 				$('.date_input').datetimepicker({
-					format: 'DD/MM/yyyy'
+					format: 'DD/MM/yyyy',
+					locale: moment.locale('vi'),
+					dayViewHeaderFormat: 'MMM YYYY',
+					tooltips: {
+						today: 'Tới hôm nay',
+						clear: 'Xóa',
+						close: 'Đóng',
+						selectMonth: 'Chọn tháng',
+						prevMonth: 'Tháng trước',
+						nextMonth: 'Tháng sau',
+						selectYear: 'Chọn năm',
+						prevYear: 'Năm trước',
+						nextYear: 'Năm sau',
+						selectDecade: 'Chọn thập kỷ',
+						prevDecade: 'Thập kỷ trước',
+						nextDecade: 'Thập kỷ sau',
+						prevCentury: 'Thế kỷ trước',
+						nextCentury: 'Thế kỷ sau',
+						pickHour: 'Chọn giờ',
+						incrementHour: 'Tăng giờ',
+						decrementHour: 'Giảm giờ',
+						pickMinute: 'Chọn phút',
+						incrementMinute: 'Tăng phút',
+						decrementMinute: 'Giảm phút',
+						pickSecond: 'Chọn giây',
+						incrementSecond: 'Tămg giây',
+						decrementSecond: 'Giảm giây',
+						togglePeriod: 'Toggle Period',
+						selectTime: 'Chọn thời gian',
+						selectDate: 'Chọn ngày'
+					}
 				});
 				//Date range picker
 				$('.date_range').daterangepicker({
