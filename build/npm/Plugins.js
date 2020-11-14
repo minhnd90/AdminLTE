@@ -414,6 +414,11 @@ const Plugins = [
 	{
 		from: 'node_modules/dropzone/dist/',
 		to: 'plugins/dropzone'
+	},
+	// jstree
+	{
+		from: 'node_modules/jstree/dist/',
+		to: 'plugins/jstree'
 	}
 ]
 
