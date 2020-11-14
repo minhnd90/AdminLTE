@@ -25,8 +25,6 @@
 		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
 		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
 		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
-		<!-- JS Tree -->
-		<link rel="stylesheet" href="../plugins/jstree/themes/default/style.min.css" />
 		<!-- dropzonejs -->
 		<link rel="stylesheet" href="../plugins/dropzone/min/dropzone.min.css" />
 		<!-- Theme style -->
@@ -561,35 +559,6 @@
 								</div>
 								<!-- /.card -->
 
-								<!-- Treeview with checkboxes -->
-								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title">Treeview with checkbox</h3>
-									</div>
-									<div class="card-body">
-										<div class="jstree_demo">
-											<ul>
-												<li id="node_1">
-													<span>Root node 1</span>
-													<ul>
-														<li id="node_1-1">Child node 1</li>
-														<li id="node_1-2">
-															<span>Child node 2</span>
-															<ul>
-																<li id="node_1-2-1">Child node 2-1</li>
-																<li id="node_1-2-2">Child node 2-2</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li id="node_2">Root node 2</li>
-											</ul>
-										</div>
-									</div>
-									<!-- /.card-body -->
-								</div>
-								<!-- /.card -->
-
 								<!-- Form elements -->
 								<div class="card">
 									<div class="card-header">
@@ -666,7 +635,7 @@
 								<div class="card card-default">
 									<div class="card-header">
 										<h3 class="card-title">
-											Dropzone.js <small><em>jQuery File Upload</em> like look</small>
+											Dropzone.js <small><em>jQuery File Upload</em></small>
 										</h3>
 									</div>
 									<div class="card-body">
@@ -682,7 +651,7 @@
 											<div class="col-lg-10 d-flex align-items-center">
 												<div class="fileupload-process w-100">
 													<div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-														<div class="progress-bar progress-bar-success" style="width: 0%" data-dz-uploadprogress></div>
+														<div class="progress-bar progress-bar-success" data-dz-uploadprogress></div>
 													</div>
 												</div>
 											</div>
@@ -706,10 +675,7 @@
 												</div>
 												<div class="col-auto d-flex align-items-center">
 													<div class="btn-group">
-														<button data-dz-remove class="btn btn-danger delete">
-															<i class="fas fa-trash"></i>
-															<span>Delete</span>
-														</button>
+														<button data-dz-remove class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
 													</div>
 												</div>
 											</div>
@@ -717,6 +683,22 @@
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">Visit <a href="https://www.dropzonejs.com">dropzone.js documentation</a> for more examples and information about the plugin.</div>
+								</div>
+
+								<!-- Toast -->
+								<div class="card card-info card-outline">
+									<div class="card-header">
+										<h3 class="card-title">
+											Toasts Examples <small>built in AdminLTE</small>
+										</h3>
+									</div>
+									<div class="card-body">
+										<button type="button" class="btn btn-success toastsDefaultSuccess">Launch Success Toast</button>
+										<button type="button" class="btn btn-info toastsDefaultInfo">Launch Info Toast</button>
+										<button type="button" class="btn btn-warning toastsDefaultWarning">Launch Warning Toast</button>
+										<button type="button" class="btn btn-danger toastsDefaultDanger">Launch Danger Toast</button>
+										<button type="button" class="btn btn-default bg-maroon toastsDefaultMaroon">Launch Maroon Toast</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -740,7 +722,7 @@
 		<!-- ./wrapper -->
 
 		<!-- Plan Create Modal -->
-		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
+		<div class="modal" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header bg-primary">
@@ -944,7 +926,7 @@
 		</div>
 
 		<!-- Plan View Modal -->
-		<div class="modal fade" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
+		<div class="modal" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -963,7 +945,7 @@
 		</div>
 
 		<!-- Plan Edit Modal -->
-		<div class="modal fade" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
+		<div class="modal" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -982,7 +964,7 @@
 		</div>
 
 		<!-- Plan Delete Modal -->
-		<div class="modal fade" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
+		<div class="modal" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -1026,8 +1008,6 @@
 		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-		<!-- JS Tree -->
-		<script src="../plugins/jstree/jstree.min.js"></script>
 		<!-- dropzonejs -->
 		<script src="../plugins/dropzone/min/dropzone.min.js"></script>
 		<!-- AdminLTE App -->
@@ -1146,8 +1126,63 @@
 				myDropzone.on('queuecomplete', function (progress) {
 					document.querySelector('#total-progress').style.opacity = '0';
 				});
-
 				// DropzoneJS Demo Code End
+
+				//Toast
+				$('.toastsDefaultSuccess').click(function () {
+					$(document).Toasts('create', {
+						class: 'bg-success',
+						autohide: true,
+						delay: 2000,
+						position: 'bottomRight',
+						title: 'Toast Title',
+						subtitle: 'Subtitle',
+						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+					});
+				});
+				$('.toastsDefaultInfo').click(function () {
+					$(document).Toasts('create', {
+						class: 'bg-info',
+						autohide: true,
+						delay: 2000,
+						position: 'bottomRight',
+						title: 'Toast Title',
+						subtitle: 'Subtitle',
+						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+					});
+				});
+				$('.toastsDefaultWarning').click(function () {
+					$(document).Toasts('create', {
+						class: 'bg-warning',
+						autohide: true,
+						position: 'bottomRight',
+						title: 'Toast Title',
+						subtitle: 'Subtitle',
+						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+					});
+				});
+				$('.toastsDefaultDanger').click(function () {
+					$(document).Toasts('create', {
+						class: 'bg-danger',
+						autohide: true,
+						delay: 2000,
+						position: 'bottomRight',
+						title: 'Toast Title',
+						subtitle: 'Subtitle',
+						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+					});
+				});
+				$('.toastsDefaultMaroon').click(function () {
+					$(document).Toasts('create', {
+						class: 'bg-maroon',
+						autohide: true,
+						delay: 2000,
+						position: 'bottomRight',
+						title: 'Toast Title',
+						subtitle: 'Subtitle',
+						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+					});
+				});
 			});
 		</script>
 	</body>
