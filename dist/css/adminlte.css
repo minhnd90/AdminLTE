@@ -21940,7 +21940,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   background-color: #6c757d;
 }
 
-.login-background {
+.login-background,
+.register-background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -21949,7 +21950,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   left: 0;
 }
 
-.login-background img {
+.login-background img,
+.register-background img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -21963,7 +21965,9 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .login-info,
-.login-form {
+.register-info,
+.login-form,
+.register-form {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
@@ -21971,14 +21975,16 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   flex-direction: column;
 }
 
-.login-form {
+.login-form,
+.register-form {
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.login-info {
+.login-info,
+.register-info {
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: 50px;
@@ -21986,7 +21992,9 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .login-info .login-logo,
-.login-info .register-logo {
+.login-info .register-logo,
+.register-info .login-logo,
+.register-info .register-logo {
   font-size: 2.1rem;
   font-weight: 300;
   margin-top: 2rem;
@@ -21996,28 +22004,42 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .login-info .login-logo a,
-.login-info .register-logo a {
+.login-info .register-logo a,
+.register-info .login-logo a,
+.register-info .register-logo a {
   color: #495057;
 }
 
-.login-info .login-title {
+.login-info .login-title,
+.login-info .register-title,
+.register-info .login-title,
+.register-info .register-title {
   color: #001f3f;
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.login-info .login-title small {
+.login-info .login-title small,
+.login-info .register-title small,
+.register-info .login-title small,
+.register-info .register-title small {
   color: #495057;
   font-size: 1.75rem;
   font-weight: 400;
 }
 
 @media (max-width: 768px) {
-  .login-info .login-title {
+  .login-info .login-title,
+  .login-info .register-title,
+  .register-info .login-title,
+  .register-info .register-title {
     font-size: 2rem;
   }
-  .login-info .login-title small {
+  .login-info .login-title small,
+  .login-info .register-title small,
+  .register-info .login-title small,
+  .register-info .register-title small {
     font-size: 1.5rem;
   }
 }
@@ -22041,13 +22063,12 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   margin-bottom: 0.5rem;
 }
 
-.login-box,
-.register-box {
+.login-box {
   width: 360px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.register-box {
+  width: 520px;
 }
 
 @media (max-width: 576px) {
@@ -22075,7 +22096,6 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   background-color: transparent;
   border-top: 0;
   color: #fff;
-  padding: 20px;
 }
 
 .login-card-body .input-group .input-group-prepend .input-group-text,
