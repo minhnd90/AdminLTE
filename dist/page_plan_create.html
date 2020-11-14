@@ -1050,6 +1050,12 @@
 					format: 'DD/MM/yyyy',
 					locale: moment.locale('vi'),
 					dayViewHeaderFormat: 'MMM YYYY',
+					// buttons: {
+					// 	showToday: true,
+					// 	showClear: true,
+					// 	showClose: true
+					// },
+					// debug: true,
 					tooltips: {
 						today: 'Tới hôm nay',
 						clear: 'Xóa',
@@ -1082,10 +1088,10 @@
 				//Date range picker
 				$('.date_range').daterangepicker({
 					locale: {
-						format: 'DD/MM/yyyy'
-					},
-					applyLabel: 'Chọn',
-					cancelLabel: 'Hủy'
+						format: 'DD/MM/yyyy',
+						applyLabel: 'Chọn',
+						cancelLabel: 'Hủy'
+					}
 				});
 				//DataTable
 				$('.data_table').DataTable({
