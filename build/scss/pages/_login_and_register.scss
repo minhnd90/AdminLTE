@@ -2,7 +2,8 @@
 // Pages: Login & Register
 //
 
-.login-background {
+.login-background,
+.register-background {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -22,16 +23,20 @@
 	height: 100vh;
 }
 .login-info,
-.login-form {
+.register-info,
+.login-form,
+.register-form {
 	display: flex;
 	height: 100vh;
 	flex-direction: column;
 }
-.login-form {
+.login-form,
+.register-form {
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: center;
 }
-.login-info {
+.login-info,
+.register-info {
 	justify-content: center;
 	padding-left: 50px;
 	margin-top: -135px;
@@ -49,7 +54,8 @@
 			color: $gray-700;
 		}
 	}
-	.login-title {
+	.login-title,
+	.register-title {
 		color: $navy;
 		font-size: 2.5rem;
 		font-weight: 700;
@@ -87,13 +93,16 @@
 		margin-bottom: 0.5rem;
 	}
 }
+
+.login-box {
+	width: 360px;
+}
+.register-box {
+	width: 520px;
+}
+
 .login-box,
 .register-box {
-	width: 360px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 
 	@media (max-width: map-get($grid-breakpoints, sm)) {
 		margin-top: 0.5rem;
@@ -116,8 +125,6 @@
 	background-color: transparent;
 	border-top: 0;
 	color: $white;
-	padding: 20px;
-
 	.input-group {
 		.input-group-prepend {
 			.input-group-text {

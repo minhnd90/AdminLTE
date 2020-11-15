@@ -36,8 +36,7 @@
 
 		// Apply the new margins to the main content and footer
 		.content-wrapper,
-		.main-footer,
-		.main-header {
+		.main-footer {
 			margin-left: $sidebar-mini-width !important;
 		}
 
@@ -46,12 +45,12 @@
 			display: none;
 		}
 
-		.nav-sidebar .nav-link p {
+		.nav-sidebar .nav-link > *:not(.nav-icon) {
 			width: 0;
 		}
 
 		.sidebar .user-panel > .info,
-		.nav-sidebar .nav-link p,
+		.nav-sidebar .nav-link > *:not(.nav-icon),
 		.brand-text {
 			margin-left: -10px;
 			animation-name: fadeOut;
@@ -109,7 +108,7 @@
 				}
 
 				.user-panel > .info,
-				.nav-sidebar .nav-link p,
+				.nav-sidebar .nav-link > *:not(.nav-icon),
 				.brand-text,
 				.logo-xl {
 					display: inline-block;

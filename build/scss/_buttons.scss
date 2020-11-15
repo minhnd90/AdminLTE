@@ -1,7 +1,11 @@
 //
 // Component: Button
 //
-
+@each $color, $value in $theme-colors {
+	.btn-hover-#{$color} {
+		@include button-hover-variant($value);
+	}
+}
 .btn {
 	&.disabled,
 	&:disabled {

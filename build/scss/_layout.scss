@@ -438,7 +438,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) {
 body:not(.sidebar-mini-md) {
 	.content-wrapper,
 	.main-footer {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			@include transition(margin-left $transition-speed $transition-fn);
 
 			margin-left: $sidebar-width;
@@ -446,6 +446,7 @@ body:not(.sidebar-mini-md) {
 
 			.sidebar-collapse & {
 				margin-left: 0;
+				padding-left: 0;
 			}
 		}
 

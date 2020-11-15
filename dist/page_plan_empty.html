@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>AdminLTE 3 | Danh sách thu thập tài liệu</title>
+		<title>AdminLTE 3 | DANH SÁCH KẾ HOẠCH THU THẬP</title>
 
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=fallback" />
@@ -25,8 +25,6 @@
 		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
 		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
 		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
-		<!-- dropzonejs -->
-		<link rel="stylesheet" href="../plugins/dropzone/min/dropzone.min.css" />
 		<!-- Theme style -->
 		<link rel="stylesheet" href="../dist/css/adminlte.min.css" />
 	</head>
@@ -255,7 +253,7 @@
 									</div>
 									<div class="card-body">
 										<!-- Search form -->
-										<form class="row">
+										<div class="row">
 											<div class="col-lg-6 col-md-12">
 												<div class="form-group">
 													<input type="text" class="form-control" placeholder="Nhập tên kế hoạch" />
@@ -275,20 +273,20 @@
 											</div>
 											<div class="col-xl-6 col-lg-8 col-md-12">
 												<div class="form-group row">
-													<label class="col-4 col-md-6 col-form-label">Thời gian dự kiến thu thập:</label>
+													<label for="search_range-date" class="col-4 col-md-6 col-form-label">Thời gian dự kiến thu thập:</label>
 													<div class="col-8 col-md-6">
 														<div class="input-group">
 															<div class="input-group-prepend">
 																<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
 															</div>
-															<input type="text" class="date_range form-control float-right" id="search_range-date" />
+															<input type="text" class="form-control float-right" id="search_range-date" />
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12">
 												<div class="form-group">
-													<div class="input-group date_input" id="search_create-date" data-target-input="nearest">
+													<div class="input-group date" id="search_create-date" data-target-input="nearest">
 														<div class="input-group-prepend" data-target="#search_create-date" data-toggle="datetimepicker">
 															<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
 														</div>
@@ -314,7 +312,7 @@
 													<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-search"></i>Tìm kiếm</button>
 												</div>
 											</div>
-										</form>
+										</div>
 										<!-- /Search form -->
 
 										<!-- Data Table -->
@@ -341,363 +339,20 @@
 												</div>
 											</div>
 										</div>
-										<table id="data_table" class="table table-bordered table-striped data_table">
-											<thead>
-												<tr>
-													<th class="text-center col-min">STT</th>
-													<th class="text-center col-min">
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="0" value="0" />
-															<label class="custom-control-label" for="0"></label>
-														</div>
-													</th>
-													<th>Tên kế hoạch</th>
-													<th>Ngày tạo</th>
-													<th>Thời gian dự kiến thu thập</th>
-													<th class="col-min">Trạng thái</th>
-													<th class="col-min">Thao tác</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="1" value="1" />
-															<label class="custom-control-label" for="1"></label>
-														</div>
-													</td>
-													<td>1</td>
-													<td>Internet Explorer 4.0</td>
-													<td>Win 95+</td>
-													<td><span class="badge badge-btn badge-primary">Another status</span></td>
-													<td>
-														<a href="#" title="Xem" class="btn btn-sm btn-outline-secondary btn-hover-success" role="button" data-toggle="modal" data-target="#planViewModal">
-															<i class="fas fa-eye"></i>
-														</a>
-														<a href="#" title="Sửa" class="btn btn-sm btn-outline-secondary btn-hover-primary" role="button" data-toggle="modal" data-target="#planEditModal">
-															<i class="fas fa-pencil-alt"></i>
-														</a>
-														<a href="#" title="Xóa" class="btn btn-sm btn-outline-secondary btn-hover-danger" role="button" data-toggle="modal" data-target="#planDeleteModal">
-															<i class="fas fa-trash-alt"></i>
-														</a>
-														<a href="#" title="Duyệt" class="btn btn-sm btn-outline-secondary btn-hover-warning" role="button" data-toggle="modal" data-target="#planDeleteModal">
-															<i class="fas fa-check"></i>
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="2" value="2" />
-															<label class="custom-control-label" for="2"></label>
-														</div>
-													</td>
-													<td>Internet Explorer 5.0</td>
-													<td>Internet Explorer 5.0</td>
-													<td>Win 95+</td>
-													<td><span class="badge badge-btn badge-secondary">Tạo mới</span></td>
-													<td>C</td>
-												</tr>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="3" value="3" />
-															<label class="custom-control-label" for="3"></label>
-														</div>
-													</td>
-													<td>Win 95+</td>
-													<td>Win 95+</td>
-													<td>Win 95+</td>
-													<td>5.5</td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="4" value="4" />
-															<label class="custom-control-label" for="4"></label>
-														</div>
-													</td>
-													<td>Win 98+</td>
-													<td>6</td>
-													<td>6</td>
-													<td><span class="badge badge-btn badge-success">Đã duyệt</span></td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="5" value="5" />
-															<label class="custom-control-label" for="5"></label>
-														</div>
-													</td>
-													<td>Internet Explorer 7</td>
-													<td>Internet Explorer 7</td>
-													<td>Win XP SP2+</td>
-													<td><span class="badge badge-btn badge-danger">Từ chối</span></td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">1</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="6" value="6" />
-															<label class="custom-control-label" for="6"></label>
-														</div>
-													</td>
-													<td>Win XP</td>
-													<td>Win XP</td>
-													<td>Win XP</td>
-													<td><span class="badge badge-btn badge-warning">Chờ phê duyệt</span></td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">2</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="7" value="7" />
-															<label class="custom-control-label" for="7"></label>
-														</div>
-													</td>
-													<td>2</td>
-													<td>Firefox 1.0</td>
-													<td>Win 98+ / OSX.2+</td>
-													<td><span class="badge badge-btn badge-info">Info</span></td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">2</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="8" value="8" />
-															<label class="custom-control-label" for="8"></label>
-														</div>
-													</td>
-													<td>Win 98+ / OSX.2+</td>
-													<td>Win 98+ / OSX.2+</td>
-													<td>Win 98+ / OSX.2+</td>
-													<td><span class="badge badge-btn badge-light">Another status</span></td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">2</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="9" value="9" />
-															<label class="custom-control-label" for="9"></label>
-														</div>
-													</td>
-													<td>Firefox 2.0</td>
-													<td>Firefox 2.0</td>
-													<td>Win 98+ / OSX.2+</td>
-													<td>1.8</td>
-													<td>A</td>
-												</tr>
-												<tr>
-													<td class="text-center">2</td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" id="10" value="10" />
-															<label class="custom-control-label" for="10"></label>
-														</div>
-													</td>
-													<td>Firefox 3.0</td>
-													<td>Firefox 3.0</td>
-													<td>Win 2k+ / OSX.3+</td>
-													<td><span class="badge badge-btn badge-dark">Another status</span></td>
-													<td>A</td>
-												</tr>
-											</tbody>
+										<table id="data_table" class="table table-bordered table-striped">
+											<caption>Không có bản ghi nào</caption>
 										</table>
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="row">
-											<div class="col-6">Có tổng cộng <span class="text-red">5</span> công việc</div>
-											<div class="col-6">
-												<nav class="d-flex justify-content-end" aria-label="Pagination">
-													<form class="form-group row align-items-center mr-4">
-														<span>Hiển thị:&nbsp;&nbsp;</span>
-														<select id="pagination_select" class="select2bs4">
-															<option>10</option>
-															<option>20</option>
-															<option>30</option>
-															<option>40</option>
-															<option>50</option>
-														</select>
-														<span>&nbsp;&nbsp;bản ghi/trang.</span>
-													</form>
-													<ul class="pagination pagination-md justify-content-end mb-0">
-														<li class="page-item disabled">
-															<a class="page-link" href="#" aria-label="Previous">
-																<span aria-hidden="true">&laquo;</span>
-															</a>
-														</li>
-														<li class="page-item active">
-															<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-														</li>
-														<li class="page-item" aria-current="page">
-															<a class="page-link" href="#">2</a>
-														</li>
-														<li class="page-item"><a class="page-link" href="#">3</a></li>
-														<li class="page-item">
-															<a class="page-link" href="#" aria-label="Next">
-																<span aria-hidden="true">&raquo;</span>
-															</a>
-														</li>
-													</ul>
-												</nav>
-											</div>
+											<div class="col-6">Có tổng cộng <span class="text-red">0</span> công việc</div>
+											<div class="col-6"></div>
 										</div>
 									</div>
 									<!-- /.card-footer-->
 								</div>
 								<!-- /.card -->
-
-								<!-- Form elements -->
-								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title">Form elements</h3>
-									</div>
-									<div class="card-body">
-										<div class="row">
-											<!-- checkbox -->
-											<div class="col-sm-6">
-												<label>Checkbox styles: </label>
-												<div class="form-group">
-													<div class="custom-control custom-checkbox">
-														<input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1" />
-														<label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>
-													</div>
-													<div class="custom-control custom-checkbox">
-														<input class="custom-control-input" type="checkbox" id="customCheckbox2" checked />
-														<label for="customCheckbox2" class="custom-control-label">Custom Checkbox checked</label>
-													</div>
-													<div class="custom-control custom-checkbox">
-														<input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled />
-														<label for="customCheckbox3" class="custom-control-label">Custom Checkbox disabled</label>
-													</div>
-													<div class="custom-control custom-checkbox">
-														<input class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox4" checked />
-														<label for="customCheckbox4" class="custom-control-label">Custom Checkbox with custom color</label>
-													</div>
-													<div class="custom-control custom-checkbox">
-														<input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="customCheckbox5" checked />
-														<label for="customCheckbox5" class="custom-control-label">Custom Checkbox with custom color outline</label>
-													</div>
-												</div>
-											</div>
-
-											<!-- radio -->
-											<div class="col-sm-6">
-												<label>Inline radio: </label>
-												<div class="form-group">
-													<div class="custom-control custom-radio form-check-inline">
-														<input class="custom-control-input" type="radio" id="customRadioInline1" name="customRadio" />
-														<label for="customRadioInline1" class="custom-control-label">Custom Radio</label>
-													</div>
-													<div class="custom-control custom-radio form-check-inline">
-														<input class="custom-control-input" type="radio" id="customRadioInline2" name="customRadio" checked />
-														<label for="customRadioInline2" class="custom-control-label">Custom Radio checked</label>
-													</div>
-												</div>
-												<label>Radio styles: </label>
-												<div class="form-group">
-													<div class="custom-control custom-radio">
-														<input class="custom-control-input" type="radio" id="customRadio1" name="customRadio" />
-														<label for="customRadio1" class="custom-control-label">Custom Radio</label>
-													</div>
-													<div class="custom-control custom-radio">
-														<input class="custom-control-input" type="radio" id="customRadio2" disabled name="customRadio" />
-														<label for="customRadio2" class="custom-control-label">Custom Radio disabled</label>
-													</div>
-													<div class="custom-control custom-radio">
-														<input class="custom-control-input custom-control-input-danger" type="radio" id="customRadio3" name="customRadio" />
-														<label for="customRadio3" class="custom-control-label">Custom Radio with custom color</label>
-													</div>
-													<div class="custom-control custom-radio">
-														<input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="radio" id="customRadio4" name="customRadio" />
-														<label for="customRadio4" class="custom-control-label">Custom Radio with custom color outline</label>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /.card-body -->
-								</div>
-
-								<!-- Upload -->
-								<div class="card card-default">
-									<div class="card-header">
-										<h3 class="card-title">
-											Dropzone.js <small><em>jQuery File Upload</em></small>
-										</h3>
-									</div>
-									<div class="card-body">
-										<div id="actions" class="row">
-											<div class="col-lg-2">
-												<div class="btn-group w-100">
-													<span class="btn btn-success col fileinput-button">
-														<i class="fas fa-plus"></i>
-														<span>Add files</span>
-													</span>
-												</div>
-											</div>
-											<div class="col-lg-10 d-flex align-items-center">
-												<div class="fileupload-process w-100">
-													<div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-														<div class="progress-bar progress-bar-success" data-dz-uploadprogress></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table table-striped files" id="previews">
-											<div id="template" class="row mt-2">
-												<div class="col-auto">
-													<span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
-												</div>
-												<div class="col d-flex align-items-center">
-													<p class="mb-0 mr-2">
-														<span data-dz-name></span>
-														(<span data-dz-size></span>)
-													</p>
-													<strong class="error text-danger" data-dz-errormessage></strong>
-												</div>
-												<div class="col-4 d-flex align-items-center">
-													<div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-														<div class="progress-bar progress-bar-success" style="width: 0%" data-dz-uploadprogress></div>
-													</div>
-												</div>
-												<div class="col-auto d-flex align-items-center">
-													<div class="btn-group">
-														<button data-dz-remove class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /.card-body -->
-									<div class="card-footer">Visit <a href="https://www.dropzonejs.com">dropzone.js documentation</a> for more examples and information about the plugin.</div>
-								</div>
-
-								<!-- Toast -->
-								<div class="card card-info card-outline">
-									<div class="card-header">
-										<h3 class="card-title">Toasts Examples <small>built in AdminLTE</small></h3>
-									</div>
-									<div class="card-body">
-										<button type="button" class="btn btn-success toastsDefaultSuccess">Launch Success Toast</button>
-										<button type="button" class="btn btn-info toastsDefaultInfo">Launch Info Toast</button>
-										<button type="button" class="btn btn-warning toastsDefaultWarning">Launch Warning Toast</button>
-										<button type="button" class="btn btn-danger toastsDefaultDanger">Launch Danger Toast</button>
-										<button type="button" class="btn btn-default bg-maroon toastsDefaultMaroon">Launch Maroon Toast</button>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -720,7 +375,7 @@
 		<!-- ./wrapper -->
 
 		<!-- Plan Create Modal -->
-		<div class="modal" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
+		<div class="modal fade" id="planCreateModal" tabindex="-1" role="dialog" aria-labelledby="planCreateModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header bg-primary">
@@ -750,7 +405,7 @@
 									<input type="text" class="form-control" name="modal_create-input-name" id="modal_create-input-name" placeholder="Tên kế hoạch" required />
 								</div>
 								<div class="col-sm-4">
-									<div class="input-group date_input" id="modal_create-date" data-target-input="nearest">
+									<div class="input-group date" id="modal_create-date" data-target-input="nearest">
 										<div class="input-group-prepend" data-target="#modal_create-date" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
 										</div>
@@ -765,13 +420,13 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-3 col-form-label">Thời gian dự kiến thu thập:</label>
+								<label for="modal_create-date_range" class="col-sm-3 col-form-label">Thời gian dự kiến thu thập:</label>
 								<div class="col-sm-9">
 									<div class="input-group">
 										<div class="input-group-prepend">
 											<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
 										</div>
-										<input type="text" class="date_range form-control float-right" id="modal_create-date_range" />
+										<input type="text" class="form-control float-right" name="modal_create-date_range" id="modal_create-date_range" />
 									</div>
 								</div>
 							</div>
@@ -924,7 +579,7 @@
 		</div>
 
 		<!-- Plan View Modal -->
-		<div class="modal" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
+		<div class="modal fade" id="planViewModal" tabindex="-1" role="dialog" aria-labelledby="planViewModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -943,7 +598,7 @@
 		</div>
 
 		<!-- Plan Edit Modal -->
-		<div class="modal" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
+		<div class="modal fade" id="planEditModal" tabindex="-1" role="dialog" aria-labelledby="planEditModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -962,7 +617,7 @@
 		</div>
 
 		<!-- Plan Delete Modal -->
-		<div class="modal" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
+		<div class="modal fade" id="planDeleteModal" tabindex="-1" role="dialog" aria-labelledby="planDeleteModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -982,12 +637,6 @@
 
 		<!-- jQuery -->
 		<script src="../plugins/jquery/jquery.min.js"></script>
-		<!-- jQuery UI 1.11.4 -->
-		<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-		<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-		<script>
-			$.widget.bridge('uibutton', $.ui.button);
-		</script>
 		<!-- Bootstrap 4 -->
 		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- Select2 -->
@@ -996,7 +645,6 @@
 		<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 		<!-- InputMask -->
 		<script src="../plugins/moment/moment.min.js"></script>
-		<script src="../plugins/moment/locales.min.js"></script>
 		<script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
 		<!-- date-range-picker -->
 		<script src="../plugins/daterangepicker/daterangepicker.js"></script>
@@ -1007,8 +655,16 @@
 		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-		<!-- dropzonejs -->
-		<script src="../plugins/dropzone/min/dropzone.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="../plugins/datatables-select/js/dataTables.select.min.js"></script>
+		<script src="../plugins/datatables-select/js/select.bootstrap4.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+		<script src="../plugins/jszip/jszip.min.js"></script>
+		<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+		<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 		<!-- AdminLTE App -->
 		<script src="js/adminlte.min.js"></script>
 		<!-- AdminLTE for demo purposes -->
@@ -1016,10 +672,6 @@
 			$(function () {
 				//Initialize Select2 Elements
 				$('.select2bs4').select2();
-				$('#pagination_select').select2({
-					width: 60,
-					minimumResultsForSearch: 'Infinity'
-				});
 				$('.select_status').select2({
 					width: '.form-group',
 					allowClear: true,
@@ -1041,169 +693,39 @@
 					allowClear: true,
 					placeholder: 'Chọn cán bộ'
 				});
-
 				//Datemask dd/mm/yyyy
 				$('[data-mask]').inputmask();
 
 				//Date picker
-				$('.date_input').datetimepicker({
-					format: 'DD/MM/yyyy',
-					locale: moment.locale('vi'),
-					dayViewHeaderFormat: 'MMM YYYY',
-					// buttons: {
-					// 	showToday: true,
-					// 	showClear: true,
-					// 	showClose: true
-					// },
-					// debug: true,
-					tooltips: {
-						today: 'Tới hôm nay',
-						clear: 'Xóa',
-						close: 'Đóng',
-						selectMonth: 'Chọn tháng',
-						prevMonth: 'Tháng trước',
-						nextMonth: 'Tháng sau',
-						selectYear: 'Chọn năm',
-						prevYear: 'Năm trước',
-						nextYear: 'Năm sau',
-						selectDecade: 'Chọn thập kỷ',
-						prevDecade: 'Thập kỷ trước',
-						nextDecade: 'Thập kỷ sau',
-						prevCentury: 'Thế kỷ trước',
-						nextCentury: 'Thế kỷ sau',
-						pickHour: 'Chọn giờ',
-						incrementHour: 'Tăng giờ',
-						decrementHour: 'Giảm giờ',
-						pickMinute: 'Chọn phút',
-						incrementMinute: 'Tăng phút',
-						decrementMinute: 'Giảm phút',
-						pickSecond: 'Chọn giây',
-						incrementSecond: 'Tămg giây',
-						decrementSecond: 'Giảm giây',
-						togglePeriod: 'Toggle Period',
-						selectTime: 'Chọn thời gian',
-						selectDate: 'Chọn ngày'
-					}
+				//Date range picker
+				$('#search_create-date, #modal_create-date').datetimepicker({
+					format: 'DD/MM/yyyy'
 				});
 				//Date range picker
-				$('.date_range').daterangepicker({
+				$('#search_range-date, #modal_create-date_range').daterangepicker({
 					locale: {
-						format: 'DD/MM/yyyy',
-						applyLabel: 'Chọn',
-						cancelLabel: 'Hủy'
-					}
+						format: 'DD/MM/yyyy'
+					},
+					applyLabel: 'Chọn',
+					cancelLabel: 'Hủy'
 				});
 				//DataTable
-				$('.data_table').DataTable({
-					paging: false,
-					info: false,
-					filter: false,
-					ordering: false,
-					responsive: true,
-					lengthChange: false,
-					autoWidth: false,
-					fixedHeader: {
-						header: true
-					}
-				});
-
-				// DropzoneJS Demo Code Start
-				Dropzone.autoDiscover = false;
-
-				// Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-				var previewNode = document.querySelector('#template');
-				previewNode.id = '';
-				var previewTemplate = previewNode.parentNode.innerHTML;
-				previewNode.parentNode.removeChild(previewNode);
-
-				var myDropzone = new Dropzone(document.body, {
-					// Make the whole body a dropzone
-					url: '/target-url', // Set the url
-					thumbnailWidth: 35,
-					thumbnailHeight: 35,
-					parallelUploads: 20,
-					previewTemplate: previewTemplate,
-					autoQueue: true, // Make sure the files aren't queued until manually added
-					previewsContainer: '#previews', // Define the container to display the previews
-					clickable: '.fileinput-button' // Define the element that should be used as click trigger to select files.
-				});
-
-				myDropzone.on('addedfile', function (file) {
-					// Hookup the start button
-					// myDropzone.enqueueFile(file);
-				});
-
-				// Update the total progress bar
-				myDropzone.on('totaluploadprogress', function (progress) {
-					document.querySelector('#total-progress .progress-bar').style.width = progress + '%';
-				});
-
-				myDropzone.on('sending', function (file) {
-					// Show the total progress bar when upload starts
-					document.querySelector('#total-progress').style.opacity = '1';
-				});
-
-				// Hide the total progress bar when nothing's uploading anymore
-				myDropzone.on('queuecomplete', function (progress) {
-					document.querySelector('#total-progress').style.opacity = '0';
-				});
-				// DropzoneJS Demo Code End
-
-				//Toast
-				$('.toastsDefaultSuccess').click(function () {
-					$(document).Toasts('create', {
-						class: 'bg-success',
-						autohide: true,
-						delay: 2000,
-						position: 'bottomRight',
-						title: 'Toast Title',
-						subtitle: 'Subtitle',
-						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-					});
-				});
-				$('.toastsDefaultInfo').click(function () {
-					$(document).Toasts('create', {
-						class: 'bg-info',
-						autohide: true,
-						delay: 2000,
-						position: 'bottomRight',
-						title: 'Toast Title',
-						subtitle: 'Subtitle',
-						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-					});
-				});
-				$('.toastsDefaultWarning').click(function () {
-					$(document).Toasts('create', {
-						class: 'bg-warning',
-						autohide: true,
-						position: 'bottomRight',
-						title: 'Toast Title',
-						subtitle: 'Subtitle',
-						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-					});
-				});
-				$('.toastsDefaultDanger').click(function () {
-					$(document).Toasts('create', {
-						class: 'bg-danger',
-						autohide: true,
-						delay: 2000,
-						position: 'bottomRight',
-						title: 'Toast Title',
-						subtitle: 'Subtitle',
-						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-					});
-				});
-				$('.toastsDefaultMaroon').click(function () {
-					$(document).Toasts('create', {
-						class: 'bg-maroon',
-						autohide: true,
-						delay: 2000,
-						position: 'bottomRight',
-						title: 'Toast Title',
-						subtitle: 'Subtitle',
-						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-					});
-				});
+				$('#data_table')
+					.DataTable({
+						paging: false,
+						info: false,
+						filter: false,
+						ordering: false,
+						responsive: true,
+						lengthChange: false,
+						autoWidth: false,
+						fixedHeader: {
+							header: true
+						}
+					})
+					.buttons()
+					.container()
+					.appendTo('#data_table_wrapper .col-md-6:eq(1)');
 			});
 		</script>
 	</body>
