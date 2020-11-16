@@ -22119,6 +22119,11 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   color: #fff;
 }
 
+.login-box .card a:hover,
+.register-box .card a:hover {
+  text-decoration: underline;
+}
+
 .login-card-body,
 .register-card-body {
   background-color: transparent;
