@@ -16997,6 +16997,25 @@ body.text-sm .input-group-text {
   border-left: none;
 }
 
+.field-validation-error {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+  text-align: left;
+}
+
+.validation-summary-errors {
+  text-align: left;
+}
+
+.validation-summary-errors ul {
+  padding: 0;
+  list-style: none;
+  text-shadow: 0 0 1px #333;
+}
+
 .progress {
   box-shadow: none;
   border-radius: 1px;
