@@ -17020,6 +17020,10 @@ body.text-sm .input-group-text {
   text-align: left;
 }
 
+.col-form-label {
+  text-align: right;
+}
+
 .progress {
   box-shadow: none;
   border-radius: 1px;
