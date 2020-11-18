@@ -1719,7 +1719,7 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .table-hover tbody tr:hover {
@@ -17022,6 +17022,15 @@ body.text-sm .input-group-text {
 
 .col-form-label {
   text-align: right;
+}
+
+.input-required::after {
+  display: inline;
+  content: '(*)';
+  color: red;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  vertical-align: top;
 }
 
 .progress {

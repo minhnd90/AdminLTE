@@ -416,3 +416,13 @@ body.text-sm {
 .col-form-label {
 	text-align: right;
 }
+.input-required {
+	&::after {
+		display: inline;
+		content: '(*)';
+		color: red;
+		font-size: 0.75rem;
+		margin-left: 0.25rem;
+		vertical-align: top;
+	}
+}
