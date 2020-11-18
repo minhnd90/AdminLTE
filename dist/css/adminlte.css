@@ -22003,11 +22003,6 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   object-fit: cover;
 }
 
-.login-background a:hover,
-.register-background a:hover {
-  text-decoration: underline;
-}
-
 .login-page,
 .register-page {
   background-color: #e9ecef;
@@ -22139,6 +22134,11 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .login-box .card a,
 .register-box .card a {
   color: #fff;
+}
+
+.login-box .card a:hover,
+.register-box .card a:hover {
+  text-decoration: underline;
 }
 
 .login-card-body,

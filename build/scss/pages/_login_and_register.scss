@@ -16,11 +16,6 @@
 		height: 100%;
 		object-fit: cover;
 	}
-	a {
-		&:hover {
-			text-decoration: underline;
-		}
-	}
 }
 .login-page,
 .register-page {
@@ -120,6 +115,9 @@
 
 		a {
 			color: $white;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
