@@ -46,6 +46,7 @@ $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$heavy-cyan: #0E63BD !default;
 
 $colors: () !default;
 $colors: map-merge(
@@ -60,6 +61,7 @@ $colors: map-merge(
 		'green': $green,
 		'teal': $teal,
 		'cyan': $cyan,
+		'heavy-cyan': $heavy-cyan,
 		'white': $white,
 		'gray': $gray-600,
 		'gray-dark': $gray-800
@@ -86,7 +88,8 @@ $theme-colors: map-merge(
 		'warning': $warning,
 		'danger': $danger,
 		'light': $light,
-		'dark': $dark
+		'dark': $dark,
+		'heavy-cyan': $heavy-cyan,
 	),
 	$theme-colors
 );

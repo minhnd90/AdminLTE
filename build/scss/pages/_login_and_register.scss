@@ -120,6 +120,11 @@
 			}
 		}
 	}
+
+	.field-validation-error {
+		text-shadow: 0 0 1px black;
+		font-weight: bold;
+	}
 }
 
 .login-card-body,
