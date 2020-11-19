@@ -20162,7 +20162,7 @@ html.maximized-card {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 1025;
+  z-index: 1041;
 }
 
 .toasts-top-right.fixed {
@@ -20173,7 +20173,7 @@ html.maximized-card {
   left: 0;
   position: absolute;
   top: 0;
-  z-index: 1025;
+  z-index: 1041;
 }
 
 .toasts-top-left.fixed {
@@ -20181,10 +20181,10 @@ html.maximized-card {
 }
 
 .toasts-bottom-right {
-  bottom: 0;
+  bottom: 10px;
   position: absolute;
-  right: 0;
-  z-index: 1025;
+  right: 10px;
+  z-index: 1041;
 }
 
 .toasts-bottom-right.fixed {
@@ -20195,7 +20195,7 @@ html.maximized-card {
   bottom: 0;
   left: 0;
   position: absolute;
-  z-index: 1025;
+  z-index: 1041;
 }
 
 .toasts-bottom-left.fixed {
@@ -22662,6 +22662,16 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .register-page {
   background-color: #e9ecef;
   height: 100vh;
+}
+
+.login-page a,
+.register-page a {
+  color: #fff;
+}
+
+.login-page a:hover,
+.register-page a:hover {
+  text-decoration: underline;
 }
 
 .login-info,

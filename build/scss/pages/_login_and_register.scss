@@ -21,6 +21,13 @@
 .register-page {
 	background-color: $gray-200;
 	height: 100vh;
+	
+	a {
+		color: $white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 .login-info,
 .register-info,
