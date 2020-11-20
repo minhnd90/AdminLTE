@@ -13338,7 +13338,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
     display: none;
   }
   .sidebar-mini.sidebar-collapse .nav-sidebar .nav-link > *:not(.nav-icon) {
-    width: 0;
+    width: auto;
   }
   .sidebar-mini.sidebar-collapse .sidebar .user-panel > .info,
   .sidebar-mini.sidebar-collapse .nav-sidebar .nav-link > *:not(.nav-icon),
@@ -13467,7 +13467,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
     display: none;
   }
   .sidebar-mini-md.sidebar-collapse .nav-sidebar .nav-link > *:not(.nav-icon) {
-    width: 0;
+    width: auto;
   }
   .sidebar-mini-md.sidebar-collapse .sidebar .user-panel > .info,
   .sidebar-mini-md.sidebar-collapse .nav-sidebar .nav-link > *:not(.nav-icon),
