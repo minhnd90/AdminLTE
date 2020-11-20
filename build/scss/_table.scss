@@ -15,6 +15,9 @@
 	td {
 		vertical-align: middle !important;
 		white-space: nowrap;
+		max-width: 200px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	&:not(.table-dark) {
 		color: inherit;
