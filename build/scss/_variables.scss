@@ -36,7 +36,7 @@ $font-size-root: 1rem !default;
 
 // Sidebar
 $sidebar-width: 300px !default;
-$sidebar-padding-x: 0.5rem !default;
+$sidebar-padding-x: 0.3125rem !default;
 $sidebar-padding-y: 0.5rem !default;
 $sidebar-custom-height: 4rem !default;
 $sidebar-custom-height-lg: 6rem !default;
@@ -51,7 +51,7 @@ $boxed-layout-max-width: 1250px !default;
 $screen-header-collapse: map-get($grid-breakpoints, md) !default;
 
 // Body background (Affects main content background only)
-$main-bg: #e5e5e5 !default;
+$main-bg: #f5f6fa !default;
 
 // Content padding
 $content-padding-y: 0 !default;

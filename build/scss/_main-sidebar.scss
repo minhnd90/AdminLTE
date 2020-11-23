@@ -27,7 +27,7 @@
 	// All levels
 	.nav-item {
 		> .nav-link {
-			margin-bottom: 0.5rem;
+			margin-bottom: $nav-link-padding-x;
 
 			.right {
 				@include transition(transform $transition-fn $transition-speed);
