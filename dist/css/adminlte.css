@@ -21155,17 +21155,19 @@ html.maximized-card {
   color: #041a32;
 }
 
-.table thead th {
+.table th {
   border-bottom: 1px solid #dee2e6;
-}
-
-.table tbody + tbody {
-  border-top: 1px solid #dee2e6;
 }
 
 .table th,
 .table td {
   vertical-align: middle !important;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+.table tbody + tbody {
+  border-top: 1px solid #dee2e6;
 }
 
 .table:not(.table-dark) {
@@ -21294,6 +21296,7 @@ html.maximized-card {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: unset !important;
 }
 
 caption {
