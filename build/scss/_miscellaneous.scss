@@ -472,7 +472,7 @@ blockquote {
 .badge-btn {
 	font-weight: 400;
 	font-size: 0.75rem;
-	padding: .5rem;
+	padding: 0.5rem;
 }
 
 .badge-btn.badge-pill {
@@ -525,4 +525,7 @@ img {
 }
 .dt-buttons {
 	float: right;
+}
+[aria-label='Pagination'] .form-group {
+	position: relative;
 }

@@ -3,22 +3,20 @@
 //
 
 .table {
-	thead th {
+	th {
 		border-bottom: $table-border-width solid $table-border-color;
+	}
+
+	th,
+	td {
+		vertical-align: middle !important;
+		min-width: 200px;
 	}
 
 	tbody + tbody {
 		border-top: $table-border-width solid $table-border-color;
 	}
 
-	th,
-	td {
-		vertical-align: middle !important;
-		white-space: nowrap;
-		max-width: 200px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
 	&:not(.table-dark) {
 		color: inherit;
 	}
@@ -172,6 +170,10 @@
 
 .col-min {
 	width: 1%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: unset !important;
 }
 caption {
 	padding: $table-cell-padding;

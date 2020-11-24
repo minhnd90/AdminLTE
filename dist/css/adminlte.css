@@ -21166,10 +21166,6 @@ html.maximized-card {
 .table th,
 .table td {
   vertical-align: middle !important;
-  white-space: nowrap;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .table:not(.table-dark) {
@@ -21295,6 +21291,9 @@ html.maximized-card {
 
 .col-min {
   width: 1%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 caption {
@@ -23336,6 +23335,16 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   height: calc(2rem + 2px);
 }
 
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  margin-top: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  height: auto;
+  margin-top: -3px;
+}
+
 .select2-container--default.select2-container--open .select2-selection--single {
   border-color: #99c7f8;
 }
@@ -23350,26 +23359,15 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  padding-left: 0;
-  height: auto;
-  margin-top: -3px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .select2-container--default[dir='rtl'] .select2-selection--single .select2-selection__rendered {
   padding-right: 6px;
   padding-left: 20px;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 31px;
-  right: 6px;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow b {
-  margin-top: 0;
 }
 
 .select2-container--default .select2-dropdown .select2-search__field,
@@ -23381,6 +23379,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .select2-container--default .select2-search--inline .select2-search__field:focus {
   outline: none;
   border: 1px solid #99c7f8;
+}
+
+.select2-container--default .select2-selection__clear {
+  top: -2px;
 }
 
 .select2-container--default .select2-dropdown.select2-dropdown--below {
@@ -23425,6 +23427,12 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
   padding: 0 0.375rem 0.375rem;
   margin-bottom: -0.375rem;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  max-width: calc(100% - 30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline {
@@ -31061,7 +31069,7 @@ blockquote.quote-heavy-cyan h6 {
 .badge-btn {
   font-weight: 400;
   font-size: 0.75rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .badge-btn.badge-pill {
@@ -31120,6 +31128,10 @@ img {
 
 .dt-buttons {
   float: right;
+}
+
+[aria-label='Pagination'] .form-group {
+  position: relative;
 }
 
 @media print {
