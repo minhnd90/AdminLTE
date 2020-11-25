@@ -12132,6 +12132,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .nav-sidebar .nav-item > .nav-link {
   margin-bottom: 0.3125rem;
+  width: 100%;
 }
 
 .nav-sidebar .nav-item > .nav-link .right {
