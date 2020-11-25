@@ -155,6 +155,7 @@
 
 			a {
 				border-top: 3px solid transparent;
+				outline: none;
 
 				&:hover {
 					border-top: 3px solid $nav-tabs-border-color;

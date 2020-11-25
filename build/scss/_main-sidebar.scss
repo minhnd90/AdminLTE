@@ -68,6 +68,7 @@
 	// First Level
 	> .nav-item {
 		margin-bottom: 0;
+		width: 100%;
 
 		.nav-icon {
 			margin-left: 0.05rem;
@@ -146,7 +147,7 @@
 	}
 
 	.nav-link > *:not(.nav-icon) {
-		display: inline-block;
+		//display: inline-block;
 		margin: 0;
 	}
 }
