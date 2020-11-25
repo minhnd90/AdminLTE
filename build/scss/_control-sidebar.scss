@@ -75,6 +75,9 @@ body.text-sm {
 
 // Control sidebar open state
 .control-sidebar-open {
+	.content-wrapper {
+		margin-right: $control-sidebar-width;
+	}
 	.control-sidebar {
 		display: block;
 

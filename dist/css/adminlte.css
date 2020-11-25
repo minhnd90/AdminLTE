@@ -13812,6 +13812,10 @@ body.text-sm .control-sidebar {
   }
 }
 
+.control-sidebar-open .content-wrapper {
+  margin-right: 300px;
+}
+
 .control-sidebar-open .control-sidebar {
   display: block;
 }
@@ -23363,6 +23367,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .select2-container--default .select2-selection--single {
   border: 1px solid #ced4da;
+  border-radius: 0;
   padding: 0.46875rem 0.75rem;
   height: calc(2rem + 2px);
 }
@@ -23383,6 +23388,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .select2-container--default .select2-dropdown {
   border: 1px solid #ced4da;
+  border-radius: 0;
 }
 
 .select2-container--default .select2-results__option {
@@ -23450,6 +23456,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .select2-container--default .select2-selection--multiple {
   border: 1px solid #ced4da;
   min-height: calc(2rem + 2px);
+  border-radius: 0;
 }
 
 .select2-container--default .select2-selection--multiple:focus {

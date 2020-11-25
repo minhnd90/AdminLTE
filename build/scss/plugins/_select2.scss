@@ -15,7 +15,7 @@
 .select2-container--default {
 	.select2-selection--single {
 		border: $input-border-width solid $input-border-color;
-		//border-radius: $input-radius;
+		border-radius: $input-border-radius;
 		padding: ($input-padding-y * 1.25) $input-padding-x;
 		height: $input-height;
 
@@ -41,7 +41,7 @@
 
 	& .select2-dropdown {
 		border: $input-border-width solid $input-border-color;
-		//border-radius: $input-radius;
+		border-radius: $input-border-radius;
 	}
 
 	& .select2-results__option {
@@ -120,6 +120,7 @@
 		.select2-selection--multiple {
 			border: $input-border-width solid $input-border-color;
 			min-height: $input-height;
+			border-radius: $input-border-radius;
 
 			&:focus {
 				border-color: $input-focus-border-color;

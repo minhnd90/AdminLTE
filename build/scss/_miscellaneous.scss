@@ -473,6 +473,8 @@ blockquote {
 	font-weight: 400;
 	font-size: 0.75rem;
 	padding: 0.5rem;
+	pointer-events: none;
+	user-select: none;
 }
 
 .badge-btn.badge-pill {
