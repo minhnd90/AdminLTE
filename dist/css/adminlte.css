@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.5;
   color: inherit;
 }
 
@@ -402,25 +402,25 @@ h6, .h6 {
 .display-1 {
   font-size: 6rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .display-2 {
   font-size: 5.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .display-3 {
   font-size: 4.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 hr {
@@ -23197,7 +23197,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .content-wrapper.kanban .content-header + .content {
-  height: calc(100% - ((2 * 15px) + (1.8rem * 1.2)));
+  height: calc(100% - ((2 * 15px) + (1.8rem * 1.5)));
 }
 
 .content-wrapper.kanban .card .card-body {
@@ -31109,6 +31109,11 @@ blockquote.quote-heavy-cyan h6 {
   font-weight: 400;
   font-size: 0.75rem;
   padding: 0.5rem;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .badge-btn.badge-pill {
