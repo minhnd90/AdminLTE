@@ -35,7 +35,7 @@ $colors: map-merge(
 $font-size-root: 1rem !default;
 
 // Sidebar
-$sidebar-width: 300px !default;
+$sidebar-width: 250px !default;
 $sidebar-padding-x: 0.3125rem !default;
 $sidebar-padding-y: 0.5rem !default;
 $sidebar-custom-height: 4rem !default;
@@ -147,7 +147,7 @@ $sidebar-user-image-width: $sidebar-nav-icon-width + ($nav-link-padding-x / 2) !
 
 // CONTROL SIDEBAR
 // --------------------------------------------------------
-$control-sidebar-width: $sidebar-width !default;
+$control-sidebar-width: 300px !default;
 
 // Cards
 // --------------------------------------------------------

@@ -316,7 +316,7 @@
 											</div>
 										</form>
 										<!-- /Search form -->
-										
+
 										<!-- Data table control -->
 										<div class="table-control">
 											<div class="row">
@@ -1213,6 +1213,27 @@
 						body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
 					});
 				});
+			});
+			var CommonJs = {
+				/**
+				 * DataTableSizing
+				 */
+				DataTableSizing: function () {
+					const $table = $('#data_table');
+					$table.length > 0 &&
+						$table.find('th').each(function (index) {
+							$table.find(`tbody tr td:nth-child(${index + 1})`).attr('class', $(this).attr('class'));
+							$table.find(`tbody tr td:nth-child(${index + 1})`).attr('data-formatter', $(this).attr('data-formatter'));
+						});
+				},
+				FrontEndFunctionsNeedToReRun: function () {
+					$('.modal-dialog').draggable({ handle: '.modal-header', cursor: 'move' });
+					$('#data_table [data-toggle="tooltip"]').tooltip({ html: true, container: '#data_table_wrapper' });
+					CommonJs.DataTableSizing();
+				}
+			};
+			jQuery(function () {
+				CommonJs.FrontEndFunctionsNeedToReRun();
 			});
 		</script>
 	</body>

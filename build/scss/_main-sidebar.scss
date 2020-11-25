@@ -28,6 +28,7 @@
 	.nav-item {
 		> .nav-link {
 			margin-bottom: $nav-link-padding-x;
+			width: 100%;
 
 			.right {
 				@include transition(transform $transition-fn $transition-speed);
@@ -146,7 +147,7 @@
 	}
 
 	.nav-link > *:not(.nav-icon) {
-		display: inline-block;
+		//display: inline-block;
 		margin: 0;
 	}
 }
