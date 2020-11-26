@@ -13764,10 +13764,6 @@ html.control-sidebar-animate {
   z-index: -1;
 }
 
-.control-sidebar.storage--file {
-  margin-top: 3.21875rem;
-}
-
 .control-sidebar.storage--file .card-body {
   padding: 0.5rem;
 }
@@ -13776,7 +13772,7 @@ html.control-sidebar-animate {
   content: ':';
   display: block;
   position: absolute;
-  top: 33%;
+  top: 50%;
   left: 1px;
   border: 1px solid #adb5bd;
   font-size: 1rem;
