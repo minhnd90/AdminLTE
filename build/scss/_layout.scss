@@ -161,9 +161,10 @@ body,
 			position: fixed;
 			right: 0;
 			top: 0;
-			padding-top: 7px;
-			padding-bottom: 7px;
+			padding-top: $navbar-padding-y;
+			padding-bottom: $navbar-padding-y;
 			z-index: $zindex-main-header + 1;
+			border-bottom: $main-header-bottom-border;
 		}
 	}
 

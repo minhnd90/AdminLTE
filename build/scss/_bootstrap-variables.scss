@@ -619,7 +619,7 @@ $navbar-nav-link-padding-x: 1rem !default;
 
 $navbar-brand-font-size: $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-$nav-link-height: ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
+$nav-link-height: ( $font-size-root * $line-height-base + $nav-link-padding-y * 2) !default;
 $navbar-brand-height: $navbar-brand-font-size * $line-height-base !default;
 $navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
 
@@ -892,8 +892,8 @@ $carousel-transition: transform 0.6s ease !default;
 
 $close-font-size: $font-size-base * 1.5 !default;
 $close-font-weight: $font-weight-bold !default;
-$close-color: $black !default;
-$close-text-shadow: 0 1px 0 $white !default;
+$close-color: $white !default;
+$close-text-shadow: 0 1px 0 $black !default;
 
 // Code
 
