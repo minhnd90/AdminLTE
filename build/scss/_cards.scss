@@ -94,9 +94,20 @@
 			> .card-header {
 				border-bottom: 0;
 
+				.nav-tabs {
+					flex-wrap: nowrap;
+				}
+
 				.nav-item {
+					.nav-link {
+						margin-left: -1px;
+						padding-left: 1rem;
+						padding-right: 1rem;
+					}
+
 					&:first-child .nav-link {
 						border-left-color: transparent;
+						margin-left: 0;
 					}
 				}
 			}
