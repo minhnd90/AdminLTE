@@ -114,7 +114,13 @@
 				}
 			}
 		}
-		&:not(.card-outline) {}
+		&:not(.card-outline) {
+			.nav-item {
+				&:first-child .nav-link {
+					margin-left: 0;
+				}
+			}
+		}
 
 		&.card-outline {
 			.nav-item {

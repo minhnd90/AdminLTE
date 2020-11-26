@@ -19698,6 +19698,10 @@ input[type='number'] {
   margin-left: 0;
 }
 
+.card.card-tabs:not(.card-outline) .nav-item:first-child .nav-link {
+  margin-left: 0;
+}
+
 .card.card-tabs.card-outline .nav-item {
   border-bottom: 0;
 }

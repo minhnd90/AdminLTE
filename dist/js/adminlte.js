@@ -676,9 +676,9 @@
   });
   jQuery(function () {
     var $body = $__default['default']('body');
-    var opened = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) || $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE);
-
-    ControlSidebar._jQueryInterface.call($__default['default'](this), opened ? 'show' : 'collapse');
+    var hasSidebar = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN);
+    var opened = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE);
+    hasSidebar && ControlSidebar._jQueryInterface.call($__default['default'](this), opened ? 'show' : 'collapse');
   });
   /**
    * jQuery API

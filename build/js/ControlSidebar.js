@@ -292,8 +292,9 @@ $(document).on('click', SELECTOR_DATA_TOGGLE, function (event) {
 })
 jQuery(function () {
 	const $body = $('body')
-	const opened = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN) || $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE);
-	ControlSidebar._jQueryInterface.call($(this), opened ? 'show' : 'collapse')
+	const hasSidebar = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_OPEN)
+	const opened = $body.hasClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE)
+	hasSidebar && ControlSidebar._jQueryInterface.call($(this), opened ? 'show' : 'collapse')
 })
 
 /**
