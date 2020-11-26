@@ -12232,6 +12232,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .nav-sidebar .nav-link > *:not(.nav-icon) {
+  display: inline-block;
   margin: 0;
 }
 
