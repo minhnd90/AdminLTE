@@ -11749,11 +11749,11 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .content-header {
-  padding: 1rem 0.5rem;
+  padding: 0.75rem 0.5rem;
 }
 
 .text-sm .content-header {
-  padding: 0.75rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .content-header h1 {
@@ -13914,7 +13914,6 @@ body.text-sm .control-sidebar {
 .control-sidebar-light {
   color: #4b545c;
   background-color: #fff;
-  border-left: 1px solid #dee2e6;
 }
 
 .text-sm .dropdown-menu {

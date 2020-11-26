@@ -588,10 +588,10 @@ body:not(.sidebar-mini-md) {
 }
 
 .content-header {
-	padding: ($content-padding-x * 2) $content-padding-x;
+	padding: ($content-padding-x * 1.5) $content-padding-x;
 
 	.text-sm & {
-		padding: ($content-padding-x * 1.5) $content-padding-x;
+		padding: $content-padding-x;
 	}
 
 	h1 {

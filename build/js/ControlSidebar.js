@@ -176,44 +176,46 @@ class ControlSidebar {
 
 		const $controlSidebar = $(SELECTOR_CONTROL_SIDEBAR)
 		const $controlsidebarContent = $(`${SELECTOR_CONTROL_SIDEBAR} ${SELECTOR_CONTROL_SIDEBAR_CONTENT}`)
-		const offsetContent = $controlsidebarContent.position().top
+		const offsetBody = $('.content').position().top
+		const offsetContent = $controlsidebarContent.position().top + offsetBody
+		const top = heights.header - positions.top
+
 		if (positions.top === 0 && positions.bottom === 0) {
 			$controlSidebar.css({
 				bottom: heights.footer,
-				top: heights.header,
-				height: heights.window - (heights.header + heights.footer)
+				top: heights.header + offsetBody,
+				height: heights.window - (heights.header + heights.footer) - offsetBody
 			})
 			$controlsidebarContent.css({ height: heights.window - (heights.header + heights.footer) - offsetContent })
 		} else if (positions.bottom <= heights.footer) {
 			if (footerFixed === false) {
-				const top = heights.header - positions.top
 				$controlSidebar.css({
 					bottom: heights.footer - positions.bottom,
-					top: top >= 0 ? top : 0,
-					height: heights.window - (heights.footer - positions.bottom)
+					top: (top >= 0 ? top : 0) + offsetBody,
+					height: heights.window - (heights.footer - positions.bottom) - offsetBody
 				})
 				$controlsidebarContent.css({ height: heights.window - (heights.footer - positions.bottom) - offsetContent })
 			} else {
-				$controlSidebar.css('bottom', heights.footer)
+				$controlSidebar.css({ bottom: heights.footer })
 			}
 		} else if (positions.top <= heights.header) {
 			if (navbarFixed === false) {
 				$controlSidebar.css({
-					top: heights.header - positions.top,
-					height: heights.window - (heights.header - positions.top)
+					top: heights.header - positions.top + offsetBody,
+					height: heights.window - (heights.header - positions.top) - offsetBody
 				})
 				$controlsidebarContent.css({ height: heights.window - (heights.header - positions.top) - offsetContent })
 			} else {
-				$controlSidebar.css({ top: heights.header })
+				$controlSidebar.css({ top: heights.header + offsetBody })
 			}
 		} else if (navbarFixed === false) {
 			$controlSidebar.css({
-				top: 0,
-				height: heights.window
+				top: offsetBody,
+				height: heights.window - offsetBody
 			})
-			$controlsidebarContent.css({ height: heights.window - offsetContent })
+			$controlsidebarContent.css({ height: heights.window - offsetContent - offsetBody })
 		} else {
-			$controlSidebar.css({ top: heights.header })
+			$controlSidebar.css({ top: heights.header + offsetBody })
 		}
 	}
 

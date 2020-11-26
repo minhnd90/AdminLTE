@@ -549,56 +549,59 @@
       var footerFixed = ($body.hasClass(CLASS_NAME_FOOTER_FIXED) || $body.hasClass(CLASS_NAME_FOOTER_SM_FIXED) || $body.hasClass(CLASS_NAME_FOOTER_MD_FIXED) || $body.hasClass(CLASS_NAME_FOOTER_LG_FIXED) || $body.hasClass(CLASS_NAME_FOOTER_XL_FIXED)) && $__default['default'](SELECTOR_FOOTER).css('position') === 'fixed';
       var $controlSidebar = $__default['default'](SELECTOR_CONTROL_SIDEBAR);
       var $controlsidebarContent = $__default['default'](SELECTOR_CONTROL_SIDEBAR + " " + SELECTOR_CONTROL_SIDEBAR_CONTENT);
-      var offsetContent = $controlsidebarContent.position().top;
+      var offsetBody = $__default['default']('.content').position().top;
+      var offsetContent = $controlsidebarContent.position().top + offsetBody;
+      var top = heights.header - positions.top;
 
       if (positions.top === 0 && positions.bottom === 0) {
         $controlSidebar.css({
           bottom: heights.footer,
-          top: heights.header,
-          height: heights.window - (heights.header + heights.footer)
+          top: heights.header + offsetBody,
+          height: heights.window - (heights.header + heights.footer) - offsetBody
         });
         $controlsidebarContent.css({
           height: heights.window - (heights.header + heights.footer) - offsetContent
         });
       } else if (positions.bottom <= heights.footer) {
         if (footerFixed === false) {
-          var top = heights.header - positions.top;
           $controlSidebar.css({
             bottom: heights.footer - positions.bottom,
-            top: top >= 0 ? top : 0,
-            height: heights.window - (heights.footer - positions.bottom)
+            top: (top >= 0 ? top : 0) + offsetBody,
+            height: heights.window - (heights.footer - positions.bottom) - offsetBody
           });
           $controlsidebarContent.css({
             height: heights.window - (heights.footer - positions.bottom) - offsetContent
           });
         } else {
-          $controlSidebar.css('bottom', heights.footer);
+          $controlSidebar.css({
+            bottom: heights.footer
+          });
         }
       } else if (positions.top <= heights.header) {
         if (navbarFixed === false) {
           $controlSidebar.css({
-            top: heights.header - positions.top,
-            height: heights.window - (heights.header - positions.top)
+            top: heights.header - positions.top + offsetBody,
+            height: heights.window - (heights.header - positions.top) - offsetBody
           });
           $controlsidebarContent.css({
             height: heights.window - (heights.header - positions.top) - offsetContent
           });
         } else {
           $controlSidebar.css({
-            top: heights.header
+            top: heights.header + offsetBody
           });
         }
       } else if (navbarFixed === false) {
         $controlSidebar.css({
-          top: 0,
-          height: heights.window
+          top: offsetBody,
+          height: heights.window - offsetBody
         });
         $controlsidebarContent.css({
-          height: heights.window - offsetContent
+          height: heights.window - offsetContent - offsetBody
         });
       } else {
         $controlSidebar.css({
-          top: heights.header
+          top: heights.header + offsetBody
         });
       }
     };
