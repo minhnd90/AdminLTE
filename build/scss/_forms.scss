@@ -413,17 +413,20 @@ body.text-sm {
 .invalid-feedback {
 	text-align: left;
 }
+
 .col-form-label {
 	text-align: right;
-}
-.input-required {
-	&::after {
-		display: inline;
-		content: '(*)';
-		color: red;
-		font-size: 0.75rem;
-		margin-left: 0.25rem;
-		vertical-align: top;
+
+	&.input-required {
+		padding-right: 1rem;
+
+		&::after {
+			content: '(*)';
+			color: red;
+			font-size: 0.75rem;
+			position: absolute;
+			right: 0;
+		}
 	}
 }
 /* Chrome, Safari, Edge, Opera */

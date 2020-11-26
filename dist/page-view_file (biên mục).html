@@ -278,38 +278,94 @@
 			<aside class="control-sidebar control-sidebar-light storage--file">
 				<div class="card card-tabs">
 					<div class="card-header p-0 border-bottom-0">
-						<ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+						<ul class="nav nav-tabs" id="sidebarTab" role="tablist">
 							<li class="nav-item">
-								<a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Home</a>
+								<a class="nav-link active" id="docInfo-tab" data-toggle="pill" href="#docInfo" role="tab" aria-controls="docInfo" aria-selected="true">Thông tin tài liệu</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Profile</a>
+								<a class="nav-link" id="docNote-tab" data-toggle="pill" href="#docNote" role="tab" aria-controls="docNote" aria-selected="false">Ghi chú</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Messages</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Settings</a>
+								<a class="nav-link" id="docHistory-tab" data-toggle="pill" href="#docHistory" role="tab" aria-controls="docHistory" aria-selected="false">Lịch sử thay đổi nội dung</a>
 							</li>
 						</ul>
 					</div>
 					<div class="card-body control-sidebar-content">
-						<div class="tab-content" id="custom-tabs-four-tabContent">
-							<div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit.
-								Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur.
+						<div class="tab-content" id="sidebarTabContent">
+							<div class="tab-pane fade show active" id="docInfo" role="tabpanel" aria-labelledby="docInfo-tab">
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required" for="AccountName" title="Tên tài khoản">Tên tài khoản</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Tên tài khoản" maxlength="50" type="text" data-val="true" data-val-maxlength="Tên tài khoản không được quá 50 ký tự" data-val-maxlength-max="50" data-val-regex="Chỉ sử dụng các chữ cái (a-z), số (0-9) và dấu chấm(.)" data-val-regex-pattern="^[0-9a-zA-Z\.]+$" data-val-required="Tên tài khoản không được để trống" id="AccountName" name="AccountName" value="" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="AccountName" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required" for="Password">Mật khẩu</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Mật khẩu" type="password" data-val="true" data-val-maxlength="The field Mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-minlength="Mật khẩu phải có ít nhất 6 ký tự" data-val-minlength-min="6" data-val-required="Mật khẩu không được để trống" id="Password" maxlength="250" name="Password" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required" for="ConfirmPassword">Nhập lại mật khẩu</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" data-val="true" data-val-equalto="Xác nhận mật khẩu chưa chính xác" data-val-equalto-other="*.Password" data-val-maxlength="The field Nhập lại mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-required="Nhập lại mật khẩu không được để trống" id="ConfirmPassword" maxlength="250" name="ConfirmPassword" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required" for="Name">Họ và tên</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Họ và tên" type="text" data-val="true" data-val-maxlength="Họ và tên không được quá 50 ký tự" data-val-maxlength-max="50" data-val-required="Họ và tên không được để trống" id="Name" maxlength="50" name="Name" value="" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required onlynumber" for="IdentityNumber">Số CMND/Hộ chiếu</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Số CMND/Hộ chiếu" type="text" data-val="true" data-val-maxlength="Số CMND/Hộ chiếu không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số CMND/Hộ chiếu không đúng định dạng" data-val-regex-pattern="^[0-9]+$" data-val-required="Số CMND/Hộ chiếu không được để trống" id="IdentityNumber" maxlength="20" name="IdentityNumber" value="" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate input-required" for="Email">Email</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-maxlength="Email không được quá 100 ký tự" data-val-maxlength-max="100" data-val-regex="Email chưa đúng định dạng. Vui lòng nhập email đúng định dạng như (@gmail.com, @abc.vn...)" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email không được để trống" id="Email" maxlength="100" name="Email" value="" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label text-truncate onlynumber" for="Phone">Số điện thoại</label>
+									<div class="col-sm-8">
+										<input class="form-control" placeholder="Số điện thoại" type="tel" maxlength="20" data-val="true" data-val-maxlength="Số điện thoại không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số điện thoại không đúng định dạng (10 hoặc 11 số)" data-val-regex-pattern="(^[0-9]{10}\b)|(^[0-9]{11}\b)" id="Phone" name="Phone" value="" />
+										<span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-4">
+									</div>
+									<div class="col-sm-8">
+										<button class="btn mb-2 btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
+										<button class="btn mb-2 btn-info"><i class="fas fa-fw fa-save mr-2"></i>Lưu tạm</button>
+									</div>
+								</div>
 							</div>
-							<div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
-								Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc
-								euismod pellentesque diam.
+							<div class="tab-pane fade" id="docNote" role="tabpanel" aria-labelledby="docNote-tab">
+								<div class="form-group">
+									<textarea class="form-control" rows="5" maxlength="250" placeholder="Ghi chú"></textarea>
+								</div>
+								<button class="btn btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
 							</div>
-							<div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+							<div class="tab-pane fade" id="docHistory" role="tabpanel" aria-labelledby="docHistory-tab">
 								Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet
 								sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
-							</div>
-							<div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-								Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent
-								imperdiet accumsan ex sit amet facilisis.
 							</div>
 						</div>
 					</div>
@@ -351,7 +407,7 @@
 			$(function () {
 				const resizeOptions = {
 					maxWidth: 700,
-					minWidth: 150,
+					minWidth: 200,
 					handles: 'w',
 					resize: function (event, ui) {
 						$('.content-wrapper').css({

@@ -110,7 +110,7 @@ body,
 		}
 	}
 
-	.layout-navbar-fixed & {
+	.layout-navbar-fixed:not(.layout-fixed) & {
 		.control-sidebar {
 			top: 0;
 		}

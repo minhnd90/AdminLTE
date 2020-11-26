@@ -90,7 +90,7 @@
 	}
 
 	&.card-tabs {
-		&:not(.card-outline) {
+		& {
 			> .card-header {
 				border-bottom: 0;
 
@@ -103,6 +103,8 @@
 						margin-left: -1px;
 						padding-left: 1rem;
 						padding-right: 1rem;
+						border-top: 0;
+						white-space: nowrap;
 					}
 
 					&:first-child .nav-link {
@@ -112,6 +114,7 @@
 				}
 			}
 		}
+		&:not(.card-outline) {}
 
 		&.card-outline {
 			.nav-item {
