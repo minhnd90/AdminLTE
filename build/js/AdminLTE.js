@@ -11,6 +11,7 @@ import SidebarSearch from './SidebarSearch'
 import Toasts from './Toasts'
 import TodoList from './TodoList'
 import Treeview from './Treeview'
+import './ScrollingTabs'
 
 export {
 	CardRefresh,

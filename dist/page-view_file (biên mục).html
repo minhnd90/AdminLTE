@@ -165,57 +165,402 @@
 					</div>
 					<!-- Sidebar Menu -->
 					<nav class="mt-2">
-						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-							<!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+						<ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="true">
 							<li class="nav-item menu-open">
 								<a href="#" class="nav-link text-uppercase active">
-									<i class="nav-icon far fa-file-alt"></i>
-									<span>Thu thập tài liệu<i class="right fas fa-angle-left"></i></span>
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Danh mục</span>
+									<i class="right fas fa-angle-left"></i>
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="#" class="nav-link active">
+										<a href="/Category" class="nav-link active">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Lập kế hoạch thu thập</span>
+											<span>Quản lý dữ liệu động</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/Agency" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt kế hoạch thu thập</span>
+											<span>Đơn vị</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/Department" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Thu thập tài liệu</span>
+											<span>Phòng ban</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/Position" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Biên mục tài liệu</span>
+											<span>Chức vụ</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/SercureLevel" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt tài liệu</span>
+											<span>Cấp độ bảo mật</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/ExpiryDate" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Lưu kho tài liệu</span>
+											<span>Thời hạn bảo quản</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Language" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Ngôn ngữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Categroy/Index/DM_Phong" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phông</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Profile" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Hồ sơ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/DocField" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Trường tin</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Doctype" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Loại tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_HopSo" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Hộp số</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_Kho" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Kho</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_MucLuc" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Mục lục</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_Phong" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phông</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/Test_NN" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Test ngôn ngữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/MD_ACV" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>123123</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/NNL" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nguồn nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/Kho 1.1" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Kho 1.1</span>
 										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link">
+								<a href="#" class="nav-link text-uppercase">
 									<i class="far fa-file-alt nav-icon"></i>
-									<span>Level 1</span>
+									<span>Kế hoạch thu nhập</span>
+									<i class="right fas fa-angle-left"></i>
 								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lập kế hoạch thu nhập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt kế hoạch thu nhập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Danh sách kế hoạch thu nhập</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Gửi kế hoạch thu nhập</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Nộp luu</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Danh sách hồ sơ tài liệu cơ quan nộp lưu</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Biên mục và lưu kho</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Biên mục hồ sơ tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt hồ sơ tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Kho lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Chỉnh lý và nâng cấp sau lưu kho</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Khai thác</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý độc giả</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý hồ sơ tài liệu được khai thác</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý yêu cầu khai thác</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt yêu cầu </span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Tiêu hủy tài liệu</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lập hồ sơ tiêu hủy</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phê duyệt</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thực hiện tiêu hủy</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Lưu và xem hồ sơ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nhật ký tiêu hủy</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Báo cáo</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC kho lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC theo phông</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC theo mục lục</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC theo hồ sơ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC theo tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>BC theo yêu cầu khai thác</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Tổng kiểm kê</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Quản trị hệ thống</span>
+									<i class="right fas fa-angle-left"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="/Team" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý nhóm người dùng</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/User" class="nav-link">
+											<i class="far fa-user nav-icon"></i>
+											<span>Quản lý người dùng</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/GroupPermission" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý nhóm quyền</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Role" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý vai trò</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Cấu hình tham số</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/CategoryType" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Cấu hình dữ liệu động</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Cấu hình loại tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Sao lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nhật ký hệ thống</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nhật ký người dùng</span>
+										</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
@@ -349,8 +694,7 @@
 									</div>
 								</div>
 								<div class="form-group row">
-									<div class="col-sm-4">
-									</div>
+									<div class="col-sm-4"></div>
 									<div class="col-sm-8">
 										<button class="btn mb-2 btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
 										<button class="btn mb-2 btn-info"><i class="fas fa-fw fa-save mr-2"></i>Lưu tạm</button>
@@ -413,9 +757,19 @@
 						$('.content-wrapper').css({
 							'margin-right': ui.size.width
 						});
+						$('.nav-tabs').scrollingTabs('refresh');
 					}
 				};
+				const scrollTabsOptions = {
+					cssClassLeftArrow: 'fas fa-angle-left',
+					cssClassRightArrow: 'fas fa-angle-right',
+					bootstrapVersion: 4,
+					scrollToTabEdge: true,
+					disableScrollArrowsOnFullyScrolled: true,
+					ignoreTabPanes: true
+				};
 				$('.control-sidebar').resizable(resizeOptions);
+				$('.nav-tabs').scrollingTabs(scrollTabsOptions);
 			});
 		</script>
 	</body>
