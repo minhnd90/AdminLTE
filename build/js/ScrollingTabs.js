@@ -1,6 +1,6 @@
 /**
  * jquery-bootstrap-scrolling-tabs
- * @version v2.2.1
+ * @version v2.6.1
  * @link https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs
  * @author Mike Jacobson <michaeljjacobson1@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -71,6 +71,35 @@
  *                          corresponds to that required tab property if
  *                          your property name is different than the
  *                          standard name (paneId, title, etc.)
+ *        tabsLiContent:
+ *                          optional string array used to define custom HTML
+ *                          for each tab's <li> element. Each entry is an HTML
+ *                          string defining the tab <li> element for the
+ *                          corresponding tab in the tabs array.
+ *                          The default for a tab is:
+ *                          '<li role="presentation" class=""></li>'
+ *                          So, for example, if you had 3 tabs and you needed
+ *                          a custom 'tooltip' attribute on each one, your
+ *                          tabsLiContent array might look like this:
+ *                            [
+ *                              '<li role="presentation" tooltip="Custom TT 1" class="custom-li"></li>',
+ *                              '<li role="presentation" tooltip="Custom TT 2" class="custom-li"></li>',
+ *                              '<li role="presentation" tooltip="Custom TT 3" class="custom-li"></li>'
+ *                            ]
+ *                          This plunk demonstrates its usage (in conjunction
+ *                          with tabsPostProcessors):
+ *                          http://plnkr.co/edit/ugJLMk7lmDCuZQziQ0k0
+ *        tabsPostProcessors:
+ *                          optional array of functions, each one associated
+ *                          with an entry in the tabs array. When a tab element
+ *                          has been created, its associated post-processor
+ *                          function will be called with two arguments: the
+ *                          newly created $li and $a jQuery elements for that tab.
+ *                          This allows you to, for example, attach a custom
+ *                          event listener to each anchor tag.
+ *                          This plunk demonstrates its usage (in conjunction
+ *                          with tabsLiContent):
+ *                          http://plnkr.co/edit/ugJLMk7lmDCuZQziQ0k0
  *        ignoreTabPanes:   relevant for data-driven tabs only--set to true if
  *                          you want the plugin to only touch the tabs
  *                          and to not generate the tab pane elements
@@ -147,11 +176,45 @@
  *                          default scrtabs-tab-scroll-arrow classes.
  *                          This plunk shows it working with svg icons:
  *                          http://plnkr.co/edit/2MdZCAnLyeU40shxaol3?p=preview
+ *
+ *                          When using this option, you can also mark a child
+ *                          element within the arrow content as the click target
+ *                          if you don't want the entire content to be
+ *                          clickable. You do that my adding the CSS class
+ *                          'scrtabs-click-target' to the element that should
+ *                          be clickable, like so:
+ *
+ *                           leftArrowContent: [
+ *                               '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left">',
+ *                               '  <button class="scrtabs-click-target" type="button">',
+ *                               '    <i class="custom-chevron-left"></i>',
+ *                               '  </button>',
+ *                               '</div>'
+ *                             ].join(''),
+ *                             rightArrowContent: [
+ *                               '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right">',
+ *                               '  <button class="scrtabs-click-target" type="button">',
+ *                               '    <i class="custom-chevron-right"></i>',
+ *                               '  </button>',
+ *                               '</div>'
+ *                             ].join('')
+ *
  *        enableRtlSupport:
  *                          set to true if you want your site to support
  *                          right-to-left languages. If true, the plugin will
  *                          check the page's <html> tag for attribute dir="rtl"
  *                          and will adjust its behavior accordingly.
+ *        handleDelayedScrollbar:
+ *                          set to true if you experience a situation where the
+ *                          right scroll arrow wraps to the next line due to a
+ *                          vertical scrollbar coming into existence on the page
+ *                          after the plugin already calculated its width without
+ *                          a scrollbar present. This would occur if, for example,
+ *                          the bulk of the page's content loaded after a delay, 
+ *                          and only then did a vertical scrollbar become necessary.
+ *                          It would also occur if a vertical scrollbar only appeared 
+ *                          on selection of a particular tab that had more content 
+ *                          than the default tab.
  *        bootstrapVersion:
  *                          set to 4 if you're using Boostrap 4. Default is 3.
  *                          Bootstrap 4 handles some things differently than 3
@@ -232,7 +295,7 @@
  *
  */
 
-(function ($, window) {
+; (function ($, window) {
     'use strict';
     /* jshint unused:false */
 
@@ -246,16 +309,19 @@
 
         DATA_KEY_DDMENU_MODIFIED: 'scrtabsddmenumodified',
         DATA_KEY_IS_MOUSEDOWN: 'scrtabsismousedown',
+        DATA_KEY_BOOTSTRAP_TAB: 'bs.tab',
 
         CSS_CLASSES: {
             BOOTSTRAP4: 'scrtabs-bootstrap4',
             RTL: 'scrtabs-rtl',
+            SCROLL_ARROW_CLICK_TARGET: 'scrtabs-click-target',
             SCROLL_ARROW_DISABLE: 'scrtabs-disable',
+            SCROLL_ARROW_WITH_CLICK_TARGET: 'scrtabs-with-click-target'
         },
 
         SLIDE_DIRECTION: {
             LEFT: 1,
-            RIGHT: 2,
+            RIGHT: 2
         },
 
         EVENTS: {
@@ -269,8 +335,8 @@
             TOUCH_END: 'touchend.scrtabs',
             TOUCH_MOVE: 'touchmove.scrtabs',
             TOUCH_START: 'touchstart.scrtabs',
-            WINDOW_RESIZE: 'resize.scrtabs',
-        },
+            WINDOW_RESIZE: 'resize.scrtabs'
+        }
     };
 
     // smartresize from Paul Irish (debounced window resize)
@@ -279,8 +345,7 @@
             var timeout;
 
             return function debounced() {
-                var obj = this,
-                    args = arguments;
+                var obj = this, args = arguments;
                 function delayed() {
                     if (!execAsap) {
                         func.apply(obj, args);
@@ -299,19 +364,18 @@
         };
         $.fn[sr] = function (fn, customEventName) {
             var eventName = customEventName || CONSTANTS.EVENTS.WINDOW_RESIZE;
-            return fn ? this.on(eventName, debounce(fn)) : this.trigger(sr);
+            return fn ? this.bind(eventName, debounce(fn)) : this.trigger(sr);
         };
+
     })('smartresizeScrtabs');
 
     /* ***********************************************************************************
      * ElementsHandler - Class that each instance of ScrollingTabsControl will instantiate
      * **********************************************************************************/
-    class ElementsHandler {
-        constructor(scrollingTabsControl) {
-            var ehd = this;
+    function ElementsHandler(scrollingTabsControl) {
+        var ehd = this;
 
-            ehd.stc = scrollingTabsControl;
-        }
+        ehd.stc = scrollingTabsControl;
     }
 
     // ElementsHandler prototype methods
@@ -319,7 +383,7 @@
         p.initElements = function (options) {
             var ehd = this;
 
-            ehd.setElementReferences();
+            ehd.setElementReferences(options);
             ehd.setEventListeners(options);
         };
 
@@ -367,10 +431,7 @@
                     stc.movableContainerLeftPos = newLeftPos;
 
                     var leftOrRight = stc.rtl ? 'right' : 'left';
-                    stc.$movableContainer.css(
-                        leftOrRight,
-                        smv.getMovableContainerCssLeftVal()
-                    );
+                    stc.$movableContainer.css(leftOrRight, smv.getMovableContainerCssLeftVal());
                     smv.refreshScrollArrowsDisabledState();
                 });
         };
@@ -381,7 +442,7 @@
                 smv = stc.scrollMovement,
                 scrollArrowsWereVisible = stc.scrollArrowsVisible,
                 actionsTaken = {
-                    didScrollToActiveTab: false,
+                    didScrollToActiveTab: false
                 },
                 isPerformingSlideAnim = false,
                 minPos;
@@ -399,7 +460,7 @@
                 minPos = smv.getMinPos();
 
                 isPerformingSlideAnim = smv.scrollToActiveTab({
-                    isOnWindowResize: true,
+                    isOnWindowResize: true
                 });
 
                 if (!isPerformingSlideAnim) {
@@ -417,6 +478,7 @@
                 }
 
                 actionsTaken.didScrollToActiveTab = true;
+
             } else if (scrollArrowsWereVisible) {
                 // scroll arrows went away after resize, so position movable container at 0
                 stc.movableContainerLeftPos = 0;
@@ -426,12 +488,14 @@
             return actionsTaken;
         };
 
-        p.setElementReferences = function () {
+        p.setElementReferences = function (settings) {
             var ehd = this,
                 stc = ehd.stc,
                 $tabsContainer = stc.$tabsContainer,
                 $leftArrow,
-                $rightArrow;
+                $rightArrow,
+                $leftArrowClickTarget,
+                $rightArrowClickTarget;
 
             stc.isNavPills = false;
 
@@ -443,15 +507,32 @@
                 $tabsContainer.addClass(CONSTANTS.CSS_CLASSES.BOOTSTRAP4);
             }
 
-            stc.$fixedContainer = $tabsContainer.find(
-                '.scrtabs-tabs-fixed-container'
-            );
+            stc.$fixedContainer = $tabsContainer.find('.scrtabs-tabs-fixed-container');
             $leftArrow = stc.$fixedContainer.prev();
             $rightArrow = stc.$fixedContainer.next();
 
-            stc.$movableContainer = $tabsContainer.find(
-                '.scrtabs-tabs-movable-container'
-            );
+            // if we have custom arrow content, we might have a click target defined
+            if (settings.leftArrowContent) {
+                $leftArrowClickTarget = $leftArrow.find('.' + CONSTANTS.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET);
+            }
+
+            if (settings.rightArrowContent) {
+                $rightArrowClickTarget = $rightArrow.find('.' + CONSTANTS.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET);
+            }
+
+            if ($leftArrowClickTarget && $leftArrowClickTarget.length) {
+                $leftArrow.addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET);
+            } else {
+                $leftArrowClickTarget = $leftArrow;
+            }
+
+            if ($rightArrowClickTarget && $rightArrowClickTarget.length) {
+                $rightArrow.addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET);
+            } else {
+                $rightArrowClickTarget = $rightArrow;
+            }
+
+            stc.$movableContainer = $tabsContainer.find('.scrtabs-tabs-movable-container');
             stc.$tabsUl = $tabsContainer.find('.nav-tabs');
 
             // check for pills
@@ -466,7 +547,9 @@
             stc.$tabsLiCollection = stc.$tabsUl.find('> li');
 
             stc.$slideLeftArrow = stc.reverseScroll ? $leftArrow : $rightArrow;
+            stc.$slideLeftArrowClickTarget = stc.reverseScroll ? $leftArrowClickTarget : $rightArrowClickTarget;
             stc.$slideRightArrow = stc.reverseScroll ? $rightArrow : $leftArrow;
+            stc.$slideRightArrowClickTarget = stc.reverseScroll ? $rightArrowClickTarget : $leftArrowClickTarget;
             stc.$scrollArrows = stc.$slideLeftArrow.add(stc.$slideRightArrow);
 
             stc.$win = $(window);
@@ -477,8 +560,7 @@
                 stc = ehd.stc;
 
             stc.winWidth = stc.$win.width();
-            stc.scrollArrowsCombinedWidth =
-                stc.$slideLeftArrow.outerWidth() + stc.$slideRightArrow.outerWidth();
+            stc.scrollArrowsCombinedWidth = stc.$slideLeftArrow.outerWidth() + stc.$slideRightArrow.outerWidth();
 
             ehd.setFixedContainerWidth();
             ehd.setMovableContainerWidth();
@@ -495,29 +577,17 @@
                 ehd.listenForTouchEvents();
             }
 
-            stc.$slideLeftArrow
+            stc.$slideLeftArrowClickTarget
                 .off('.scrtabs')
-                .on(ev.MOUSEDOWN, function (e) {
-                    evh.handleMousedownOnSlideMovContainerLeftArrow.call(evh, e);
-                })
-                .on(ev.MOUSEUP, function (e) {
-                    evh.handleMouseupOnSlideMovContainerLeftArrow.call(evh, e);
-                })
-                .on(ev.CLICK, function (e) {
-                    evh.handleClickOnSlideMovContainerLeftArrow.call(evh, e);
-                });
+                .on(ev.MOUSEDOWN, function (e) { evh.handleMousedownOnSlideMovContainerLeftArrow.call(evh, e); })
+                .on(ev.MOUSEUP, function (e) { evh.handleMouseupOnSlideMovContainerLeftArrow.call(evh, e); })
+                .on(ev.CLICK, function (e) { evh.handleClickOnSlideMovContainerLeftArrow.call(evh, e); });
 
-            stc.$slideRightArrow
+            stc.$slideRightArrowClickTarget
                 .off('.scrtabs')
-                .on(ev.MOUSEDOWN, function (e) {
-                    evh.handleMousedownOnSlideMovContainerRightArrow.call(evh, e);
-                })
-                .on(ev.MOUSEUP, function (e) {
-                    evh.handleMouseupOnSlideMovContainerRightArrow.call(evh, e);
-                })
-                .on(ev.CLICK, function (e) {
-                    evh.handleClickOnSlideMovContainerRightArrow.call(evh, e);
-                });
+                .on(ev.MOUSEDOWN, function (e) { evh.handleMousedownOnSlideMovContainerRightArrow.call(evh, e); })
+                .on(ev.MOUSEUP, function (e) { evh.handleMouseupOnSlideMovContainerRightArrow.call(evh, e); })
+                .on(ev.CLICK, function (e) { evh.handleClickOnSlideMovContainerRightArrow.call(evh, e); });
 
             if (stc.tabClickHandler) {
                 stc.$tabsLiCollection
@@ -526,14 +596,41 @@
                     .on(ev.CLICK, stc.tabClickHandler);
             }
 
-            stc.$win.off(resizeEventName).smartresizeScrtabs(function (e) {
-                evh.handleWindowResize.call(evh, e);
-            }, resizeEventName);
+            if (settings.handleDelayedScrollbar) {
+                ehd.listenForDelayedScrollbar();
+            }
 
-            $('body').on(
-                CONSTANTS.EVENTS.FORCE_REFRESH,
-                stc.elementsHandler.refreshAllElementSizes.bind(stc.elementsHandler)
-            );
+            stc.$win
+                .off(resizeEventName)
+                .smartresizeScrtabs(function (e) { evh.handleWindowResize.call(evh, e); }, resizeEventName);
+
+            $('body').on(CONSTANTS.EVENTS.FORCE_REFRESH, stc.elementsHandler.refreshAllElementSizes.bind(stc.elementsHandler));
+        };
+
+        p.listenForDelayedScrollbar = function () {
+            var iframe = document.createElement('iframe');
+            iframe.id = "scrtabs-scrollbar-resize-listener";
+            iframe.style.cssText = 'height: 0; background-color: transparent; margin: 0; padding: 0; overflow: hidden; border-width: 0; position: absolute; width: 100%;';
+            iframe.onload = function () {
+                var timeout;
+
+                function handleResize() {
+                    try {
+                        $(window).trigger('resize');
+                        timeout = null;
+                    } catch (e) { }
+                }
+
+                iframe.contentWindow.addEventListener('resize', function () {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                    }
+
+                    timeout = setTimeout(handleResize, 100);
+                });
+            };
+
+            document.body.appendChild(iframe);
         };
 
         p.setFixedContainerWidth = function () {
@@ -545,9 +642,7 @@
              * It solves problem with rounding by jQuery.outerWidth
              * If we have real width 100.5 px, jQuery.outerWidth returns us 101 px and we get layout's fail
              */
-            stc.fixedContainerWidth =
-                tabsContainerRect.width ||
-                tabsContainerRect.right - tabsContainerRect.left;
+            stc.fixedContainerWidth = tabsContainerRect.width || (tabsContainerRect.right - tabsContainerRect.left);
             stc.fixedContainerWidth = stc.fixedContainerWidth * stc.widthMultiplier;
 
             stc.$fixedContainer.width(stc.fixedContainerWidth);
@@ -564,9 +659,7 @@
             var ehd = this,
                 stc = ehd.stc;
 
-            stc.$fixedContainer.width(
-                stc.fixedContainerWidth - stc.scrollArrowsCombinedWidth
-            );
+            stc.$fixedContainer.width(stc.fixedContainerWidth - stc.scrollArrowsCombinedWidth);
         };
 
         p.setMovableContainerWidth = function () {
@@ -577,18 +670,16 @@
             stc.movableContainerWidth = 0;
 
             if ($tabLi.length) {
+
                 $tabLi.each(function () {
                     var $li = $(this),
                         totalMargin = 0;
 
-                    if (stc.isNavPills) {
-                        // pills have a margin-left, tabs have no margin
-                        totalMargin =
-                            parseInt($li.css('margin-left'), 10) +
-                            parseInt($li.css('margin-right'), 10);
+                    if (stc.isNavPills) { // pills have a margin-left, tabs have no margin
+                        totalMargin = parseInt($li.css('margin-left'), 10) + parseInt($li.css('margin-right'), 10);
                     }
 
-                    stc.movableContainerWidth += $li.outerWidth() + totalMargin;
+                    stc.movableContainerWidth += ($li.outerWidth() + totalMargin);
                 });
 
                 stc.movableContainerWidth += 1;
@@ -624,17 +715,16 @@
                 ehd.setFixedContainerWidthForHiddenScrollArrows();
             }
         };
-    })(ElementsHandler.prototype);
+
+    }(ElementsHandler.prototype));
 
     /* ***********************************************************************************
      * EventHandlers - Class that each instance of ScrollingTabsControl will instantiate
      * **********************************************************************************/
-    class EventHandlers {
-        constructor(scrollingTabsControl) {
-            var evh = this;
+    function EventHandlers(scrollingTabsControl) {
+        var evh = this;
 
-            evh.stc = scrollingTabsControl;
-        }
+        evh.stc = scrollingTabsControl;
     }
 
     // prototype methods
@@ -657,7 +747,7 @@
             var evh = this,
                 stc = evh.stc;
 
-            stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
+            stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
             stc.scrollMovement.continueSlideMovableContainerLeft();
         };
 
@@ -665,7 +755,7 @@
             var evh = this,
                 stc = evh.stc;
 
-            stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
+            stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
             stc.scrollMovement.continueSlideMovableContainerRight();
         };
 
@@ -673,14 +763,14 @@
             var evh = this,
                 stc = evh.stc;
 
-            stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
+            stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
         };
 
         p.handleMouseupOnSlideMovContainerRightArrow = function () {
             var evh = this,
                 stc = evh.stc;
 
-            stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
+            stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
         };
 
         p.handleWindowResize = function () {
@@ -695,35 +785,32 @@
             stc.winWidth = newWinWidth;
             stc.elementsHandler.refreshAllElementSizes();
         };
-    })(EventHandlers.prototype);
+
+    }(EventHandlers.prototype));
 
     /* ***********************************************************************************
      * ScrollMovement - Class that each instance of ScrollingTabsControl will instantiate
      * **********************************************************************************/
-    class ScrollMovement {
-        constructor(scrollingTabsControl) {
-            var smv = this;
+    function ScrollMovement(scrollingTabsControl) {
+        var smv = this;
 
-            smv.stc = scrollingTabsControl;
-        }
+        smv.stc = scrollingTabsControl;
     }
 
     // prototype methods
     (function (p) {
+
         p.continueSlideMovableContainerLeft = function () {
             var smv = this,
                 stc = smv.stc;
 
             setTimeout(function () {
-                if (
-                    stc.movableContainerLeftPos <= smv.getMinPos() ||
-                    !stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)
-                ) {
+                if (stc.movableContainerLeftPos <= smv.getMinPos() ||
+                    !stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
                     return;
                 }
 
-                if (!smv.incrementMovableContainerLeft()) {
-                    // haven't reached max left
+                if (!smv.incrementMovableContainerLeft()) { // haven't reached max left
                     smv.continueSlideMovableContainerLeft();
                 }
             }, CONSTANTS.CONTINUOUS_SCROLLING_TIMEOUT_INTERVAL);
@@ -734,15 +821,12 @@
                 stc = smv.stc;
 
             setTimeout(function () {
-                if (
-                    stc.movableContainerLeftPos >= 0 ||
-                    !stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)
-                ) {
+                if (stc.movableContainerLeftPos >= 0 ||
+                    !stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
                     return;
                 }
 
-                if (!smv.incrementMovableContainerRight()) {
-                    // haven't reached max right
+                if (!smv.incrementMovableContainerRight()) { // haven't reached max right
                     smv.continueSlideMovableContainerRight();
                 }
             }, CONSTANTS.CONTINUOUS_SCROLLING_TIMEOUT_INTERVAL);
@@ -752,8 +836,7 @@
             var smv = this,
                 stc = smv.stc;
 
-            stc.movableContainerLeftPos -=
-                stc.fixedContainerWidth / CONSTANTS.SCROLL_OFFSET_FRACTION;
+            stc.movableContainerLeftPos -= (stc.fixedContainerWidth / CONSTANTS.SCROLL_OFFSET_FRACTION);
             if (stc.movableContainerLeftPos < minPos) {
                 stc.movableContainerLeftPos = minPos;
             } else if (stc.scrollToTabEdge) {
@@ -795,9 +878,7 @@
                 return;
             }
 
-            stc.$slideLeftArrow.removeClass(
-                CONSTANTS.CSS_CLASSES.SCROLL_ARROW_DISABLE
-            );
+            stc.$slideLeftArrow.removeClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_DISABLE);
         };
 
         p.enableSlideRightArrow = function () {
@@ -815,14 +896,14 @@
             var smv = this,
                 stc = smv.stc;
 
-            return stc.scrollArrowsVisible ? stc.fixedContainerWidth - stc.movableContainerWidth - stc.scrollArrowsCombinedWidth : 0;
+            return stc.scrollArrowsVisible ? (stc.fixedContainerWidth - stc.movableContainerWidth - stc.scrollArrowsCombinedWidth) : 0;
         };
 
         p.getMovableContainerCssLeftVal = function () {
             var smv = this,
                 stc = smv.stc;
 
-            return stc.movableContainerLeftPos === 0 ? '0' : stc.movableContainerLeftPos + 'px';
+            return (stc.movableContainerLeftPos === 0) ? '0' : stc.movableContainerLeftPos + 'px';
         };
 
         p.incrementMovableContainerLeft = function () {
@@ -835,7 +916,7 @@
             smv.enableSlideRightArrow();
 
             // return true if we're fully left, false otherwise
-            return stc.movableContainerLeftPos === minPos;
+            return (stc.movableContainerLeftPos === minPos);
         };
 
         p.incrementMovableContainerRight = function (minPos) {
@@ -846,15 +927,12 @@
             if (minPos) {
                 stc.movableContainerLeftPos = minPos;
             } else {
-                stc.movableContainerLeftPos +=
-                    stc.fixedContainerWidth / CONSTANTS.SCROLL_OFFSET_FRACTION;
+                stc.movableContainerLeftPos += (stc.fixedContainerWidth / CONSTANTS.SCROLL_OFFSET_FRACTION);
 
                 if (stc.movableContainerLeftPos > 0) {
                     stc.movableContainerLeftPos = 0;
                 } else if (stc.scrollToTabEdge) {
-                    smv.setMovableContainerLeftPosToTabEdge(
-                        CONSTANTS.SLIDE_DIRECTION.RIGHT
-                    );
+                    smv.setMovableContainerLeftPosToTabEdge(CONSTANTS.SLIDE_DIRECTION.RIGHT);
                 }
             }
 
@@ -863,7 +941,7 @@
 
             // return true if we're fully right, false otherwise
             // left pos of 0 is the movable container's max position (farthest right)
-            return stc.movableContainerLeftPos === 0;
+            return (stc.movableContainerLeftPos === 0);
         };
 
         p.refreshScrollArrowsDisabledState = function () {
@@ -874,15 +952,13 @@
                 return;
             }
 
-            if (stc.movableContainerLeftPos >= 0) {
-                // movable container fully right
+            if (stc.movableContainerLeftPos >= 0) { // movable container fully right
                 smv.disableSlideRightArrow();
                 smv.enableSlideLeftArrow();
                 return;
             }
 
-            if (stc.movableContainerLeftPos <= smv.getMinPos()) {
-                // fully left
+            if (stc.movableContainerLeftPos <= smv.getMinPos()) { // fully left
                 smv.disableSlideLeftArrow();
                 smv.enableSlideRightArrow();
                 return;
@@ -895,12 +971,14 @@
         p.scrollToActiveTab = function () {
             var smv = this,
                 stc = smv.stc,
-                RIGHT_OFFSET_BUFFER = 20,
                 $activeTab,
                 $activeTabAnchor,
                 activeTabLeftPos,
                 activeTabRightPos,
                 rightArrowLeftPos,
+                activeTabWidth,
+                leftPosOffset,
+                offsetToMiddle,
                 leftScrollArrowWidth,
                 rightScrollArrowWidth;
 
@@ -921,44 +999,45 @@
                 return;
             }
 
+            rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
+            activeTabWidth = $activeTab.outerWidth();
+
             /**
              * @author poletaew
              * We need relative offset (depends on $fixedContainer), don't absolute
              */
             activeTabLeftPos = $activeTab.offset().left - stc.$fixedContainer.offset().left;
-            activeTabRightPos = activeTabLeftPos + $activeTab.outerWidth();
+            activeTabRightPos = activeTabLeftPos + activeTabWidth;
 
-            rightArrowLeftPos = stc.fixedContainerWidth - RIGHT_OFFSET_BUFFER;
+            rightArrowLeftPos = stc.fixedContainerWidth - rightScrollArrowWidth;
 
             if (stc.rtl) {
                 leftScrollArrowWidth = stc.$slideLeftArrow.outerWidth();
 
-                if (activeTabLeftPos < 0) {
-                    // active tab off left side
+                if (activeTabLeftPos < 0) { // active tab off left side
                     stc.movableContainerLeftPos += activeTabLeftPos;
                     smv.slideMovableContainerToLeftPos();
                     return true;
-                } else {
-                    // active tab off right side
-                    rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
+                } else { // active tab off right side
                     if (activeTabRightPos > rightArrowLeftPos) {
-                        stc.movableContainerLeftPos += activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth + RIGHT_OFFSET_BUFFER;
+                        stc.movableContainerLeftPos += (activeTabRightPos - rightArrowLeftPos) + (2 * rightScrollArrowWidth);
                         smv.slideMovableContainerToLeftPos();
                         return true;
                     }
                 }
             } else {
-                if (activeTabRightPos > rightArrowLeftPos) {
-                    // active tab off right side
-                    rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
-                    stc.movableContainerLeftPos -= activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth;
+                if (activeTabRightPos > rightArrowLeftPos) { // active tab off right side
+                    leftPosOffset = activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth;
+                    offsetToMiddle = stc.fixedContainerWidth / 2;
+                    leftPosOffset += offsetToMiddle - (activeTabWidth / 2);
+                    stc.movableContainerLeftPos -= leftPosOffset;
                     smv.slideMovableContainerToLeftPos();
                     return true;
                 } else {
                     leftScrollArrowWidth = stc.$slideLeftArrow.outerWidth();
-                    if (activeTabLeftPos < leftScrollArrowWidth) {
-                        // active tab off left side
-                        stc.movableContainerLeftPos += leftScrollArrowWidth - activeTabLeftPos;
+                    if (activeTabLeftPos < 0) { // active tab off left side
+                        offsetToMiddle = stc.fixedContainerWidth / 2;
+                        stc.movableContainerLeftPos += (-activeTabLeftPos) + offsetToMiddle - (activeTabWidth / 2);
                         smv.slideMovableContainerToLeftPos();
                         return true;
                     }
@@ -982,9 +1061,10 @@
                 totalTabWidth += tabWidth;
 
                 if (totalTabWidth > offscreenWidth) {
-                    stc.movableContainerLeftPos = slideDirection === CONSTANTS.SLIDE_DIRECTION.RIGHT ? -(totalTabWidth - tabWidth) : -totalTabWidth;
+                    stc.movableContainerLeftPos = (slideDirection === CONSTANTS.SLIDE_DIRECTION.RIGHT) ? -(totalTabWidth - tabWidth) : -totalTabWidth;
                     return false; // exit .each() loop
                 }
+
             });
         };
 
@@ -1007,7 +1087,7 @@
 
             var targetPos = stc.rtl ? { right: leftOrRightVal } : { left: leftOrRightVal };
 
-            stc.$movableContainer.stop().animate(targetPos, 100, function __slideAnimComplete() {
+            stc.$movableContainer.stop().animate(targetPos, 'slow', function __slideAnimComplete() {
                 var newMinPos = smv.getMinPos();
 
                 smv.performingSlideAnim = false;
@@ -1019,45 +1099,41 @@
 
                     targetPos = stc.rtl ? { right: smv.getMovableContainerCssLeftVal() } : { left: smv.getMovableContainerCssLeftVal() };
 
-                    stc.$movableContainer.stop().animate(targetPos, 200, function () { smv.refreshScrollArrowsDisabledState(); });
+                    stc.$movableContainer.stop().animate(targetPos, 'fast', function () {
+                        smv.refreshScrollArrowsDisabledState();
+                    });
                 } else {
                     smv.refreshScrollArrowsDisabledState();
                 }
             });
         };
-    })(ScrollMovement.prototype);
+
+    }(ScrollMovement.prototype));
 
     /* **********************************************************************
      * ScrollingTabsControl - Class that each directive will instantiate
      * **********************************************************************/
-    class ScrollingTabsControl {
-        constructor($tabsContainer) {
-            var stc = this;
+    function ScrollingTabsControl($tabsContainer) {
+        var stc = this;
 
-            stc.$tabsContainer = $tabsContainer;
-            stc.instanceId = $.fn.scrollingTabs.nextInstanceId++;
+        stc.$tabsContainer = $tabsContainer;
+        stc.instanceId = $.fn.scrollingTabs.nextInstanceId++;
 
-            stc.movableContainerLeftPos = 0;
-            stc.scrollArrowsVisible = false;
-            stc.scrollToTabEdge = false;
-            stc.disableScrollArrowsOnFullyScrolled = false;
-            stc.reverseScroll = false;
-            stc.widthMultiplier = 1;
+        stc.movableContainerLeftPos = 0;
+        stc.scrollArrowsVisible = false;
+        stc.scrollToTabEdge = false;
+        stc.disableScrollArrowsOnFullyScrolled = false;
+        stc.reverseScroll = false;
+        stc.widthMultiplier = 1;
 
-            stc.scrollMovement = new ScrollMovement(stc);
-            stc.eventHandlers = new EventHandlers(stc);
-            stc.elementsHandler = new ElementsHandler(stc);
-        }
+        stc.scrollMovement = new ScrollMovement(stc);
+        stc.eventHandlers = new EventHandlers(stc);
+        stc.elementsHandler = new ElementsHandler(stc);
     }
 
     // prototype methods
     (function (p) {
-        p.initTabs = function (
-            options,
-            $scroller,
-            readyCallback,
-            attachTabContentToDomCallback
-        ) {
+        p.initTabs = function (options, $scroller, readyCallback, attachTabContentToDomCallback) {
             var stc = this,
                 elementsHandler = stc.elementsHandler,
                 num;
@@ -1122,10 +1198,12 @@
 
             smv.scrollToActiveTab(options);
         };
-    })(ScrollingTabsControl.prototype);
+    }(ScrollingTabsControl.prototype));
+
 
     /* exported buildNavTabsAndTabContentForTargetElementInstance */
     var tabElements = (function () {
+
         return {
             getElTabPaneForLi: getElTabPaneForLi,
             getNewElNavTabs: getNewElNavTabs,
@@ -1133,7 +1211,7 @@
             getNewElTabAnchor: getNewElTabAnchor,
             getNewElTabContent: getNewElTabContent,
             getNewElTabLi: getNewElTabLi,
-            getNewElTabPane: getNewElTabPane,
+            getNewElTabPane: getNewElTabPane
         };
 
         ///////////////////
@@ -1143,6 +1221,7 @@
             return $($li.find('a').attr('href'));
         }
 
+
         // ---- create new elements ----------
         function getNewElNavTabs() {
             return $('<ul class="nav nav-tabs" role="tablist"></ul>');
@@ -1150,18 +1229,21 @@
 
         function getNewElScrollerElementWrappingNavTabsInstance($navTabsInstance, settings) {
             var $tabsContainer = $('<div class="scrtabs-tab-container"></div>'),
-                leftArrowContent = settings.leftArrowContent || `<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left"><span class="${settings.cssClassLeftArrow}"></span></div>`,
+                leftArrowContent = settings.leftArrowContent || '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left"><span class="' + settings.cssClassLeftArrow + '"></span></div>',
                 $leftArrow = $(leftArrowContent),
-                rightArrowContent = settings.rightArrowContent || `<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right"><span class="${settings.cssClassRightArrow}"></span></div>`,
+                rightArrowContent = settings.rightArrowContent || '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right"><span class="' + settings.cssClassRightArrow + '"></span></div>',
                 $rightArrow = $(rightArrowContent),
                 $fixedContainer = $('<div class="scrtabs-tabs-fixed-container"></div>'),
                 $movableContainer = $('<div class="scrtabs-tabs-movable-container"></div>');
 
             if (settings.disableScrollArrowsOnFullyScrolled) {
-                $leftArrow.add($rightArrow).addClass('scrtabs-disable');
+                $leftArrow.add($rightArrow).addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_DISABLE);
             }
 
-            return $tabsContainer.append($leftArrow, $fixedContainer.append($movableContainer.append($navTabsInstance)), $rightArrow);
+            return $tabsContainer
+                .append($leftArrow,
+                    $fixedContainer.append($movableContainer.append($navTabsInstance)),
+                    $rightArrow);
         }
 
         function getNewElTabAnchor(tab, propNames) {
@@ -1174,39 +1256,47 @@
             return $('<div class="tab-content"></div>');
         }
 
-        function getNewElTabLi(tab, propNames, forceActiveTab) {
-            var $li = $('<li role="presentation" class=""></li>'),
+        function getNewElTabLi(tab, propNames, options) {
+            var liContent = options.tabLiContent || '<li role="presentation" class=""></li>',
+                $li = $(liContent),
                 $a = getNewElTabAnchor(tab, propNames).appendTo($li);
 
             if (tab[propNames.disabled]) {
                 $li.addClass('disabled');
                 $a.attr('data-toggle', '');
-            } else if (forceActiveTab && tab[propNames.active]) {
+            } else if (options.forceActiveTab && tab[propNames.active]) {
                 $li.addClass('active');
+            }
+
+            if (options.tabPostProcessor) {
+                options.tabPostProcessor($li, $a);
             }
 
             return $li;
         }
 
-        function getNewElTabPane(tab, propNames, forceActiveTab) {
+        function getNewElTabPane(tab, propNames, options) {
             var $pane = $('<div role="tabpanel" class="tab-pane"></div>')
                 .attr('id', tab[propNames.paneId])
                 .html(tab[propNames.content]);
 
-            if (forceActiveTab && tab[propNames.active]) {
+            if (options.forceActiveTab && tab[propNames.active]) {
                 $pane.addClass('active');
             }
 
             return $pane;
         }
-    })(); // tabElements
+
+
+    }()); // tabElements
 
     var tabUtils = (function () {
+
         return {
             didTabOrderChange: didTabOrderChange,
             getIndexOfClosestEnabledTab: getIndexOfClosestEnabledTab,
             getTabIndexByPaneId: getTabIndexByPaneId,
-            storeDataOnLiEl: storeDataOnLiEl,
+            storeDataOnLiEl: storeDataOnLiEl
         };
 
         ///////////////////
@@ -1215,14 +1305,9 @@
             var isTabOrderChanged = false;
 
             $currTabLis.each(function (currDomIdx) {
-                var newIdx = getTabIndexByPaneId(
-                    updatedTabs,
-                    propNames.paneId,
-                    $(this).data('tab')[propNames.paneId]
-                );
+                var newIdx = getTabIndexByPaneId(updatedTabs, propNames.paneId, $(this).data('tab')[propNames.paneId]);
 
-                if (newIdx > -1 && newIdx !== currDomIdx) {
-                    // tab moved
+                if ((newIdx > -1) && (newIdx !== currDomIdx)) { // tab moved
                     isTabOrderChanged = true;
                     return false; // exit .each() loop
                 }
@@ -1239,14 +1324,15 @@
 
             // expand out from the current tab looking for an enabled tab;
             // we prefer the tab after us over the tab before
-            while (closestIdx === -1 && testIdx >= 0) {
-                if (
-                    ((testIdx = startIndex + ++incrementFromStartIndex) <= lastIndex &&
-                        !$currTabLis.eq(testIdx).hasClass('disabled')) ||
-                    ((testIdx = startIndex - incrementFromStartIndex) >= 0 &&
-                        !$currTabLis.eq(testIdx).hasClass('disabled'))
-                ) {
+            while ((closestIdx === -1) && (testIdx >= 0)) {
+
+                if ((((testIdx = startIndex + (++incrementFromStartIndex)) <= lastIndex) &&
+                    !$currTabLis.eq(testIdx).hasClass('disabled')) ||
+                    (((testIdx = startIndex - incrementFromStartIndex) >= 0) &&
+                        !$currTabLis.eq(testIdx).hasClass('disabled'))) {
+
                     closestIdx = testIdx;
+
                 }
             }
 
@@ -1269,10 +1355,11 @@
         function storeDataOnLiEl($li, tabs, index) {
             $li.data({
                 tab: $.extend({}, tabs[index]), // store a clone so we can check for changes
-                index: index,
+                index: index
             });
         }
-    })(); // tabUtils
+
+    }()); // tabUtils
 
     function buildNavTabsAndTabContentForTargetElementInstance($targetElInstance, settings, readyCallback) {
         var tabs = settings.tabs,
@@ -1281,7 +1368,7 @@
                 title: settings.propTitle,
                 active: settings.propActive,
                 disabled: settings.propDisabled,
-                content: settings.propContent,
+                content: settings.propContent
             },
             ignoreTabPanes = settings.ignoreTabPanes,
             hasTabContent = tabs.length && tabs[0][propNames.content] !== undefined,
@@ -1296,16 +1383,30 @@
             return;
         }
 
-        tabs.forEach(function (tab) {
-            tabElements.getNewElTabLi(tab, propNames, true).appendTo($navTabs);
+        tabs.forEach(function (tab, index) {
+            var options = {
+                forceActiveTab: true,
+                tabLiContent: settings.tabsLiContent && settings.tabsLiContent[index],
+                tabPostProcessor: settings.tabsPostProcessors && settings.tabsPostProcessors[index]
+            };
+
+            tabElements
+                .getNewElTabLi(tab, propNames, options)
+                .appendTo($navTabs);
 
             // build the tab panes if we weren't told to ignore them and there's
             // tab content data available
-            (!ignoreTabPanes && hasTabContent) && tabElements.getNewElTabPane(tab, propNames, true).appendTo($tabContent);
-
+            if (!ignoreTabPanes && hasTabContent) {
+                tabElements
+                    .getNewElTabPane(tab, propNames, options)
+                    .appendTo($tabContent);
+            }
         });
 
-        $scroller = wrapNavTabsInstanceInScroller($navTabs, settings, readyCallback, attachTabContentToDomCallback);
+        $scroller = wrapNavTabsInstanceInScroller($navTabs,
+            settings,
+            readyCallback,
+            attachTabContentToDomCallback);
 
         $scroller.appendTo($targetElInstance);
 
@@ -1315,8 +1416,10 @@
                 propNames: propNames,
                 ignoreTabPanes: ignoreTabPanes,
                 hasTabContent: hasTabContent,
-                scroller: $scroller,
-            },
+                tabsLiContent: settings.tabsLiContent,
+                tabsPostProcessors: settings.tabsPostProcessors,
+                scroller: $scroller
+            }
         });
 
         // once the nav-tabs are wrapped in the scroller, attach each tab's
@@ -1330,30 +1433,37 @@
         return $targetElInstance;
     }
 
+
     function wrapNavTabsInstanceInScroller($navTabsInstance, settings, readyCallback, attachTabContentToDomCallback) {
-        var $scroller = tabElements.getNewElScrollerElementWrappingNavTabsInstance($navTabsInstance.clone(true), settings),
-            // use clone because we replaceWith later
+        // Remove tab data stored by Bootstrap in order to fix tabs that were already visited
+        $navTabsInstance
+            .find('a[data-toggle="tab"]')
+            .removeData(CONSTANTS.DATA_KEY_BOOTSTRAP_TAB);
+
+        var $scroller = tabElements.getNewElScrollerElementWrappingNavTabsInstance($navTabsInstance.clone(true), settings), // use clone because we replaceWith later
             scrollingTabsControl = new ScrollingTabsControl($scroller),
             navTabsInstanceData = $navTabsInstance.data('scrtabs');
 
         if (!navTabsInstanceData) {
-            $navTabsInstance.data('scrtabs', { scroller: $scroller, });
+            $navTabsInstance.data('scrtabs', {
+                scroller: $scroller
+            });
         } else {
             navTabsInstanceData.scroller = $scroller;
         }
 
         $navTabsInstance.replaceWith($scroller.css('visibility', 'hidden'));
 
-        if (
-            settings.tabClickHandler &&
-            typeof settings.tabClickHandler === 'function'
-        ) {
+        if (settings.tabClickHandler && (typeof settings.tabClickHandler === 'function')) {
             $scroller.hasTabClickHandler = true;
             scrollingTabsControl.tabClickHandler = settings.tabClickHandler;
         }
 
         $scroller.initTabs = function () {
-            scrollingTabsControl.initTabs(settings, $scroller, readyCallback, attachTabContentToDomCallback);
+            scrollingTabsControl.initTabs(settings,
+                $scroller,
+                readyCallback,
+                attachTabContentToDomCallback);
         };
 
         $scroller.scrollToActiveTab = function () {
@@ -1372,6 +1482,8 @@
                 scrollToActiveTab */
     function checkForTabAdded(refreshData) {
         var updatedTabsArray = refreshData.updatedTabsArray,
+            updatedTabsLiContent = refreshData.updatedTabsLiContent || [],
+            updatedTabsPostProcessors = refreshData.updatedTabsPostProcessors || [],
             propNames = refreshData.propNames,
             ignoreTabPanes = refreshData.ignoreTabPanes,
             options = refreshData.options,
@@ -1384,36 +1496,35 @@
         // make sure each tab in the updated tabs array has a corresponding DOM element
         updatedTabsArray.forEach(function (tab, idx) {
             var $li = $currTabLis.find('a[href="#' + tab[propNames.paneId] + '"]'),
-                isTabIdxPastCurrTabs = idx >= $currTabLis.length,
+                isTabIdxPastCurrTabs = (idx >= $currTabLis.length),
                 $pane;
 
-            if (!$li.length) {
-                // new tab
+            if (!$li.length) { // new tab
                 isInitTabsRequired = true;
 
                 // add the tab, add its pane (if necessary), and refresh the scroller
-                $li = tabElements.getNewElTabLi(tab, propNames, options.forceActiveTab);
+                options.tabLiContent = updatedTabsLiContent[idx];
+                options.tabPostProcessor = updatedTabsPostProcessors[idx];
+                $li = tabElements.getNewElTabLi(tab, propNames, options);
                 tabUtils.storeDataOnLiEl($li, updatedTabsArray, idx);
 
-                if (isTabIdxPastCurrTabs) {
-                    // append to end of current tabs
+                if (isTabIdxPastCurrTabs) { // append to end of current tabs
                     $li.appendTo($navTabs);
-                } else {
-                    // insert in middle of current tabs
+                } else {                        // insert in middle of current tabs
                     $li.insertBefore($currTabLis.eq(idx));
                 }
 
                 if (!ignoreTabPanes && tab[propNames.content] !== undefined) {
-                    $pane = tabElements.getNewElTabPane(tab, propNames, options.forceActiveTab);
-                    if (isTabIdxPastCurrTabs) {
-                        // append to end of current tabs
+                    $pane = tabElements.getNewElTabPane(tab, propNames, options);
+                    if (isTabIdxPastCurrTabs) { // append to end of current tabs
                         $pane.appendTo($currTabContentPanesContainer);
-                    } else {
-                        // insert in middle of current tabs
+                    } else {                        // insert in middle of current tabs
                         $pane.insertBefore($currTabContentPanes.eq(idx));
                     }
                 }
+
             }
+
         });
 
         return isInitTabsRequired;
@@ -1431,18 +1542,18 @@
 
         // update tab title if necessary
         if (origTabData[propNames.title] !== newTabData[propNames.title]) {
-            $li.find('a[role="tab"]').html((origTabData[propNames.title] = newTabData[propNames.title]));
+            $li.find('a[role="tab"]')
+                .html(origTabData[propNames.title] = newTabData[propNames.title]);
+
             isInitTabsRequired = true;
         }
 
         // update tab disabled state if necessary
         if (origTabData[propNames.disabled] !== newTabData[propNames.disabled]) {
-            if (newTabData[propNames.disabled]) {
-                // enabled -> disabled
+            if (newTabData[propNames.disabled]) { // enabled -> disabled
                 $li.addClass('disabled');
                 $li.find('a[role="tab"]').attr('data-toggle', '');
-            } else {
-                // disabled -> enabled
+            } else { // disabled -> enabled
                 $li.removeClass('disabled');
                 $li.find('a[role="tab"]').attr('data-toggle', 'tab');
             }
@@ -1461,12 +1572,13 @@
             $contentPane[newTabData[propNames.active] ? 'addClass' : 'removeClass']('active');
 
             origTabData[propNames.active] = newTabData[propNames.active];
+
             isInitTabsRequired = true;
         }
 
         // update tab content pane if necessary
         if (!ignoreTabPanes && origTabData[propNames.content] !== newTabData[propNames.content]) {
-            $contentPane.html((origTabData[propNames.content] = newTabData[propNames.content]));
+            $contentPane.html(origTabData[propNames.content] = newTabData[propNames.content]);
             isInitTabsRequired = true;
         }
 
@@ -1479,23 +1591,32 @@
             $li = tabLiData.$li,
             idxToMakeActive;
 
-        if (tabLiData.newIdx !== -1) {
-            // tab was not removed--it has a valid index
+        if (tabLiData.newIdx !== -1) { // tab was not removed--it has a valid index
             return false;
         }
 
         // if this was the active tab, make the closest enabled tab active
         if ($li.hasClass('active')) {
+
             idxToMakeActive = tabUtils.getIndexOfClosestEnabledTab(refreshData.$currTabLis, tabLiData.currDomIdx);
             if (idxToMakeActive > -1) {
-                refreshData.$currTabLis.eq(idxToMakeActive).addClass('active');
-                !ignoreTabPanes && refreshData.$currTabContentPanes.eq(idxToMakeActive).addClass('active');
+                refreshData.$currTabLis
+                    .eq(idxToMakeActive)
+                    .addClass('active');
+
+                if (!ignoreTabPanes) {
+                    refreshData.$currTabContentPanes
+                        .eq(idxToMakeActive)
+                        .addClass('active');
+                }
             }
         }
 
         $li.remove();
 
-        !ignoreTabPanes && tabLiData.$contentPane.remove();
+        if (!ignoreTabPanes) {
+            tabLiData.$contentPane.remove();
+        }
 
         return true;
     }
@@ -1515,12 +1636,23 @@
         // the tab order changed...
         updatedTabsArray.forEach(function (t) {
             var paneId = t[propNames.paneId];
-            newTabsCollection.push($currTabLis.find(`a[role="tab"][href="#${paneId}"]`).parent('li'));
-            !ignoreTabPanes && newTabPanesCollection.push($(`#${paneId}`));
+
+            newTabsCollection.push(
+                $currTabLis
+                    .find('a[role="tab"][href="#' + paneId + '"]')
+                    .parent('li')
+            );
+
+            if (!ignoreTabPanes) {
+                newTabPanesCollection.push($('#' + paneId));
+            }
         });
 
         refreshData.$navTabs.append(newTabsCollection);
-        !ignoreTabPanes && refreshData.$currTabContentPanesContainer.append(newTabPanesCollection);
+
+        if (!ignoreTabPanes) {
+            refreshData.$currTabContentPanesContainer.append(newTabPanesCollection);
+        }
 
         return true;
     }
@@ -1531,11 +1663,12 @@
             propNames = refreshData.propNames,
             isInitTabsRequired = false;
 
+
         $currTabLis.each(function (currDomIdx) {
             var $li = $(this),
                 origTabData = $li.data('tab'),
                 newIdx = tabUtils.getTabIndexByPaneId(updatedTabsArray, propNames.paneId, origTabData[propNames.paneId]),
-                newTabData = newIdx > -1 ? updatedTabsArray[newIdx] : null;
+                newTabData = (newIdx > -1) ? updatedTabsArray[newIdx] : null;
 
             refreshData.tabLi = {
                 $li: $li,
@@ -1543,7 +1676,7 @@
                 newIdx: newIdx,
                 $contentPane: tabElements.getElTabPaneForLi($li),
                 origTabData: origTabData,
-                newTabData: newTabData,
+                newTabData: newTabData
             };
 
             if (checkForTabRemoved(refreshData)) {
@@ -1604,13 +1737,13 @@
             ddMenuTargetLeft = ddLiOffset.left;
 
             if (ddMenuRightX > tabsContainerMaxX) {
-                ddMenuTargetLeft -= ddMenuRightX - tabsContainerMaxX;
+                ddMenuTargetLeft -= (ddMenuRightX - tabsContainerMaxX);
             }
 
             $ddMenu.css({
-                display: 'block',
-                top: ddLiOffset.top + $ddParentTabLi.outerHeight() - 2,
-                left: ddMenuTargetLeft,
+                'display': 'block',
+                'top': ddLiOffset.top + $ddParentTabLi.outerHeight() - 2,
+                'left': ddMenuTargetLeft
             });
 
             function handleClickOnDropdownMenuItem() {
@@ -1620,7 +1753,9 @@
                     $selectedMenuItemDropdownMenu = $selectedMenuItemLi.parent('.dropdown-menu'),
                     targetPaneId = $selectedMenuItemAnc.attr('href');
 
-                if ($selectedMenuItemLi.hasClass('active')) { return; }
+                if ($selectedMenuItemLi.hasClass('active')) {
+                    return;
+                }
 
                 // once we select a menu item from the dropdown, deactivate
                 // the current tab (unless it's our parent tab), deactivate
@@ -1632,12 +1767,15 @@
                     .add($selectedMenuItemDropdownMenu.find('li.active'))
                     .removeClass('active');
 
-                $ddParentTabLi.add($selectedMenuItemLi).addClass('active');
+                $ddParentTabLi
+                    .add($selectedMenuItemLi)
+                    .addClass('active');
 
                 // manually deactivate current active pane and activate our pane
                 $('.tab-content .tab-pane.active').removeClass('active');
                 $(targetPaneId).addClass('active');
             }
+
         }
     }
 
@@ -1650,26 +1788,40 @@
             refreshData = {
                 options: options,
                 updatedTabsArray: instanceData.tabs,
+                updatedTabsLiContent: instanceData.tabsLiContent,
+                updatedTabsPostProcessors: instanceData.tabsPostProcessors,
                 propNames: instanceData.propNames,
                 ignoreTabPanes: instanceData.ignoreTabPanes,
                 $navTabs: $navTabs,
                 $currTabLis: $navTabs.find('> li'),
                 $currTabContentPanesContainer: $currTabContentPanesContainer,
-                $currTabContentPanes: $currTabContentPanesContainer.find('.tab-pane'),
+                $currTabContentPanes: $currTabContentPanesContainer.find('.tab-pane')
             };
 
         // to preserve the tab positions if we're just adding or removing
         // a tab, don't completely rebuild the tab structure, but check
         // for differences between the new tabs array and the old
+        if (checkForTabAdded(refreshData)) {
+            isInitTabsRequired = true;
+        }
 
-        isInitTabsRequired = checkForTabAdded(refreshData) || checkForTabsOrderChanged(refreshData) || checkForTabsRemovedOrUpdated(refreshData);
-        isInitTabsRequired && scroller.initTabs();
+        if (checkForTabsOrderChanged(refreshData)) {
+            isInitTabsRequired = true;
+        }
+
+        if (checkForTabsRemovedOrUpdated(refreshData)) {
+            isInitTabsRequired = true;
+        }
+
+        if (isInitTabsRequired) {
+            scroller.initTabs();
+        }
+
         return isInitTabsRequired;
     }
 
     function refreshTargetElementInstance($container, options) {
-        if (!$container.data('scrtabs')) {
-            // target element doesn't have plugin on it
+        if (!$container.data('scrtabs')) { // target element doesn't have plugin on it
             return;
         }
 
@@ -1706,25 +1858,29 @@
 
             // ---- tabs NOT data-driven -------------------------
             if (!settings.tabs) {
+
                 // just wrap the selected .nav-tabs element(s) in the scroller
                 return $targetEls.each(function (index) {
                     var dataObj = {
-                        isWrapperOnly: true,
+                        isWrapperOnly: true
                     },
                         $targetEl = $(this).data({ scrtabs: dataObj }),
-                        readyCallback = index < targetElsLastIndex ? null : function () {
+                        readyCallback = (index < targetElsLastIndex) ? null : function () {
                             $targetEls.trigger(CONSTANTS.EVENTS.TABS_READY);
                         };
+
                     wrapNavTabsInstanceInScroller($targetEl, settings, readyCallback);
                 });
+
             }
 
             // ---- tabs data-driven -------------------------
             return $targetEls.each(function (index) {
                 var $targetEl = $(this),
-                    readyCallback = index < targetElsLastIndex ? null : function () {
+                    readyCallback = (index < targetElsLastIndex) ? null : function () {
                         $targetEls.trigger(CONSTANTS.EVENTS.TABS_READY);
                     };
+
                 buildNavTabsAndTabContentForTargetElementInstance($targetEl, settings, readyCallback);
             });
         },
@@ -1740,7 +1896,7 @@
 
         scrollToActiveTab: function () {
             return this.each(scrollToActiveTab);
-        },
+        }
     };
 
     function destroyPlugin() {
@@ -1756,10 +1912,7 @@
         if (scrtabsData.enableSwipingElement === 'self') {
             $targetElInstance.removeClass(CONSTANTS.CSS_CLASSES.ALLOW_SCROLLBAR);
         } else if (scrtabsData.enableSwipingElement === 'parent') {
-            $targetElInstance
-                .closest('.scrtabs-tab-container')
-                .parent()
-                .removeClass(CONSTANTS.CSS_CLASSES.ALLOW_SCROLLBAR);
+            $targetElInstance.closest('.scrtabs-tab-container').parent().removeClass(CONSTANTS.CSS_CLASSES.ALLOW_SCROLLBAR);
         }
 
         scrtabsData.scroller
@@ -1769,27 +1922,30 @@
         // if there were any dropdown menus opened, remove the css we added to
         // them so they would display correctly
         scrtabsData.scroller
-            .find(`[data-${CONSTANTS.DATA_KEY_DDMENU_MODIFIED}]`)
+            .find('[data-' + CONSTANTS.DATA_KEY_DDMENU_MODIFIED + ']')
             .css({
                 display: '',
                 left: '',
-                top: '',
+                top: ''
             })
             .off(CONSTANTS.EVENTS.CLICK)
-            .removeAttr(`data-${CONSTANTS.DATA_KEY_DDMENU_MODIFIED}`);
+            .removeAttr('data-' + CONSTANTS.DATA_KEY_DDMENU_MODIFIED);
 
         if (scrtabsData.scroller.hasTabClickHandler) {
-            $targetElInstance.find('a[data-toggle="tab"]').off('.scrtabs');
+            $targetElInstance
+                .find('a[data-toggle="tab"]')
+                .off('.scrtabs');
         }
 
-        if (scrtabsData.isWrapperOnly) {
-            // we just wrapped nav-tabs markup, so restore it
+        if (scrtabsData.isWrapperOnly) { // we just wrapped nav-tabs markup, so restore it
             // $targetElInstance is the ul.nav-tabs
             $tabsContainer = $targetElInstance.parents('.scrtabs-tab-container');
-            ($tabsContainer.length) && $tabsContainer.replaceWith($targetElInstance);
 
-        } else {
-            // we generated the tabs from data so destroy everything we created
+            if ($tabsContainer.length) {
+                $tabsContainer.replaceWith($targetElInstance);
+            }
+
+        } else { // we generated the tabs from data so destroy everything we created
             if (scrtabsData.scroller && scrtabsData.scroller.initTabs) {
                 scrtabsData.scroller.initTabs = null;
             }
@@ -1810,15 +1966,15 @@
         $('body').off(CONSTANTS.EVENTS.FORCE_REFRESH);
     }
 
+
     $.fn.scrollingTabs = function (methodOrOptions) {
+
         if (methods[methodOrOptions]) {
             return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (!methodOrOptions || typeof methodOrOptions === 'object') {
+        } else if (!methodOrOptions || (typeof methodOrOptions === 'object')) {
             return methods.init.apply(this, arguments);
         } else {
-            $.error(
-                `'Method ${methodOrOptions} does not exist on $.scrollingTabs.'`
-            );
+            $.error('Method ' + methodOrOptions + ' does not exist on $.scrollingTabs.');
         }
     };
 
@@ -1842,8 +1998,11 @@
         cssClassRightArrow: 'glyphicon glyphicon-chevron-right',
         leftArrowContent: '',
         rightArrowContent: '',
+        tabsLiContent: null,
+        tabsPostProcessors: null,
         enableSwiping: false,
         enableRtlSupport: false,
-        bootstrapVersion: 3,
+        handleDelayedScrollbar: false,
+        bootstrapVersion: 3
     };
-})(jQuery, window);
+}(jQuery, window));

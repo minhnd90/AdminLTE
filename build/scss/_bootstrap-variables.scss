@@ -43,7 +43,7 @@ $pink: #e83e8c !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #f8b425 !default;
-$green: #28a745 !default;
+$green: #107c41 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 $heavy-cyan: #0E63BD !default;
@@ -599,7 +599,7 @@ $nav-link-padding-x: 0.3125rem !default;
 $nav-link-disabled-color: $gray-600 !default;
 
 $nav-tabs-border-color: $gray-300 !default;
-$nav-tabs-border-width: $border-width !default;
+$nav-tabs-border-width: 0 !default;
 $nav-tabs-border-radius: $border-radius !default;
 $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color !default;
 $nav-tabs-link-active-color: $gray-700 !default;
