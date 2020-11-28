@@ -23189,11 +23189,27 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   background-color: #343a40;
 }
 
-.profile-user-img {
-  border: 3px solid #adb5bd;
-  margin: 0 auto;
+.avatar-frame {
   padding: 3px;
-  width: 100px;
+  border: 3px solid var(--green);
+  border-radius: 50%;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.avatar .profile-user-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .profile-username {
