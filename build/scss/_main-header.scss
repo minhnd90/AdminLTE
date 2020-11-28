@@ -46,6 +46,32 @@
 				}
 			}
 		}
+		&.ml-auto {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: -$navbar-padding-y;
+				bottom: -$navbar-padding-y;
+				right: -$navbar-padding-x * 10;
+				left: -$navbar-padding-x * 2;
+				background-color: $success;
+				z-index: -1;
+				transform: skewX(-20deg);
+			}
+			.nav-link {
+				color: $navbar-dark-color;
+		  
+				@include hover-focus() {
+				  color: $navbar-dark-hover-color;
+				}
+		  
+				&.disabled {
+				  color: $navbar-dark-disabled-color;
+				}
+			  }
+		}
 	}
 }
 

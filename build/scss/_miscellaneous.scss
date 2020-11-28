@@ -471,14 +471,18 @@ blockquote {
 // Badge BTN Style
 .badge-btn {
 	font-weight: 400;
-	font-size: 0.75rem;
-	padding: 0.5rem;
-	pointer-events: none;
 	user-select: none;
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+	
+	&.badge-pill {
+		padding: 0.375rem 0.6rem;
+	}
 }
 
-.badge-btn.badge-pill {
-	padding: 0.375rem 0.6rem;
+@each $color, $value in $theme-colors {
+	.badge-btn.badge-#{$color} {
+		@include badge-btn-variant($value);
+	}
 }
 
 .dark-mode {
