@@ -12321,15 +12321,14 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   color: #343a40;
 }
 
-[class*='sidebar-light-'] .nav-sidebar > .nav-item.menu-open > .nav-link,
-[class*='sidebar-light-'] .nav-sidebar > .nav-item:hover > .nav-link {
-  background-color: #F5F6FA;
-  color: #212529;
-}
-
 [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link.active {
   color: #000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+[class*='sidebar-light-'] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*='sidebar-light-'] .nav-sidebar > .nav-item:hover > .nav-link {
+  background-color: #F5F6FA;
+  color: #212529;
 }
 
 [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-treeview {
@@ -21064,10 +21063,6 @@ html.maximized-card {
   background-color: #4b545c;
   color: #dee2e6;
   border-color: #78828a;
-}
-
-.dataTable .btn {
-  background-color: white;
 }
 
 .callout {
@@ -30380,6 +30375,10 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .jsgrid-selected-row > .jsgrid-cell {
   background-color: #3f474e;
+}
+
+.fa-fw {
+  width: 1rem;
 }
 
 .border-transparent {
