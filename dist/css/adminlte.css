@@ -32866,7 +32866,18 @@ a.text-muted:hover {
 .accent-primary .custom-select:focus,
 .accent-primary .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-primary .custom-file-input:focus ~ .custom-file-label {
-  border-color: #99c7f8;
+  border-color: #2286ef;
+}
+
+.accent-primary .select2-container--default .select2-dropdown .select2-search__field,
+.accent-primary .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #2286ef;
+}
+
+.accent-primary .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-primary .select2-container--default.select2-container--open .select2-selection--single, .accent-primary .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-primary .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #2286ef;
 }
 
 .accent-primary .page-item .page-link {
@@ -32935,7 +32946,18 @@ a.text-muted:hover {
 .accent-secondary .custom-select:focus,
 .accent-secondary .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-secondary .custom-file-input:focus ~ .custom-file-label {
-  border-color: #f4f5f6;
+  border-color: #adb5bd;
+}
+
+.accent-secondary .select2-container--default .select2-dropdown .select2-search__field,
+.accent-secondary .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #adb5bd;
+}
+
+.accent-secondary .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-secondary .select2-container--default.select2-container--open .select2-selection--single, .accent-secondary .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-secondary .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #adb5bd;
 }
 
 .accent-secondary .page-item .page-link {
@@ -33004,7 +33026,18 @@ a.text-muted:hover {
 .accent-success .custom-select:focus,
 .accent-success .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-success .custom-file-input:focus ~ .custom-file-label {
-  border-color: #28e37d;
+  border-color: #107c41;
+}
+
+.accent-success .select2-container--default .select2-dropdown .select2-search__field,
+.accent-success .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #107c41;
+}
+
+.accent-success .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-success .select2-container--default.select2-container--open .select2-selection--single, .accent-success .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-success .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #107c41;
 }
 
 .accent-success .page-item .page-link {
@@ -33073,7 +33106,18 @@ a.text-muted:hover {
 .accent-info .custom-select:focus,
 .accent-info .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-info .custom-file-input:focus ~ .custom-file-label {
-  border-color: #63d9ec;
+  border-color: #17a2b8;
+}
+
+.accent-info .select2-container--default .select2-dropdown .select2-search__field,
+.accent-info .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #17a2b8;
+}
+
+.accent-info .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-info .select2-container--default.select2-container--open .select2-selection--single, .accent-info .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-info .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #17a2b8;
 }
 
 .accent-info .page-item .page-link {
@@ -33142,7 +33186,18 @@ a.text-muted:hover {
 .accent-warning .custom-select:focus,
 .accent-warning .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-warning .custom-file-input:focus ~ .custom-file-label {
-  border-color: #fcdfa1;
+  border-color: #f8b425;
+}
+
+.accent-warning .select2-container--default .select2-dropdown .select2-search__field,
+.accent-warning .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #f8b425;
+}
+
+.accent-warning .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-warning .select2-container--default.select2-container--open .select2-selection--single, .accent-warning .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-warning .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #f8b425;
 }
 
 .accent-warning .page-item .page-link {
@@ -33211,7 +33266,18 @@ a.text-muted:hover {
 .accent-danger .custom-select:focus,
 .accent-danger .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-danger .custom-file-input:focus ~ .custom-file-label {
-  border-color: #efa2a9;
+  border-color: #dc3545;
+}
+
+.accent-danger .select2-container--default .select2-dropdown .select2-search__field,
+.accent-danger .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #dc3545;
+}
+
+.accent-danger .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-danger .select2-container--default.select2-container--open .select2-selection--single, .accent-danger .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-danger .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #dc3545;
 }
 
 .accent-danger .page-item .page-link {
@@ -33280,7 +33346,18 @@ a.text-muted:hover {
 .accent-light .custom-select:focus,
 .accent-light .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-light .custom-file-input:focus ~ .custom-file-label {
-  border-color: white;
+  border-color: #f8f9fa;
+}
+
+.accent-light .select2-container--default .select2-dropdown .select2-search__field,
+.accent-light .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #f8f9fa;
+}
+
+.accent-light .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-light .select2-container--default.select2-container--open .select2-selection--single, .accent-light .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-light .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #f8f9fa;
 }
 
 .accent-light .page-item .page-link {
@@ -33349,7 +33426,18 @@ a.text-muted:hover {
 .accent-dark .custom-select:focus,
 .accent-dark .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-dark .custom-file-input:focus ~ .custom-file-label {
-  border-color: #6d7a86;
+  border-color: #343a40;
+}
+
+.accent-dark .select2-container--default .select2-dropdown .select2-search__field,
+.accent-dark .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #343a40;
+}
+
+.accent-dark .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-dark .select2-container--default.select2-container--open .select2-selection--single, .accent-dark .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-dark .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #343a40;
 }
 
 .accent-dark .page-item .page-link {
@@ -33418,7 +33506,18 @@ a.text-muted:hover {
 .accent-heavy-cyan .custom-select:focus,
 .accent-heavy-cyan .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-heavy-cyan .custom-file-input:focus ~ .custom-file-label {
-  border-color: #58a3f3;
+  border-color: #0E63BD;
+}
+
+.accent-heavy-cyan .select2-container--default .select2-dropdown .select2-search__field,
+.accent-heavy-cyan .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #0E63BD;
+}
+
+.accent-heavy-cyan .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-heavy-cyan .select2-container--default.select2-container--open .select2-selection--single, .accent-heavy-cyan .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-heavy-cyan .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #0E63BD;
 }
 
 .accent-heavy-cyan .page-item .page-link {
@@ -33487,7 +33586,18 @@ a.text-muted:hover {
 .accent-lightblue .custom-select:focus,
 .accent-lightblue .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-lightblue .custom-file-input:focus ~ .custom-file-label {
-  border-color: #99c5de;
+  border-color: #3c8dbc;
+}
+
+.accent-lightblue .select2-container--default .select2-dropdown .select2-search__field,
+.accent-lightblue .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #3c8dbc;
+}
+
+.accent-lightblue .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-lightblue .select2-container--default.select2-container--open .select2-selection--single, .accent-lightblue .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-lightblue .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #3c8dbc;
 }
 
 .accent-lightblue .page-item .page-link {
@@ -33556,7 +33666,18 @@ a.text-muted:hover {
 .accent-navy .custom-select:focus,
 .accent-navy .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-navy .custom-file-input:focus ~ .custom-file-label {
-  border-color: #005ebf;
+  border-color: #001f3f;
+}
+
+.accent-navy .select2-container--default .select2-dropdown .select2-search__field,
+.accent-navy .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #001f3f;
+}
+
+.accent-navy .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-navy .select2-container--default.select2-container--open .select2-selection--single, .accent-navy .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-navy .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #001f3f;
 }
 
 .accent-navy .page-item .page-link {
@@ -33625,7 +33746,18 @@ a.text-muted:hover {
 .accent-olive .custom-select:focus,
 .accent-olive .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-olive .custom-file-input:focus ~ .custom-file-label {
-  border-color: #87cfaf;
+  border-color: #3d9970;
+}
+
+.accent-olive .select2-container--default .select2-dropdown .select2-search__field,
+.accent-olive .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #3d9970;
+}
+
+.accent-olive .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-olive .select2-container--default.select2-container--open .select2-selection--single, .accent-olive .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-olive .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #3d9970;
 }
 
 .accent-olive .page-item .page-link {
@@ -33694,7 +33826,18 @@ a.text-muted:hover {
 .accent-lime .custom-select:focus,
 .accent-lime .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-lime .custom-file-input:focus ~ .custom-file-label {
-  border-color: #81ffb8;
+  border-color: #01ff70;
+}
+
+.accent-lime .select2-container--default .select2-dropdown .select2-search__field,
+.accent-lime .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #01ff70;
+}
+
+.accent-lime .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-lime .select2-container--default.select2-container--open .select2-selection--single, .accent-lime .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-lime .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #01ff70;
 }
 
 .accent-lime .page-item .page-link {
@@ -33763,7 +33906,18 @@ a.text-muted:hover {
 .accent-fuchsia .custom-select:focus,
 .accent-fuchsia .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-fuchsia .custom-file-input:focus ~ .custom-file-label {
-  border-color: #f88adf;
+  border-color: #f012be;
+}
+
+.accent-fuchsia .select2-container--default .select2-dropdown .select2-search__field,
+.accent-fuchsia .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #f012be;
+}
+
+.accent-fuchsia .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-fuchsia .select2-container--default.select2-container--open .select2-selection--single, .accent-fuchsia .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-fuchsia .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #f012be;
 }
 
 .accent-fuchsia .page-item .page-link {
@@ -33832,7 +33986,18 @@ a.text-muted:hover {
 .accent-maroon .custom-select:focus,
 .accent-maroon .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-maroon .custom-file-input:focus ~ .custom-file-label {
-  border-color: #f083ab;
+  border-color: #d81b60;
+}
+
+.accent-maroon .select2-container--default .select2-dropdown .select2-search__field,
+.accent-maroon .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #d81b60;
+}
+
+.accent-maroon .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-maroon .select2-container--default.select2-container--open .select2-selection--single, .accent-maroon .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-maroon .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #d81b60;
 }
 
 .accent-maroon .page-item .page-link {
@@ -33901,7 +34066,18 @@ a.text-muted:hover {
 .accent-blue .custom-select:focus,
 .accent-blue .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-blue .custom-file-input:focus ~ .custom-file-label {
-  border-color: #99c7f8;
+  border-color: #2286ef;
+}
+
+.accent-blue .select2-container--default .select2-dropdown .select2-search__field,
+.accent-blue .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #2286ef;
+}
+
+.accent-blue .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-blue .select2-container--default.select2-container--open .select2-selection--single, .accent-blue .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-blue .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #2286ef;
 }
 
 .accent-blue .page-item .page-link {
@@ -33970,7 +34146,18 @@ a.text-muted:hover {
 .accent-indigo .custom-select:focus,
 .accent-indigo .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-indigo .custom-file-input:focus ~ .custom-file-label {
-  border-color: #b389f9;
+  border-color: #6610f2;
+}
+
+.accent-indigo .select2-container--default .select2-dropdown .select2-search__field,
+.accent-indigo .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #6610f2;
+}
+
+.accent-indigo .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-indigo .select2-container--default.select2-container--open .select2-selection--single, .accent-indigo .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-indigo .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #6610f2;
 }
 
 .accent-indigo .page-item .page-link {
@@ -34039,7 +34226,18 @@ a.text-muted:hover {
 .accent-purple .custom-select:focus,
 .accent-purple .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-purple .custom-file-input:focus ~ .custom-file-label {
-  border-color: #b8a2e0;
+  border-color: #6f42c1;
+}
+
+.accent-purple .select2-container--default .select2-dropdown .select2-search__field,
+.accent-purple .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #6f42c1;
+}
+
+.accent-purple .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-purple .select2-container--default.select2-container--open .select2-selection--single, .accent-purple .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-purple .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #6f42c1;
 }
 
 .accent-purple .page-item .page-link {
@@ -34108,7 +34306,18 @@ a.text-muted:hover {
 .accent-pink .custom-select:focus,
 .accent-pink .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-pink .custom-file-input:focus ~ .custom-file-label {
-  border-color: #f6b0d0;
+  border-color: #e83e8c;
+}
+
+.accent-pink .select2-container--default .select2-dropdown .select2-search__field,
+.accent-pink .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #e83e8c;
+}
+
+.accent-pink .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-pink .select2-container--default.select2-container--open .select2-selection--single, .accent-pink .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-pink .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #e83e8c;
 }
 
 .accent-pink .page-item .page-link {
@@ -34177,7 +34386,18 @@ a.text-muted:hover {
 .accent-red .custom-select:focus,
 .accent-red .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-red .custom-file-input:focus ~ .custom-file-label {
-  border-color: #efa2a9;
+  border-color: #dc3545;
+}
+
+.accent-red .select2-container--default .select2-dropdown .select2-search__field,
+.accent-red .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #dc3545;
+}
+
+.accent-red .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-red .select2-container--default.select2-container--open .select2-selection--single, .accent-red .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-red .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #dc3545;
 }
 
 .accent-red .page-item .page-link {
@@ -34246,7 +34466,18 @@ a.text-muted:hover {
 .accent-orange .custom-select:focus,
 .accent-orange .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-orange .custom-file-input:focus ~ .custom-file-label {
-  border-color: #fec392;
+  border-color: #fd7e14;
+}
+
+.accent-orange .select2-container--default .select2-dropdown .select2-search__field,
+.accent-orange .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #fd7e14;
+}
+
+.accent-orange .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-orange .select2-container--default.select2-container--open .select2-selection--single, .accent-orange .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-orange .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #fd7e14;
 }
 
 .accent-orange .page-item .page-link {
@@ -34315,7 +34546,18 @@ a.text-muted:hover {
 .accent-yellow .custom-select:focus,
 .accent-yellow .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-yellow .custom-file-input:focus ~ .custom-file-label {
-  border-color: #fcdfa1;
+  border-color: #f8b425;
+}
+
+.accent-yellow .select2-container--default .select2-dropdown .select2-search__field,
+.accent-yellow .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #f8b425;
+}
+
+.accent-yellow .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-yellow .select2-container--default.select2-container--open .select2-selection--single, .accent-yellow .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-yellow .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #f8b425;
 }
 
 .accent-yellow .page-item .page-link {
@@ -34384,7 +34626,18 @@ a.text-muted:hover {
 .accent-green .custom-select:focus,
 .accent-green .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-green .custom-file-input:focus ~ .custom-file-label {
-  border-color: #28e37d;
+  border-color: #107c41;
+}
+
+.accent-green .select2-container--default .select2-dropdown .select2-search__field,
+.accent-green .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #107c41;
+}
+
+.accent-green .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-green .select2-container--default.select2-container--open .select2-selection--single, .accent-green .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-green .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #107c41;
 }
 
 .accent-green .page-item .page-link {
@@ -34453,7 +34706,18 @@ a.text-muted:hover {
 .accent-teal .custom-select:focus,
 .accent-teal .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-teal .custom-file-input:focus ~ .custom-file-label {
-  border-color: #7eeaca;
+  border-color: #20c997;
+}
+
+.accent-teal .select2-container--default .select2-dropdown .select2-search__field,
+.accent-teal .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #20c997;
+}
+
+.accent-teal .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-teal .select2-container--default.select2-container--open .select2-selection--single, .accent-teal .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-teal .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #20c997;
 }
 
 .accent-teal .page-item .page-link {
@@ -34522,7 +34786,18 @@ a.text-muted:hover {
 .accent-cyan .custom-select:focus,
 .accent-cyan .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-cyan .custom-file-input:focus ~ .custom-file-label {
-  border-color: #63d9ec;
+  border-color: #17a2b8;
+}
+
+.accent-cyan .select2-container--default .select2-dropdown .select2-search__field,
+.accent-cyan .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #17a2b8;
+}
+
+.accent-cyan .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-cyan .select2-container--default.select2-container--open .select2-selection--single, .accent-cyan .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-cyan .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #17a2b8;
 }
 
 .accent-cyan .page-item .page-link {
@@ -34591,7 +34866,18 @@ a.text-muted:hover {
 .accent-white .custom-select:focus,
 .accent-white .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-white .custom-file-input:focus ~ .custom-file-label {
-  border-color: white;
+  border-color: #fff;
+}
+
+.accent-white .select2-container--default .select2-dropdown .select2-search__field,
+.accent-white .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #fff;
+}
+
+.accent-white .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-white .select2-container--default.select2-container--open .select2-selection--single, .accent-white .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-white .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #fff;
 }
 
 .accent-white .page-item .page-link {
@@ -34660,7 +34946,18 @@ a.text-muted:hover {
 .accent-gray .custom-select:focus,
 .accent-gray .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-gray .custom-file-input:focus ~ .custom-file-label {
-  border-color: #afb5ba;
+  border-color: #6c757d;
+}
+
+.accent-gray .select2-container--default .select2-dropdown .select2-search__field,
+.accent-gray .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #6c757d;
+}
+
+.accent-gray .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-gray .select2-container--default.select2-container--open .select2-selection--single, .accent-gray .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-gray .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #6c757d;
 }
 
 .accent-gray .page-item .page-link {
@@ -34729,7 +35026,18 @@ a.text-muted:hover {
 .accent-gray-dark .custom-select:focus,
 .accent-gray-dark .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-gray-dark .custom-file-input:focus ~ .custom-file-label {
-  border-color: #6d7a86;
+  border-color: #343a40;
+}
+
+.accent-gray-dark .select2-container--default .select2-dropdown .select2-search__field,
+.accent-gray-dark .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #343a40;
+}
+
+.accent-gray-dark .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-gray-dark .select2-container--default.select2-container--open .select2-selection--single, .accent-gray-dark .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-gray-dark .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #343a40;
 }
 
 .accent-gray-dark .page-item .page-link {
@@ -34798,7 +35106,18 @@ a.text-muted:hover {
 .accent-heavy-cyan .custom-select:focus,
 .accent-heavy-cyan .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
 .accent-heavy-cyan .custom-file-input:focus ~ .custom-file-label {
-  border-color: #58a3f3;
+  border-color: #0E63BD;
+}
+
+.accent-heavy-cyan .select2-container--default .select2-dropdown .select2-search__field,
+.accent-heavy-cyan .select2-container--default .select2-search--inline .select2-search__field {
+  border-color: #0E63BD;
+}
+
+.accent-heavy-cyan .select2-container--default.select2-container--open .select2-selection--multiple,
+.accent-heavy-cyan .select2-container--default.select2-container--open .select2-selection--single, .accent-heavy-cyan .select2-container--default.select2-container--focus .select2-selection--multiple,
+.accent-heavy-cyan .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #0E63BD;
 }
 
 .accent-heavy-cyan .page-item .page-link {
