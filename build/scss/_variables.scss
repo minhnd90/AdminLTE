@@ -35,7 +35,7 @@ $colors: map-merge(
 $font-size-root: 1rem !default;
 
 // Sidebar
-$sidebar-width: 250px !default;
+$sidebar-width: 300px !default;
 $sidebar-padding-x: 0.3125rem !default;
 $sidebar-padding-y: 0.5rem !default;
 $sidebar-custom-height: 4rem !default;
@@ -142,7 +142,7 @@ $sidebar-light-header-color: $gray-800 !default;
 // SIDEBAR MINI
 // --------------------------------------------------------
 $sidebar-mini-width: ($nav-link-padding-x + $sidebar-padding-x + 0.8rem) * 2 !default;
-$sidebar-nav-icon-width: $sidebar-mini-width - (($sidebar-padding-x + $nav-link-padding-x) * 2) !default;
+$sidebar-nav-icon-width: 1rem !default;
 $sidebar-user-image-width: $sidebar-nav-icon-width + ($nav-link-padding-x / 2) !default;
 
 // CONTROL SIDEBAR

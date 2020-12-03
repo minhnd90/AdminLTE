@@ -457,7 +457,7 @@
 
 // Nav Flat
 .nav-flat {
-	margin: (-$sidebar-padding-x / 2) (-$sidebar-padding-x) 0;
+	margin: 0 -$sidebar-padding-x;
 
 	.nav-item {
 		> .nav-link {
@@ -465,7 +465,7 @@
 			margin-bottom: 0;
 
 			> .nav-icon {
-				margin-left: 0.55rem;
+				margin-left: 0.25rem;
 			}
 		}
 	}
@@ -475,7 +475,7 @@
 			.nav-item {
 				> .nav-link {
 					> .nav-icon {
-						margin-left: 0.4rem;
+						margin-left: 0.25rem;
 					}
 				}
 			}
