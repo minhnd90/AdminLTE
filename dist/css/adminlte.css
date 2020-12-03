@@ -11921,7 +11921,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .header-text {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 
 .navbar-dark .form-control-navbar,
@@ -12299,18 +12299,18 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 [class*='sidebar-light-'] .user-panel .status {
-  background-color: #F5F6FA;
+  background-color: #e9ecef;
   color: #343a40;
 }
 
 [class*='sidebar-light-'] .user-panel .status:hover, [class*='sidebar-light-'] .user-panel .status:focus, [class*='sidebar-light-'] .user-panel .status:active {
-  background-color: #ebedf5;
+  background-color: #e0e4e9;
   color: #212529;
 }
 
 [class*='sidebar-light-'] .user-panel .dropdown-menu {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  border-color: #e4e7f2;
+  border-color: #dadfe4;
 }
 
 [class*='sidebar-light-'] .user-panel .dropdown-item {
@@ -12327,7 +12327,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 [class*='sidebar-light-'] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*='sidebar-light-'] .nav-sidebar > .nav-item:hover > .nav-link {
-  background-color: #F5F6FA;
+  background-color: #e9ecef;
   color: #212529;
 }
 
@@ -12349,22 +12349,22 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 [class*='sidebar-light-'] .nav-treeview > .nav-item > .nav-link {
-  color: #777;
+  color: #495057;
   border-left: 4px solid transparent;
 }
 
 [class*='sidebar-light-'] .nav-treeview > .nav-item > .nav-link.active, [class*='sidebar-light-'] .nav-treeview > .nav-item > .nav-link.active:hover, [class*='sidebar-light-'] .nav-treeview > .nav-item > .nav-link:hover {
-  background-color: #F5F6FA;
+  background-color: #e9ecef;
   color: #212529;
   border-left-color: #2286ef;
 }
 
 [class*='sidebar-light-'] .nav-flat .nav-item .nav-treeview .nav-treeview {
-  border-color: #F5F6FA;
+  border-color: #e9ecef;
 }
 
 [class*='sidebar-light-'] .nav-flat .nav-item .nav-treeview > .nav-item > .nav-link, [class*='sidebar-light-'] .nav-flat .nav-item .nav-treeview > .nav-item > .nav-link.active {
-  border-color: #F5F6FA;
+  border-color: #e9ecef;
 }
 
 [class*='sidebar-dark-'] {
@@ -23103,7 +23103,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .login-card-body .input-group .input-group-text,
 .register-card-body .input-group .input-group-text {
   background-color: transparent;
-  color: #777;
+  color: #212529;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -25415,6 +25415,19 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
   color: #fff;
+}
+
+.user-panel .select2-dropdown,
+.user-panel .select2-selection--single {
+  border: 0;
+}
+
+.user-panel .select2-dropdown {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.user-panel .select2-dropdown .select2-results__option {
+  border-bottom: 1px solid #e9ecef;
 }
 
 .slider .tooltip.in {
