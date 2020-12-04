@@ -1,40 +1,60 @@
 //
 // Plugin: SweetAlert2
 //
+.swal2-popup {
+	width: auto;
+}
+.swal2-header {
+	padding: 0;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.swal2-close {
+	padding: 0.5rem;
+	position: static;
+}
 
 // Icon Colors
 .swal2-icon {
+	width: 2rem;
+	height: 2rem;
+	margin: 0;
+	margin-right: 1rem;
+
 	&.swal2-info {
-		border-color: ligthen($info, 20%);
+		border-color: lighten($info, 20%);
 		color: $info;
 	}
 
 	&.swal2-warning {
-		border-color: ligthen($warning, 20%);
+		border-color: lighten($warning, 20%);
 		color: $warning;
 	}
 
 	&.swal2-error {
-		border-color: ligthen($danger, 20%);
+		border-color: lighten($danger, 20%);
 		color: $danger;
 	}
 
 	&.swal2-question {
-		border-color: ligthen($secondary, 20%);
+		border-color: lighten($secondary, 20%);
 		color: $secondary;
 	}
 
 	&.swal2-success {
-		border-color: ligthen($success, 20%);
+		border-color: lighten($success, 20%);
 		color: $success;
 
 		.swal2-success-ring {
-			border-color: ligthen($success, 20%);
+			border-color: lighten($success, 20%);
 		}
 
 		[class^='swal2-success-line'] {
 			background-color: $success;
 		}
+	}
+	.swal2-icon-content {
+		font-size: 2rem;
 	}
 }
 
