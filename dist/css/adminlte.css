@@ -2144,8 +2144,8 @@ select.form-control:focus::-ms-value {
 }
 
 .col-form-label-sm {
-  padding-top: calc(0.25rem + 1px);
-  padding-bottom: calc(0.25rem + 1px);
+  padding-top: calc(0.125rem + 1px);
+  padding-bottom: calc(0.125rem + 1px);
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -2169,8 +2169,8 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-sm {
-  height: calc(1.625rem + 2px);
-  padding: 0.25rem 0.375rem;
+  height: calc(1.375rem + 2px);
+  padding: 0.125rem 0.1875rem;
   font-size: 0.75rem;
   line-height: 1.5;
   border-radius: 0;
@@ -3241,7 +3241,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-sm, .btn-group-sm > .btn {
-  padding: 0.25rem 0.375rem;
+  padding: 0.125rem 0.1875rem;
   font-size: 0.75rem;
   line-height: 1.5;
   border-radius: 0;
@@ -3615,8 +3615,8 @@ input[type="button"].btn-block {
 }
 
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
-  padding-right: 0.28125rem;
-  padding-left: 0.28125rem;
+  padding-right: 0.140625rem;
+  padding-left: 0.140625rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
@@ -3833,7 +3833,7 @@ input[type="button"].btn-block {
 
 .input-group-sm > .form-control:not(textarea),
 .input-group-sm > .custom-select {
-  height: calc(1.625rem + 2px);
+  height: calc(1.375rem + 2px);
 }
 
 .input-group-sm > .form-control,
@@ -3842,7 +3842,7 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
-  padding: 0.25rem 0.375rem;
+  padding: 0.125rem 0.1875rem;
   font-size: 0.75rem;
   line-height: 1.5;
   border-radius: 0;
@@ -4082,10 +4082,10 @@ input[type="button"].btn-block {
 }
 
 .custom-select-sm {
-  height: calc(1.625rem + 2px);
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.375rem;
+  height: calc(1.375rem + 2px);
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.1875rem;
   font-size: 75%;
 }
 
@@ -14195,10 +14195,10 @@ body.text-sm .control-sidebar {
 .navbar-nav > .user-menu .user-image {
   border-radius: 50%;
   float: left;
-  height: 1.15625rem;
-  margin-right: 10px;
-  margin-top: -2px;
-  width: 1.15625rem;
+  height: 2.125rem;
+  margin-right: 0.5rem;
+  margin-top: -0.3125rem;
+  width: 2.125rem;
 }
 
 .dark-mode .dropdown-menu {
@@ -14669,11 +14669,11 @@ body.text-sm .control-sidebar {
 .input-group-sm + .form-control-feedback.fad,
 .input-group-sm + .form-control-feedback.svg-inline--fa,
 .input-group-sm + .form-control-feedback.ion {
-  line-height: calc(1.625rem + 2px);
+  line-height: calc(1.375rem + 2px);
 }
 
 .form-group-sm .form-control + .form-control-feedback.fa, .form-group-sm .form-control + .form-control-feedback.fas, .form-group-sm .form-control + .form-control-feedback.far, .form-group-sm .form-control + .form-control-feedback.fab, .form-group-sm .form-control + .form-control-feedback.fal, .form-group-sm .form-control + .form-control-feedback.fad, .form-group-sm .form-control + .form-control-feedback.svg-inline--fa, .form-group-sm .form-control + .form-control-feedback.ion {
-  line-height: calc(1.625rem + 2px);
+  line-height: calc(1.375rem + 2px);
 }
 
 .warning-feedback {
@@ -23679,7 +23679,7 @@ select.form-control-sm ~ .select2-container--default {
 
 .text-sm .select2-container--default .select2-selection--single,
 select.form-control-sm ~ .select2-container--default .select2-selection--single {
-  height: calc(1.625rem + 2px);
+  height: calc(1.375rem + 2px);
 }
 
 .text-sm .select2-container--default .select2-selection--single .select2-selection__rendered,
@@ -23694,18 +23694,18 @@ select.form-control-sm ~ .select2-container--default .select2-selection--single 
 
 .text-sm .select2-container--default .select2-selection--multiple,
 select.form-control-sm ~ .select2-container--default .select2-selection--multiple {
-  min-height: calc(1.625rem + 2px);
+  min-height: calc(1.375rem + 2px);
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered,
 select.form-control-sm ~ .select2-container--default .select2-selection--multiple .select2-selection__rendered {
-  padding: 0 0.1875rem 0.25rem;
-  margin-top: -0.075rem;
+  padding: 0 0.09375rem 0.125rem;
+  margin-top: -0.0375rem;
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline,
 select.form-control-sm ~ .select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline {
-  margin-left: 0.1875rem;
+  margin-left: 0.09375rem;
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field,
@@ -31259,7 +31259,7 @@ blockquote.quote-heavy-cyan h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 0.25rem 0.375rem;
+  padding: 0.125rem 0.1875rem;
   font-size: 0.75rem;
   line-height: 1.5;
   border-radius: 0;
