@@ -61,15 +61,12 @@
 
 // Application buttons
 .btn-app {
-	@include border-radius(3px);
+	border-radius: $border-radius;
 	background-color: $button-default-background-color;
 	border: 1px solid $button-default-border-color;
 	color: $gray-600;
-	font-size: 12px;
-	height: 60px;
-	margin: 0 0 10px 10px;
-	min-width: 80px;
-	padding: 15px 5px;
+	min-width: 5rem;
+	padding: 1rem 0.5rem;
 	position: relative;
 	text-align: center;
 
