@@ -19946,7 +19946,6 @@ html.maximized-card {
 }
 
 .btn-tool {
-  background-color: transparent;
   color: #adb5bd;
   font-size: 0.75rem;
   margin: -0.75rem 0;
@@ -30430,7 +30429,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .fa-fw {
-  width: 1rem;
+  width: 1.5em;
 }
 
 .border-transparent {
@@ -30858,7 +30857,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 pre {
-  padding: 0.75rem;
+  font-size: inherit;
 }
 
 blockquote {
