@@ -62,15 +62,15 @@
 			}
 			.nav-link {
 				color: $navbar-dark-color;
-		  
+
 				@include hover-focus() {
-				  color: $navbar-dark-hover-color;
+					color: $navbar-dark-hover-color;
 				}
-		  
+
 				&.disabled {
-				  color: $navbar-dark-disabled-color;
+					color: $navbar-dark-disabled-color;
 				}
-			  }
+			}
 		}
 	}
 }
@@ -175,11 +175,11 @@
 .user-panel {
 	position: relative;
 
-	[class*='sidebar-dark'] & {
+	[class^='sidebar-dark'] & {
 		border-bottom: 1px solid lighten($dark, 12%);
 	}
 
-	[class*='sidebar-light'] & {
+	[class^='sidebar-light'] & {
 		border-bottom: 1px solid $gray-300;
 	}
 

@@ -27,11 +27,18 @@
 	// All levels
 	.nav-item {
 		> .nav-link {
-			margin-bottom: $nav-link-padding-x;
+			margin-top: $nav-link-padding-x;
 			width: 100%;
 
 			.right {
 				@include transition(transform $transition-fn $transition-speed);
+			}
+		}
+		.nav-treeview {
+			> .nav-item {
+				> .nav-link {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -61,7 +68,7 @@
 	.menu-is-opening {
 		> .nav-link {
 			i.right {
-				@include rotate(-90deg);
+				@include rotate(90deg);
 			}
 		}
 	}
@@ -71,6 +78,12 @@
 		margin-bottom: 0;
 		width: 100%;
 
+		> .nav-link {
+			font-size: $font-size-lg;
+			> span {
+				text-shadow: 0 0 2px $black;
+			}
+		}
 		.nav-icon {
 			margin-left: 0.05rem;
 			margin-right: 0.2rem;
@@ -221,7 +234,7 @@
 			}
 			&.active {
 				color: $sidebar-light-active-color;
-	
+
 				@if $enable-shadows {
 					box-shadow: map-get($elevations, 1);
 				}
@@ -232,8 +245,8 @@
 		&.menu-open,
 		&:hover {
 			> .nav-link {
-				background-color: $sidebar-light-hover-bg;
-				color: $sidebar-light-hover-color;	
+				//background-color: $sidebar-light-hover-bg;
+				color: color-yiq($sidebar-light-hover-color);
 			}
 		}
 
@@ -265,16 +278,13 @@
 		> .nav-item {
 			> .nav-link {
 				color: $sidebar-light-submenu-color;
-				border-left: 4px solid transparent;
-			}
+				border-left: 4px solid $sidebar-light-submenu-active-bg;
 
-			> .nav-link {
 				&.active,
 				&.active:hover,
 				&:hover {
 					background-color: $sidebar-light-submenu-active-bg;
 					color: $sidebar-light-submenu-active-color;
-					border-left-color: theme-color('primary');
 				}
 			}
 		}
