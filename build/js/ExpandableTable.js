@@ -96,8 +96,8 @@ $(SELECTOR_TABLE).ready(function () {
   ExpandableTable._jQueryInterface.call($(this), 'init')
 })
 
-$(document).on('click', SELECTOR_DATA_TOGGLE, function () {
-  ExpandableTable._jQueryInterface.call($(this), 'toggleRow')
+$(document).on('click', SELECTOR_DATA_TOGGLE + ' > td:not(:has(a))', function () {
+    ExpandableTable._jQueryInterface.call($(this).parent(), 'toggleRow')
 })
 
 /**

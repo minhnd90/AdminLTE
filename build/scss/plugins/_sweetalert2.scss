@@ -2,7 +2,7 @@
 // Plugin: SweetAlert2
 //
 .swal2-popup {
-	width: auto;
+	width: 40rem;
 }
 .swal2-header {
 	padding: 0;
@@ -13,7 +13,14 @@
 	padding: 0.5rem;
 	position: static;
 }
-
+.swal2-content,
+.swal2-actions {
+	padding: 0;
+	margin-top: 1rem;
+}
+.swal2-actions {
+	justify-content: space-between;
+}
 // Icon Colors
 .swal2-icon {
 	width: 2rem;
