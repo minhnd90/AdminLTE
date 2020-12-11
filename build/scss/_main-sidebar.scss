@@ -80,9 +80,6 @@
 
 		> .nav-link {
 			font-size: $font-size-lg;
-			> span {
-				text-shadow: 0 0 2px $black;
-			}
 		}
 		.nav-icon {
 			margin-left: 0.05rem;
@@ -228,10 +225,10 @@
 		// links
 		> .nav-link {
 			// border-left: 3px solid transparent;
-			&:active,
-			&:focus {
-				color: $sidebar-light-color;
-			}
+			// &:active,
+			// &:focus {
+			// 	color: $sidebar-light-color;
+			// }
 			&.active {
 				color: $sidebar-light-active-color;
 

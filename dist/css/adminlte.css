@@ -12210,10 +12210,6 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   font-size: 0.875rem;
 }
 
-.nav-sidebar > .nav-item > .nav-link > span {
-  text-shadow: 0 0 2px #000;
-}
-
 .nav-sidebar > .nav-item .nav-icon {
   margin-left: 0.05rem;
   margin-right: 0.2rem;
@@ -12327,10 +12323,6 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 [class*='sidebar-light-'] .user-panel .dropdown-item {
   color: #212529;
-}
-
-[class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link:active, [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link:focus {
-  color: #343a40;
 }
 
 [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link.active {
