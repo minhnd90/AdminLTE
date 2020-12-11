@@ -51,7 +51,7 @@ class ExpandableTable {
 
   toggleRow() {
     const $element = this._element
-    const time = 500
+    const time = 300
     const $type = $element.attr(SELECTOR_ARIA_ATTR)
     const $body = $element.next().children().first().children()
 

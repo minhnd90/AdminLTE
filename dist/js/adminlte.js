@@ -962,7 +962,7 @@
 
     _proto.toggleRow = function toggleRow() {
       var $element = this._element;
-      var time = 500;
+      var time = 300;
       var $type = $element.attr(SELECTOR_ARIA_ATTR);
       var $body = $element.next().children().first().children();
       $body.stop();
@@ -2364,238 +2364,12 @@
 
   /**
    * jquery-bootstrap-scrolling-tabs
-   * @version v2.2.1
+   * @version v2.6.1
    * @link https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs
    * @author Mike Jacobson <michaeljjacobson1@gmail.com>
    * @license MIT License, http://www.opensource.org/licenses/MIT
    */
 
-  /**
-   * jQuery plugin version of Angular directive angular-bootstrap-scrolling-tabs:
-   * https://github.com/mikejacobson/angular-bootstrap-scrolling-tabs
-   *
-   * Usage:
-   *
-   *    Use case #1: HTML-defined tabs
-   *    ------------------------------
-   *    Demo: http://plnkr.co/edit/thyD0grCxIjyU4PoTt4x?p=preview
-   *
-   *      Sample HTML:
-   *
-   *           <!-- Nav tabs -->
-   *           <ul class="nav nav-tabs" role="tablist">
-   *             <li role="presentation" class="active"><a href="#tab1" role="tab" data-toggle="tab">Tab Number 1</a></li>
-   *             <li role="presentation"><a href="#tab2" role="tab" data-toggle="tab">Tab Number 2</a></li>
-   *             <li role="presentation"><a href="#tab3" role="tab" data-toggle="tab">Tab Number 3</a></li>
-   *             <li role="presentation"><a href="#tab4" role="tab" data-toggle="tab">Tab Number 4</a></li>
-   *           </ul>
-   *
-   *           <!-- Tab panes -->
-   *           <div class="tab-content">
-   *             <div role="tabpanel" class="tab-pane active" id="tab1">Tab 1 content...</div>
-   *             <div role="tabpanel" class="tab-pane" id="tab2">Tab 2 content...</div>
-   *             <div role="tabpanel" class="tab-pane" id="tab3">Tab 3 content...</div>
-   *             <div role="tabpanel" class="tab-pane" id="tab4">Tab 4 content...</div>
-   *           </div>
-   *
-   *
-   *      JavaScript:
-   *
-   *            $('.nav-tabs').scrollingTabs();
-   *
-   *
-   *    Use Case #2: Data-driven tabs
-   *    -----------------------------
-   *    Demo: http://plnkr.co/edit/MWBjLnTvJeetjU3NEimg?p=preview
-   *
-   *      Sample HTML:
-   *
-   *          <!-- build .nav-tabs and .tab-content in here -->
-   *          <div id="tabs-inside-here"></div>
-   *
-   *
-   *      JavaScript:
-   *
-   *             $('#tabs-inside-here').scrollingTabs({
-   *               tabs: tabs, // required
-   *               propPaneId: 'paneId', // optional
-   *               propTitle: 'title', // optional
-   *               propActive: 'active', // optional
-   *               propDisabled: 'disabled', // optional
-   *               propContent: 'content', // optional
-   *               ignoreTabPanes: false, // optional
-   *               scrollToTabEdge: false, // optional
-   *               disableScrollArrowsOnFullyScrolled: false, // optional
-   *               reverseScroll: false // optional
-   *             });
-   *
-   *      Settings/Options:
-   *
-   *        tabs:             tabs data array
-   *        prop*:            name of your tab object's property name that
-   *                          corresponds to that required tab property if
-   *                          your property name is different than the
-   *                          standard name (paneId, title, etc.)
-   *        ignoreTabPanes:   relevant for data-driven tabs only--set to true if
-   *                          you want the plugin to only touch the tabs
-   *                          and to not generate the tab pane elements
-   *                          that go in .tab-content. By default, the plugin
-   *                          will generate the tab panes based on the content
-   *                          property in your tab data, if a content property
-   *                          is present.
-   *        scrollToTabEdge:  set to true if you want to force full-width tabs
-   *                          to display at the left scroll arrow. i.e., if the
-   *                          scrolling stops with only half a tab showing,
-   *                          it will snap the tab to its edge so the full tab
-   *                          shows.
-   *        disableScrollArrowsOnFullyScrolled:
-   *                          set to true if you want the left scroll arrow to
-   *                          disable when the tabs are scrolled fully left,
-   *                          and the right scroll arrow to disable when the tabs
-   *                          are scrolled fully right.
-   *        reverseScroll:
-   *                          set to true if you want the left scroll arrow to
-   *                          slide the tabs left instead of right, and the right
-   *                          scroll arrow to slide the tabs right.
-   *        enableSwiping:
-   *                          set to true if you want to enable horizontal swiping
-   *                          for touch screens.
-   *        widthMultiplier:
-   *                          set to a value less than 1 if you want the tabs
-   *                          container to be less than the full width of its
-   *                          parent element. For example, set it to 0.5 if you
-   *                          want the tabs container to be half the width of
-   *                          its parent.
-   *        tabClickHandler:
-   *                          a callback function to execute any time a tab is clicked.
-   *                          The function is simply passed as the event handler
-   *                          to jQuery's .on(), so the function will receive
-   *                          the jQuery event as an argument, and the 'this'
-   *                          inside the function will be the clicked tab's anchor
-   *                          element.
-   *        cssClassLeftArrow, cssClassRightArrow:
-   *                          custom values for the class attributes for the
-   *                          left and right scroll arrows. The defaults are
-   *                          'glyphicon glyphicon-chevron-left' and
-   *                          'glyphicon glyphicon-chevron-right'.
-   *                          Using different icons might require you to add
-   *                          custom styling to the arrows to position the icons
-   *                          correctly; the arrows can be targeted with these
-   *                          selectors:
-   *                          .scrtabs-tab-scroll-arrow
-   *                          .scrtabs-tab-scroll-arrow-left
-   *                          .scrtabs-tab-scroll-arrow-right
-   *        leftArrowContent, rightArrowContent:
-   *                          custom HTML string for the left and right scroll
-   *                          arrows. This will override any custom cssClassLeftArrow
-   *                          and cssClassRightArrow settings.
-   *                          For example, if you wanted to use svg icons, you
-   *                          could set them like so:
-   *
-   *                           leftArrowContent: [
-   *                               '<div class="custom-arrow">',
-   *                               '  <svg class="icon icon-point-left">',
-   *                               '    <use xlink:href="#icon-point-left"></use>',
-   *                               '  </svg>',
-   *                               '</div>'
-   *                             ].join(''),
-   *                             rightArrowContent: [
-   *                               '<div class="custom-arrow">',
-   *                               '  <svg class="icon icon-point-right">',
-   *                               '    <use xlink:href="#icon-point-right"></use>',
-   *                               '  </svg>',
-   *                               '</div>'
-   *                             ].join('')
-   *
-   *                          You would then need to add some CSS to make them
-   *                          work correctly if you don't give them the
-   *                          default scrtabs-tab-scroll-arrow classes.
-   *                          This plunk shows it working with svg icons:
-   *                          http://plnkr.co/edit/2MdZCAnLyeU40shxaol3?p=preview
-   *        enableRtlSupport:
-   *                          set to true if you want your site to support
-   *                          right-to-left languages. If true, the plugin will
-   *                          check the page's <html> tag for attribute dir="rtl"
-   *                          and will adjust its behavior accordingly.
-   *        bootstrapVersion:
-   *                          set to 4 if you're using Boostrap 4. Default is 3.
-   *                          Bootstrap 4 handles some things differently than 3
-   *                          (e.g., the 'active' class gets applied to the tab's
-   *                          'li > a' element rather than the 'li' itself).
-   *
-   *
-   *      On tabs data change:
-   *
-   *            $('#tabs-inside-here').scrollingTabs('refresh');
-   *
-   *      On tabs data change, if you want the active tab to be set based on
-   *      the updated tabs data (i.e., you want to override the current
-   *      active tab setting selected by the user), for example, if you
-   *      added a new tab and you want it to be the active tab:
-   *
-   *             $('#tabs-inside-here').scrollingTabs('refresh', {
-   *               forceActiveTab: true
-   *             });
-   *
-   *      Any options that can be passed into the plugin can be set on the
-   *      plugin's 'defaults' object instead so you don't have to pass them in:
-   *
-   *             $.fn.scrollingTabs.defaults.tabs = tabs;
-   *             $.fn.scrollingTabs.defaults.forceActiveTab = true;
-   *             $.fn.scrollingTabs.defaults.scrollToTabEdge = true;
-   *             $.fn.scrollingTabs.defaults.disableScrollArrowsOnFullyScrolled = true;
-   *             $.fn.scrollingTabs.defaults.reverseScroll = true;
-   *             $.fn.scrollingTabs.defaults.widthMultiplier = 0.5;
-   *             $.fn.scrollingTabs.defaults.tabClickHandler = function () { };
-   *
-   *
-   *    Methods
-   *    -----------------------------
-   *    - refresh
-   *    On window resize, the tabs should refresh themselves, but to force a refresh:
-   *
-   *      $('.nav-tabs').scrollingTabs('refresh');
-   *
-   *    - scrollToActiveTab
-   *    On window resize, the active tab will automatically be scrolled to
-   *    if it ends up offscreen, but you can also programmatically force a
-   *    scroll to the active tab any time (if, for example, you're
-   *    programmatically setting the active tab) by calling the
-   *    'scrollToActiveTab' method:
-   *
-   *    $('.nav-tabs').scrollingTabs('scrollToActiveTab');
-   *
-   *
-   *    Events
-   *    -----------------------------
-   *    The plugin triggers event 'ready.scrtabs' when the tabs have
-   *    been wrapped in the scroller and are ready for viewing:
-   *
-   *      $('.nav-tabs')
-   *        .scrollingTabs()
-   *        .on('ready.scrtabs', function() {
-   *          // tabs ready, do my other stuff...
-   *        });
-   *
-   *      $('#tabs-inside-here')
-   *        .scrollingTabs({ tabs: tabs })
-   *        .on('ready.scrtabs', function() {
-   *          // tabs ready, do my other stuff...
-   *        });
-   *
-   *
-   *    Destroying
-   *    -----------------------------
-   *    To destroy:
-   *
-   *      $('.nav-tabs').scrollingTabs('destroy');
-   *
-   *      $('#tabs-inside-here').scrollingTabs('destroy');
-   *
-   *    If you were wrapping markup, the markup will be restored; if your tabs
-   *    were data-driven, the tabs will be destroyed along with the plugin.
-   *
-   */
   (function ($, window) {
     /* jshint unused:false */
 
@@ -2611,10 +2385,13 @@
       // to make the tabs scroll farther per click
       DATA_KEY_DDMENU_MODIFIED: 'scrtabsddmenumodified',
       DATA_KEY_IS_MOUSEDOWN: 'scrtabsismousedown',
+      DATA_KEY_BOOTSTRAP_TAB: 'bs.tab',
       CSS_CLASSES: {
         BOOTSTRAP4: 'scrtabs-bootstrap4',
         RTL: 'scrtabs-rtl',
-        SCROLL_ARROW_DISABLE: 'scrtabs-disable'
+        SCROLL_ARROW_CLICK_TARGET: 'scrtabs-click-target',
+        SCROLL_ARROW_DISABLE: 'scrtabs-disable',
+        SCROLL_ARROW_WITH_CLICK_TARGET: 'scrtabs-with-click-target'
       },
       SLIDE_DIRECTION: {
         LEFT: 1,
@@ -2662,7 +2439,7 @@
 
       $.fn[sr] = function (fn, customEventName) {
         var eventName = customEventName || CONSTANTS.EVENTS.WINDOW_RESIZE;
-        return fn ? this.on(eventName, debounce(fn)) : this.trigger(sr);
+        return fn ? this.bind(eventName, debounce(fn)) : this.trigger(sr);
       };
     })('smartresizeScrtabs');
     /* ***********************************************************************************
@@ -2670,16 +2447,16 @@
      * **********************************************************************************/
 
 
-    var ElementsHandler = function ElementsHandler(scrollingTabsControl) {
+    function ElementsHandler(scrollingTabsControl) {
       var ehd = this;
       ehd.stc = scrollingTabsControl;
-    }; // ElementsHandler prototype methods
+    } // ElementsHandler prototype methods
 
 
     (function (p) {
       p.initElements = function (options) {
         var ehd = this;
-        ehd.setElementReferences();
+        ehd.setElementReferences(options);
         ehd.setEventListeners(options);
       };
 
@@ -2778,12 +2555,14 @@
         return actionsTaken;
       };
 
-      p.setElementReferences = function () {
+      p.setElementReferences = function (settings) {
         var ehd = this,
             stc = ehd.stc,
             $tabsContainer = stc.$tabsContainer,
             $leftArrow,
-            $rightArrow;
+            $rightArrow,
+            $leftArrowClickTarget,
+            $rightArrowClickTarget;
         stc.isNavPills = false;
 
         if (stc.rtl) {
@@ -2796,7 +2575,28 @@
 
         stc.$fixedContainer = $tabsContainer.find('.scrtabs-tabs-fixed-container');
         $leftArrow = stc.$fixedContainer.prev();
-        $rightArrow = stc.$fixedContainer.next();
+        $rightArrow = stc.$fixedContainer.next(); // if we have custom arrow content, we might have a click target defined
+
+        if (settings.leftArrowContent) {
+          $leftArrowClickTarget = $leftArrow.find('.' + CONSTANTS.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET);
+        }
+
+        if (settings.rightArrowContent) {
+          $rightArrowClickTarget = $rightArrow.find('.' + CONSTANTS.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET);
+        }
+
+        if ($leftArrowClickTarget && $leftArrowClickTarget.length) {
+          $leftArrow.addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET);
+        } else {
+          $leftArrowClickTarget = $leftArrow;
+        }
+
+        if ($rightArrowClickTarget && $rightArrowClickTarget.length) {
+          $rightArrow.addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET);
+        } else {
+          $rightArrowClickTarget = $rightArrow;
+        }
+
         stc.$movableContainer = $tabsContainer.find('.scrtabs-tabs-movable-container');
         stc.$tabsUl = $tabsContainer.find('.nav-tabs'); // check for pills
 
@@ -2810,7 +2610,9 @@
 
         stc.$tabsLiCollection = stc.$tabsUl.find('> li');
         stc.$slideLeftArrow = stc.reverseScroll ? $leftArrow : $rightArrow;
+        stc.$slideLeftArrowClickTarget = stc.reverseScroll ? $leftArrowClickTarget : $rightArrowClickTarget;
         stc.$slideRightArrow = stc.reverseScroll ? $rightArrow : $leftArrow;
+        stc.$slideRightArrowClickTarget = stc.reverseScroll ? $rightArrowClickTarget : $leftArrowClickTarget;
         stc.$scrollArrows = stc.$slideLeftArrow.add(stc.$slideRightArrow);
         stc.$win = $(window);
       };
@@ -2835,14 +2637,14 @@
           ehd.listenForTouchEvents();
         }
 
-        stc.$slideLeftArrow.off('.scrtabs').on(ev.MOUSEDOWN, function (e) {
+        stc.$slideLeftArrowClickTarget.off('.scrtabs').on(ev.MOUSEDOWN, function (e) {
           evh.handleMousedownOnSlideMovContainerLeftArrow.call(evh, e);
         }).on(ev.MOUSEUP, function (e) {
           evh.handleMouseupOnSlideMovContainerLeftArrow.call(evh, e);
         }).on(ev.CLICK, function (e) {
           evh.handleClickOnSlideMovContainerLeftArrow.call(evh, e);
         });
-        stc.$slideRightArrow.off('.scrtabs').on(ev.MOUSEDOWN, function (e) {
+        stc.$slideRightArrowClickTarget.off('.scrtabs').on(ev.MOUSEDOWN, function (e) {
           evh.handleMousedownOnSlideMovContainerRightArrow.call(evh, e);
         }).on(ev.MOUSEUP, function (e) {
           evh.handleMouseupOnSlideMovContainerRightArrow.call(evh, e);
@@ -2854,10 +2656,41 @@
           stc.$tabsLiCollection.find('a[data-toggle="tab"]').off(ev.CLICK).on(ev.CLICK, stc.tabClickHandler);
         }
 
+        if (settings.handleDelayedScrollbar) {
+          ehd.listenForDelayedScrollbar();
+        }
+
         stc.$win.off(resizeEventName).smartresizeScrtabs(function (e) {
           evh.handleWindowResize.call(evh, e);
         }, resizeEventName);
         $('body').on(CONSTANTS.EVENTS.FORCE_REFRESH, stc.elementsHandler.refreshAllElementSizes.bind(stc.elementsHandler));
+      };
+
+      p.listenForDelayedScrollbar = function () {
+        var iframe = document.createElement('iframe');
+        iframe.id = "scrtabs-scrollbar-resize-listener";
+        iframe.style.cssText = 'height: 0; background-color: transparent; margin: 0; padding: 0; overflow: hidden; border-width: 0; position: absolute; width: 100%;';
+
+        iframe.onload = function () {
+          var timeout;
+
+          function handleResize() {
+            try {
+              $(window).trigger('resize');
+              timeout = null;
+            } catch (e) {}
+          }
+
+          iframe.contentWindow.addEventListener('resize', function () {
+            if (timeout) {
+              clearTimeout(timeout);
+            }
+
+            timeout = setTimeout(handleResize, 100);
+          });
+        };
+
+        document.body.appendChild(iframe);
       };
 
       p.setFixedContainerWidth = function () {
@@ -2943,10 +2776,10 @@
      * **********************************************************************************/
 
 
-    var EventHandlers = function EventHandlers(scrollingTabsControl) {
+    function EventHandlers(scrollingTabsControl) {
       var evh = this;
       evh.stc = scrollingTabsControl;
-    }; // prototype methods
+    } // prototype methods
 
 
     (function (p) {
@@ -2965,27 +2798,27 @@
       p.handleMousedownOnSlideMovContainerLeftArrow = function () {
         var evh = this,
             stc = evh.stc;
-        stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
+        stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
         stc.scrollMovement.continueSlideMovableContainerLeft();
       };
 
       p.handleMousedownOnSlideMovContainerRightArrow = function () {
         var evh = this,
             stc = evh.stc;
-        stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
+        stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, true);
         stc.scrollMovement.continueSlideMovableContainerRight();
       };
 
       p.handleMouseupOnSlideMovContainerLeftArrow = function () {
         var evh = this,
             stc = evh.stc;
-        stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
+        stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
       };
 
       p.handleMouseupOnSlideMovContainerRightArrow = function () {
         var evh = this,
             stc = evh.stc;
-        stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
+        stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN, false);
       };
 
       p.handleWindowResize = function () {
@@ -3006,10 +2839,10 @@
      * **********************************************************************************/
 
 
-    var ScrollMovement = function ScrollMovement(scrollingTabsControl) {
+    function ScrollMovement(scrollingTabsControl) {
       var smv = this;
       smv.stc = scrollingTabsControl;
-    }; // prototype methods
+    } // prototype methods
 
 
     (function (p) {
@@ -3017,7 +2850,7 @@
         var smv = this,
             stc = smv.stc;
         setTimeout(function () {
-          if (stc.movableContainerLeftPos <= smv.getMinPos() || !stc.$slideLeftArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
+          if (stc.movableContainerLeftPos <= smv.getMinPos() || !stc.$slideLeftArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
             return;
           }
 
@@ -3032,7 +2865,7 @@
         var smv = this,
             stc = smv.stc;
         setTimeout(function () {
-          if (stc.movableContainerLeftPos >= 0 || !stc.$slideRightArrow.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
+          if (stc.movableContainerLeftPos >= 0 || !stc.$slideRightArrowClickTarget.data(CONSTANTS.DATA_KEY_IS_MOUSEDOWN)) {
             return;
           }
 
@@ -3178,12 +3011,14 @@
       p.scrollToActiveTab = function () {
         var smv = this,
             stc = smv.stc,
-            RIGHT_OFFSET_BUFFER = 20,
             $activeTab,
             $activeTabAnchor,
             activeTabLeftPos,
             activeTabRightPos,
             rightArrowLeftPos,
+            activeTabWidth,
+            leftPosOffset,
+            offsetToMiddle,
             leftScrollArrowWidth,
             rightScrollArrowWidth;
 
@@ -3204,15 +3039,17 @@
         if (!$activeTab || !$activeTab.length) {
           return;
         }
+
+        rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
+        activeTabWidth = $activeTab.outerWidth();
         /**
          * @author poletaew
          * We need relative offset (depends on $fixedContainer), don't absolute
          */
 
-
         activeTabLeftPos = $activeTab.offset().left - stc.$fixedContainer.offset().left;
-        activeTabRightPos = activeTabLeftPos + $activeTab.outerWidth();
-        rightArrowLeftPos = stc.fixedContainerWidth - RIGHT_OFFSET_BUFFER;
+        activeTabRightPos = activeTabLeftPos + activeTabWidth;
+        rightArrowLeftPos = stc.fixedContainerWidth - rightScrollArrowWidth;
 
         if (stc.rtl) {
           leftScrollArrowWidth = stc.$slideLeftArrow.outerWidth();
@@ -3224,10 +3061,8 @@
             return true;
           } else {
             // active tab off right side
-            rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
-
             if (activeTabRightPos > rightArrowLeftPos) {
-              stc.movableContainerLeftPos += activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth + RIGHT_OFFSET_BUFFER;
+              stc.movableContainerLeftPos += activeTabRightPos - rightArrowLeftPos + 2 * rightScrollArrowWidth;
               smv.slideMovableContainerToLeftPos();
               return true;
             }
@@ -3235,16 +3070,19 @@
         } else {
           if (activeTabRightPos > rightArrowLeftPos) {
             // active tab off right side
-            rightScrollArrowWidth = stc.$slideRightArrow.outerWidth();
-            stc.movableContainerLeftPos -= activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth;
+            leftPosOffset = activeTabRightPos - rightArrowLeftPos + rightScrollArrowWidth;
+            offsetToMiddle = stc.fixedContainerWidth / 2;
+            leftPosOffset += offsetToMiddle - activeTabWidth / 2;
+            stc.movableContainerLeftPos -= leftPosOffset;
             smv.slideMovableContainerToLeftPos();
             return true;
           } else {
             leftScrollArrowWidth = stc.$slideLeftArrow.outerWidth();
 
-            if (activeTabLeftPos < leftScrollArrowWidth) {
+            if (activeTabLeftPos < 0) {
               // active tab off left side
-              stc.movableContainerLeftPos += leftScrollArrowWidth - activeTabLeftPos;
+              offsetToMiddle = stc.fixedContainerWidth / 2;
+              stc.movableContainerLeftPos += -activeTabLeftPos + offsetToMiddle - activeTabWidth / 2;
               smv.slideMovableContainerToLeftPos();
               return true;
             }
@@ -3292,7 +3130,7 @@
         } : {
           left: leftOrRightVal
         };
-        stc.$movableContainer.stop().animate(targetPos, 100, function __slideAnimComplete() {
+        stc.$movableContainer.stop().animate(targetPos, 'slow', function __slideAnimComplete() {
           var newMinPos = smv.getMinPos();
           smv.performingSlideAnim = false; // if we slid past the min pos--which can happen if you resize the window
           // quickly--move back into position
@@ -3304,7 +3142,7 @@
             } : {
               left: smv.getMovableContainerCssLeftVal()
             };
-            stc.$movableContainer.stop().animate(targetPos, 200, function () {
+            stc.$movableContainer.stop().animate(targetPos, 'fast', function () {
               smv.refreshScrollArrowsDisabledState();
             });
           } else {
@@ -3318,7 +3156,7 @@
      * **********************************************************************/
 
 
-    var ScrollingTabsControl = function ScrollingTabsControl($tabsContainer) {
+    function ScrollingTabsControl($tabsContainer) {
       var stc = this;
       stc.$tabsContainer = $tabsContainer;
       stc.instanceId = $.fn.scrollingTabs.nextInstanceId++;
@@ -3331,7 +3169,7 @@
       stc.scrollMovement = new ScrollMovement(stc);
       stc.eventHandlers = new EventHandlers(stc);
       stc.elementsHandler = new ElementsHandler(stc);
-    }; // prototype methods
+    } // prototype methods
 
 
     (function (p) {
@@ -3423,15 +3261,15 @@
 
       function getNewElScrollerElementWrappingNavTabsInstance($navTabsInstance, settings) {
         var $tabsContainer = $('<div class="scrtabs-tab-container"></div>'),
-            leftArrowContent = settings.leftArrowContent || "<div class=\"scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left\"><span class=\"" + settings.cssClassLeftArrow + "\"></span></div>",
+            leftArrowContent = settings.leftArrowContent || '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left"><span class="' + settings.cssClassLeftArrow + '"></span></div>',
             $leftArrow = $(leftArrowContent),
-            rightArrowContent = settings.rightArrowContent || "<div class=\"scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right\"><span class=\"" + settings.cssClassRightArrow + "\"></span></div>",
+            rightArrowContent = settings.rightArrowContent || '<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right"><span class="' + settings.cssClassRightArrow + '"></span></div>',
             $rightArrow = $(rightArrowContent),
             $fixedContainer = $('<div class="scrtabs-tabs-fixed-container"></div>'),
             $movableContainer = $('<div class="scrtabs-tabs-movable-container"></div>');
 
         if (settings.disableScrollArrowsOnFullyScrolled) {
-          $leftArrow.add($rightArrow).addClass('scrtabs-disable');
+          $leftArrow.add($rightArrow).addClass(CONSTANTS.CSS_CLASSES.SCROLL_ARROW_DISABLE);
         }
 
         return $tabsContainer.append($leftArrow, $fixedContainer.append($movableContainer.append($navTabsInstance)), $rightArrow);
@@ -3445,24 +3283,29 @@
         return $('<div class="tab-content"></div>');
       }
 
-      function getNewElTabLi(tab, propNames, forceActiveTab) {
-        var $li = $('<li role="presentation" class=""></li>'),
+      function getNewElTabLi(tab, propNames, options) {
+        var liContent = options.tabLiContent || '<li role="presentation" class=""></li>',
+            $li = $(liContent),
             $a = getNewElTabAnchor(tab, propNames).appendTo($li);
 
         if (tab[propNames.disabled]) {
           $li.addClass('disabled');
           $a.attr('data-toggle', '');
-        } else if (forceActiveTab && tab[propNames.active]) {
+        } else if (options.forceActiveTab && tab[propNames.active]) {
           $li.addClass('active');
+        }
+
+        if (options.tabPostProcessor) {
+          options.tabPostProcessor($li, $a);
         }
 
         return $li;
       }
 
-      function getNewElTabPane(tab, propNames, forceActiveTab) {
+      function getNewElTabPane(tab, propNames, options) {
         var $pane = $('<div role="tabpanel" class="tab-pane"></div>').attr('id', tab[propNames.paneId]).html(tab[propNames.content]);
 
-        if (forceActiveTab && tab[propNames.active]) {
+        if (options.forceActiveTab && tab[propNames.active]) {
           $pane.addClass('active');
         }
 
@@ -3552,11 +3395,18 @@
         return;
       }
 
-      tabs.forEach(function (tab) {
-        tabElements.getNewElTabLi(tab, propNames, true).appendTo($navTabs); // build the tab panes if we weren't told to ignore them and there's
+      tabs.forEach(function (tab, index) {
+        var options = {
+          forceActiveTab: true,
+          tabLiContent: settings.tabsLiContent && settings.tabsLiContent[index],
+          tabPostProcessor: settings.tabsPostProcessors && settings.tabsPostProcessors[index]
+        };
+        tabElements.getNewElTabLi(tab, propNames, options).appendTo($navTabs); // build the tab panes if we weren't told to ignore them and there's
         // tab content data available
 
-        !ignoreTabPanes && hasTabContent && tabElements.getNewElTabPane(tab, propNames, true).appendTo($tabContent);
+        if (!ignoreTabPanes && hasTabContent) {
+          tabElements.getNewElTabPane(tab, propNames, options).appendTo($tabContent);
+        }
       });
       $scroller = wrapNavTabsInstanceInScroller($navTabs, settings, readyCallback, attachTabContentToDomCallback);
       $scroller.appendTo($targetElInstance);
@@ -3566,6 +3416,8 @@
           propNames: propNames,
           ignoreTabPanes: ignoreTabPanes,
           hasTabContent: hasTabContent,
+          tabsLiContent: settings.tabsLiContent,
+          tabsPostProcessors: settings.tabsPostProcessors,
           scroller: $scroller
         }
       }); // once the nav-tabs are wrapped in the scroller, attach each tab's
@@ -3580,6 +3432,8 @@
     }
 
     function wrapNavTabsInstanceInScroller($navTabsInstance, settings, readyCallback, attachTabContentToDomCallback) {
+      // Remove tab data stored by Bootstrap in order to fix tabs that were already visited
+      $navTabsInstance.find('a[data-toggle="tab"]').removeData(CONSTANTS.DATA_KEY_BOOTSTRAP_TAB);
       var $scroller = tabElements.getNewElScrollerElementWrappingNavTabsInstance($navTabsInstance.clone(true), settings),
           // use clone because we replaceWith later
       scrollingTabsControl = new ScrollingTabsControl($scroller),
@@ -3619,6 +3473,8 @@
 
     function checkForTabAdded(refreshData) {
       var updatedTabsArray = refreshData.updatedTabsArray,
+          updatedTabsLiContent = refreshData.updatedTabsLiContent || [],
+          updatedTabsPostProcessors = refreshData.updatedTabsPostProcessors || [],
           propNames = refreshData.propNames,
           ignoreTabPanes = refreshData.ignoreTabPanes,
           options = refreshData.options,
@@ -3637,7 +3493,9 @@
           // new tab
           isInitTabsRequired = true; // add the tab, add its pane (if necessary), and refresh the scroller
 
-          $li = tabElements.getNewElTabLi(tab, propNames, options.forceActiveTab);
+          options.tabLiContent = updatedTabsLiContent[idx];
+          options.tabPostProcessor = updatedTabsPostProcessors[idx];
+          $li = tabElements.getNewElTabLi(tab, propNames, options);
           tabUtils.storeDataOnLiEl($li, updatedTabsArray, idx);
 
           if (isTabIdxPastCurrTabs) {
@@ -3649,7 +3507,7 @@
           }
 
           if (!ignoreTabPanes && tab[propNames.content] !== undefined) {
-            $pane = tabElements.getNewElTabPane(tab, propNames, options.forceActiveTab);
+            $pane = tabElements.getNewElTabPane(tab, propNames, options);
 
             if (isTabIdxPastCurrTabs) {
               // append to end of current tabs
@@ -3732,12 +3590,19 @@
 
         if (idxToMakeActive > -1) {
           refreshData.$currTabLis.eq(idxToMakeActive).addClass('active');
-          !ignoreTabPanes && refreshData.$currTabContentPanes.eq(idxToMakeActive).addClass('active');
+
+          if (!ignoreTabPanes) {
+            refreshData.$currTabContentPanes.eq(idxToMakeActive).addClass('active');
+          }
         }
       }
 
       $li.remove();
-      !ignoreTabPanes && tabLiData.$contentPane.remove();
+
+      if (!ignoreTabPanes) {
+        tabLiData.$contentPane.remove();
+      }
+
       return true;
     }
 
@@ -3756,11 +3621,18 @@
 
       updatedTabsArray.forEach(function (t) {
         var paneId = t[propNames.paneId];
-        newTabsCollection.push($currTabLis.find("a[role=\"tab\"][href=\"#" + paneId + "\"]").parent('li'));
-        !ignoreTabPanes && newTabPanesCollection.push($("#" + paneId));
+        newTabsCollection.push($currTabLis.find('a[role="tab"][href="#' + paneId + '"]').parent('li'));
+
+        if (!ignoreTabPanes) {
+          newTabPanesCollection.push($('#' + paneId));
+        }
       });
       refreshData.$navTabs.append(newTabsCollection);
-      !ignoreTabPanes && refreshData.$currTabContentPanesContainer.append(newTabPanesCollection);
+
+      if (!ignoreTabPanes) {
+        refreshData.$currTabContentPanesContainer.append(newTabPanesCollection);
+      }
+
       return true;
     }
 
@@ -3835,9 +3707,9 @@
         }
 
         $ddMenu.css({
-          display: 'block',
-          top: ddLiOffset.top + $ddParentTabLi.outerHeight() - 2,
-          left: ddMenuTargetLeft
+          'display': 'block',
+          'top': ddLiOffset.top + $ddParentTabLi.outerHeight() - 2,
+          'left': ddMenuTargetLeft
         });
 
         function handleClickOnDropdownMenuItem() {
@@ -3873,6 +3745,8 @@
           refreshData = {
         options: options,
         updatedTabsArray: instanceData.tabs,
+        updatedTabsLiContent: instanceData.tabsLiContent,
+        updatedTabsPostProcessors: instanceData.tabsPostProcessors,
         propNames: instanceData.propNames,
         ignoreTabPanes: instanceData.ignoreTabPanes,
         $navTabs: $navTabs,
@@ -3883,8 +3757,22 @@
       // a tab, don't completely rebuild the tab structure, but check
       // for differences between the new tabs array and the old
 
-      isInitTabsRequired = checkForTabAdded(refreshData) || checkForTabsOrderChanged(refreshData) || checkForTabsRemovedOrUpdated(refreshData);
-      isInitTabsRequired && scroller.initTabs();
+      if (checkForTabAdded(refreshData)) {
+        isInitTabsRequired = true;
+      }
+
+      if (checkForTabsOrderChanged(refreshData)) {
+        isInitTabsRequired = true;
+      }
+
+      if (checkForTabsRemovedOrUpdated(refreshData)) {
+        isInitTabsRequired = true;
+      }
+
+      if (isInitTabsRequired) {
+        scroller.initTabs();
+      }
+
       return isInitTabsRequired;
     }
 
@@ -3979,11 +3867,11 @@
       scrtabsData.scroller.off(CONSTANTS.EVENTS.DROPDOWN_MENU_SHOW).off(CONSTANTS.EVENTS.DROPDOWN_MENU_HIDE); // if there were any dropdown menus opened, remove the css we added to
       // them so they would display correctly
 
-      scrtabsData.scroller.find("[data-" + CONSTANTS.DATA_KEY_DDMENU_MODIFIED + "]").css({
+      scrtabsData.scroller.find('[data-' + CONSTANTS.DATA_KEY_DDMENU_MODIFIED + ']').css({
         display: '',
         left: '',
         top: ''
-      }).off(CONSTANTS.EVENTS.CLICK).removeAttr("data-" + CONSTANTS.DATA_KEY_DDMENU_MODIFIED);
+      }).off(CONSTANTS.EVENTS.CLICK).removeAttr('data-' + CONSTANTS.DATA_KEY_DDMENU_MODIFIED);
 
       if (scrtabsData.scroller.hasTabClickHandler) {
         $targetElInstance.find('a[data-toggle="tab"]').off('.scrtabs');
@@ -3993,7 +3881,10 @@
         // we just wrapped nav-tabs markup, so restore it
         // $targetElInstance is the ul.nav-tabs
         $tabsContainer = $targetElInstance.parents('.scrtabs-tab-container');
-        $tabsContainer.length && $tabsContainer.replaceWith($targetElInstance);
+
+        if ($tabsContainer.length) {
+          $tabsContainer.replaceWith($targetElInstance);
+        }
       } else {
         // we generated the tabs from data so destroy everything we created
         if (scrtabsData.scroller && scrtabsData.scroller.initTabs) {
@@ -4019,7 +3910,7 @@
       } else if (!methodOrOptions || typeof methodOrOptions === 'object') {
         return methods.init.apply(this, arguments);
       } else {
-        $.error("'Method " + methodOrOptions + " does not exist on $.scrollingTabs.'");
+        $.error('Method ' + methodOrOptions + ' does not exist on $.scrollingTabs.');
       }
     };
 
@@ -4042,8 +3933,11 @@
       cssClassRightArrow: 'glyphicon glyphicon-chevron-right',
       leftArrowContent: '',
       rightArrowContent: '',
+      tabsLiContent: null,
+      tabsPostProcessors: null,
       enableSwiping: false,
       enableRtlSupport: false,
+      handleDelayedScrollbar: false,
       bootstrapVersion: 3
     };
   })(jQuery, window);
