@@ -4,30 +4,58 @@
 
 // Sidebar Color
 @mixin sidebar-color($color) {
-	.nav-sidebar > .nav-item {
-		> .nav-link {
-			&,
-			&.active {
-				background-color: $color;
-				color: color-yiq($color);
+	.nav-sidebar {
+		> .nav-item {
+			> .nav-link {
+				transition: all 0.2s ease-in-out;
+				font-weight: 500;
+				margin-bottom: 0.5rem;
+				background-color: rgba($black, 0.05);
+				box-shadow: map-get($elevations, 1);
+
+				&.active,
+				&:active{
+					background-color: $color;
+					color: color-yiq($color);;
+				}
+				&:hover {
+					background-color: rgba($black, 0.1);
+					color: $color;
+				}
+			}
+			&.menu-open {
+				> .nav-link:not(.active) {
+					background-color: rgba($black, 0.1);
+				}
 			}
 		}
-		.nav-treeview {
-			> .nav-item {
-				> .nav-link {
-					&.active,
-					&.active:hover,
-					&:hover {
-						border-left-color: $color;
-					}
+	}
+	.nav-treeview {
+
+		> .nav-item {
+			> .nav-link {
+				border-left: 3px solid transparent;
+
+				&.active,
+				&:active,
+				&:hover {
+					border-color: $color;
+					background-color: transparent;
+					color: $color;
+				}
+				&.active:hover {
+					background-color: transparent;
+					color: $color;
 				}
 			}
 		}
 	}
 
 	.nav-sidebar.nav-legacy > .nav-item {
-		> .nav-link.active {
-			border-color: $color;
+		> .nav-link {
+			&.active {
+				border-color: $color;
+			}
 		}
 	}
 }
@@ -40,8 +68,6 @@
 	.nav-sidebar .nav-link {
 		white-space: nowrap;
 		overflow: hidden;
-		//font-size: 0.75rem;
-		text-overflow: ellipsis;
 	}
 
 	// When the sidebar is collapsed...
@@ -52,7 +78,8 @@
 
 		// Apply the new margins to the main content and footer
 		.content-wrapper,
-		.main-footer {
+		.main-footer,
+		&:not(.layout-navbar-fixed) .main-header {
 			margin-left: $sidebar-mini-width !important;
 		}
 
@@ -61,12 +88,12 @@
 			display: none;
 		}
 
-		.nav-sidebar .nav-link > *:not(.nav-icon) {
-			width: auto;
+		.nav-sidebar .nav-link p {
+			width: 0;
 		}
 
 		.sidebar .user-panel > .info,
-		.nav-sidebar .nav-link > *:not(.nav-icon),
+		.nav-sidebar .nav-link p,
 		.brand-text {
 			margin-left: -10px;
 			animation-name: fadeOut;
@@ -124,7 +151,7 @@
 				}
 
 				.user-panel > .info,
-				.nav-sidebar .nav-link > *:not(.nav-icon),
+				.nav-sidebar .nav-link p,
 				.brand-text,
 				.logo-xl {
 					display: inline-block;

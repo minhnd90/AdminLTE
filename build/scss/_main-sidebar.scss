@@ -27,34 +27,30 @@
 	// All levels
 	.nav-item {
 		> .nav-link {
-			margin-top: $nav-link-padding-x;
-			width: 100%;
+			margin-bottom: 0.2rem;
+			font-size: $font-size-lg;
 
 			.right {
 				@include transition(transform $transition-fn $transition-speed);
 			}
 		}
-		.nav-treeview {
-			> .nav-item {
-				> .nav-link {
-					margin-top: 0;
-				}
-			}
-		}
 	}
 
-	.nav-link .right {
-		position: absolute;
-		right: 1rem;
-		top: 0.7rem;
+	.nav-link,
+	.nav-link > p {
+		> .right {
+			position: absolute;
+			right: 1rem;
+			top: 0.7rem;
 
-		i,
-		span {
-			margin-left: 0.5rem;
-		}
+			i,
+			span {
+				margin-left: 0.5rem;
+			}
 
-		&:nth-child(2) {
-			right: 2.2rem;
+			&:nth-child(2) {
+				right: 2.2rem;
+			}
 		}
 	}
 
@@ -76,15 +72,13 @@
 	// First Level
 	> .nav-item {
 		margin-bottom: 0;
-		width: 100%;
 
-		> .nav-link {
-			font-size: $font-size-lg;
-		}
 		.nav-icon {
-			margin-left: 0.05rem;
-			margin-right: 0.2rem;
+			margin-left: 0.125rem;
+			font-size: 1.2rem;
+			margin-right: 0.5rem;
 			text-align: center;
+			width: $sidebar-nav-icon-width;
 
 			&.fa,
 			&.fas,
@@ -144,27 +138,22 @@
 	}
 
 	.nav-header {
-		font-size: $font-size-base;
-
-		h2,
-		h3,
-		h4 {
-			font-size: inherit;
-		}
+		font-size: 0.9rem;
+		padding: $nav-link-padding-y;
 
 		&:not(:first-of-type) {
 			padding: 1.7rem 1rem 0.5rem;
 		}
 	}
 
-	.nav-link > *:not(.nav-icon) {
-		display: inline;
+	.nav-link p {
+		display: inline-block;
 		margin: 0;
 	}
 }
 
 .sidebar-is-opening .nav-sidebar {
-	.nav-link > *:not(.nav-icon) {
+	.nav-link p {
 		animation-name: fadeIn;
 		animation-duration: $transition-speed;
 		animation-fill-mode: both;
@@ -225,25 +214,24 @@
 		// links
 		> .nav-link {
 			// border-left: 3px solid transparent;
-			// &:active,
-			// &:focus {
-			// 	color: $sidebar-light-color;
-			// }
-			&.active {
-				color: $sidebar-light-active-color;
-
-				@if $enable-shadows {
-					box-shadow: map-get($elevations, 1);
-				}
+			&:active,
+			&:focus {
+				color: $sidebar-light-color;
 			}
 		}
 
 		// Hover and active states
-		&.menu-open,
-		&:hover {
-			> .nav-link {
-				//background-color: $sidebar-light-hover-bg;
-				color: color-yiq($sidebar-light-hover-color);
+		&.menu-open > .nav-link,
+		&:hover > .nav-link {
+			background-color: $sidebar-light-hover-bg;
+			color: $sidebar-light-hover-color;
+		}
+
+		> .nav-link.active {
+			color: $sidebar-light-active-color;
+
+			@if $enable-shadows {
+				box-shadow: map-get($elevations, 1);
 			}
 		}
 
@@ -275,14 +263,18 @@
 		> .nav-item {
 			> .nav-link {
 				color: $sidebar-light-submenu-color;
-				border-left: 4px solid $sidebar-light-submenu-active-bg;
+			}
 
-				&.active,
-				&.active:hover,
+			> .nav-link.active {
+				&,
 				&:hover {
 					background-color: $sidebar-light-submenu-active-bg;
 					color: $sidebar-light-submenu-active-color;
 				}
+			}
+
+			> .nav-link:hover {
+				background-color: $sidebar-light-submenu-hover-bg;
 			}
 		}
 	}
@@ -464,7 +456,7 @@
 
 // Nav Flat
 .nav-flat {
-	margin: 0 -$sidebar-padding-x;
+	margin: (-$sidebar-padding-x / 2) (-$sidebar-padding-x) 0;
 
 	.nav-item {
 		> .nav-link {
@@ -472,7 +464,7 @@
 			margin-bottom: 0;
 
 			> .nav-icon {
-				margin-left: 0.25rem;
+				margin-left: 0.55rem;
 			}
 		}
 	}
@@ -482,7 +474,7 @@
 			.nav-item {
 				> .nav-link {
 					> .nav-icon {
-						margin-left: 0.25rem;
+						margin-left: 0.4rem;
 					}
 				}
 			}
@@ -1088,8 +1080,4 @@
 			right: 0.5rem;
 		}
 	}
-}
-.os-theme-light > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle,
-.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-	background: rgba(0, 0, 0, 0.4);
 }
