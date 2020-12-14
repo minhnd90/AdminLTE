@@ -431,7 +431,7 @@
   var CLASS_NAME_FOOTER_XL_FIXED = 'layout-xl-footer-fixed';
   var Default$2 = {
     controlsidebarSlide: true,
-    scrollbarTheme: 'os-theme-light',
+    scrollbarTheme: $__default['default'](SELECTOR_CONTROL_SIDEBAR).hasClass('control-sidebar-light') ? 'os-theme-dark' : 'os-theme-light',
     scrollbarAutoHide: 'l'
   };
   /**
@@ -1205,7 +1205,7 @@
   var CLASS_NAME_CONTROL_SIDEBAR_SLIDE_OPEN = 'control-sidebar-slide-open';
   var CLASS_NAME_CONTROL_SIDEBAR_OPEN$1 = 'control-sidebar-open';
   var Default$5 = {
-    scrollbarTheme: 'os-theme-light',
+    scrollbarTheme: $__default['default'](SELECTOR_SIDEBAR).has('[class^="sidebar-light"]') ? 'os-theme-dark' : 'os-theme-light',
     scrollbarAutoHide: 'l',
     panelAutoHeight: true,
     loginRegisterAutoHeight: true

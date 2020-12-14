@@ -43,7 +43,7 @@ const CLASS_NAME_FOOTER_XL_FIXED = 'layout-xl-footer-fixed'
 
 const Default = {
 	controlsidebarSlide: true,
-	scrollbarTheme: 'os-theme-light',
+	scrollbarTheme: $(SELECTOR_CONTROL_SIDEBAR).hasClass('control-sidebar-light') ? 'os-theme-dark' : 'os-theme-light',
 	scrollbarAutoHide: 'l'
 }
 

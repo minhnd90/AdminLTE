@@ -33,7 +33,7 @@ const CLASS_NAME_CONTROL_SIDEBAR_SLIDE_OPEN = 'control-sidebar-slide-open'
 const CLASS_NAME_CONTROL_SIDEBAR_OPEN = 'control-sidebar-open'
 
 const Default = {
-	scrollbarTheme: 'os-theme-light',
+	scrollbarTheme: $(SELECTOR_SIDEBAR).has('[class^="sidebar-light"]') ? 'os-theme-dark' : 'os-theme-light',
 	scrollbarAutoHide: 'l',
 	panelAutoHeight: true,
 	loginRegisterAutoHeight: true

@@ -160,54 +160,224 @@
 			<aside class="main-sidebar sidebar-light-success elevation-4">
 				<!-- Sidebar -->
 				<div class="sidebar">
-					<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-						<select name="a" id="a" class="select2 w-100">
-							<option value="1" data-icon="far fa-file-alt">
-								<span>Danh mục</span>
-							</option>
-							<option value="2" data-icon="far fa-file-alt">
-								<span>Kế hoạch thu nhập</span>
-							</option>
-							<option value="3" data-icon="far fa-file-alt">
-								<span>Nộp lưu</span>
-							</option>
-							<option value="4" data-icon="fas fa-layer-group">
-								<span>Quản trị hệ thống</span>
-							</option>
-						</select>
-					</div>
 					<!-- Sidebar Menu -->
 					<nav class="mt-2">
-						<ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="true">
-							<li class="nav-item menu-open">
-								<a href="#" class="nav-link text-uppercase active">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Danh mục</span>
-									<i class="right fas fa-angle-left"></i>
+						<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fas fa-tasks nav-icon"></i>
+									<span>Thu thập và nộp lưu</span>
+									<i class="right fas fa-angle-right"></i>
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="/Category" class="nav-link active">
+										<a href="/Plan" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý dữ liệu động</span>
+											<span>Quản lý kế hoạch</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/Agency" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Đơn vị</span>
+										<a href="/Plan/Approve" class="nav-link">
+											<i class="far fas fa-check-circle nav-icon"></i>
+											<span>Duyệt kế hoạch thu thập</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/Department" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phòng ban</span>
+										<a href="/CollectionManagement" class="nav-link">
+											<i class="far fas fa-tasks nav-icon"></i>
+											<span>Quản lý thu thập</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/Position" class="nav-link">
+										<a href="/ArchiveManagement" class="nav-link">
+											<i class="far fa-paper-plane nav-icon"></i>
+											<span>Duyệt &amp; gửi nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ArchiveManagement/IndexListApproved" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Chức vụ</span>
+											<span>Danh sách gửi nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ReceiveArchive/Index" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nhận nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ReceiveArchive/ReceivedIndex" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Danh sách nhận nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/DeliveryRecord" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý biên bản bàn giao</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Nhận biên bản bàn giao</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ReportArchive/ReportSendArchive" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thống kê gửi nộp lưu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ReportArchive/ReportReceiveArchive" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Thống kê nhận nộp lưu</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fas fa-pencil-ruler nav-icon"></i>
+									<span>Biên mục chỉnh lý</span>
+									<i class="right fas fa-angle-right"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="/DocumentCataloging" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Biên mục hồ sơ tài liệu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ApproveStorage" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Duyệt lưu kho</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý yêu cầu biên mục bổ sung</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Duyệt yêu cầu biên mục bổ sung</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item menu-is-opening menu-open">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fas fa-database nav-icon"></i>
+									<span>Kho lưu trữ</span>
+									<i class="right fas fa-angle-right"></i>
+								</a>
+								<ul class="nav nav-treeview" style="display: block">
+									<li class="nav-item">
+										<a href="/Storage/IndexSearchProfile" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Tra cứu hồ sơ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Xếp hộp cặp hồ sơ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Báo cáo kho lưu trữ</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fa-file-alt nav-icon"></i>
+									<span>Danh mục riêng</span>
+									<i class="right fas fa-angle-right"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="/Category/Index/DM_KHO" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Kho</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_HopSo" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Hộp số</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_NgonNgu" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Ngôn ngữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_GIA" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Giá lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Category/Index/DM_TANG" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Tầng lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/ProfileTemplate" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Phông lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Tầng lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Giá lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Hộp lưu trữ</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/CategoryType" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Danh mục tuỳ biến</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fas fa-list nav-icon"></i>
+									<span>Danh mục chung</span>
+									<i class="right fas fa-angle-right"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="/DocType" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Khung biên mục tài liệu</span>
 										</a>
 									</li>
 									<li class="nav-item">
@@ -223,306 +393,24 @@
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/Language" class="nav-link">
+										<a href="/Position" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Ngôn ngữ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Categroy/Index/DM_Phong" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phông</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Profile" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Hồ sơ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/DocField" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Trường tin</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Doctype" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Loại tài liệu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/DM_HopSo" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Hộp số</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/DM_Kho" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Kho</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/DM_MucLuc" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Mục lục</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/DM_Phong" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phông</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/Test_NN" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Test ngôn ngữ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/MD_ACV" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>123123</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/NNL" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Nguồn nộp lưu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/Category/Index/Kho 1.1" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Kho 1.1</span>
+											<span>Chức vụ</span>
 										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Kế hoạch thu nhập</span>
-									<i class="right fas fa-angle-left"></i>
+									<i class="far fas fa-user-cog nav-icon"></i>
+									<span>Quản trị đơn vị</span>
+									<i class="right fas fa-angle-right"></i>
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="#" class="nav-link">
+										<a href="/Agency" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Lập kế hoạch thu nhập</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt kế hoạch thu nhập</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Danh sách kế hoạch thu nhập</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Gửi kế hoạch thu nhập</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Nộp luu</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Danh sách hồ sơ tài liệu cơ quan nộp lưu</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Biên mục và lưu kho</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Biên mục hồ sơ tài liệu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt hồ sơ tài liệu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Kho lưu trữ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Chỉnh lý và nâng cấp sau lưu kho</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Khai thác</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý độc giả</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý hồ sơ tài liệu được khai thác</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý yêu cầu khai thác</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt yêu cầu </span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Tiêu hủy tài liệu</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Lập hồ sơ tiêu hủy</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Phê duyệt</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Thực hiện tiêu hủy</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Lưu và xem hồ sơ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Nhật ký tiêu hủy</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Báo cáo</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC kho lưu trữ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC theo phông</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC theo mục lục</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC theo hồ sơ</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC theo tài liệu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>BC theo yêu cầu khai thác</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Tổng kiểm kê</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link text-uppercase">
-									<i class="far fa-file-alt nav-icon"></i>
-									<span>Quản trị hệ thống</span>
-									<i class="right fas fa-angle-left"></i>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="/Team" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý nhóm người dùng</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="/User" class="nav-link">
-											<i class="far fa-user nav-icon"></i>
-											<span>Quản lý người dùng</span>
+											<span>Quản lý đơn vị</span>
 										</a>
 									</li>
 									<li class="nav-item">
@@ -532,33 +420,48 @@
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/Role" class="nav-link">
+										<a href="/Team" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Quản lý vai trò</span>
+											<span>Quản lý nhóm người dùng</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/User" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý người dùng</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a href="#" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Cấu hình tham số</span>
+											<span>Quản lý phân quyền</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link text-uppercase">
+									<i class="far fas fa-cogs nav-icon"></i>
+									<span>Quản trị hệ thống</span>
+									<i class="right fas fa-angle-right"></i>
+								</a>
+								<ul class="nav nav-treeview">
+									<li class="nav-item">
+										<a href="/Organ" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý cơ quan</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="/CategoryType" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Cấu hình dữ liệu động</span>
+										<a href="#" class="nav-link">
+											<i class="far fa-user nav-icon"></i>
+											<span>Quản lý tài khoản quản trị cơ quan</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a href="#" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Cấu hình loại tài liệu</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="far fa-file-alt nav-icon"></i>
-											<span>Sao lưu</span>
+											<span>Nhật ký người dùng</span>
 										</a>
 									</li>
 									<li class="nav-item">
@@ -570,7 +473,13 @@
 									<li class="nav-item">
 										<a href="#" class="nav-link">
 											<i class="far fa-file-alt nav-icon"></i>
-											<span>Nhật ký người dùng</span>
+											<span>Cấu hình tham số</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="/Module" class="nav-link">
+											<i class="far fa-file-alt nav-icon"></i>
+											<span>Quản lý menu</span>
 										</a>
 									</li>
 								</ul>
@@ -602,47 +511,118 @@
 						<div class="row">
 							<div class="col-12">
 								<!-- Default box -->
-								<div class="card">
-									<div class="card-header p-0">
-										<nav class="navbar navbar-expand navbar-white navbar-light p-0">
-											<!-- Right navbar links -->
-											<ul class="navbar-nav ml-auto">
-												<li class="nav-item dropdown">
-													<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-														<span>Nhận dạng</span>
-													</a>
-													<div class="dropdown-menu dropdown-menu-lg">
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Chọn vùng nhận dạng</a>
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Nhận dạng tự động</a>
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Nhận dạng theo form</a>
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Chuyển đổi sang PDF Searchable</a>
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Chuyển đổi sang Word</a>
-														<div class="dropdown-divider"></div>
-														<a href="#" class="dropdown-item">Chuyển đổi sang txt</a>
-														<div class="dropdown-divider"></div>
-													</div>
-												</li>
-												<li class="nav-item">
-													<a href="#" class="btn btn-success">
-														<i class="fas fa-file-signature"></i>
-														<span>Hiển thị chữ ký</span>
-													</a>
-												</li>
-												<li class="nav-item">
-													<a href="#" class="btn btn-success">
-														<i class="fas fa-download"></i>
-														<span>Tải về</span>
-													</a>
-												</li>
-											</ul>
-										</nav>
+								<div class="card card-tabs card-success">
+									<div class="card-header p-0 pt-1">
+										<ul class="nav nav-tabs" id="sidebarTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="docInfo-tab" data-toggle="pill" href="#docInfo" role="tab" aria-controls="docInfo" aria-selected="true">Thông tin tài liệu</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="docNote-tab" data-toggle="pill" href="#docNote" role="tab" aria-controls="docNote" aria-selected="false">Ghi chú</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="docHistory-tab" data-toggle="pill" href="#docHistory" role="tab" aria-controls="docHistory" aria-selected="false">Lịch sử thay đổi nội dung</a>
+											</li>
+										</ul>
 									</div>
-									<div class="card-body"></div>
+									<div class="card-body">
+										<div class="tab-content" id="sidebarTabContent">
+											<div class="tab-pane fade show active" id="docInfo" role="tabpanel" aria-labelledby="docInfo-tab">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required" for="AccountName" title="Tên tài khoản">Tên tài khoản</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Tên tài khoản" maxlength="50" type="text" data-val="true" data-val-maxlength="Tên tài khoản không được quá 50 ký tự" data-val-maxlength-max="50" data-val-regex="Chỉ sử dụng các chữ cái (a-z), số (0-9) và dấu chấm(.)" data-val-regex-pattern="^[0-9a-zA-Z\.]+$" data-val-required="Tên tài khoản không được để trống" id="AccountName" name="AccountName" value="" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="AccountName" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required" for="Password">Mật khẩu</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Mật khẩu" type="password" data-val="true" data-val-maxlength="The field Mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-minlength="Mật khẩu phải có ít nhất 6 ký tự" data-val-minlength-min="6" data-val-required="Mật khẩu không được để trống" id="Password" maxlength="250" name="Password" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required" for="ConfirmPassword">Nhập lại mật khẩu</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" data-val="true" data-val-equalto="Xác nhận mật khẩu chưa chính xác" data-val-equalto-other="*.Password" data-val-maxlength="The field Nhập lại mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-required="Nhập lại mật khẩu không được để trống" id="ConfirmPassword" maxlength="250" name="ConfirmPassword" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required" for="Name">Họ và tên</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Họ và tên" type="text" data-val="true" data-val-maxlength="Họ và tên không được quá 50 ký tự" data-val-maxlength-max="50" data-val-required="Họ và tên không được để trống" id="Name" maxlength="50" name="Name" value="" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required onlynumber" for="IdentityNumber">Số CMND/Hộ chiếu</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Số CMND/Hộ chiếu" type="text" data-val="true" data-val-maxlength="Số CMND/Hộ chiếu không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số CMND/Hộ chiếu không đúng định dạng" data-val-regex-pattern="^[0-9]+$" data-val-required="Số CMND/Hộ chiếu không được để trống" id="IdentityNumber" maxlength="20" name="IdentityNumber" value="" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate input-required" for="Email">Email</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-maxlength="Email không được quá 100 ký tự" data-val-maxlength-max="100" data-val-regex="Email chưa đúng định dạng. Vui lòng nhập email đúng định dạng như (@gmail.com, @abc.vn...)" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email không được để trống" id="Email" maxlength="100" name="Email" value="" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label text-truncate onlynumber" for="Phone">Số điện thoại</label>
+													<div class="col-sm-8">
+														<input class="form-control" placeholder="Số điện thoại" type="tel" maxlength="20" data-val="true" data-val-maxlength="Số điện thoại không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số điện thoại không đúng định dạng (10 hoặc 11 số)" data-val-regex-pattern="(^[0-9]{10}\b)|(^[0-9]{11}\b)" id="Phone" name="Phone" value="" />
+														<span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-4"></div>
+													<div class="col-sm-8">
+														<button class="btn mb-2 btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
+														<button class="btn mb-2 btn-info"><i class="fas fa-fw fa-edit mr-2"></i>Lưu tạm</button>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="docNote" role="tabpanel" aria-labelledby="docNote-tab">
+												<div class="form-group">
+													<textarea class="form-control" rows="5" maxlength="250" placeholder="Ghi chú"></textarea>
+												</div>
+												<button class="btn btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
+											</div>
+											<div class="tab-pane fade" id="docHistory" role="tabpanel" aria-labelledby="docHistory-tab">
+												<h4>Lịch sử thêm mới tài liệu:</h4>
+												<div class="module toggle-wrap">
+													<div class="mod-content module_cmt">
+														<div>
+															<ul>
+																<li>
+																	<dl>
+																		<dt>Người tạo</dt>
+																		<dd>Admin_cloud 2</dd>
+																	</dl>
+																</li>
+																<li>
+																	<dl>
+																		<dt>Ngày tạo</dt>
+																		<dd>21-10-2020 08:34</dd>
+																	</dl>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<h4>Lịch sử sửa tài liệu:</h4>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -659,117 +639,48 @@
 
 			<!-- Control Sidebar -->
 			<aside class="control-sidebar control-sidebar-light storage--file">
-				<div class="card card-tabs card-success">
+				<div class="card">
 					<div class="card-header p-0 border-bottom-0">
-						<ul class="nav nav-tabs" id="sidebarTab" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" id="docInfo-tab" data-toggle="pill" href="#docInfo" role="tab" aria-controls="docInfo" aria-selected="true">Thông tin tài liệu</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="docNote-tab" data-toggle="pill" href="#docNote" role="tab" aria-controls="docNote" aria-selected="false">Ghi chú</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" id="docHistory-tab" data-toggle="pill" href="#docHistory" role="tab" aria-controls="docHistory" aria-selected="false">Lịch sử thay đổi nội dung</a>
-							</li>
-						</ul>
+						<nav class="navbar navbar-expand navbar-white navbar-light p-0">
+							<!-- Right navbar links -->
+							<ul class="navbar-nav">
+								<li class="nav-item dropdown">
+									<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span>Nhận dạng</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-lg">
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Chọn vùng nhận dạng</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Nhận dạng tự động</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Nhận dạng theo form</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Chuyển đổi sang PDF Searchable</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Chuyển đổi sang Word</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item">Chuyển đổi sang txt</a>
+										<div class="dropdown-divider"></div>
+									</div>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="btn btn-success">
+										<i class="fas fa-file-signature"></i>
+										<span>Hiển thị chữ ký</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="btn btn-success">
+										<i class="fas fa-download"></i>
+										<span>Tải về</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 					<div class="card-body control-sidebar-content">
-						<div class="tab-content" id="sidebarTabContent">
-							<div class="tab-pane fade show active" id="docInfo" role="tabpanel" aria-labelledby="docInfo-tab">
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required" for="AccountName" title="Tên tài khoản">Tên tài khoản</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Tên tài khoản" maxlength="50" type="text" data-val="true" data-val-maxlength="Tên tài khoản không được quá 50 ký tự" data-val-maxlength-max="50" data-val-regex="Chỉ sử dụng các chữ cái (a-z), số (0-9) và dấu chấm(.)" data-val-regex-pattern="^[0-9a-zA-Z\.]+$" data-val-required="Tên tài khoản không được để trống" id="AccountName" name="AccountName" value="" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="AccountName" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required" for="Password">Mật khẩu</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Mật khẩu" type="password" data-val="true" data-val-maxlength="The field Mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-minlength="Mật khẩu phải có ít nhất 6 ký tự" data-val-minlength-min="6" data-val-required="Mật khẩu không được để trống" id="Password" maxlength="250" name="Password" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required" for="ConfirmPassword">Nhập lại mật khẩu</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" data-val="true" data-val-equalto="Xác nhận mật khẩu chưa chính xác" data-val-equalto-other="*.Password" data-val-maxlength="The field Nhập lại mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-required="Nhập lại mật khẩu không được để trống" id="ConfirmPassword" maxlength="250" name="ConfirmPassword" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required" for="Name">Họ và tên</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Họ và tên" type="text" data-val="true" data-val-maxlength="Họ và tên không được quá 50 ký tự" data-val-maxlength-max="50" data-val-required="Họ và tên không được để trống" id="Name" maxlength="50" name="Name" value="" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required onlynumber" for="IdentityNumber">Số CMND/Hộ chiếu</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Số CMND/Hộ chiếu" type="text" data-val="true" data-val-maxlength="Số CMND/Hộ chiếu không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số CMND/Hộ chiếu không đúng định dạng" data-val-regex-pattern="^[0-9]+$" data-val-required="Số CMND/Hộ chiếu không được để trống" id="IdentityNumber" maxlength="20" name="IdentityNumber" value="" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate input-required" for="Email">Email</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-maxlength="Email không được quá 100 ký tự" data-val-maxlength-max="100" data-val-regex="Email chưa đúng định dạng. Vui lòng nhập email đúng định dạng như (@gmail.com, @abc.vn...)" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email không được để trống" id="Email" maxlength="100" name="Email" value="" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-4 col-form-label text-truncate onlynumber" for="Phone">Số điện thoại</label>
-									<div class="col-sm-8">
-										<input class="form-control" placeholder="Số điện thoại" type="tel" maxlength="20" data-val="true" data-val-maxlength="Số điện thoại không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số điện thoại không đúng định dạng (10 hoặc 11 số)" data-val-regex-pattern="(^[0-9]{10}\b)|(^[0-9]{11}\b)" id="Phone" name="Phone" value="" />
-										<span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
-									</div>
-								</div>
-								<div class="form-group row">
-									<div class="col-sm-4"></div>
-									<div class="col-sm-8">
-										<button class="btn mb-2 btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
-										<button class="btn mb-2 btn-info"><i class="fas fa-fw fa-edit mr-2"></i>Lưu tạm</button>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="docNote" role="tabpanel" aria-labelledby="docNote-tab">
-								<div class="form-group">
-									<textarea class="form-control" rows="5" maxlength="250" placeholder="Ghi chú"></textarea>
-								</div>
-								<button class="btn btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
-							</div>
-							<div class="tab-pane fade" id="docHistory" role="tabpanel" aria-labelledby="docHistory-tab">
-								<h4>Lịch sử thêm mới tài liệu:</h4>
-								<div class="module toggle-wrap">
-									<div class="mod-content module_cmt">
-										<div>
-											<ul>
-												<li>
-													<dl>
-														<dt>Người tạo</dt>
-														<dd>Admin_cloud 2</dd>
-													</dl>
-												</li>
-												<li>
-													<dl>
-														<dt>Ngày tạo</dt>
-														<dd>21-10-2020 08:34</dd>
-													</dl>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<h4>Lịch sử sửa tài liệu:</h4>
-							</div>
-						</div>
+						<img src="img/boxed-bg.jpg" alt="pdf" />
 					</div>
 				</div>
 			</aside>
@@ -808,8 +719,8 @@
 		<script>
 			$(function () {
 				const resizeOptions = {
-					maxWidth: 700,
-					minWidth: 200,
+					maxWidth: 960,
+					minWidth: 480,
 					handles: 'w',
 					resize: function (event, ui) {
 						$('.content-wrapper').css({
@@ -844,7 +755,7 @@
 					minimumResultsForSearch: Infinity,
 					dropdownParent: '.user-panel',
 					templateResult: formatOption,
-					templateSelection: formatOption,
+					templateSelection: formatOption
 				});
 			});
 		</script>
