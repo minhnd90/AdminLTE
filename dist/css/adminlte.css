@@ -22566,12 +22566,13 @@ html.maximized-card {
   background-color: inherit !important;
 }
 
-[data-widget='expandable-table'] {
+[data-widget='expandable-table']:not(.quickShowDetail) {
   cursor: pointer;
 }
 
 [data-widget='expandable-table'] i {
   transition: transform 0.3s linear;
+  cursor: pointer;
 }
 
 [data-widget='expandable-table'][aria-expanded='true'] td > i[class*='right'] {

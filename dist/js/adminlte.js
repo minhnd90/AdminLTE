@@ -1008,8 +1008,16 @@
   $__default['default'](SELECTOR_TABLE).ready(function () {
     ExpandableTable._jQueryInterface.call($__default['default'](this), 'init');
   });
-  $__default['default'](document).on('click', SELECTOR_DATA_TOGGLE$2 + ' > td:not(:has(a))', function () {
-    ExpandableTable._jQueryInterface.call($__default['default'](this).parent(), 'toggleRow');
+  jQuery(function () {
+    if ($__default['default']('.quickShowDetail').length > 0) {
+      $__default['default'](document).on('click', SELECTOR_DATA_TOGGLE$2 + ' td .right', function () {
+        ExpandableTable._jQueryInterface.call($__default['default'](this).parent().parent(), 'toggleRow');
+      });
+    } else {
+      $__default['default'](document).on('click', SELECTOR_DATA_TOGGLE$2, function () {
+        ExpandableTable._jQueryInterface.call($__default['default'](this), 'toggleRow');
+      });
+    }
   });
   /**
     * jQuery API

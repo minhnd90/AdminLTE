@@ -95,10 +95,12 @@
 }
 
 [data-widget='expandable-table'] {
-	cursor: pointer;
-
+	&:not(.quickShowDetail) {
+		cursor: pointer;
+	}
 	i {
 		transition: transform $transition-speed linear;
+		cursor: pointer;
 	}
 	&[aria-expanded='true'] {
 		td > i {

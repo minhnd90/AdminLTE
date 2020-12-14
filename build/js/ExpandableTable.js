@@ -92,14 +92,21 @@ class ExpandableTable {
   * Data API
   * ====================================================
   */
-$(SELECTOR_TABLE).ready(function () {
+
+ $(SELECTOR_TABLE).ready(function () {
   ExpandableTable._jQueryInterface.call($(this), 'init')
 })
-
-$(document).on('click', SELECTOR_DATA_TOGGLE + ' > td:not(:has(a))', function () {
-    ExpandableTable._jQueryInterface.call($(this).parent(), 'toggleRow')
+jQuery(function () {
+  if ($('.quickShowDetail').length > 0) {
+    $(document).on('click', SELECTOR_DATA_TOGGLE + ' td .right', function () {
+      ExpandableTable._jQueryInterface.call($(this).parent().parent(), 'toggleRow')
+    })
+  } else {
+    $(document).on('click', SELECTOR_DATA_TOGGLE, function () {
+      ExpandableTable._jQueryInterface.call($(this), 'toggleRow')
+    })
+  }
 })
-
 /**
   * jQuery API
   * ====================================================
