@@ -118,12 +118,15 @@
 
 .expandable-body {
 	> td {
-		padding: 0 !important;
+		// padding: 0 !important;
 		width: 100%;
 
-		> div,
-		> p {
-			padding: $table-cell-padding;
+		// > div,
+		// > p {
+		// 	padding: $table-cell-padding;
+		// }
+		.jumbotron {
+			padding: $grid-gutter-width / 2;
 		}
 	}
 

@@ -22584,13 +22584,11 @@ html.maximized-card {
 }
 
 .expandable-body > td {
-  padding: 0 !important;
   width: 100%;
 }
 
-.expandable-body > td > div,
-.expandable-body > td > p {
-  padding: 0.375rem;
+.expandable-body > td .jumbotron {
+  padding: 7.5px;
 }
 
 .expandable-body .table {

@@ -929,7 +929,6 @@
   var JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
   var EVENT_EXPANDED$2 = "expanded" + EVENT_KEY$4;
   var EVENT_COLLAPSED$2 = "collapsed" + EVENT_KEY$4;
-  var SELECTOR_TABLE = '.expandable-table';
   var SELECTOR_DATA_TOGGLE$2 = '[data-widget="expandable-table"]';
   var SELECTOR_ARIA_ATTR = 'aria-expanded';
   /**
@@ -1005,15 +1004,50 @@
     */
 
 
-  $__default['default'](SELECTOR_TABLE).ready(function () {
-    ExpandableTable._jQueryInterface.call($__default['default'](this), 'init');
-  });
   jQuery(function () {
     if ($__default['default']('.quickShowDetail').length > 0) {
-      $__default['default'](document).on('click', SELECTOR_DATA_TOGGLE$2 + ' td .right', function () {
-        ExpandableTable._jQueryInterface.call($__default['default'](this).parent().parent(), 'toggleRow');
+      $__default['default'](document).on("click", SELECTOR_DATA_TOGGLE$2 + ' > td > .right', function () {
+        var toggler = $__default['default'](this);
+        var $row = $__default['default'](this).parent().parent();
+        var $template = $__default['default']('<tr />').addClass('expandable-body');
+        var hasExpandableBody = $row.next().hasClass('expandable-body');
+        var $expandableBody = hasExpandableBody ? $row.next() : $template.clone();
+
+        if (!hasExpandableBody) {
+          $expandableBody.insertAfter($row);
+          hasExpandableBody = true;
+        }
+
+        if ($__default['default'].trim($expandableBody.html()) == '') {
+          $__default['default'].ajax({
+            type: "POST",
+            async: true,
+            url: $row.data("url"),
+            data: {
+              IDProfile: $row.data("id")
+            },
+            beforeSend: function beforeSend() {
+              toggler.addClass('fa-spin fa-spinner');
+            },
+            success: function success(data) {
+              $expandableBody.html(data);
+              $expandableBody.find("td:first").attr("colspan", $row.data("colspan"));
+
+              ExpandableTable._jQueryInterface.call($__default['default'](this), 'init');
+            },
+            complete: function complete() {
+              toggler.removeClass('fa-spin fa-spinner');
+
+              ExpandableTable._jQueryInterface.call($row, 'toggleRow');
+            }
+          });
+        } else {
+          ExpandableTable._jQueryInterface.call($row, 'toggleRow');
+        }
       });
     } else {
+      ExpandableTable._jQueryInterface.call($__default['default'](this), 'init');
+
       $__default['default'](document).on('click', SELECTOR_DATA_TOGGLE$2, function () {
         ExpandableTable._jQueryInterface.call($__default['default'](this), 'toggleRow');
       });
