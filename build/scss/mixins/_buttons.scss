@@ -2,7 +2,7 @@
 @mixin button-hover-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
 
   //color: $color;
-  background-color: transparent;
+  //background-color: transparent;
   //border-color: $color;
 
   @include hover() {

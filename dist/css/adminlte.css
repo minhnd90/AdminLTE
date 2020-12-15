@@ -21976,10 +21976,6 @@ html.maximized-card {
   color: #fff;
 }
 
-.btn-hover-primary {
-  background-color: transparent;
-}
-
 .btn-hover-primary:hover {
   color: #fff;
   background-color: rgba(34, 134, 239, 0.75);
@@ -21990,10 +21986,6 @@ html.maximized-card {
   color: #fff;
   background-color: rgba(34, 134, 239, 0.75);
   border-color: #2286ef;
-}
-
-.btn-hover-secondary {
-  background-color: transparent;
 }
 
 .btn-hover-secondary:hover {
@@ -22008,10 +22000,6 @@ html.maximized-card {
   border-color: #adb5bd;
 }
 
-.btn-hover-success {
-  background-color: transparent;
-}
-
 .btn-hover-success:hover {
   color: #fff;
   background-color: rgba(16, 124, 65, 0.75);
@@ -22022,10 +22010,6 @@ html.maximized-card {
   color: #fff;
   background-color: rgba(16, 124, 65, 0.75);
   border-color: #107c41;
-}
-
-.btn-hover-info {
-  background-color: transparent;
 }
 
 .btn-hover-info:hover {
@@ -22040,10 +22024,6 @@ html.maximized-card {
   border-color: #17a2b8;
 }
 
-.btn-hover-warning {
-  background-color: transparent;
-}
-
 .btn-hover-warning:hover {
   color: #fff;
   background-color: rgba(248, 180, 37, 0.75);
@@ -22054,10 +22034,6 @@ html.maximized-card {
   color: #fff;
   background-color: rgba(248, 180, 37, 0.75);
   border-color: #f8b425;
-}
-
-.btn-hover-danger {
-  background-color: transparent;
 }
 
 .btn-hover-danger:hover {
@@ -22072,10 +22048,6 @@ html.maximized-card {
   border-color: #dc3545;
 }
 
-.btn-hover-light {
-  background-color: transparent;
-}
-
 .btn-hover-light:hover {
   color: #1f2d3d;
   background-color: rgba(248, 249, 250, 0.75);
@@ -22088,10 +22060,6 @@ html.maximized-card {
   border-color: #f8f9fa;
 }
 
-.btn-hover-dark {
-  background-color: transparent;
-}
-
 .btn-hover-dark:hover {
   color: #fff;
   background-color: rgba(52, 58, 64, 0.75);
@@ -22102,10 +22070,6 @@ html.maximized-card {
   color: #fff;
   background-color: rgba(52, 58, 64, 0.75);
   border-color: #343a40;
-}
-
-.btn-hover-heavy-cyan {
-  background-color: transparent;
 }
 
 .btn-hover-heavy-cyan:hover {
@@ -22634,6 +22598,10 @@ caption {
 .table-control {
   margin-bottom: 5px;
   margin-top: 10px;
+}
+
+.table-responsive {
+  padding-bottom: 1.5rem;
 }
 
 .carousel-control-prev .carousel-control-custom-icon {
