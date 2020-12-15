@@ -28,26 +28,16 @@ html.control-sidebar-animate {
 		top: 0;
 		z-index: -1;
 	}
-	&.storage--file {
-		//margin-top: ($font-size-base * 1.5) + ($content-padding-x * 4);
+}
 
-		.card-body {
-			padding: 0.5rem;
-		}
-	}
-	.ui-resizable-handle.ui-resizable-w::before {
-		content: ':';
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 1px;
-		border: 1px solid $gray-500;
-		font-size: 1rem;
-		line-height: 20px;
-		padding-bottom: 3px;
-		border-radius: 2px;
-		color: $gray-500;
-		width: 100%;
+.storage--file {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto !important;
+
+	.card-body {
+		padding: 0.5rem;
 	}
 }
 

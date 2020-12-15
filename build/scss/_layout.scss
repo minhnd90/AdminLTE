@@ -486,6 +486,7 @@ body:not(.sidebar-mini-md) {
 
 	> .content {
 		padding: $content-padding-y $content-padding-x;
+		position: relative;
 	}
 }
 
