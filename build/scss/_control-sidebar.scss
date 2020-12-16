@@ -29,15 +29,11 @@ html.control-sidebar-animate {
 		z-index: -1;
 	}
 }
-
 .storage--file {
-	position: absolute;
-	top: 0;
-	right: 0;
 	left: auto !important;
 
 	.card-body {
-		padding: 0.5rem;
+		padding: 0;
 	}
 }
 
