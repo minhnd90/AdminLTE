@@ -3,12 +3,21 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>AdminLTE 3 | Danh sách thu thập tài liệu</title>
+		<title>AdminLTE 3 | Xếp hộp cặp hồ sơ</title>
 
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=fallback" />
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+
+		<!-- DataTables -->
+		<link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+		<!-- DataTables Select -->
+		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
+		<!-- DataTables Buttons -->
+		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
+
 		<!-- Select2 -->
 		<link rel="stylesheet" href="../plugins/select2/css/select2.min.css" />
 		<link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" />
@@ -499,7 +508,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#">Home</a></li>
 							<li class="breadcrumb-item"><a href="#">Kho lưu trữ</a></li>
-							<li class="breadcrumb-item active">Kho ABC</li>
+							<li class="breadcrumb-item active">Xếp hộp cặp hồ sơ</li>
 						</ol>
 					</div>
 					<!-- /.container-fluid -->
@@ -507,224 +516,173 @@
 
 				<!-- Main content -->
 				<section class="content">
-					<div class="row">
-						<div class="col storage--documenting">
-							<!-- Default box -->
-							<div class="card card-tabs card-success">
-								<div class="card-header p-0 pt-1">
-									<ul class="nav nav-tabs" id="sidebarTab" role="tablist">
-										<li class="nav-item">
-											<a class="nav-link active" id="docInfo-tab" data-toggle="pill" href="#docInfo" role="tab" aria-controls="docInfo" aria-selected="true">Thông tin tài liệu</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" id="docNote-tab" data-toggle="pill" href="#docNote" role="tab" aria-controls="docNote" aria-selected="false">Ghi chú</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" id="docHistory-tab" data-toggle="pill" href="#docHistory" role="tab" aria-controls="docHistory" aria-selected="false">Lịch sử thay đổi nội dung</a>
-										</li>
-									</ul>
-								</div>
-								<div class="card-body">
-									<div class="tab-content" id="sidebarTabContent">
-										<div class="tab-pane fade show active" id="docInfo" role="tabpanel" aria-labelledby="docInfo-tab">
-											<!-- Demo content -->
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="AccountName" title="Tên tài khoản">Tên tài khoản</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Tên tài khoản" maxlength="50" type="text" data-val="true" data-val-maxlength="Tên tài khoản không được quá 50 ký tự" data-val-maxlength-max="50" data-val-regex="Chỉ sử dụng các chữ cái (a-z), số (0-9) và dấu chấm(.)" data-val-regex-pattern="^[0-9a-zA-Z\.]+$" data-val-required="Tên tài khoản không được để trống" id="AccountName" name="AccountName" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="AccountName" data-valmsg-replace="true"></span>
-												</div>
+					<div class="container-fluid" id="ContentArea">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Xếp hộp cặp hồ sơ</h3>
+							</div>
+							<div class="card-body">
+								<div class="row justify-content-center">
+									<div class="col-5">
+										<div class="card card-outline card-success">
+											<div class="card-header">
+												<h4 class="card-title">Danh sách hồ sơ chưa xếp hộp cặp</h4>
 											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Password">Mật khẩu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Mật khẩu" type="password" data-val="true" data-val-maxlength="The field Mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-minlength="Mật khẩu phải có ít nhất 6 ký tự" data-val-minlength-min="6" data-val-required="Mật khẩu không được để trống" id="Password" maxlength="250" name="Password" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-												</div>
+											<div class="card-body">
+												<table id="tableFile" class="table table-striped table-hover w-100">
+													<thead>
+														<tr>
+															<th>STT</th>
+															<th>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="group-checkable custom-control-input" id="checkallFile" />
+																	<label class="custom-control-label" for="checkallFile"></label>
+																</div>
+															</th>
+															<th>Mã hồ sơ</th>
+															<th>Tiêu đề hồ sơ</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS01" />
+																	<label class="custom-control-label" for="HS01"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 4.0</td>
+															<td>Win 95+</td>
+														</tr>
+													</tbody>
+												</table>
 											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="ConfirmPassword">Nhập lại mật khẩu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" data-val="true" data-val-equalto="Xác nhận mật khẩu chưa chính xác" data-val-equalto-other="*.Password" data-val-maxlength="The field Nhập lại mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-required="Nhập lại mật khẩu không được để trống" id="ConfirmPassword" maxlength="250" name="ConfirmPassword" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Name">Họ và tên</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Họ và tên" type="text" data-val="true" data-val-maxlength="Họ và tên không được quá 50 ký tự" data-val-maxlength-max="50" data-val-required="Họ và tên không được để trống" id="Name" maxlength="50" name="Name" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required onlynumber" for="IdentityNumber">Số CMND/Hộ chiếu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Số CMND/Hộ chiếu" type="text" data-val="true" data-val-maxlength="Số CMND/Hộ chiếu không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số CMND/Hộ chiếu không đúng định dạng" data-val-regex-pattern="^[0-9]+$" data-val-required="Số CMND/Hộ chiếu không được để trống" id="IdentityNumber" maxlength="20" name="IdentityNumber" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Email">Email</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-maxlength="Email không được quá 100 ký tự" data-val-maxlength-max="100" data-val-regex="Email chưa đúng định dạng. Vui lòng nhập email đúng định dạng như (@gmail.com, @abc.vn...)" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email không được để trống" id="Email" maxlength="100" name="Email" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate onlynumber" for="Phone">Số điện thoại</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Số điện thoại" type="tel" maxlength="20" data-val="true" data-val-maxlength="Số điện thoại không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số điện thoại không đúng định dạng (10 hoặc 11 số)" data-val-regex-pattern="(^[0-9]{10}\b)|(^[0-9]{11}\b)" id="Phone" name="Phone" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="AccountName" title="Tên tài khoản">Tên tài khoản</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Tên tài khoản" maxlength="50" type="text" data-val="true" data-val-maxlength="Tên tài khoản không được quá 50 ký tự" data-val-maxlength-max="50" data-val-regex="Chỉ sử dụng các chữ cái (a-z), số (0-9) và dấu chấm(.)" data-val-regex-pattern="^[0-9a-zA-Z\.]+$" data-val-required="Tên tài khoản không được để trống" id="AccountName" name="AccountName" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="AccountName" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Password">Mật khẩu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Mật khẩu" type="password" data-val="true" data-val-maxlength="The field Mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-minlength="Mật khẩu phải có ít nhất 6 ký tự" data-val-minlength-min="6" data-val-required="Mật khẩu không được để trống" id="Password" maxlength="250" name="Password" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="ConfirmPassword">Nhập lại mật khẩu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" data-val="true" data-val-equalto="Xác nhận mật khẩu chưa chính xác" data-val-equalto-other="*.Password" data-val-maxlength="The field Nhập lại mật khẩu must be a string or array type with a maximum length of '250'." data-val-maxlength-max="250" data-val-required="Nhập lại mật khẩu không được để trống" id="ConfirmPassword" maxlength="250" name="ConfirmPassword" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Name">Họ và tên</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Họ và tên" type="text" data-val="true" data-val-maxlength="Họ và tên không được quá 50 ký tự" data-val-maxlength-max="50" data-val-required="Họ và tên không được để trống" id="Name" maxlength="50" name="Name" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required onlynumber" for="IdentityNumber">Số CMND/Hộ chiếu</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Số CMND/Hộ chiếu" type="text" data-val="true" data-val-maxlength="Số CMND/Hộ chiếu không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số CMND/Hộ chiếu không đúng định dạng" data-val-regex-pattern="^[0-9]+$" data-val-required="Số CMND/Hộ chiếu không được để trống" id="IdentityNumber" maxlength="20" name="IdentityNumber" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate input-required" for="Email">Email</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-maxlength="Email không được quá 100 ký tự" data-val-maxlength-max="100" data-val-regex="Email chưa đúng định dạng. Vui lòng nhập email đúng định dạng như (@gmail.com, @abc.vn...)" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email không được để trống" id="Email" maxlength="100" name="Email" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-sm-4 col-form-label text-truncate onlynumber" for="Phone">Số điện thoại</label>
-												<div class="col-sm-8">
-													<input class="form-control" placeholder="Số điện thoại" type="tel" maxlength="20" data-val="true" data-val-maxlength="Số điện thoại không được quá 20 ký tự" data-val-maxlength-max="20" data-val-regex="Số điện thoại không đúng định dạng (10 hoặc 11 số)" data-val-regex-pattern="(^[0-9]{10}\b)|(^[0-9]{11}\b)" id="Phone" name="Phone" value="" />
-													<span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<div class="col-sm-4"></div>
-												<div class="col-sm-8">
-													<button class="btn mb-2 btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
-													<button class="btn mb-2 btn-info"><i class="fas fa-fw fa-edit mr-2"></i>Lưu tạm</button>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane fade" id="docNote" role="tabpanel" aria-labelledby="docNote-tab">
-											<!-- Demo content -->
-											<div class="form-group">
-												<textarea class="form-control" rows="5" maxlength="250" placeholder="Ghi chú"></textarea>
-											</div>
-											<button class="btn btn-primary"><i class="fas fa-fw fa-save mr-2"></i>Lưu</button>
-										</div>
-										<div class="tab-pane fade" id="docHistory" role="tabpanel" aria-labelledby="docHistory-tab">
-											<!-- Demo content -->
-											<h4>Lịch sử thêm mới tài liệu:</h4>
-											<div class="module toggle-wrap">
-												<div class="mod-content module_cmt">
-													<div>
-														<ul>
-															<li>
-																<dl>
-																	<dt>Người tạo</dt>
-																	<dd>Admin_cloud 2</dd>
-																</dl>
-															</li>
-															<li>
-																<dl>
-																	<dt>Ngày tạo</dt>
-																	<dd>21-10-2020 08:34</dd>
-																</dl>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<h4>Lịch sử sửa tài liệu:</h4>
 										</div>
 									</div>
+									<div id="dt_buttons" class="col-1 d-flex flex-column justify-content-center align-items-center"></div>
+									<div class="col-5">
+										<div class="card card-outline card-success">
+											<div class="card-header">
+												<h4 class="card-title">Vị trí lưu</h4>
+											</div>
+											<div class="card-body">
+												<table id="tableStorage" class="table table-striped table-hover w-100">
+													<thead>
+														<tr>
+															<th>STT</th>
+															<th>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="group-checkable custom-control-input" id="checkallStorage" />
+																	<label class="custom-control-label" for="checkallStorage"></label>
+																</div>
+															</th>
+															<th>Mã hồ sơ</th>
+															<th>Tiêu đề hồ sơ</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS02" />
+																	<label class="custom-control-label" for="HS02"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 5.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS03" />
+																	<label class="custom-control-label" for="HS03"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 6.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS04" />
+																	<label class="custom-control-label" for="HS04"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 7.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS05" />
+																	<label class="custom-control-label" for="HS05"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 8.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS06" />
+																	<label class="custom-control-label" for="HS06"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 9.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS07" />
+																	<label class="custom-control-label" for="HS07"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 10.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS08" />
+																	<label class="custom-control-label" for="HS08"></label>
+																</div>
+															</td>
+															<td>Internet Explorer 11.0</td>
+															<td>Win 95+</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td>
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="checkboxes custom-control-input" id="HS09" />
+																	<label class="custom-control-label" for="HS09"></label>
+																</div>
+															</td>
+															<td>Microsoft Edge</td>
+															<td>Win 95+</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- /.col -->
 								</div>
+								<!-- /.row -->
 							</div>
-						</div>
-						<div class="col storage--file position-relative">
-							<div class="card card-success">
-								<div class="card-header p-0 pt-1 border-0">
-									<nav class="navbar navbar-expand p-0">
-										<!-- Right navbar links -->
-										<ul class="navbar-nav">
-											<li class="nav-item dropdown">
-												<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-													<span>Nhận dạng</span>
-												</a>
-												<div class="dropdown-menu dropdown-menu-lg">
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Chọn vùng nhận dạng</a>
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Nhận dạng tự động</a>
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Nhận dạng theo form</a>
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Chuyển đổi sang PDF Searchable</a>
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Chuyển đổi sang Word</a>
-													<div class="dropdown-divider"></div>
-													<a href="#" class="dropdown-item">Chuyển đổi sang txt</a>
-													<div class="dropdown-divider"></div>
-												</div>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fas fa-file-signature"></i>
-													<span>Hiển thị chữ ký</span>
-												</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fas fa-download"></i>
-													<span>Tải về</span>
-												</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-								<div class="card-body">
-									<img src="img/boxed-bg.jpg" alt="pdf" />
+							<div class="card-footer">
+								<div class="d-flex justify-content-between">
+									<button type="button" class="btn btn-secondary"><i class="fas fa-fw fa-angle-left"></i><span>Thoát</span></button>
+									<button type="button" class="btn btn-primary"><i class="fas fa-fw fa-save"></i><span>Lưu</span></button>
 								</div>
 							</div>
 						</div>
@@ -752,6 +710,20 @@
 		</script>
 		<!-- Bootstrap 4 -->
 		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- DataTables  & Plugins -->
+		<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+		<!-- DataTables Responsive -->
+		<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+		<!-- DataTables Select -->
+		<script src="../plugins/datatables-select/js/dataTables.select.min.js"></script>
+		<script src="../plugins/datatables-select/js/select.bootstrap4.min.js"></script>
+		<!-- DataTables Buttons -->
+		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+
 		<!-- Select2 -->
 		<script src="../plugins/select2/js/select2.full.min.js"></script>
 		<!-- overlayScrollbars -->
@@ -772,38 +744,75 @@
 
 		<script>
 			$(function () {
-				const createResizeEvent = (event, ui) => {
-					$('.ui-resizable-handle').css({ height: event.target.firstElementChild.clientHeight });
-				};
-				const resizeEvent = (event, ui) => {
-					$(event.target).css({ 'max-width': 'unset', flex: ui.size.width });
-					$(event.target.previousElementSibling).css({ 'max-width': 'unset', flex: '1 1 auto' });
-					$('.ui-resizable-handle').css({ height: event.target.firstElementChild.clientHeight });
-					$('#sidebarTab').scrollingTabs('refresh');
-				};
-				const resizeOptions = {
-					maxWidth: 960,
-					minWidth: 640,
-					handles: 'w',
-					alsoResizeReverse: '.storage--documenting',
-					create: createResizeEvent,
-					resize: resizeEvent
-				};
-				const scrollTabsOptions = {
-					cssClassLeftArrow: 'fas fa-angle-left',
-					cssClassRightArrow: 'fas fa-angle-right',
-					bootstrapVersion: 4,
-					scrollToTabEdge: true,
-					disableScrollArrowsOnFullyScrolled: true,
-					ignoreTabPanes: true,
-					enableSwiping: true
-				};
-				$('.storage--file').resizable(resizeOptions);
-				$(window).on('resize collapsed.lte.pushmenu shown.lte.pushmenu', function () {
-					$('.storage--file').css({ flex: '1 1 0' });
-					$('.storage--documenting').css({ flex: '1 1 0' });
+				$.extend(true, $.fn.dataTable.Buttons.defaults, { dom: { button: { className: 'btn m-2' } } });
+				function DT_Options(btnClass, btnIcon) {
+					return {
+						responsive: true,
+						select: { style: 'multi' },
+						paging: false,
+						ordering: false,
+						info: false,
+						autoWidth: true,
+						scrollY: '500px',
+						scrollCollapse: true,
+						columnDefs: [
+							{
+								searchable: false,
+								orderable: false,
+								targets: 0
+							}
+						],
+						order: [[1, 'asc']],
+						buttons: [
+							{
+								extend: 'selected',
+								className: `btn-outline-${btnClass}`,
+								text: `<i class="fas fa-fw ${btnIcon}"></i>`,
+								action: (e, dt, button, config) => {
+									//otherTable.row.add(dt.rows({ selected: true })).draw();
+									//dt.rows({ selected: true }).remove().draw();
+								}
+							}
+						]
+					};
+				}
+				function DT_AutoIndex(element) {
+					element
+						.on('order.dt search.dt', () => {
+							element
+								.column(0, { search: 'applied', order: 'applied' })
+								.nodes()
+								.each((cell, i) => (cell.innerHTML = i + 1));
+						})
+						.draw();
+				}
+
+				const tableFile = $('#tableFile').DataTable(DT_Options('success', 'fa-caret-right'));
+				const tableStorage = $('#tableStorage').DataTable(DT_Options('danger', 'fa-caret-left'));
+
+				DT_AutoIndex(tableFile);
+				DT_AutoIndex(tableStorage);
+
+				tableFile.buttons().container().appendTo($('#dt_buttons'));
+				tableStorage.buttons().container().appendTo($('#dt_buttons'));
+
+				function DT_MoveRows(fromTable, toTable) {
+					var $row = $(fromTable).find('.selected');
+					$.each($row, function (k, v) {
+						if (this != null) {
+							addRow = fromTable.fnGetData(this);
+							toTable.fnAddData(addRow);
+							fromTable.fnDeleteRow(this);
+						}
+					});
+				}
+				$('[aria-controls="tableFile"]').on('click', function () {
+					DT_MoveRows(tableFile, tableStorage);
 				});
-				$('#sidebarTab').scrollingTabs(scrollTabsOptions);
+
+				$('[aria-controls="tableStorage"]').on('click', function () {
+					DT_MoveRows(tableStorage, tableFile);
+				});
 			});
 		</script>
 	</body>
