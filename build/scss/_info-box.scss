@@ -157,18 +157,24 @@
 
 	.info-box {
 		flex-direction: column;
-		margin-bottom: $grid-gutter-width * 1.5;
+		margin-bottom: $grid-gutter-width;
 
 		.info-box-icon {
-			height: 3rem;
-			width: 3rem;
+			border-radius: 50%;
+			//font-size: 1.5rem;
+			height: 4rem;
+			width: 4rem;
 			margin: 0 auto;
+			text-shadow: 0 1px 3px rgba(0,0,0, 0.25);
 		}
 		.info-box-content {
 			font-weight: 500;
 			margin-top: $grid-gutter-width / 2;
 			padding: 0;
 			text-align: center;
+		}
+		.info-box-text {
+			font-size: 0.75rem;
 		}
 	}
 }

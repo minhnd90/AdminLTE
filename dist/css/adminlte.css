@@ -22998,13 +22998,15 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .dashboard .info-box {
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 22.5px;
+  margin-bottom: 15px;
 }
 
 .dashboard .info-box .info-box-icon {
-  height: 3rem;
-  width: 3rem;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
   margin: 0 auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .dashboard .info-box .info-box-content {
@@ -23012,6 +23014,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   margin-top: 7.5px;
   padding: 0;
   text-align: center;
+}
+
+.dashboard .info-box .info-box-text {
+  font-size: 0.75rem;
 }
 
 .timeline {
