@@ -554,7 +554,7 @@
 									</div>
 								</form>
 								<div id="data_table_wrapper" class="dataTables_wrapper">
-									<div class="row justify-content-between">
+									<div class="row">
 										<div class="col">
 											<div class="card card-outline card-success">
 												<div class="card-header">
@@ -592,7 +592,9 @@
 												</div>
 											</div>
 										</div>
-										<div id="dt_buttons" class="col-1 d-flex flex-column justify-content-center align-items-center"></div>
+										<div class="col-1">
+											<div id="dt_buttons" class="row flex-column justify-content-center align-items-center h-100"></div>
+										</div>
 										<div class="col">
 											<div class="card card-outline card-success">
 												<div class="card-header">
@@ -780,7 +782,7 @@
 		<script>
 			$(function () {
 				$.extend(true, $.fn.dataTable.Buttons.defaults, { dom: { button: { className: 'btn m-2' } } });
-				function DT_Options(btnClass, btnIcon) {
+				function DT_Options(btnClass, btnIconSelected, btnIconAll) {
 					return {
 						responsive: true,
 						select: { style: 'multi' },
@@ -797,24 +799,13 @@
 								targets: 0
 							}
 						],
-						order: [[1, 'asc']],
-						buttons: [
-							{
-								extend: 'selected',
-								className: `btn-outline-${btnClass}`,
-								text: `<i class="fas fa-fw ${btnIcon}"></i>`,
-								action: (e, dt, button, config) => {
-									//otherTable.row.add(dt.rows({ selected: true })).draw();
-									//dt.rows({ selected: true }).remove().draw();
-								}
-							}
-						]
+						order: [[1, 'asc']]
 					};
 				}
-				function DT_AutoIndex(element) {
-					element
+				function DT_AutoIndex(dt) {
+					dt
 						.on('order.dt search.dt', () => {
-							element
+							dt
 								.column(0, { search: 'applied', order: 'applied' })
 								.nodes()
 								.each((cell, i) => (cell.innerHTML = i + 1));
@@ -822,14 +813,11 @@
 						.draw();
 				}
 
-				const tableFile = $('#tableFile').DataTable(DT_Options('success', 'fa-caret-right'));
-				const tableStorage = $('#tableStorage').DataTable(DT_Options('danger', 'fa-caret-left'));
+				const tableFile = $('#tableFile').DataTable(DT_Options());
+				const tableStorage = $('#tableStorage').DataTable(DT_Options());
 
 				DT_AutoIndex(tableFile);
 				DT_AutoIndex(tableStorage);
-
-				tableFile.buttons().container().appendTo($('#dt_buttons'));
-				tableStorage.buttons().container().appendTo($('#dt_buttons'));
 
 				function DT_MoveRows(fromTable, toTable) {
 					var $row = $(fromTable).find('.selected');

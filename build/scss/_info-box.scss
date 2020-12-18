@@ -150,3 +150,22 @@
 		color: $white;
 	}
 }
+
+.dashboard {
+	flex-wrap: nowrap;
+
+	.info-box {
+		flex-flow: column;
+		min-width: 150px;
+
+		.info-box-icon {
+			height: 5rem;
+			width: 5rem;
+			margin: 0 auto 1rem;
+		}
+		.info-box-content {
+			text-align: center;
+			font-weight: 500;
+		}
+	}
+}
