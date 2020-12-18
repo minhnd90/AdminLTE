@@ -153,19 +153,22 @@
 
 .dashboard {
 	flex-wrap: nowrap;
+	padding: $grid-gutter-width / 2;
 
 	.info-box {
-		flex-flow: column;
-		min-width: 150px;
+		flex-direction: column;
+		margin-bottom: $grid-gutter-width * 1.5;
 
 		.info-box-icon {
-			height: 5rem;
-			width: 5rem;
-			margin: 0 auto 1rem;
+			height: 3rem;
+			width: 3rem;
+			margin: 0 auto;
 		}
 		.info-box-content {
-			text-align: center;
 			font-weight: 500;
+			margin-top: $grid-gutter-width / 2;
+			padding: 0;
+			text-align: center;
 		}
 	}
 }
