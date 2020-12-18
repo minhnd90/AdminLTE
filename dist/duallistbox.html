@@ -13,8 +13,6 @@
 		<!-- DataTables -->
 		<link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
 		<link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
-		<!-- DataTables Select -->
-		<link rel="stylesheet" href="../plugins/datatables-select/css/select.bootstrap4.min.css" />
 		<!-- DataTables Buttons -->
 		<link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
 
@@ -522,160 +520,198 @@
 								<h3 class="card-title">Xếp hộp cặp hồ sơ</h3>
 							</div>
 							<div class="card-body">
-								<div class="row justify-content-center">
-									<div class="col-5">
-										<div class="card card-outline card-success">
-											<div class="card-header">
-												<h4 class="card-title">Danh sách hồ sơ chưa xếp hộp cặp</h4>
-											</div>
-											<div class="card-body">
-												<table id="tableFile" class="table table-striped table-hover w-100">
-													<thead>
-														<tr>
-															<th>STT</th>
-															<th>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="group-checkable custom-control-input" id="checkallFile" />
-																	<label class="custom-control-label" for="checkallFile"></label>
-																</div>
-															</th>
-															<th>Mã hồ sơ</th>
-															<th>Tiêu đề hồ sơ</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS01" />
-																	<label class="custom-control-label" for="HS01"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 4.0</td>
-															<td>Win 95+</td>
-														</tr>
-													</tbody>
-												</table>
+								<pre class="text-info">Sau khi chọn hộp sẽ load table trong card <b>Vị trí lưu</b></pre>
+								<form class="row">
+									<div class="col-md-4">
+										<div class="form-group row">
+											<label for="kho" class="col-sm-4 col-form-label text-left input-required">Kho: </label>
+											<div class="col-sm-12">
+												<select name="kho" id="kho" class="select2 w-100">
+													<option value="-1">--Chọn kho--</option>
+												</select>
 											</div>
 										</div>
 									</div>
-									<div id="dt_buttons" class="col-1 d-flex flex-column justify-content-center align-items-center"></div>
-									<div class="col-5">
-										<div class="card card-outline card-success">
-											<div class="card-header">
-												<h4 class="card-title">Vị trí lưu</h4>
-											</div>
-											<div class="card-body">
-												<table id="tableStorage" class="table table-striped table-hover w-100">
-													<thead>
-														<tr>
-															<th>STT</th>
-															<th>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="group-checkable custom-control-input" id="checkallStorage" />
-																	<label class="custom-control-label" for="checkallStorage"></label>
-																</div>
-															</th>
-															<th>Mã hồ sơ</th>
-															<th>Tiêu đề hồ sơ</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS02" />
-																	<label class="custom-control-label" for="HS02"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 5.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS03" />
-																	<label class="custom-control-label" for="HS03"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 6.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS04" />
-																	<label class="custom-control-label" for="HS04"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 7.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS05" />
-																	<label class="custom-control-label" for="HS05"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 8.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS06" />
-																	<label class="custom-control-label" for="HS06"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 9.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS07" />
-																	<label class="custom-control-label" for="HS07"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 10.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS08" />
-																	<label class="custom-control-label" for="HS08"></label>
-																</div>
-															</td>
-															<td>Internet Explorer 11.0</td>
-															<td>Win 95+</td>
-														</tr>
-														<tr>
-															<td></td>
-															<td>
-																<div class="custom-control custom-checkbox">
-																	<input type="checkbox" class="checkboxes custom-control-input" id="HS09" />
-																	<label class="custom-control-label" for="HS09"></label>
-																</div>
-															</td>
-															<td>Microsoft Edge</td>
-															<td>Win 95+</td>
-														</tr>
-													</tbody>
-												</table>
+									<div class="col-md-4">
+										<div class="form-group row">
+											<label for="giake" class="col-sm-4 col-form-label text-left input-required">Giá/kệ: </label>
+											<div class="col-sm-12">
+												<select name="giake" id="giake" class="select2 w-100">
+													<option value="-1">--Chọn giá/kệ--</option>
+												</select>
 											</div>
 										</div>
 									</div>
-									<!-- /.col -->
+									<div class="col-md-4">
+										<div class="form-group row">
+											<label for="hopcap" class="col-sm-4 col-form-label text-left input-required">Hộp/cặp: </label>
+											<div class="col-sm-12">
+												<select name="hopcap" id="hopcap" class="select2 w-100">
+													<option value="-1">--Chọn hộp/cặp--</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div id="data_table_wrapper" class="dataTables_wrapper">
+									<div class="row justify-content-between">
+										<div class="col">
+											<div class="card card-outline card-success">
+												<div class="card-header">
+													<h4 class="card-title">Danh sách hồ sơ chưa xếp hộp cặp</h4>
+												</div>
+												<div class="card-body">
+													<table id="tableFile" class="table table-striped table-hover w-100">
+														<thead>
+															<tr>
+																<th>STT</th>
+																<th>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="group-checkable custom-control-input" id="checkallFile" />
+																		<label class="custom-control-label" for="checkallFile"></label>
+																	</div>
+																</th>
+																<th>Mã hồ sơ</th>
+																<th>Tiêu đề hồ sơ</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS01" />
+																		<label class="custom-control-label" for="HS01"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 4.0</td>
+																<td>Win 95+</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div id="dt_buttons" class="col-1 d-flex flex-column justify-content-center align-items-center"></div>
+										<div class="col">
+											<div class="card card-outline card-success">
+												<div class="card-header">
+													<h4 class="card-title">Vị trí lưu</h4>
+													<div class="card-tools">
+														<a class="btn btn-tool btn-success quickUpdate" href="#" data-target="#planCreateModal"> <i class="fas fa-fw fa-plus"></i><span>Tạo hộp/cặp</span> </a>
+													</div>
+												</div>
+												<div class="card-body">
+													<table id="tableStorage" class="table table-striped table-hover w-100">
+														<thead>
+															<tr>
+																<th>STT</th>
+																<th>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="group-checkable custom-control-input" id="checkallStorage" />
+																		<label class="custom-control-label" for="checkallStorage"></label>
+																	</div>
+																</th>
+																<th>Mã hồ sơ</th>
+																<th>Tiêu đề hồ sơ</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS02" />
+																		<label class="custom-control-label" for="HS02"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 5.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS03" />
+																		<label class="custom-control-label" for="HS03"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 6.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS04" />
+																		<label class="custom-control-label" for="HS04"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 7.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS05" />
+																		<label class="custom-control-label" for="HS05"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 8.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS06" />
+																		<label class="custom-control-label" for="HS06"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 9.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS07" />
+																		<label class="custom-control-label" for="HS07"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 10.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS08" />
+																		<label class="custom-control-label" for="HS08"></label>
+																	</div>
+																</td>
+																<td>Internet Explorer 11.0</td>
+																<td>Win 95+</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="checkboxes custom-control-input" id="HS09" />
+																		<label class="custom-control-label" for="HS09"></label>
+																	</div>
+																</td>
+																<td>Microsoft Edge</td>
+																<td>Win 95+</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- /.col -->
+									</div>
 								</div>
 								<!-- /.row -->
 							</div>
@@ -719,7 +755,6 @@
 		<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 		<!-- DataTables Select -->
 		<script src="../plugins/datatables-select/js/dataTables.select.min.js"></script>
-		<script src="../plugins/datatables-select/js/select.bootstrap4.min.js"></script>
 		<!-- DataTables Buttons -->
 		<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 		<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
@@ -813,6 +848,8 @@
 				$('[aria-controls="tableStorage"]').on('click', function () {
 					DT_MoveRows(tableStorage, tableFile);
 				});
+
+				$('.select2').select2();
 			});
 		</script>
 	</body>

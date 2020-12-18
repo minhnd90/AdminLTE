@@ -18755,16 +18755,10 @@ body.text-sm .input-group-text {
   text-align: right;
 }
 
-.col-form-label.input-required {
-  padding-right: 1rem;
-}
-
 .col-form-label.input-required::after {
-  content: '(*)';
+  content: ' (*)';
   color: red;
   font-size: 0.75rem;
-  position: absolute;
-  right: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
