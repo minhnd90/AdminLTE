@@ -158,10 +158,11 @@
 	.info-box {
 		flex-direction: column;
 		margin-bottom: $grid-gutter-width;
+		min-width: 7rem;
+		min-height: 7rem;
 
 		.info-box-icon {
 			border-radius: 50%;
-			//font-size: 1.5rem;
 			height: 4rem;
 			width: 4rem;
 			margin: 0 auto;

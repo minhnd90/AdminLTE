@@ -22999,6 +22999,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 15px;
+  min-width: 7rem;
+  min-height: 7rem;
 }
 
 .dashboard .info-box .info-box-icon {

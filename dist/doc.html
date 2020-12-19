@@ -1,0 +1,87 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #fafafa;
+				font: 12pt 'Tahoma';
+			}
+
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+			}
+
+			.page {
+				width: 21cm;
+				height: 29.7cm;
+				padding: 1cm;
+				margin: 1cm auto;
+				border: 1px #d3d3d3 solid;
+				background: white;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			}
+			.header {
+				display: flex;
+				margin: 0 -10px;
+			}
+			.header > * {
+                padding: 0 10px;
+				-ms-flex-preferred-size: 0;
+				flex-basis: 0;
+				-ms-flex-positive: 1;
+                flex-grow: 1;
+                text-align: center;
+			}
+			.header--left {
+				max-width: 40%;
+			}
+			.header--right {
+				max-width: 60%;
+            }
+            p {
+                margin-top: 0 ;
+                margin-bottom: 10px;
+            }
+			@page {
+				size: A4;
+				margin: 0;
+			}
+			@media print {
+				html,
+				body {
+					width: 210mm;
+					height: 297mm;
+				}
+				.page {
+					margin: 0;
+					border: 0;
+					box-shadow: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="book">
+			<div class="page">
+				<div class="header">
+					<div class="header--left">
+                        <p>Tên CQ, TC CHỦ QUẢN:</p>
+                        <p>FSISoft</p>
+                    </div>
+					<div class="header--right">
+                        <p>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                        <p>Độc lập - Tự do - Hạnh phúc</p>
+                        <p><i>CreateDate:</i></p>
+                    </div>
+                </div>
+                <p><i>CreateDate:</i></p>
+			</div>
+		</div>
+	</body>
+</html>
