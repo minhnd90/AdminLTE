@@ -22992,7 +22992,6 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .dashboard {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  padding: 7.5px;
 }
 
 .dashboard .info-box {

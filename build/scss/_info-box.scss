@@ -153,7 +153,7 @@
 
 .dashboard {
 	flex-wrap: nowrap;
-	padding: $grid-gutter-width / 2;
+	//@at-root: $grid-gutter-width / 2;
 
 	.info-box {
 		flex-direction: column;
