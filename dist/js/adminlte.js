@@ -1,6 +1,6 @@
 /*!
  * AdminLTE v3.1.0-pre (https://adminlte.io)
- * Copyright 2014-2020 Colorlib <https://colorlib.com>
+ * Copyright 2014-2021 Colorlib <https://colorlib.com>
  * Licensed under MIT (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
  */
 (function (global, factory) {
@@ -1433,7 +1433,7 @@
   var CLASS_NAME_IS_OPENING = 'sidebar-is-opening';
   var CLASS_NAME_CLOSED = 'sidebar-closed';
   var Default$6 = {
-    autoCollapseSize: 992,
+    autoCollapseSize: 1280,
     enableRemember: false,
     noTransitionAfterReload: true
   };
