@@ -22587,12 +22587,8 @@ caption {
   margin-top: 10px;
 }
 
-.table-responsive {
-  margin-bottom: 2.5rem;
-}
-
 .table-responsive .table {
-  margin: 0;
+  margin-top: 1rem !important;
 }
 
 .carousel-control-prev .carousel-control-custom-icon {
