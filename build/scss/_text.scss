@@ -37,6 +37,12 @@
 		color: #{$color} !important;
 	}
 }
+@each $name, $color in $colors {
+	.text-#{$name}-stroke {
+		color: #{$color} !important;
+		text-shadow: -1px -1px 0 yiq($color), -1px 1px 0 yiq($color), 1px -1px 0 yiq($color), 1px 1px 0 yiq($color);
+	}
+}
 
 .dark-mode {
 	.text-muted {

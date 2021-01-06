@@ -4895,7 +4895,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 0.5rem;
 }
 
 .card-title {
@@ -4916,11 +4916,11 @@ input[type="button"].btn-block {
 }
 
 .card-link + .card-link {
-  margin-left: 1.25rem;
+  margin-left: 0.5rem;
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.5rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 0 solid rgba(0, 0, 0, 0.125);
@@ -4931,7 +4931,7 @@ input[type="button"].btn-block {
 }
 
 .card-footer {
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.5rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 0 solid rgba(0, 0, 0, 0.125);
 }
@@ -4941,15 +4941,15 @@ input[type="button"].btn-block {
 }
 
 .card-header-tabs {
-  margin-right: -0.625rem;
+  margin-right: -0.25rem;
   margin-bottom: -0.75rem;
-  margin-left: -0.625rem;
+  margin-left: -0.25rem;
   border-bottom: 0;
 }
 
 .card-header-pills {
-  margin-right: -0.625rem;
-  margin-left: -0.625rem;
+  margin-right: -0.25rem;
+  margin-left: -0.25rem;
 }
 
 .card-img-overlay {
@@ -21079,7 +21079,7 @@ html.maximized-card {
 .card-header {
   background-color: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.5rem;
   position: relative;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -21091,7 +21091,7 @@ html.maximized-card {
 
 .card-header > .card-tools {
   float: right;
-  margin-right: -0.625rem;
+  margin-right: -0.25rem;
 }
 
 .card-header > .card-tools .input-group,
@@ -22583,8 +22583,8 @@ caption {
 }
 
 .table-control {
-  margin-bottom: 5px;
-  margin-top: 10px;
+  margin-bottom: -0.5rem;
+  margin-top: 0.5rem;
 }
 
 .table-responsive .table {
@@ -31998,10 +31998,10 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-top-right-radius: 0;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-top: -1.25rem;
-  margin-left: -1.25rem;
-  height: calc(100% + 2 * 1.25rem);
-  width: calc(100% + 2 * 1.25rem);
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+  height: calc(100% + 2 * 0.5rem);
+  width: calc(100% + 2 * 0.5rem);
 }
 
 .tab-pane > .overlay-wrapper > .overlay.dark {
@@ -32824,6 +32824,106 @@ img {
 
 .text-heavy-cyan {
   color: #0e63bd !important;
+}
+
+.text-lightblue-stroke {
+  color: #3c8dbc !important;
+  text-shadow: -1px -1px 0 yiq(#3c8dbc), -1px 1px 0 yiq(#3c8dbc), 1px -1px 0 yiq(#3c8dbc), 1px 1px 0 yiq(#3c8dbc);
+}
+
+.text-navy-stroke {
+  color: #001f3f !important;
+  text-shadow: -1px -1px 0 yiq(#001f3f), -1px 1px 0 yiq(#001f3f), 1px -1px 0 yiq(#001f3f), 1px 1px 0 yiq(#001f3f);
+}
+
+.text-olive-stroke {
+  color: #3d9970 !important;
+  text-shadow: -1px -1px 0 yiq(#3d9970), -1px 1px 0 yiq(#3d9970), 1px -1px 0 yiq(#3d9970), 1px 1px 0 yiq(#3d9970);
+}
+
+.text-lime-stroke {
+  color: #01ff70 !important;
+  text-shadow: -1px -1px 0 yiq(#01ff70), -1px 1px 0 yiq(#01ff70), 1px -1px 0 yiq(#01ff70), 1px 1px 0 yiq(#01ff70);
+}
+
+.text-fuchsia-stroke {
+  color: #f012be !important;
+  text-shadow: -1px -1px 0 yiq(#f012be), -1px 1px 0 yiq(#f012be), 1px -1px 0 yiq(#f012be), 1px 1px 0 yiq(#f012be);
+}
+
+.text-maroon-stroke {
+  color: #d81b60 !important;
+  text-shadow: -1px -1px 0 yiq(#d81b60), -1px 1px 0 yiq(#d81b60), 1px -1px 0 yiq(#d81b60), 1px 1px 0 yiq(#d81b60);
+}
+
+.text-blue-stroke {
+  color: #2286ef !important;
+  text-shadow: -1px -1px 0 yiq(#2286ef), -1px 1px 0 yiq(#2286ef), 1px -1px 0 yiq(#2286ef), 1px 1px 0 yiq(#2286ef);
+}
+
+.text-indigo-stroke {
+  color: #6610f2 !important;
+  text-shadow: -1px -1px 0 yiq(#6610f2), -1px 1px 0 yiq(#6610f2), 1px -1px 0 yiq(#6610f2), 1px 1px 0 yiq(#6610f2);
+}
+
+.text-purple-stroke {
+  color: #6f42c1 !important;
+  text-shadow: -1px -1px 0 yiq(#6f42c1), -1px 1px 0 yiq(#6f42c1), 1px -1px 0 yiq(#6f42c1), 1px 1px 0 yiq(#6f42c1);
+}
+
+.text-pink-stroke {
+  color: #e83e8c !important;
+  text-shadow: -1px -1px 0 yiq(#e83e8c), -1px 1px 0 yiq(#e83e8c), 1px -1px 0 yiq(#e83e8c), 1px 1px 0 yiq(#e83e8c);
+}
+
+.text-red-stroke {
+  color: #dc3545 !important;
+  text-shadow: -1px -1px 0 yiq(#dc3545), -1px 1px 0 yiq(#dc3545), 1px -1px 0 yiq(#dc3545), 1px 1px 0 yiq(#dc3545);
+}
+
+.text-orange-stroke {
+  color: #fd7e14 !important;
+  text-shadow: -1px -1px 0 yiq(#fd7e14), -1px 1px 0 yiq(#fd7e14), 1px -1px 0 yiq(#fd7e14), 1px 1px 0 yiq(#fd7e14);
+}
+
+.text-yellow-stroke {
+  color: #f8b425 !important;
+  text-shadow: -1px -1px 0 yiq(#f8b425), -1px 1px 0 yiq(#f8b425), 1px -1px 0 yiq(#f8b425), 1px 1px 0 yiq(#f8b425);
+}
+
+.text-green-stroke {
+  color: #107c41 !important;
+  text-shadow: -1px -1px 0 yiq(#107c41), -1px 1px 0 yiq(#107c41), 1px -1px 0 yiq(#107c41), 1px 1px 0 yiq(#107c41);
+}
+
+.text-teal-stroke {
+  color: #20c997 !important;
+  text-shadow: -1px -1px 0 yiq(#20c997), -1px 1px 0 yiq(#20c997), 1px -1px 0 yiq(#20c997), 1px 1px 0 yiq(#20c997);
+}
+
+.text-cyan-stroke {
+  color: #17a2b8 !important;
+  text-shadow: -1px -1px 0 yiq(#17a2b8), -1px 1px 0 yiq(#17a2b8), 1px -1px 0 yiq(#17a2b8), 1px 1px 0 yiq(#17a2b8);
+}
+
+.text-white-stroke {
+  color: #ffffff !important;
+  text-shadow: -1px -1px 0 yiq(#ffffff), -1px 1px 0 yiq(#ffffff), 1px -1px 0 yiq(#ffffff), 1px 1px 0 yiq(#ffffff);
+}
+
+.text-gray-stroke {
+  color: #aaaaaa !important;
+  text-shadow: -1px -1px 0 yiq(#aaaaaa), -1px 1px 0 yiq(#aaaaaa), 1px -1px 0 yiq(#aaaaaa), 1px 1px 0 yiq(#aaaaaa);
+}
+
+.text-gray-dark-stroke {
+  color: #222222 !important;
+  text-shadow: -1px -1px 0 yiq(#222222), -1px 1px 0 yiq(#222222), 1px -1px 0 yiq(#222222), 1px 1px 0 yiq(#222222);
+}
+
+.text-heavy-cyan-stroke {
+  color: #0e63bd !important;
+  text-shadow: -1px -1px 0 yiq(#0e63bd), -1px 1px 0 yiq(#0e63bd), 1px -1px 0 yiq(#0e63bd), 1px 1px 0 yiq(#0e63bd);
 }
 
 .dark-mode .text-muted {
