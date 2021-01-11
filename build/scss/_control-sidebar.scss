@@ -29,12 +29,26 @@ html.control-sidebar-animate {
 		z-index: -1;
 	}
 }
-.storage--file {
-	left: auto !important;
+.documenting {
+	height: calc(100vh - 1rem - #{$main-header-height} - #{$content-header-height} - #{$main-footer-height});
 
-	.card-body {
-		padding: 0;
-		overflow: hidden;
+	.card {
+		height: 100%;
+
+		.card-body {
+			overflow: auto;
+
+			.os-content > * {
+				padding-right: 2px;
+			}
+		}
+	}
+	.storage--file {
+		left: auto !important;
+
+		.card-body {
+			padding: 0;
+		}
 	}
 }
 

@@ -559,8 +559,8 @@ pre code {
 .container-lg,
 .container-xl {
   width: 100%;
-  padding-right: 7.5px;
-  padding-left: 7.5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -594,8 +594,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -7.5px;
-  margin-left: -7.5px;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
 }
 
 .no-gutters {
@@ -617,8 +617,8 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 7.5px;
-  padding-left: 7.5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .col {
@@ -4983,7 +4983,7 @@ input[type="button"].btn-block {
 }
 
 .card-deck .card {
-  margin-bottom: 7.5px;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 576px) {
@@ -4992,20 +4992,20 @@ input[type="button"].btn-block {
     display: flex;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    margin-right: -7.5px;
-    margin-left: -7.5px;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
   }
   .card-deck .card {
     -ms-flex: 1 0 0%;
     flex: 1 0 0%;
-    margin-right: 7.5px;
+    margin-right: 0.5rem;
     margin-bottom: 0;
-    margin-left: 7.5px;
+    margin-left: 0.5rem;
   }
 }
 
 .card-group > .card {
-  margin-bottom: 7.5px;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 576px) {
@@ -10473,7 +10473,7 @@ body,
 }
 
 .wrapper .content-wrapper {
-  min-height: calc(100vh - 3.5rem - calc(3.5rem + 1px));
+  min-height: calc(100vh - 3.5rem - calc(3.21875rem + 1px));
 }
 
 .layout-boxed .wrapper {
@@ -11488,7 +11488,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-footer-fixed .wrapper .content-wrapper {
-  padding-bottom: calc(3.5rem + 1px);
+  padding-bottom: calc(3.21875rem + 1px);
 }
 
 .layout-footer-not-fixed .wrapper .main-footer {
@@ -11507,7 +11507,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
     z-index: 1022;
   }
   .layout-sm-footer-fixed .wrapper .content-wrapper {
-    padding-bottom: calc(3.5rem + 1px);
+    padding-bottom: calc(3.21875rem + 1px);
   }
   .layout-sm-footer-not-fixed .wrapper .main-footer {
     position: static;
@@ -11526,7 +11526,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
     z-index: 1022;
   }
   .layout-md-footer-fixed .wrapper .content-wrapper {
-    padding-bottom: calc(3.5rem + 1px);
+    padding-bottom: calc(3.21875rem + 1px);
   }
   .layout-md-footer-not-fixed .wrapper .main-footer {
     position: static;
@@ -11545,7 +11545,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
     z-index: 1022;
   }
   .layout-lg-footer-fixed .wrapper .content-wrapper {
-    padding-bottom: calc(3.5rem + 1px);
+    padding-bottom: calc(3.21875rem + 1px);
   }
   .layout-lg-footer-not-fixed .wrapper .main-footer {
     position: static;
@@ -11564,7 +11564,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
     z-index: 1022;
   }
   .layout-xl-footer-fixed .wrapper .content-wrapper {
-    padding-bottom: calc(3.5rem + 1px);
+    padding-bottom: calc(3.21875rem + 1px);
   }
   .layout-xl-footer-not-fixed .wrapper .main-footer {
     position: static;
@@ -12159,8 +12159,11 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   padding: 0.3125rem 0.5rem;
 }
 
+.nav-sidebar .nav-item {
+  margin-bottom: 0.3125rem;
+}
+
 .nav-sidebar .nav-item > .nav-link {
-  margin-bottom: 0.2rem;
   font-size: 0.875rem;
 }
 
@@ -12178,7 +12181,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 .nav-sidebar .nav-link > p > .right {
   position: absolute;
   right: 1rem;
-  top: 0.7rem;
+  top: 0.5625rem;
 }
 
 .nav-sidebar .nav-link > .right i,
@@ -12190,7 +12193,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .nav-sidebar .nav-link > .right:nth-child(2),
 .nav-sidebar .nav-link > p > .right:nth-child(2) {
-  right: 2.2rem;
+  right: 2rem;
 }
 
 .nav-sidebar .menu-open > .nav-treeview {
@@ -12208,18 +12211,18 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .nav-sidebar > .nav-item .nav-icon {
   margin-left: 0.125rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-right: 0.5rem;
   text-align: center;
   width: 1rem;
 }
 
 .nav-sidebar > .nav-item .nav-icon.fa, .nav-sidebar > .nav-item .nav-icon.fas, .nav-sidebar > .nav-item .nav-icon.far, .nav-sidebar > .nav-item .nav-icon.fab, .nav-sidebar > .nav-item .nav-icon.fal, .nav-sidebar > .nav-item .nav-icon.fad, .nav-sidebar > .nav-item .nav-icon.svg-inline--fa, .nav-sidebar > .nav-item .nav-icon.ion {
-  font-size: 1rem;
+  font-size: inherit;
 }
 
 .nav-sidebar > .nav-item .float-right {
-  margin-top: 3px;
+  margin-top: 0.125rem;
 }
 
 .nav-sidebar .nav-treeview {
@@ -14950,14 +14953,14 @@ html.control-sidebar-animate {
 }
 
 .control-sidebar {
-  bottom: calc(3.5rem + 1px);
+  bottom: calc(3.21875rem + 1px);
   position: absolute;
   top: 3.5rem;
   z-index: 1021;
 }
 
 .control-sidebar, .control-sidebar::before {
-  bottom: calc(3.5rem + 1px);
+  bottom: calc(3.21875rem + 1px);
   display: none;
   right: -480px;
   width: 480px;
@@ -14978,13 +14981,28 @@ html.control-sidebar-animate {
   z-index: -1;
 }
 
-.storage--file {
+.documenting {
+  height: calc(100vh - 1rem - 3.5rem - 2.71875rem - calc(3.21875rem + 1px));
+}
+
+.documenting .card {
+  height: 100%;
+}
+
+.documenting .card .card-body {
+  overflow: auto;
+}
+
+.documenting .card .card-body .os-content > * {
+  padding-right: 2px;
+}
+
+.documenting .storage--file {
   left: auto !important;
 }
 
-.storage--file .card-body {
+.documenting .storage--file .card-body {
   padding: 0;
-  overflow: hidden;
 }
 
 body.text-sm .control-sidebar {
@@ -22537,7 +22555,7 @@ html.maximized-card {
 }
 
 .expandable-body > td .jumbotron {
-  padding: 7.5px;
+  padding: 0.5rem;
 }
 
 .expandable-body .table {
@@ -22991,7 +23009,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .dashboard .shortcut {
-  padding: 15px 0;
+  padding: 1rem 0;
   overflow: hidden;
 }
 
@@ -23013,7 +23031,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .dashboard .shortcut .info-box .info-box-content {
   font-weight: 500;
-  margin-top: 7.5px;
+  margin-top: 0.5rem;
   padding: 0;
   text-align: center;
 }
@@ -23024,8 +23042,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .dashboard .shortcut .info-box .btn-close {
   position: absolute;
-  top: 7.5px;
-  right: 7.5px;
+  top: 0.5rem;
+  right: 0.5rem;
   width: 1rem;
   height: 1rem;
   text-align: center;
@@ -23049,7 +23067,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .dashboard .shortcut .ui-state-highlight {
   min-width: 7rem;
-  margin: 0 7.5px;
+  margin: 0 0.5rem;
 }
 
 .timeline {

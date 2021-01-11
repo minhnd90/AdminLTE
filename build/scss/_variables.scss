@@ -56,6 +56,7 @@ $main-bg: #f5f6fa !default;
 // Content padding
 $content-padding-y: 0 !default;
 $content-padding-x: $navbar-padding-x !default;
+$content-header-height: $content-padding-x * 3 + $font-size-base * $line-height-base;
 
 // IMAGE SIZES
 // --------------------------------------------------------
@@ -102,7 +103,7 @@ $main-footer-padding-sm: $main-footer-padding * 0.812 !default;
 $main-footer-border-top-width: 1px !default;
 $main-footer-border-top-color: $gray-300 !default;
 $main-footer-border-top: $main-footer-border-top-width solid $main-footer-border-top-color !default;
-$main-footer-height-inner: (($font-size-root * $line-height-base) + ($main-footer-padding * 2)) !default;
+$main-footer-height-inner: (($font-size-base * $line-height-base) + ($main-footer-padding * 2)) !default;
 $main-footer-height: calc(#{$main-footer-height-inner} + #{$main-footer-border-top-width}) !default;
 $main-footer-height-sm-inner: (($font-size-sm * $line-height-base) + ($main-footer-padding-sm * 2)) !default;
 $main-footer-height-sm: calc(#{$main-footer-height-sm-inner} + #{$main-footer-border-top-width}) !default;
