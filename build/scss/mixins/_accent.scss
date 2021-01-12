@@ -27,15 +27,16 @@
 			}
 		}
 
-		.custom-control-input:checked ~ .custom-control-label {
+		.custom-control-input:checked ~ .custom-control-label,
+		.custom-control-input:indeterminate ~ .custom-control-label {
 			&::before {
 				background-color: $color;
-				border-color: darken($color, 20%);
+				border-color: darken($color, 10%);
 			}
 
 			&::after {
 				$new-color: color-yiq($color);
-				background-image: str-replace($custom-checkbox-indicator-icon-checked, str-replace(#{$custom-control-indicator-checked-color}, '#', '%23'), str-replace(#{$new-color}, '#', '%23'));
+				//background-image: str-replace($custom-checkbox-indicator-icon-checked, str-replace(#{$custom-control-indicator-checked-color}, '#', '%23'), str-replace(#{$new-color}, '#', '%23'));
 			}
 		}
 

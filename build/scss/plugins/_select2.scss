@@ -11,7 +11,9 @@
 //     outline: none;
 //   }
 // }
-
+.modal [class^='col'] .select2-container {
+	width: 100% !important;
+}
 .select2-container--default {
 	.select2-selection--single {
 		border: $input-border-width solid $input-border-color;
@@ -330,12 +332,12 @@ select.form-control-sm ~ {
 		border: 0;
 	}
 	.select2-dropdown {
-		box-shadow: 0 .5rem 1rem rgba(0,0,0,.175);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
 		.select2-results__option {
 			border-bottom: 1px solid $gray-200;
 		}
-		.select2-results__option--highlighted {
-			//background-color: rgba(0,0,0,.175);
-		}
+		// .select2-results__option--highlighted {
+		// 	//background-color: rgba(0,0,0,.175);
+		// }
 	}
 }

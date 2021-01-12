@@ -152,14 +152,15 @@
 
 .dashboard {
 	.shortcut {
-		padding: $grid-gutter-width 0;
+		padding: $grid-gutter-width / 2;
 		overflow: hidden;
+		@include make-row();
 
 		.info-box {
 			flex-direction: column;
-			min-width: 7rem;
 			min-height: 7rem;
-			margin-bottom: 0;
+			width: 10rem;
+			margin: 0 auto;
 
 			.info-box-icon {
 				border-radius: 50%;
@@ -179,27 +180,39 @@
 			.info-box-text {
 				font-size: 0.75rem;
 			}
+			.handle,
 			.btn-close {
 				position: absolute;
 				top: $grid-gutter-width / 2;
-				right: $grid-gutter-width / 2;
 				width: 1rem;
 				height: 1rem;
 				text-align: center;
 				line-height: 1rem;
 				z-index: 2;
-                display: none;
-                opacity: 0;
-                @include transition();
-            }
-            
-            &:hover .btn-close {
-                display: block;
-                opacity: 1;
-            }
+				opacity: 0;
+				@include transition();
+			}
+			.btn-close {
+				right: $grid-gutter-width / 2;
+			}
+			.handle {
+				left: $grid-gutter-width / 2;
+				cursor: move;
+			}
+
+			&:hover {
+				.handle,
+				.btn-close {
+					opacity: 1;
+				}
+			}
 		}
 		.ui-state-highlight {
 			min-width: 7rem;
+			margin: 0 $grid-gutter-width / 2;
+		}
+		.sort-highlight {
+			width: 10rem;
 			margin: 0 $grid-gutter-width / 2;
 		}
 	}
