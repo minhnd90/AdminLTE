@@ -14998,6 +14998,10 @@ html.control-sidebar-animate {
   padding-right: 2px;
 }
 
+.documenting .storage--documenting {
+  height: 100% !important;
+}
+
 .documenting .storage--file {
   left: auto !important;
 }
@@ -31715,6 +31719,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .ui-resizable-handle.ui-resizable-w {
   left: -3.5px;
+  height: 100% !important;
 }
 
 .ui-resizable-handle.ui-resizable-w::before {
