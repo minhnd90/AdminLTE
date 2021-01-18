@@ -74,10 +74,24 @@
 			}
 		}
 	}
-	.dropdown-menu {
-		height: calc(100vh - #{$main-header-height});
+	.notification_list {
 		max-height: 500px;
+
+		.dropdown-divider:last-of-type {
+			display: none;
+		}
 	}
+}
+
+.unread {
+	$color: lighten($info, 50%);
+	background-color: $color !important;
+	color: color-yiq($color) !important;
+}
+.unread:hover {
+	$color: lighten($info, 40%);
+	background-color: $color !important;
+	color: color-yiq($color) !important;
 }
 
 // Add this class to images within a nav-link

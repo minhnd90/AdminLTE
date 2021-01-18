@@ -11891,9 +11891,22 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   color: rgba(255, 255, 255, 0.25);
 }
 
-.main-header .dropdown-menu {
-  height: calc(100vh - 3.5rem);
+.main-header .notification_list {
   max-height: 500px;
+}
+
+.main-header .notification_list .dropdown-divider:last-of-type {
+  display: none;
+}
+
+.unread {
+  background-color: #d4f5fa !important;
+  color: #1f2d3d !important;
+}
+
+.unread:hover {
+  background-color: #a7e9f4 !important;
+  color: #1f2d3d !important;
 }
 
 .navbar-img {
