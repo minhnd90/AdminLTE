@@ -536,3 +536,14 @@ img {
 [aria-label='Pagination'] .form-group {
 	position: relative;
 }
+
+//lazyload
+.lazyload-overlay {
+	position: absolute;
+	inset: 0px;
+	z-index: $zindex-dropdown - 1;
+	background-color: rgba(0, 0, 0, 0.25);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

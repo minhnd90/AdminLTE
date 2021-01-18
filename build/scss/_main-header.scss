@@ -74,6 +74,10 @@
 			}
 		}
 	}
+	.dropdown-menu {
+		height: calc(100vh - #{$main-header-height});
+		max-height: 500px;
+	}
 }
 
 // Add this class to images within a nav-link

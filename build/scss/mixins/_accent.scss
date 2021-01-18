@@ -106,6 +106,9 @@
 				}
 			}
 		}
+		.lazyload-overlay {
+			color: $color;
+		}
 	}
 	.dark-mode.accent-#{$name} {
 		.page-item {

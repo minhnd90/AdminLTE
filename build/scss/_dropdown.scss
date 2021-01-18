@@ -105,12 +105,20 @@
 }
 
 // Dropdown header and footer
-.dropdown-footer,
 .dropdown-header {
+	top: 0;
+}
+.dropdown-footer {
+	bottom: 0;
+}
+.dropdown-header,
+.dropdown-footer {
 	display: block;
 	font-size: $font-size-sm;
 	padding: 0.5rem $dropdown-item-padding-x;
 	text-align: center;
+	position: sticky;
+	background-color: $dropdown-bg;
 }
 
 // Add fade animation to dropdown menus by appending
