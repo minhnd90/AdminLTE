@@ -18813,10 +18813,17 @@ body.text-sm .input-group-text {
   text-align: right;
 }
 
+.col-form-label.input-required {
+  padding-right: 1rem;
+  position: relative;
+}
+
 .col-form-label.input-required::after {
   content: ' (*)';
   color: red;
   font-size: 0.75rem;
+  position: absolute;
+  right: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -22642,7 +22649,6 @@ caption {
 
 .table-control {
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .carousel-control-prev .carousel-control-custom-icon {
@@ -32797,7 +32803,7 @@ img {
 .lazyload-overlay {
   position: absolute;
   inset: 0px;
-  z-index: 1029;
+  z-index: 1023;
   background-color: rgba(0, 0, 0, 0.25);
   display: -ms-flexbox;
   display: flex;
@@ -32805,6 +32811,19 @@ img {
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.branch > .fa {
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.5;
+  color: #000 !important;
+  outline: none !important;
+  transition: transform ease-in-out 0.3s;
+}
+
+.branch > .fa[aria-expanded='true'] {
+  transform: rotate(90deg);
 }
 
 @media print {
@@ -34358,6 +34377,11 @@ a.text-muted:hover {
   border-color: #0f6dcf;
 }
 
+.accent-primary .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-primary .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(34, 134, 239, 0.5);
+}
+
 .accent-primary .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-primary .custom-select:focus,
 .accent-primary .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -34441,6 +34465,11 @@ a.text-muted:hover {
 .accent-secondary .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #888888;
   border-color: #6f6f6f;
+}
+
+.accent-secondary .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-secondary .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(136, 136, 136, 0.5);
 }
 
 .accent-secondary .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -34528,6 +34557,11 @@ a.text-muted:hover {
   border-color: #0a4f29;
 }
 
+.accent-success .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-success .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(16, 124, 65, 0.5);
+}
+
 .accent-success .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-success .custom-select:focus,
 .accent-success .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -34611,6 +34645,11 @@ a.text-muted:hover {
 .accent-info .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #17a2b8;
   border-color: #117a8b;
+}
+
+.accent-info .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-info .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(23, 162, 184, 0.5);
 }
 
 .accent-info .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -34698,6 +34737,11 @@ a.text-muted:hover {
   border-color: #e39c07;
 }
 
+.accent-warning .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-warning .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(248, 180, 37, 0.5);
+}
+
 .accent-warning .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-warning .custom-select:focus,
 .accent-warning .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -34781,6 +34825,11 @@ a.text-muted:hover {
 .accent-danger .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #dc3545;
   border-color: #bd2130;
+}
+
+.accent-danger .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-danger .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(220, 53, 69, 0.5);
 }
 
 .accent-danger .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -34868,6 +34917,11 @@ a.text-muted:hover {
   border-color: #d5d5d5;
 }
 
+.accent-light .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-light .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
 .accent-light .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-light .custom-select:focus,
 .accent-light .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -34951,6 +35005,11 @@ a.text-muted:hover {
 .accent-dark .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #222222;
   border-color: #090909;
+}
+
+.accent-dark .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-dark .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(34, 34, 34, 0.5);
 }
 
 .accent-dark .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35038,6 +35097,11 @@ a.text-muted:hover {
   border-color: #0a4a8e;
 }
 
+.accent-heavy-cyan .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-heavy-cyan .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(14, 99, 189, 0.5);
+}
+
 .accent-heavy-cyan .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-heavy-cyan .custom-select:focus,
 .accent-heavy-cyan .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35121,6 +35185,11 @@ a.text-muted:hover {
 .accent-lightblue .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #3c8dbc;
   border-color: #307095;
+}
+
+.accent-lightblue .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-lightblue .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(60, 141, 188, 0.5);
 }
 
 .accent-lightblue .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35208,6 +35277,11 @@ a.text-muted:hover {
   border-color: #00060c;
 }
 
+.accent-navy .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-navy .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(0, 31, 63, 0.5);
+}
+
 .accent-navy .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-navy .custom-select:focus,
 .accent-navy .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35291,6 +35365,11 @@ a.text-muted:hover {
 .accent-olive .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #3d9970;
   border-color: #2e7555;
+}
+
+.accent-olive .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-olive .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(61, 153, 112, 0.5);
 }
 
 .accent-olive .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35378,6 +35457,11 @@ a.text-muted:hover {
   border-color: #00cd5a;
 }
 
+.accent-lime .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-lime .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(1, 255, 112, 0.5);
+}
+
 .accent-lime .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-lime .custom-select:focus,
 .accent-lime .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35461,6 +35545,11 @@ a.text-muted:hover {
 .accent-fuchsia .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #f012be;
   border-color: #c30c9a;
+}
+
+.accent-fuchsia .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-fuchsia .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(240, 18, 190, 0.5);
 }
 
 .accent-fuchsia .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35548,6 +35637,11 @@ a.text-muted:hover {
   border-color: #ab154c;
 }
 
+.accent-maroon .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-maroon .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(216, 27, 96, 0.5);
+}
+
 .accent-maroon .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-maroon .custom-select:focus,
 .accent-maroon .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35631,6 +35725,11 @@ a.text-muted:hover {
 .accent-blue .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #2286ef;
   border-color: #0f6dcf;
+}
+
+.accent-blue .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-blue .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(34, 134, 239, 0.5);
 }
 
 .accent-blue .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35718,6 +35817,11 @@ a.text-muted:hover {
   border-color: #510bc4;
 }
 
+.accent-indigo .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-indigo .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(102, 16, 242, 0.5);
+}
+
 .accent-indigo .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-indigo .custom-select:focus,
 .accent-indigo .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35801,6 +35905,11 @@ a.text-muted:hover {
 .accent-purple .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #6f42c1;
   border-color: #59339d;
+}
+
+.accent-purple .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-purple .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(111, 66, 193, 0.5);
 }
 
 .accent-purple .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -35888,6 +35997,11 @@ a.text-muted:hover {
   border-color: #d91a72;
 }
 
+.accent-pink .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-pink .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(232, 62, 140, 0.5);
+}
+
 .accent-pink .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-pink .custom-select:focus,
 .accent-pink .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -35971,6 +36085,11 @@ a.text-muted:hover {
 .accent-red .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #dc3545;
   border-color: #bd2130;
+}
+
+.accent-red .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-red .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(220, 53, 69, 0.5);
 }
 
 .accent-red .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -36058,6 +36177,11 @@ a.text-muted:hover {
   border-color: #dc6502;
 }
 
+.accent-orange .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-orange .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(253, 126, 20, 0.5);
+}
+
 .accent-orange .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-orange .custom-select:focus,
 .accent-orange .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -36141,6 +36265,11 @@ a.text-muted:hover {
 .accent-yellow .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #f8b425;
   border-color: #e39c07;
+}
+
+.accent-yellow .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-yellow .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(248, 180, 37, 0.5);
 }
 
 .accent-yellow .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -36228,6 +36357,11 @@ a.text-muted:hover {
   border-color: #0a4f29;
 }
 
+.accent-green .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-green .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(16, 124, 65, 0.5);
+}
+
 .accent-green .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-green .custom-select:focus,
 .accent-green .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -36311,6 +36445,11 @@ a.text-muted:hover {
 .accent-teal .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #20c997;
   border-color: #199d76;
+}
+
+.accent-teal .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-teal .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(32, 201, 151, 0.5);
 }
 
 .accent-teal .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -36398,6 +36537,11 @@ a.text-muted:hover {
   border-color: #117a8b;
 }
 
+.accent-cyan .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-cyan .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(23, 162, 184, 0.5);
+}
+
 .accent-cyan .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-cyan .custom-select:focus,
 .accent-cyan .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -36481,6 +36625,11 @@ a.text-muted:hover {
 .accent-white .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #ffffff;
   border-color: #e6e6e6;
+}
+
+.accent-white .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-white .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .accent-white .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
@@ -36568,6 +36717,11 @@ a.text-muted:hover {
   border-color: #919191;
 }
 
+.accent-gray .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-gray .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(170, 170, 170, 0.5);
+}
+
 .accent-gray .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-gray .custom-select:focus,
 .accent-gray .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -36653,6 +36807,11 @@ a.text-muted:hover {
   border-color: #090909;
 }
 
+.accent-gray-dark .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-gray-dark .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(34, 34, 34, 0.5);
+}
+
 .accent-gray-dark .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 .accent-gray-dark .custom-select:focus,
 .accent-gray-dark .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
@@ -36736,6 +36895,11 @@ a.text-muted:hover {
 .accent-heavy-cyan .custom-control-input:indeterminate ~ .custom-control-label::before {
   background-color: #0e63bd;
   border-color: #0a4a8e;
+}
+
+.accent-heavy-cyan .custom-control-input:disabled:checked ~ .custom-control-label::before,
+.accent-heavy-cyan .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(14, 99, 189, 0.5);
 }
 
 .accent-heavy-cyan .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),

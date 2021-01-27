@@ -541,9 +541,20 @@ img {
 .lazyload-overlay {
 	position: absolute;
 	inset: 0px;
-	z-index: $zindex-dropdown - 1;
+	z-index: $zindex-main-sidebar;
 	background-color: rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.branch > .fa {
+	height: 1.5em;
+	text-align: center;
+	line-height: 1.5;
+	color: #000 !important;
+	outline: none !important;
+	transition: transform ease-in-out 0.3s;
+	&[aria-expanded='true'] {
+		transform: rotate(90deg);
+	}
 }

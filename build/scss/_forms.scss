@@ -418,14 +418,15 @@ body.text-sm {
 	text-align: right;
 
 	&.input-required {
-		//padding-right: 1rem;
+		padding-right: 1rem;
+		position: relative;
 
 		&::after {
 			content: ' (*)';
 			color: red;
 			font-size: 0.75rem;
-			//position: absolute;
-			//right: 0;
+			position: absolute;
+			right: 0;
 		}
 	}
 }

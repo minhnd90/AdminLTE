@@ -39,6 +39,12 @@
 				//background-image: str-replace($custom-checkbox-indicator-icon-checked, str-replace(#{$custom-control-indicator-checked-color}, '#', '%23'), str-replace(#{$new-color}, '#', '%23'));
 			}
 		}
+		.custom-control-input:disabled {
+			&:checked ~ .custom-control-label::before,
+			&:indeterminate ~ .custom-control-label::before {
+				@include gradient-bg(rgba($color, 0.5));
+			}
+		}
 
 		.form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid),
 		.custom-select:focus,
